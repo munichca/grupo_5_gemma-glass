@@ -16,10 +16,10 @@ Somos Christian A. Munich, Nancy Sosa y Antonio Diaz Fierro.
 <hr>
 <h3>Sitios de referencia<h3>
 <hr>
-<li>
+
  [SITIO 1!](http://google.com)
  [SITIO 2!](http://google.com)
  [SITIO 3!](http://google.com)
  [SITIO 4!](http://google.com)
  [SITIO 5!](http://google.com)
-</li>
+
