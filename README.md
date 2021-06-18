@@ -13,6 +13,8 @@ Nuestro grupo llevará a cabo la tarea de desarrollar una página web de comerci
 
 <p><em>Soy Analista Funcional en Telepeajeplus y estudiante de programacion en la Universidad Tecnologica Nacional, tengo 23 años, me encanta programar, jugar videojuegos, andar en skate y moto <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> </em> </p>
 <li>:mechanical_arm:Christian A. Munich:</li>
+
+<p><em>Tengo 28 años. Estudié Literatura en el Instituto Superior del Profesorado Joaquín V. González y actualmente estoy arrancando la Tecnicatura en Informática en la Universidad de General Sarmiento. Me gusta todo lo relacionado al mundo del hardware, nuevas tecnologías y la informática en general. También me gustan algunos deportes, como el fútbol o el tenis y -por supuesto- el gaming. </em> </p>
   <li>:vampire_woman:Nancy Sosa:</li>
   <li>:mage_man:Antonio Diaz Fierro:</li>
  
