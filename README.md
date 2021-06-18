@@ -1,4 +1,4 @@
-<h2><p style= 'color:red'>Grupo 5 Gemma Glass 👋 </p></h2>
+<h2 style= 'color:red'>Grupo 5 Gemma Glass 👋</h2>
 
 ---aca va el logo---
 <h3>Primer Sprint<h3>
