@@ -16,6 +16,9 @@ Nuestro grupo llevará a cabo la tarea de desarrollar una página web de comerci
 
 <p><em>Tengo 28 años. Estudié Literatura en el Instituto Superior del Profesorado Joaquín V. González y actualmente estoy arrancando la Tecnicatura en Informática en la Universidad de General Sarmiento. Me gusta todo lo relacionado al mundo del hardware, nuevas tecnologías y la informática en general. También me gustan algunos deportes, como el fútbol o el tenis y -por supuesto- el gaming. </em> </p>
   <li>:vampire_woman:Nancy Sosa:</li>
+  <p><em> Soy operador de sistemas de grabado por luz, laser Co2, laser Yag y laser Fibra , además de todo sistema de impresión por tintas y marcado con fresas o diamantes con pantografos de 2D y 3D, tengo titulo de Vendedor Profesional con Mención en Comercialización Internacional comencé hace mas de 20 años la carrera de analista de sistemas la que tuve que dejar por razones personales, ahi aprendi los fundamentos básicos de la programación con Pascal y Visual Basic, hace 3 años retomé la carrera y aprendí c++. Hice un curso de la Suite de Corel Draw. Comencé este camino porque
+en todos los ámbitos en los que me he desarrollado mi tarea principal fue detectar y solucionar problemas desde mi Practica Profesional realizada en la Aduana en donde tuve mi primera experiencia con computadoras en un entorno de DOS, tambien armo, reparo y hago mantenimiento de computadoras tanto en el entorno laboral como para terceros desde hace 15 años y porque las teclas me llaman me invitan y me aman, me gustan las artes
+(pintor aficionado y musico) soy fan de las peliculas de ciencia ficción pero sobre todo las que tienen muchos efectos realizados en computadora y he  visto la evolución de la tecnología sin jamas dejar de perder la curiosidad ni la sorpresa ante cualquier cambio, tengo 49 años y 25 años de experiencia diseño , sistemas de impresión y grabado computarizado.</em> </p>
   <li>:mage_man:Antonio Diaz Fierro:</li>
  
 </h4>
