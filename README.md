@@ -23,14 +23,16 @@ Nuestro grupo llevará a cabo la tarea de desarrollar una página web de comerci
 en todos los ámbitos en los que me he desarrollado mi tarea principal fue detectar y solucionar problemas desde mi Practica Profesional realizada en la Aduana en donde tuve mi primera experiencia con computadoras en un entorno de DOS, tambien armo, reparo y hago mantenimiento de computadoras tanto en el entorno laboral como para terceros desde hace 15 años y porque las teclas me llaman me invitan y me aman, me gustan las artes
 (pintor aficionado y musico) soy fan de las peliculas de ciencia ficción pero sobre todo las que tienen muchos efectos realizados en computadora y he  visto la evolución de la tecnología sin jamas dejar de perder la curiosidad ni la sorpresa ante cualquier cambio, tengo 49 años y 25 años de experiencia diseño , sistemas de impresión y grabado computarizado.
  
-</h4>
+  
   Evelyn Gerez:
   Soy Tester-QA soy de San Justo,Buenos Aires ,tengo 26 años , y me empezó a interesar la programación porque quería saber como era el desarrollo del software desde el principio, por eso realicé diferentes cursos de Diseño Web y FrontEnd. Como pasatiempo me gusta escuchar música e ir a recitales. 
   Mi espectativa sobre este curso es poder aprender nuevas tecnologias y la metodología de trabajo del área.
+</h4>
+
   
 <hr>
 <h3>Sitios de referencia<h3>
- [SITIO 1!](http://http://www.opticamonigaby.com.ar/) De esta web usamos como referencia el carrousel del home <br>
+ [SITIO 1!](http://www.opticamonigaby.com.ar/) De esta web usamos como referencia el carrousel del home <br>
  [SITIO 2!](http://google.com) <br>
  [SITIO 3!](http://google.com) <br>
  [SITIO 4!](http://google.com) <br>
