@@ -34,10 +34,10 @@ en todos los ámbitos en los que me he desarrollado mi tarea principal fue detec
 <hr>
 <h3>Sitios de referencia<h3>
  [SITIO 1!](http://www.opticamonigaby.com.ar/) De esta web usamos como referencia el carrousel del home <br>
- [SITIO 2!](http://google.com) <br>
- [SITIO 3!](http://google.com) <br>
- [SITIO 4!](http://google.com) <br>
- [SITIO 5!](http://google.com) <br>
+ [SITIO 2!](http://www.masvision.com) <br>
+ [SITIO 3!](http://www.ray-ban.com) <br>
+ [SITIO 4!](http://www.lof.com.ar) <br>
+ [SITIO 5!](http://www.mioptica.com.ar/) <br>
  <hr>
  
 
