@@ -16,15 +16,15 @@ Nuestro grupo llevará a cabo la tarea de desarrollar una página web de comerci
 
 <p><em>Tengo 28 años. Estudié Literatura en el Instituto Superior del Profesorado Joaquín V. González y actualmente estoy arrancando la Tecnicatura en Informática en la Universidad de General Sarmiento. Me gusta todo lo relacionado al mundo del hardware, nuevas tecnologías y la informática en general. También me gustan algunos deportes, como el fútbol o el tenis y -por supuesto- el gaming. </em> </p>
   <li>:vampire_woman:Nancy Sosa:</li>
+=======
   Tengo 45 años, soy mamá de 4 hermosos hijos ya todos mayor d edad. Estudie secretariado ejecutivo, soy tec. en armado y rep. de pc, diseñador grafico, asist. en admin. de empresas, marketing y operaciones bancarias y financieras, curse admin. contable y auxiliar en criminalistica y criminologia. Mi deporte favorito es karate 2 lo practique un tiempo hasta un desgarro, deje y cuando retome no pude seguir x dicho desgarro. 
-  
   <li>:mage_man:Antonio Diaz Fierro:</li>
   Soy operador de sistemas de grabado por luz, laser Co2, laser Yag y laser Fibra , además de todo
 sistema de impresión por tintas y marcado con fresas o diamantes con pantografos de 2D y 3D.
  <br>
   <br>
   
-  Evelyn Gerez:
+  <li>:computer:Evelyn Gerez:</li>
   Soy Tester-QA soy de San Justo,Buenos Aires ,tengo 26 años , y me empezó a interesar la programación porque quería saber como era el desarrollo del software desde el principio, por eso realicé diferentes cursos de Diseño Web y FrontEnd. Como pasatiempo me gusta escuchar música e ir a recitales. 
   Mi espectativa sobre este curso es poder aprender nuevas tecnologias y la metodología de trabajo del área.
 </h4>
