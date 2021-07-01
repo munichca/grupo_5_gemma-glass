@@ -34,10 +34,10 @@ sistema de impresión por tintas y marcado con fresas o diamantes con pantografo
 <h3>Sitios de referencia<h3>
  [SITIO 1!](http://www.opticamonigaby.com.ar/) De esta web usamos como referencia el carrousel del home <br>
  [SITIO 2!](http://www.masvision.com.ar) <br>
- [SITIO 3!](http://www.ray-ban.com) <br> la forma en la que aparecen las imagenes al bajar por primera vez
+ [SITIO 3!](http://www.ray-ban.com)  la forma en la que aparecen las imagenes al bajar por primera vez <br>
  [SITIO 4!](http://www.lof.com.ar) <br>
  [SITIO 5!](http://www.mioptica.com.ar/) <br>
- [SITIO 6!](https://www.zennioptical.com/)<br> en menu desplegable
+ [SITIO 6!](https://www.zennioptical.com/) en menu desplegable <br>
  <hr>
  
 
