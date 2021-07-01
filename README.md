@@ -24,7 +24,7 @@ sistema de impresión por tintas y marcado con fresas o diamantes con pantografo
  <br>
   <br>
   
-  Evelyn Gerez:
+  <li>:computer:Evelyn Gerez:</li>
   Soy Tester-QA soy de San Justo,Buenos Aires ,tengo 26 años , y me empezó a interesar la programación porque quería saber como era el desarrollo del software desde el principio, por eso realicé diferentes cursos de Diseño Web y FrontEnd. Como pasatiempo me gusta escuchar música e ir a recitales. 
   Mi espectativa sobre este curso es poder aprender nuevas tecnologias y la metodología de trabajo del área.
 </h4>
