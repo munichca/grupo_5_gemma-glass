@@ -1,0 +1,165 @@
+:root{
+--grey : #444444;
+--red : #b92519;
+--tipos:#152847;
+--header:#4F8DF0;
+--nombre:'Usuario' ;
+}
+*{
+    padding: 0;
+    margin: 0;    
+    font-family: sans-serif;
+    box-sizing: border-box;    
+    color: var(--tipos);
+}
+.uper{
+    text-transform: uppercase;
+}
+a{ 
+    text-decoration: none;
+}
+#hideMobile{
+    display: none;
+}
+body{
+    width: 100%;
+}
+
+
+.headerArriba{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;   
+    background-color: var(--header); 
+    padding: 5px;
+       
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+}
+.logo img{
+    width: 17vw;
+}
+.menu{
+    font-size: 2.2rem;        
+}
+.carrito{
+    font-size: 2.2rem;
+    }
+.headerAbajo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;   
+    background-color: var(--header); 
+    padding: 5px;    
+}
+.welcome{
+    order: -1;
+    display: flex;
+    flex-direction: row;
+}
+.welcome p{
+    margin-right: 5px;
+    color: var(--tipos);
+}
+.lupa{
+    font-size: 1.5rem;
+    
+}
+.sub-menu .opcion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: auto auto;
+    padding: 5px;
+}
+.sub-menu .opcion li{
+    list-style-type: none;
+    width: auto;
+    font-weight: bold;
+}
+hr {
+    background: linear-gradient(90deg, rgb(24,24,24), var(--tipos));
+    height: 2px;
+    margin: auto;
+    width: 95%;
+    border: none;
+}
+
+
+
+
+.prod{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.prod img{
+    width: 80%;
+}
+.prod span{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+/* footer */
+footer *{
+    color: white;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+    background-color: var(--tipos);
+    padding: 8px;
+}
+.medios-pago{
+    order: 1;
+    width: 45%;
+    text-align:left;
+}
+
+.medios-pago i{     
+    font-size: 2.8rem;
+}
+.ayuda{
+    order:3;
+    display: flex;
+    flex-direction: column;
+    width: 45%;    
+}
+.contacto{
+    order: 4;
+    display: flex;
+    flex-direction: column;
+    width: 45%;    
+    text-align: right;
+}
+.social{
+    order: 2;
+    width: 45%;    
+    text-align: right;
+}
+.social .redes i{
+    font-size: 2rem;
+}
+
+
+@media (min-width: 769px) {
+    #hideMobile{
+        display: inline-block;
+    }
+    .headerArriba .menu{
+        display: none;
+    }
+} 
+
+    
+    
