@@ -17,6 +17,8 @@ header {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  position: sticky;
+  top:0;
 }
 
 .container-2 {
