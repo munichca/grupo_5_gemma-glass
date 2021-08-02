@@ -1,0 +1,717 @@
+
+:root{
+    --grey : #444444;
+    --red : #b92519;
+    --tipos:#152847;
+    --header:#4F8DF0;
+    --nombre:'Usuario' ;
+}
+*{
+    padding: 0;
+    margin: 0;    
+    font-family: sans-serif;
+    box-sizing: border-box;    
+    color: var(--tipos);
+}
+a{
+    text-decoration: none;
+}
+
+.hr-mobile{    
+    background: rgb(21,40,71);
+    background: linear-gradient(90deg, rgba(21,40,71,1) 0%, rgba(79,141,240,1) 50%, rgba(21,40,71,1) 100%);
+    height: 1.5px;      
+    width: 90%;
+    border: none;  
+    margin: 10px auto 20px; 
+}
+.hr-desktop{
+    background: rgb(21,40,71);
+    background: linear-gradient(90deg, rgba(21,40,71,1) 0%, rgba(79,141,240,1) 50%, rgba(21,40,71,1) 100%);
+    height: 2px;      
+    width: 90%;
+    border: none;  
+    margin: 10px auto 20px; 
+    display: none;
+}
+.title-slider .title{
+    
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;  
+    padding:15px 0 10px ;
+}
+.ani{
+    display: flex;
+    justify-content: center;   
+    width: 80%;    
+    margin: 5px  auto 20px; 
+    order: 1;
+}
+.ani .container{    
+    display: block;  
+    justify-content: center;  
+    width: 75vw;
+    height: 45vw;
+    margin: auto 0;    
+    overflow: hidden;
+    border: 1px solid cadetblue;
+    border-radius: 1.5rem;       
+} 
+.ani #slider{    
+    width: 150vw;
+    height: 45vw;
+    background-image: url(/image/sl1.jpg);
+    background-size: 100% ;
+    animation: slider 7s infinite alternate cubic-bezier(1, 0, 0, 1);    
+    /* animation-direction: alternate; */    
+    /* animation-timing-function: cubic-bezier(1, 0, 0, 1); */
+}
+@keyframes slider{
+    to {
+        background-position: 78vw;
+    }
+}
+.block1-body-mobile .price{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    order: 3;
+}
+.block1-body-mobile .price i {        
+    margin-right: 3px;    
+}
+.block1-body-mobile .pay{
+    display: flex;
+    width: 70%;
+    flex-direction: column;  
+    margin: auto auto;
+     
+}
+.block1-body-mobile .pay .hs5{    
+    text-align: center;
+}
+.block1-body-mobile .credit-card{
+    margin: auto;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    flex-wrap:wrap;
+}
+.block1-body-mobile .credit-card i{
+    font-size: 60px;
+    padding:  0 5px;
+}
+.block1-body-mobile .button-buy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    order: 5;
+    
+    margin-bottom: 5px;
+}
+.block1-body-mobile .button-buy button{
+    width:50%;
+    height: 75%;
+    border-radius: 2rem;
+    background-color: var(--tipos);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+.block1-body-mobile .postal-code{
+    padding: 5px;
+    width: 65%;
+    border: 1px solid var(--header); 
+    border-radius: 5px;
+    margin: 0 auto 15px;    
+    background-color: var(--header);  
+    order: 6;
+}
+.block1-body-mobile .postal-code p{
+    font-size: 12px;   
+    text-align: center; 
+    padding-bottom: 10px;   
+}
+.block1-body-mobile .postal-code input{
+    display: flex;
+   margin: 0 auto 10px;
+   height: 2rem;
+   border-style: none;
+   border-radius: 15px;  
+   text-align: center;
+   outline: none;  /* elimina el borde amarillo cuando tiene el foco */ 
+}
+.block1-body-mobile .postal-code li{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.block1-body-mobile .details .detail,
+.block1-body-mobile .info,
+.block1-body-mobile .measures{
+    display: block;
+    width: 90%;
+    margin: 0 15px 15px;    
+}
+.block1-body-mobile .details .detail p,
+.block1-body-mobile .info p,
+.block1-body-mobile .measures p{
+    font-size: 14px;
+}
+.block1-body-mobile .social-media{
+    display:flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;  
+    order:9;
+}
+.block1-body-mobile .social-media .share{
+    width: 100%;   
+    margin-bottom:  5px;
+    text-transform: capitalize;    
+    font-weight: bold;
+    font-size: 14px;
+}
+.block1-body-mobile .social-media ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 22px;  
+    gap: 5px  ;
+}
+.separator{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    order:  11;
+}
+.sold-separator{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;  
+    order:  12;  
+}
+.sold-separator hr{      
+    background: rgb(21,40,71);
+    background: linear-gradient(90deg, rgba(21,40,71,1) 0%, rgba(79,141,240,1) 50%, rgba(21,40,71,1) 100%);
+    height: 1px;    
+    margin: 0 ;
+    width: 20.4%;
+    border: none;  
+    position: relative;
+}
+.sold-separator p{
+    position: relative;
+    top: 0;
+}
+
+/* slider para descktop */
+.containerSlide .images{
+    opacity: 0;
+}
+.containerSlide{  
+    display: flex;  
+    flex-direction: column;
+    width: 60%;
+    height: 85vh;          
+    justify-content: center;
+    align-items: center; 
+    /* text-align: center; */ 
+    margin-bottom: 20px;   
+}
+.containerSlide .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    margin: auto auto;    
+}
+.containerSlide .name{
+    text-align: center;
+    padding: auto auto;
+    text-transform: uppercase;  
+    color:var(--tipos);
+    font-weight: bold;  
+}
+.containerSlide .pictures{
+    display: flex;
+    width: 85%;
+    height: 80%;    
+    position: relative;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+}
+.containerSlide .pictures  img{
+    width: fit-content;
+    height: 100%;
+    position: absolute;
+    border: 2px solid var(--tipos);
+    border-radius: 25px;    
+    object-fit: scale-down;
+}
+.containerSlide .menu img{
+    width: 40%;
+    border: 1.5px solid var(--tipos);
+    border-radius: 50%;
+}
+.containerSlide .navegadorImagenes{    
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+    margin-top: 10px;
+}
+.containerSlide .navegadorImagenes ul.menu li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerSlide .navegadorImagenes ul.menu{
+    list-style: none;
+    display: flex;
+    width: 65%;
+}
+.containerSlide .images#images1{
+    opacity: 1;
+}
+.containerSlide .images:target{
+    opacity: 1;
+}
+.containerSlide{
+    display: none;
+}
+/* fin slider descktop */
+/* bloque 2 desktop */
+.block2-desktop{
+    display:flex;
+    flex-direction: column;
+    width: 38%;
+    margin-bottom:80px;
+    margin: 0px auto 0px;
+    /* border: 1px solid black; */
+}
+.block2-desktop .price{        
+    display: flex;
+    flex-direction: row;
+    width: 38%;
+    margin: 30px auto 10px;        
+    justify-content: center;
+    font-size: 25px;        
+}    
+.block2-desktop .price i,
+.block2-desktop .price h4{
+    color: var(--tipos);
+}
+.block2-desktop .button-buy{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;      
+    width: 75%;
+    height: 10vh;         
+    margin: 20px auto 30px;  
+              
+}
+.block2-desktop .button-buy button{
+    width:100%;
+    height: 75%;
+    border-radius: 2rem;
+    background-color: var(--tipos);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}
+.block2-desktop .detail{       
+    margin:25px auto 10px;                
+}
+.block2-desktop .info{
+    margin:0px auto 10px;
+}    
+.block2-desktop .detail h4,
+.block2-desktop .detail p{
+    color: var(--tipos);
+}
+.block2-desktop .info h5,
+.block2-desktop .info p{
+    color: var(--tipos);
+}
+.block2-desktop .measures h4,
+.block2-desktop .measures p{
+    color: var(--tipos);
+}
+.block2-desktop{
+    display: none;
+}        
+/* fin bloque 2 desktop */
+/* bloque 3 postal desktop */
+
+.block3-postal .postal-code{
+    padding: 5px;
+    width: 65%;
+    border: 1px solid var(--header); 
+    border-radius: 5px;
+    margin: 0 auto 15px;    
+    background-color: var(--header);  
+    order: 6;
+}
+.block3-postal .postal-code p{
+    font-size: 12px;   
+    text-align: center; 
+    padding-bottom: 10px;   
+}
+.block3-postal .postal-code input{
+    display: flex;
+   margin: 0 auto 10px;
+   height: 2rem;
+   border-style: none;
+   border-radius: 15px;  
+   text-align: center;
+   outline: none;  /* elimina el borde amarillo cuando tiene el foco */ 
+}
+.block3-postal .postal-code li{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.block3-postal .pay{
+    display: flex;
+    width: 70%;
+    flex-direction: column;  
+    margin: auto auto;
+      
+}
+.block3-postal .pay .hs5{    
+    
+    text-align: center;
+}
+.block3-postal .credit-card{
+    margin: auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    flex-wrap:wrap;
+}
+.block3-postal .credit-card i{
+    font-size: 60px;
+    padding:  0 5px;
+}
+.block3-postal .social-media{
+    display:flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;  
+    order:9;
+}
+.block3-postal .social-media .share{
+    width: 100%;   
+    margin-bottom:  5px;
+    text-transform: capitalize;    
+    font-weight: bold;
+    font-size: 14px;
+}
+.block3-postal .social-media ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 22px;  
+    gap: 5px  ;
+}
+.block3-postal{
+    display: none;
+}
+
+/* fin bloque 3 postal desktop */
+
+
+/* bloque de mas vendidos */
+
+.block-best-sellers{
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.block-best-sellers .product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+.block-best-sellers .twist{
+    border: 2px solid var(--tipos);
+    border-radius: 25px; 
+    width: 52%;
+}
+.block-best-sellers .twist .link-twist{
+    display: flex;
+    width: 50%;
+    height: 50vw;   
+    position: relative;        
+}
+.block-best-sellers .twist .link-twist img{
+    width: fit-content;
+    height: 100%;
+    margin-left: 1.5px;
+    position: absolute;    
+    border-radius: 35px;  
+    animation: twist1 7s infinite ;     
+}
+.block-best-sellers .rear{
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+}
+@keyframes twist1 {
+    from { transform: rotateY(0deg) }
+    to { transform: rotateY(360deg) }
+}
+.block-best-sellers .best-sellers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-top: 10px;    
+}
+.block-best-sellers .best-sellers h5, h4{
+    text-transform: uppercase;    
+    color: var(--tipos);
+}
+.block-best-sellers .best-sellers .price{
+    display: flex;
+    flex-direction: row;
+}
+.block-best-sellers .best-sellers i{    
+    margin-right: 3px;
+    color: var(--tipos);
+}
+
+/* fin de bloque mas vendidos */
+
+
+
+/*  pantalla 768 */
+
+ @media (min-width: 768px) {
+    .hr-mobile{
+        display: none;
+    }
+    .hr-desktop{
+        display: initial;
+    }
+    body{
+        display: flex;              
+        flex-direction: row;
+        flex-wrap: wrap; 
+        justify-content: center;       
+    }
+    .block1-body-mobile {
+        display: none;
+    }
+    .containerSlide{
+        display: initial;
+    }
+    .block2-desktop{
+        display: initial;
+    }    
+    .block3-postal{
+        display: initial;
+    }
+    .block3-postal .social-media i{
+        font-size: 30px;
+    }
+    .block-best-sellers{
+        display: flex;  
+        flex-direction: row;
+        justify-content: space-evenly;  
+        flex-wrap: wrap;  
+    }
+    .block-best-sellers .product{
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
+        margin: 5px 10px 5px;
+    }
+    .block-best-sellers .twist{
+        width: 100%;        
+    }
+    .block-best-sellers  .twist .link-twist{
+        height: 19vw;       
+    }
+    .block-best-sellers .best-sellers{    
+        
+        text-align: center;
+    }
+    .block-best-sellers .best-sellers h5, h4,i{
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: uppercase;    
+        color: var(--tipos);
+}  
+@media (min-width: 1024px){
+    .hr-desktop{
+        display: initial;
+    }
+    .containerSlide .name{
+        text-align: center;
+        padding: auto auto;          
+        font-weight: bold; 
+        font-size: 22px;          
+    }
+    .block2-desktop .detail{       
+        font-size: larger;               
+    }
+   
+    .block2-desktop .info{
+        font-size: larger;
+    }    
+    .block2-desktop .measures{
+        font-size: larger;
+    }
+    /* postal */
+    .block3-postal{
+        margin-top: 10px;
+        width: 40vw;
+    }
+    .block3-postal .postal-code{       
+        width: 100%;        
+        border-radius: 10px;       
+    }
+    .block3-postal .postal-code p{
+        font-size: 20px;      
+    }
+    .block3-postal .postal-code input{
+        width: 75%;  
+    }
+    .block3-postal .postal-code li{
+        font-size: 18px;
+    }
+    .block3-postal .pay{
+        width: 100%;
+    }
+    .block3-postal .credit-card{
+        width: 100%;
+    }
+    .block3-postal .credit-card i{
+        font-size:85px;
+    } 
+    .block3-postal .social-media i{
+        font-size: 50px;  
+    }
+    /* fin postal */
+    /* mas vendidos */
+    .block-best-sellers .best-sellers h5, h4,i{
+        font-size: 15px;        
+        text-transform: uppercase;    
+        color: var(--tipos);
+    }
+    /* fin mas vendidos */
+}     
+@media (min-width: 1044px){
+    .containerSlide .name{
+        text-align: center;
+        padding: auto auto;          
+        font-weight: bold; 
+        font-size: x-large;          
+    }
+    .block2-desktop .price{        
+        display: flex;
+        flex-direction: row;
+        width: 38%;
+        margin: 30px auto 10px;        
+        justify-content: center;
+        font-size: 35px;        
+    }    
+    .block2-desktop .detail{       
+        font-size: 16px;
+        margin-bottom: 26px;               
+    }
+   
+    .block2-desktop .info{
+        font-size: 16px;
+        margin-bottom: 26px;
+    }    
+    .block2-desktop .measures{
+        font-size: 16px;
+    }
+    /* postal */
+    .block3-postal{
+        width: 40vw;
+        margin-top: 25px;
+    }
+    .block3-postal .postal-code{ 
+        display: flex;
+        flex-direction: column;      
+        width: 100%; 
+        height: 300px;     
+        justify-content: center;
+        align-items: center;  
+        border-radius: 10px; 
+          
+    }
+    .block3-postal .postal-code p{
+        font-size: 20px;      
+    }
+    .block3-postal .postal-code input{
+        width: 75%;
+        border-radius: 30px;
+        height: 3rem;  
+    }
+    .block3-postal .postal-code li{
+        font-size: 25px;
+    }
+    .block3-postal .pay{        
+        width: 100%;          
+    }
+    .block3-postal .pay .hs5{   
+        font-size: 22px; 
+        text-align: center;
+    }
+    .block3-postal .credit-card{
+        width: 100%;
+    }
+    .block3-postal .credit-card i{
+        font-size: 120px;
+    } 
+
+    .block3-postal .social-media i{
+        font-size: 60px;  
+    }
+    /* fin postal */
+    .block-best-sellers .best-sellers h5, h4,i{
+        font-size: 16px;        
+        text-transform: uppercase;    
+        color: var(--tipos);
+    }
+
+}

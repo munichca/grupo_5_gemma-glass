@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer{
+    width: 100%;
+    height: 20%;
+    display: flex ;
+    justify-content: space-around;
+ color: white;
+background-color: #152847;  
+font-family: "Ubuntu", sans-serif;
+}
+
+.footer-2{
+    display: none;
+}
+.footer-3{
+    display: none;
+}
+.footer-1 ,
+.footer-2,
+ .footer-3,
+  .footer-4{
+    text-align: center;
+    font-size: 14px;
+}
+.footer-1 h4 ,
+.footer-2 h4,
+ .footer-3 h4,
+  .footer-4 h4{
+    font-size: 15px;
+    padding-bottom: 4px;
+}
+.footer-1 i{
+    font-size: 25px;
+    padding: 3px;
+/*     font-size: 35px; */
+/*     padding: 10px; */
+    padding-bottom: 15px;
+}
+.footer-2 a,
+.footer-3 a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+
+}
+.footer-2 a :hover,
+.footer-3 a:hover {
+    background-color: #4f8df0;
+border-radius: 20%;
+
+}
+.footer-2 li{
+    padding-bottom: 8px;
+}
+.footer-3 p {
+    padding-bottom: 8px;
+} 
+.footer-4 i{
+    font-size: 25px;
+    padding: 3px;
+/*     font-size: 35px; */
+/*     padding: 10px; */
+    color: white;
+}
+.footer-4 i:hover{
+    background-color: #4f8df0;
+    border-radius: 15%;
+}
+
+/*  VERSIÓN TABLET  */
+@media (min-width: 768px) {
+    .footer-1 ,
+    .footer-4{
+        font-size: 20px;
+    }
+    .footer-1 i{
+     font-size: 30px; 
+    padding: 6px; 
+    }
+.footer-4 i{
+    font-size: 30px;
+    padding: 6px;
+}
+}
+/*  VERSIÓN DESKTOP  */
+@media (min-width: 992px) {
+    .footer-2{
+        display: block;
+    }
+    .footer-3{
+        display: block;
+    }
+    .footer-1 ,
+.footer-2,
+ .footer-3,
+  .footer-4{
+    text-align: center;
+    font-size: 15px;
+}
+.footer-1 h4 ,
+.footer-2 h4,
+ .footer-3 h4,
+  .footer-4 h4{
+    font-size: 18px;
+    padding-bottom: 6px;
+    padding-top: 10px;
+}
+    .footer-2 li{
+    padding-bottom: 8px;
+}
+.footer-3 p {
+    padding-bottom: 8px;
+} 
+
+    .footer-1 i{
+        font-size: 35px;
+        padding: 10px;
+        padding-bottom: 15px;
+    }
+    .footer-4 i{
+        font-size: 35px;
+        padding: 10px;
+    }
+}

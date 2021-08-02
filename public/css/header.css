@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.logo {
+  width: 74px;
+  height: 56px;
+  padding-top: 5px;
+}
+
+header {
+  width: 100%;
+  background-color: #4f8df0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top:0;
+}
+
+.container-2 {
+  width: 35%;
+}
+
+.barra-busqueda input,
+.container-2 .number {
+  display: none;
+}
+
+.container-burger {
+  width: 33%;
+  padding: 5px 13px;
+  font-size: 32px;
+}
+
+.container-1 {
+  width: 33%;
+  text-align: center;
+}
+
+.container-2 {
+  position: relative;
+  width: 33%;
+  text-align: end;
+  padding-bottom: 16px;
+  padding-left: 5px;
+}
+
+.lupa {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  right: 16px;
+  bottom: 5px;
+  position: absolute;
+  font-size: 19px;
+}
+.lupa i {
+  color: #152847;
+}
+
+.container-3 {
+  width: 70%;
+  padding-left: 5px;
+  text-align: start;
+  font-size: 15px;
+  padding-top: 15px;
+}
+
+.container-3 ul li a {
+  padding-right: 16px;
+  text-decoration: none;
+  color: #152847;
+}
+
+.container-3 ul li {
+  display: inline;
+}
+
+header .container-3 ul li a:hover,
+header a:hover {
+  color: white;
+}
+
+.container-4 {
+  padding-left: 30px;
+  width: 30%;
+  text-align: center;
+  font-size: 11px;
+  padding-bottom: 3px;
+}
+
+.container-4 i {
+  font-size: 30px;
+}
+
+.container-4 a {
+  padding-bottom: 3px;
+  text-decoration: none;
+  color: #152847;
+}
+
+/*  BARRA DE NAVEGACIÓN  */
+.container-nav{
+    width: 100%;
+    border-top: solid 1px white;
+    display: none;
+}
+.container-nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color:lightblue;
+
+}
+
+.container-nav ul a {
+text-decoration: none;
+color: #152847;
+font-size: 18px;
+border-right: solid 2px white;
+width: 20%;
+text-align: center;
+ }
+ .container-nav ul a:last-child {
+     border-right: none;
+
+ }
+ .container-nav ul a:hover{
+    background-color: #4f8df0;
+    color: white;
+    font-weight: bold;
+}
+.container-nav ul a li{
+   display: inline ;
+   text-align: center;
+}
+
+/*  VERSIÓN TABLET  */
+@media (min-width: 768px) {
+  .logo {
+    width: 105px;
+    height: 70px;
+    padding-top: 5px;
+  }
+
+  .container-burger {
+    width: 33%;
+    padding: 10px 30px;
+    font-size: 42px;
+  }
+  .lupa {
+    right: 20px;
+    font-size: 25px;
+  }
+  .container-3 {
+    padding-left: 20px;
+    font-size: 20px;
+  }
+  .container-4 {
+    padding-left: 110px;
+    font-size: 20px;
+  }
+}
+/*  VERSIÓN DESKTOP  */
+@media (min-width: 992px) {
+  .container-burger {
+    display: none;
+  }
+
+.logo {
+    width: 120px;
+    height: 90px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+  }
+  
+
+  .container-1 {
+    width: 17%;
+    text-align: center;
+  }
+  .container-2 {
+    width: 35%;
+    padding-top: 5px;
+    text-align: start;
+  }
+
+  .barra-busqueda input,
+  .container-2 .number {
+    display: block;
+  }
+  .search {
+    width: 100%;
+    height: 29px;
+    padding: 0 8px;
+  }
+
+  .barra-busqueda {
+    position: relative;
+  }
+  .lupa {
+    position: absolute;
+    bottom: 1px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .container-3 {
+    width: 33%;
+    padding-top: 29px;
+    padding-left: 5px;
+    text-align: center;
+    font-size: 21px;
+  }
+
+  .container-3 ul li {
+    display: inline;
+  }
+  .container-4 {
+    padding-left: 48px;
+    width: 15%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .container-4 i {
+    font-size: 40px;
+  }
+
+  .container-4 a {
+    text-decoration: none;
+    color: #152847;
+  }
+  .container-nav{
+    display: block;
+}
+
+  
+}
