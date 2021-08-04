@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+
+}
+.titulo-turno{
+    text-align: center;
+    margin: 20px 0;
+}
+.form-turno{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 34px ;
+}
+.container-turno{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+.form-turno label{
+    padding: 5px 0;
+}
+.form-turno input,
+.form-turno select{
+    height: 35px;
+    border: solid 2px grey;
+    padding: 7px;
+    margin-bottom: 10px;
+}
+.btn-turno{
+    border: solid 2px grey;
+    background-color: #4f8df0;
+    width: 130px;
+    height: 40px;
+    align-self: center;
+    margin: 30px  0 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*  VERSIÓN TABLET  */
+@media (min-width: 768px) {
+    .container-turno{
+       max-width: 600px;
+       margin: auto auto;
+    }
+    .btn-turno{
+        width: 140px;
+        font-size: 17px;
+    }
+    }
+       /*  VERSIÓN DESKTOP  */
+@media (min-width: 992px) {
+    .titulo-turno{
+        font-size: 32px;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .form-turno label{
+        padding: 8px 0;
+        font-size: 18px;
+    }
+    .form-turno input{
+        height: 37px;
+        padding: 5px;
+        margin-bottom: 12px;
+    }
+    .btn-turno{
+       height: 45px;
+       width: 150px;
+       font-size: 18px;
+    }
+    }
