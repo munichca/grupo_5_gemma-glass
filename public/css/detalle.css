@@ -118,20 +118,24 @@ a{
 }
 .block1-body-mobile .button-buy button{
     width:50%;
-    height: 75%;
-    border-radius: 2rem;
-    background-color: var(--tipos);
-    color: white;
+    height: 75%;    
+    border: solid 1px #fff;                                    /* acacacacacaca */
+    background-color: var(--header);
+    color: var(--tipos);
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 0;
 }
+.block1-body-mobile .button-buy button:hover{
+    background-color: #2f7cf7;
+    color: white;
+    font-weight: bold;
+}
 .block1-body-mobile .postal-code{
     padding: 5px;
     width: 65%;
-    border: 1px solid var(--header); 
-    border-radius: 5px;
+    border: 1px solid var(--header);     
     margin: 0 auto 15px;    
     background-color: var(--header);  
     order: 6;
@@ -146,7 +150,7 @@ a{
    margin: 0 auto 10px;
    height: 2rem;
    border-style: none;
-   border-radius: 15px;  
+   
    text-align: center;
    outline: none;  /* elimina el borde amarillo cuando tiene el foco */ 
 }
@@ -250,7 +254,9 @@ a{
     padding: auto auto;
     text-transform: uppercase;  
     color:var(--tipos);
-    font-weight: bold;  
+    font-size: 4vh;
+    font-weight: bold;
+    
 }
 .containerSlide .pictures{
     display: flex;
@@ -307,8 +313,7 @@ a{
     flex-direction: column;
     width: 38%;
     margin-bottom:80px;
-    margin: 0px auto 0px;
-    /* border: 1px solid black; */
+    margin: 0px auto 0px;    
 }
 .block2-desktop .price{        
     display: flex;
@@ -316,11 +321,12 @@ a{
     width: 38%;
     margin: 30px auto 10px;        
     justify-content: center;
-    font-size: 25px;        
+           
 }    
 .block2-desktop .price i,
 .block2-desktop .price h4{
     color: var(--tipos);
+    font-size: 5vh;
 }
 .block2-desktop .button-buy{
     display: flex;
@@ -334,14 +340,18 @@ a{
 }
 .block2-desktop .button-buy button{
     width:100%;
-    height: 75%;
-    border-radius: 2rem;
-    background-color: var(--tipos);
-    color: white;
-    font-size: 18px;
+    height: 75%;    
+    background-color: var(--header);
+    border: solid 1px white;
+    color: var(--tipos);
+    font-size: 4.2vh;
     font-weight: bold;
-    text-transform: uppercase;
-    
+    text-transform: uppercase;    
+}
+.block2-desktop .button-buy button:hover{
+    background-color: #2f7cf7;
+    color: white;
+    font-weight: bold;
 }
 .block2-desktop .detail{       
     margin:25px auto 10px;                
@@ -351,14 +361,17 @@ a{
 }    
 .block2-desktop .detail h4,
 .block2-desktop .detail p{
+    font-size: 3.6vh;
     color: var(--tipos);
 }
 .block2-desktop .info h5,
 .block2-desktop .info p{
+    font-size: 3.6vh;
     color: var(--tipos);
 }
 .block2-desktop .measures h4,
 .block2-desktop .measures p{
+    font-size: 3.6vh;
     color: var(--tipos);
 }
 .block2-desktop{
@@ -368,32 +381,38 @@ a{
 /* bloque 3 postal desktop */
 
 .block3-postal .postal-code{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 5px;
-    width: 65%;
+    width: 50vh;
+    height: 55vh;
     border: 1px solid var(--header); 
-    border-radius: 5px;
+    
     margin: 0 auto 15px;    
     background-color: var(--header);  
     order: 6;
 }
 .block3-postal .postal-code p{
-    font-size: 12px;   
+    font-size: 3.5vh;   
     text-align: center; 
     padding-bottom: 10px;   
 }
 .block3-postal .postal-code input{
     display: flex;
    margin: 0 auto 10px;
-   height: 2rem;
-   border-style: none;
-   border-radius: 15px;  
+   width: 35vh;
+   height: 7vh;
+   border-style: none;    
    text-align: center;
-   outline: none;  /* elimina el borde amarillo cuando tiene el foco */ 
+   outline: none;  /* elimina el borde amarillo cuando tiene el foco */  
+   color: var(--tipos);  
 }
+
 .block3-postal .postal-code li{
     list-style: none;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 3.5vh;
     font-weight: bold;
     text-align: center;
     margin-bottom: 5px;
@@ -405,8 +424,8 @@ a{
     margin: auto auto;
       
 }
-.block3-postal .pay .hs5{    
-    
+.block3-postal .pay .hs3{    
+    font-size: 3.5vh;
     text-align: center;
 }
 .block3-postal .credit-card{
@@ -517,7 +536,68 @@ a{
 }
 
 /* fin de bloque mas vendidos */
+/*  bloque mas vendidos desktop */
 
+.block-best-sellers-desktop{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90vw;
+    
+    justify-content: space-evenly;
+}
+.block-best-sellers-desktop .container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.block-best-sellers-desktop .sellers h5{
+    font-size: 3vh;
+}
+.block-best-sellers-desktop .price{
+    display: flex;
+    flex-direction: row;   
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+}
+.block-best-sellers-desktop .price i{
+    margin-right: 5px;
+}
+.block-best-sellers-desktop .images{    
+    display: flex;   
+    position: relative;
+    width: 15vw;
+    height: 15vw;
+    margin: 20px 20px 5px;
+}
+.block-best-sellers-desktop .images .image{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.block-best-sellers-desktop .images img{    
+    border: 2px solid var(--tipos);
+    border-radius: 20px;    
+    width: fit-content;
+    height: 100%;
+    object-fit: scale-down;
+    position: absolute;   
+}
+.block-best-sellers-desktop .images .rear{   
+    transition:  400ms;    
+}
+.block-best-sellers-desktop .images .rear:hover{    
+    transform: scaleX(0%);
+}
+.block-best-sellers-desktop{
+    display: none;
+}
+
+/*  fin bloque mas vendidos desktop */
 
 
 /*  pantalla 768 */
@@ -551,6 +631,12 @@ a{
         font-size: 30px;
     }
     .block-best-sellers{
+        display: none;
+    }
+    .block-best-sellers-desktop{
+        display: inherit;
+    }
+/*     .block-best-sellers{
         display: flex;  
         flex-direction: row;
         justify-content: space-evenly;  
@@ -573,52 +659,34 @@ a{
         text-align: center;
     }
     .block-best-sellers .best-sellers h5, h4,i{
-        font-size: 11px;
+        font-size: 2.5vh;
         font-weight: bold;
         text-transform: uppercase;    
         color: var(--tipos);
-}  
+}   */
 @media (min-width: 1024px){
     .hr-desktop{
         display: initial;
     }
-    .containerSlide .name{
-        text-align: center;
-        padding: auto auto;          
-        font-weight: bold; 
-        font-size: 22px;          
-    }
-    .block2-desktop .detail{       
-        font-size: larger;               
-    }
-   
-    .block2-desktop .info{
-        font-size: larger;
-    }    
-    .block2-desktop .measures{
-        font-size: larger;
-    }
+    
+    
     /* postal */
     .block3-postal{
         margin-top: 10px;
-        width: 40vw;
+       /*  width: 40vw; */
     }
-    .block3-postal .postal-code{       
+   /*  .block3-postal .postal-code{       
         width: 100%;        
-        border-radius: 10px;       
-    }
-    .block3-postal .postal-code p{
+               
+    } */
+    /* .block3-postal .postal-code p{
         font-size: 20px;      
-    }
-    .block3-postal .postal-code input{
+    } */
+   /*  .block3-postal .postal-code input{
         width: 75%;  
-    }
-    .block3-postal .postal-code li{
-        font-size: 18px;
-    }
-    .block3-postal .pay{
-        width: 100%;
-    }
+     */}
+
+    
     .block3-postal .credit-card{
         width: 100%;
     }
@@ -630,73 +698,52 @@ a{
     }
     /* fin postal */
     /* mas vendidos */
-    .block-best-sellers .best-sellers h5, h4,i{
-        font-size: 15px;        
+    /* .block-best-sellers .best-sellers h5, h4,i{
+            
         text-transform: uppercase;    
         color: var(--tipos);
-    }
+    } */
     /* fin mas vendidos */
 }     
 @media (min-width: 1044px){
-    .containerSlide .name{
-        text-align: center;
-        padding: auto auto;          
-        font-weight: bold; 
-        font-size: x-large;          
-    }
     .block2-desktop .price{        
         display: flex;
         flex-direction: row;
         width: 38%;
         margin: 30px auto 10px;        
         justify-content: center;
-        font-size: 35px;        
+        
     }    
-    .block2-desktop .detail{       
-        font-size: 16px;
-        margin-bottom: 26px;               
-    }
+    
    
     .block2-desktop .info{
         font-size: 16px;
         margin-bottom: 26px;
     }    
-    .block2-desktop .measures{
-        font-size: 16px;
-    }
+    
     /* postal */
-    .block3-postal{
+    /* .block3-postal{
         width: 40vw;
         margin-top: 25px;
-    }
-    .block3-postal .postal-code{ 
+    } */
+  /*   .block3-postal .postal-code{ 
         display: flex;
         flex-direction: column;      
         width: 100%; 
         height: 300px;     
         justify-content: center;
         align-items: center;  
-        border-radius: 10px; 
+         
           
-    }
-    .block3-postal .postal-code p{
-        font-size: 20px;      
-    }
-    .block3-postal .postal-code input{
-        width: 75%;
-        border-radius: 30px;
-        height: 3rem;  
-    }
-    .block3-postal .postal-code li{
-        font-size: 25px;
-    }
+    } */
+
+    
+    
+
     .block3-postal .pay{        
         width: 100%;          
     }
-    .block3-postal .pay .hs5{   
-        font-size: 22px; 
-        text-align: center;
-    }
+    
     .block3-postal .credit-card{
         width: 100%;
     }
@@ -708,10 +755,10 @@ a{
         font-size: 60px;  
     }
     /* fin postal */
-    .block-best-sellers .best-sellers h5, h4,i{
-        font-size: 16px;        
+   /*  .block-best-sellers .best-sellers h5, h4,i{
+       
         text-transform: uppercase;    
         color: var(--tipos);
-    }
+    } */
 
 }
