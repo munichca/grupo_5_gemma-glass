@@ -13,6 +13,9 @@ app.get('/',(req, res)=>{
 
 
 
+app.get('/turnos',(req, res)=>{
+    res.sendFile(path.join(__dirname, '/views/turnos.html'))
+});
 
 app.listen(port, ()=>{
     console.log(`Puerto corriendo en ${port}\n http://localhost:${port}`)});
