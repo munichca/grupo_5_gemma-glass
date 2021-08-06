@@ -12,9 +12,6 @@ Nuestro grupo llevará a cabo la tarea de desarrollar una página web de comerci
 
 <p><em> Full stack web developer especializado en Javascript, Node JS, HTML y CSS. Tengo 28 años. Además, estudié Literatura en el Instituto Superior del Profesorado Joaquín V. González y actualmente estoy arrancando la Tecnicatura en Informática en la Universidad de General Sarmiento. Me gusta todo lo relacionado al mundo del hardware, nuevas tecnologías y la informática en general.</em> </p>
 <br>
-  <li>:vampire_woman:Nancy Sosa:</li>
-=======
-  Tengo 45 años, soy mamá de 4 hermosos hijos ya todos mayor d edad. Estudie secretariado ejecutivo, soy tec. en armado y rep. de pc, diseñador grafico, asist. en admin. de empresas, marketing y operaciones bancarias y financieras, curse admin. contable y auxiliar en criminalistica y criminologia. Mi deporte favorito es karate 2 lo practique un tiempo hasta un desgarro, deje y cuando retome no pude seguir x dicho desgarro. 
   <li>:mage_man:Antonio Diaz Fierro:</li>
   Soy operador de sistemas de grabado por luz, laser Co2, laser Yag y laser Fibra , además de todo
 sistema de impresión por tintas y marcado con fresas o diamantes con pantografos de 2D y 3D.
