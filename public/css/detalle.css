@@ -1,17 +1,16 @@
-
 :root{
     --grey : #444444;
     --red : #b92519;
     --tipos:#152847;
     --header:#4F8DF0;
-    --nombre:'Usuario' ;
+    
 }
+
 *{
+    margin: 0;
     padding: 0;
-    margin: 0;    
-    font-family: sans-serif;
-    box-sizing: border-box;    
-    color: var(--tipos);
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
 }
 a{
     text-decoration: none;
@@ -120,8 +119,8 @@ a{
     width:50%;
     height: 75%;    
     border: solid 1px #fff;                                    /* acacacacacaca */
-    background-color: var(--header);
-    color: var(--tipos);
+    background-color: #4F8DF0;
+    color: #152847;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
@@ -135,9 +134,9 @@ a{
 .block1-body-mobile .postal-code{
     padding: 5px;
     width: 65%;
-    border: 1px solid var(--header);     
+    border: 1px solid #4F8DF0;     
     margin: 0 auto 15px;    
-    background-color: var(--header);  
+    background-color: #4F8DF0;  
     order: 6;
 }
 .block1-body-mobile .postal-code p{
@@ -253,7 +252,7 @@ a{
     text-align: center;
     padding: auto auto;
     text-transform: uppercase;  
-    color:var(--tipos);
+    color:#152847;
     font-size: 4vh;
     font-weight: bold;
     
@@ -271,13 +270,13 @@ a{
     width: fit-content;
     height: 100%;
     position: absolute;
-    border: 2px solid var(--tipos);
+    border: 2px solid #152847;
     border-radius: 25px;    
     object-fit: scale-down;
 }
 .containerSlide .menu img{
     width: 40%;
-    border: 1.5px solid var(--tipos);
+    border: 1.5px solid #152847;
     border-radius: 50%;
 }
 .containerSlide .navegadorImagenes{    
@@ -312,8 +311,8 @@ a{
     display:flex;
     flex-direction: column;
     width: 38%;
-    margin-bottom:80px;
-    margin: 0px auto 0px;    
+   /*  margin-bottom:80px; */
+    margin: 0px auto 80px;    
 }
 .block2-desktop .price{        
     display: flex;
@@ -325,7 +324,7 @@ a{
 }    
 .block2-desktop .price i,
 .block2-desktop .price h4{
-    color: var(--tipos);
+    color: #152847;
     font-size: 5vh;
 }
 .block2-desktop .button-buy{
@@ -341,9 +340,9 @@ a{
 .block2-desktop .button-buy button{
     width:100%;
     height: 75%;    
-    background-color: var(--header);
+    background-color: #4F8DF0;
     border: solid 1px white;
-    color: var(--tipos);
+    color: #152847;
     font-size: 4.2vh;
     font-weight: bold;
     text-transform: uppercase;    
@@ -356,23 +355,29 @@ a{
 .block2-desktop .detail{       
     margin:25px auto 10px;                
 }
+.block2-desktop .detail h4{
+    text-align: left;
+}
 .block2-desktop .info{
     margin:0px auto 10px;
 }    
 .block2-desktop .detail h4,
 .block2-desktop .detail p{
     font-size: 3.6vh;
-    color: var(--tipos);
+    color: #152847;
 }
 .block2-desktop .info h5,
 .block2-desktop .info p{
     font-size: 3.6vh;
-    color: var(--tipos);
+    color: #152847;
 }
 .block2-desktop .measures h4,
 .block2-desktop .measures p{
     font-size: 3.6vh;
-    color: var(--tipos);
+    color: #152847;
+}
+.block2-desktop .measures h4{
+    text-align: left;
 }
 .block2-desktop{
     display: none;
@@ -387,10 +392,10 @@ a{
     padding: 5px;
     width: 50vh;
     height: 55vh;
-    border: 1px solid var(--header); 
+    border: 1px solid #4F8DF0; 
     
     margin: 0 auto 15px;    
-    background-color: var(--header);  
+    background-color: #4F8DF0;  
     order: 6;
 }
 .block3-postal .postal-code p{
@@ -406,7 +411,7 @@ a{
    border-style: none;    
    text-align: center;
    outline: none;  /* elimina el borde amarillo cuando tiene el foco */  
-   color: var(--tipos);  
+   color: #152847;  
 }
 
 .block3-postal .postal-code li{
@@ -425,8 +430,11 @@ a{
       
 }
 .block3-postal .pay .hs3{    
-    font-size: 3.5vh;
+    
     text-align: center;
+}
+.block3-postal .pay .hs3 h3{
+    font-size: 3vh;
 }
 .block3-postal .credit-card{
     margin: auto;
@@ -441,6 +449,7 @@ a{
 .block3-postal .credit-card i{
     font-size: 60px;
     padding:  0 5px;
+    color: var(--tipos);                                          /* sdfsdfsdfsdfsdfsd */
 }
 .block3-postal .social-media{
     display:flex;  
@@ -448,8 +457,10 @@ a{
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%;  
-    order:9;
+    width: 100%;     
+}
+.block3-postal .social-media i{
+    color: var(--tipos);
 }
 .block3-postal .social-media .share{
     width: 100%;   
@@ -488,7 +499,7 @@ a{
     width: 100vw;
 }
 .block-best-sellers .twist{
-    border: 2px solid var(--tipos);
+    border: 2px solid #152847;
     border-radius: 25px; 
     width: 52%;
 }
@@ -522,9 +533,10 @@ a{
     padding: 5px;
     margin-top: 10px;    
 }
-.block-best-sellers .best-sellers h5, h4{
+.block-best-sellers .best-sellers h5,
+.block-best-sellers .best-sellers h4{
     text-transform: uppercase;    
-    color: var(--tipos);
+    color: #152847;
 }
 .block-best-sellers .best-sellers .price{
     display: flex;
@@ -532,7 +544,7 @@ a{
 }
 .block-best-sellers .best-sellers i{    
     margin-right: 3px;
-    color: var(--tipos);
+    color: #152847;
 }
 
 /* fin de bloque mas vendidos */
@@ -554,17 +566,24 @@ a{
     justify-content: center;
 }
 .block-best-sellers-desktop .sellers h5{
-    font-size: 3vh;
+    font-size: 2.7vh;
+    color: var(--tipos);
 }
 .block-best-sellers-desktop .price{
     display: flex;
     flex-direction: row;   
     align-items: center;
     justify-content: center;
-    font-size: 3vh;
+    
 }
 .block-best-sellers-desktop .price i{
     margin-right: 5px;
+    color: var(--tipos);
+    font-size: 4vh;
+}
+.block-best-sellers-desktop .price h4{
+    font-size: 3.5vh;
+    color: var(--tipos);
 }
 .block-best-sellers-desktop .images{    
     display: flex;   
@@ -580,7 +599,7 @@ a{
     height: 100%;
 }
 .block-best-sellers-desktop .images img{    
-    border: 2px solid var(--tipos);
+    border: 2px solid #152847;
     border-radius: 20px;    
     width: fit-content;
     height: 100%;
@@ -636,57 +655,15 @@ a{
     .block-best-sellers-desktop{
         display: inherit;
     }
-/*     .block-best-sellers{
-        display: flex;  
-        flex-direction: row;
-        justify-content: space-evenly;  
-        flex-wrap: wrap;  
-    }
-    .block-best-sellers .product{
-        display: flex;
-        flex-direction: column;
-        width: 20vw;
-        margin: 5px 10px 5px;
-    }
-    .block-best-sellers .twist{
-        width: 100%;        
-    }
-    .block-best-sellers  .twist .link-twist{
-        height: 19vw;       
-    }
-    .block-best-sellers .best-sellers{    
-        
-        text-align: center;
-    }
-    .block-best-sellers .best-sellers h5, h4,i{
-        font-size: 2.5vh;
-        font-weight: bold;
-        text-transform: uppercase;    
-        color: var(--tipos);
-}   */
+}
 @media (min-width: 1024px){
     .hr-desktop{
         display: initial;
     }
-    
-    
     /* postal */
     .block3-postal{
-        margin-top: 10px;
-       /*  width: 40vw; */
+        margin-top: 10px;      
     }
-   /*  .block3-postal .postal-code{       
-        width: 100%;        
-               
-    } */
-    /* .block3-postal .postal-code p{
-        font-size: 20px;      
-    } */
-   /*  .block3-postal .postal-code input{
-        width: 75%;  
-     */}
-
-    
     .block3-postal .credit-card{
         width: 100%;
     }
@@ -696,14 +673,7 @@ a{
     .block3-postal .social-media i{
         font-size: 50px;  
     }
-    /* fin postal */
-    /* mas vendidos */
-    /* .block-best-sellers .best-sellers h5, h4,i{
-            
-        text-transform: uppercase;    
-        color: var(--tipos);
-    } */
-    /* fin mas vendidos */
+   
 }     
 @media (min-width: 1044px){
     .block2-desktop .price{        
@@ -711,35 +681,12 @@ a{
         flex-direction: row;
         width: 38%;
         margin: 30px auto 10px;        
-        justify-content: center;
-        
-    }    
-    
-   
+        justify-content: center;        
+    }  
     .block2-desktop .info{
         font-size: 16px;
         margin-bottom: 26px;
     }    
-    
-    /* postal */
-    /* .block3-postal{
-        width: 40vw;
-        margin-top: 25px;
-    } */
-  /*   .block3-postal .postal-code{ 
-        display: flex;
-        flex-direction: column;      
-        width: 100%; 
-        height: 300px;     
-        justify-content: center;
-        align-items: center;  
-         
-          
-    } */
-
-    
-    
-
     .block3-postal .pay{        
         width: 100%;          
     }
@@ -754,11 +701,4 @@ a{
     .block3-postal .social-media i{
         font-size: 60px;  
     }
-    /* fin postal */
-   /*  .block-best-sellers .best-sellers h5, h4,i{
-       
-        text-transform: uppercase;    
-        color: var(--tipos);
-    } */
-
 }

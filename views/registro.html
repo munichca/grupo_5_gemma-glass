@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<!-- header -->
+
+
+<!-- fin header -->
+<body>
+    <!-- header -->
+
+    <header>
+        <div class="container-burger"><i class="fa fa-bars"></i></div>
+        <div class="container-1">
+
+            <a href=""> <img class="logo" src="/image/logo.png" alt="Logo"></a>
+        </div>
+        <div class="container-2">
+            <p class="number">(011)15555555</p> <br>
+            <div class="barra-busqueda">
+                <input class="search" type="search" placeholder="Buscá un producto">
+                <button class="lupa"><i class="fa fa-search "></i></button>
+            </div>
+        </div>
+        <div class="container-3">
+            <ul>
+                <li><a href="#">Inicia sesión</a></li>
+                <li><a href="#">Registrate</a></li>
+            </ul>
+        </div>
+        <div class="container-4">
+            <a href="#">
+                <i class="fa fa-shopping-cart"></i> <br> Mi carrito
+            </a>
+
+        </div>
+        <nav class="container-nav">
+            <ul>
+                <a href=""> <li>Lentes recetados</li></a>
+                <a href=""> <li>Lentes de sol</li></a>
+                <a href=""> <li>Lentes de contacto</li></a>
+                <a href=""> <li>Lentes gaming</li></a>
+                <a href=""> <li>Ofertas</li></a>
+                <a href=""> <li>Pedí una consulta</li></a>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- header -->
+    <div class="container-register">
+        <div class="welcome">
+            <h2>¡Bienvenido!</h2>
+            <p>Creá tu cuenta para comprar con mas facilidad</p>
+        </div>
+        <div class="exterior">
+            <div class="my-data">
+                <p>Completá tus datos</p>
+                <div class="name">
+                    <div class="left-side">
+                        <label for="">Nombre</label>
+                        <input type="text" name="name" id="">
+                    </div>
+                    <div class="right-side">
+                        <label for="" id="lana">Apellido</label>
+                        <input type="text" name="last-name" id="lastName">
+                    </div>                   
+                </div>            
+                <label for="">e-mail</label>
+                <input type="email" name="" placeholder="  mail@domain.com" id="email">
+                
+                <label for="">Telefono</label>
+                <input type="phone" name="phone" id="">
+                <label for="">Contraseña</label>
+                <div class="pass1">
+                    <input type="password" onclick="validateOff()" name="pass" id="myInput">
+                    <i class="far fa-eye"  onclick="myFunction()" id="eye1"></i>
+                </div>
+                <label for="">Confirmar contraseña</label>
+                <div class="pass2">                                    
+                    <input type="password" onclick="validateOff()" name="conf-pass" id="myInput2">
+                    <i class="far fa-eye"  onclick="myFunction2()" id="eye2"></i>
+                </div>  
+                <div class="validate" id="validate">
+                    <span class="val">¡Las contraseñas no coinciden!</span>
+                </div>
+                <button class="register-button" onclick="validate()" id="button" type="submit">Registrarse</button>
+                <a href="">
+                    ¿Ya tenés cuenta? Ingresá
+                </a>            
+            </div>
+        </div>               
+    </div>
+    <script>
+    function validateOff(){
+        let mesage = document.getElementById("validate");
+        mesage.style.display="none";
+    }
+    function myFunction() {
+        let x = document.getElementById("myInput");      
+          
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }           
+    }    
+    function myFunction2() {
+        let x = document.getElementById("myInput2");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    function validate(){
+        let vali1 = document.getElementById("myInput");
+        let vali2 = document.getElementById("myInput2");
+        let mesage = document.getElementById("validate")
+        let button = document.getElementById("button")
+        if (vali1.value !== vali2.value){
+            mesage.style.display="flex"
+        }        
+    }
+
+    
+    </script> 
+    <!-- footer -->
+
+    <footer>
+        <div class="footer-1">
+          <h4>Métodos de pago</h4>
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          </div>
+  
+  
+        <div class="footer-2">
+          <h4>Ayuda</h4>
+          <ul>
+            <a href=""> <li>¿Quienes somos?</li></a>
+            <a href=""><li>Preguntas frecuentes</li></a>
+            <a href=""><li>Sucursales</li></a>
+          </ul>
+        </div>
+        
+        <div class="footer-3">
+          <h4>Contactanos</h4>
+          <p>0800-0000-0000</p>
+          <p>(011) 15555555</p>
+          <a href="mailto: ejemplo@ejemplo.com"> ejemplo@ejemplo.com</a>
+        </div>
+  
+        <div class="footer-4">
+          <h4>Nuestras redes </h4>
+          <a href=""><i class="fab fa-whatsapp"></i></a>
+          <a href=""><i class="fab fa-facebook-square"></i></a>
+          <a href=""> <i class="fab fa-instagram"></i></a>
+          <a href=""> <i class="fab fa-twitter-square"></i> </a>
+        </div>
+  
+  
+  
+      </footer>
+
+    <!-- fin footer -->
+</body>
+<!-- footer -->
+</html>

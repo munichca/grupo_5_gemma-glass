@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "<h2>Grupo 5 Gemma Glass 👋</h2>",
   "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/munichca/grupo_5_gemma-glass/issues"
   },
-  "homepage": "https://github.com/munichca/grupo_5_gemma-glass#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/munichca/grupo_5_gemma-glass#readme"
 }
