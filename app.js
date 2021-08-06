@@ -7,10 +7,10 @@ const path = require('path');
 app.use(express.static('public'));
 
 
-/* app.get('/',(req, res)=>{
-    res.sendFile(path.join(__dirname, '/views/detalle.html'))
+ app.get('/',(req, res)=>{
+    res.sendFile(path.join(__dirname, '/views/home.html'))
 });
- */
+ 
 app.get('/detalle',(req, res)=>{
     res.sendFile(path.join(__dirname, '/views/home.html'))
 });
@@ -20,6 +20,10 @@ app.get('/detalle',(req, res)=>{
 /* app.get('/turnos',(req, res)=>{
     res.sendFile(path.join(__dirname, '/views/turnos.html'))
 }); */
+
+app.get('/carrito',(req, res)=>{
+    res.sendFile(path.join(__dirname, '/views/carrito.html'))
+});
 
 app.listen(port, ()=>{
     console.log(`Puerto corriendo en ${port}\n http://localhost:${port}`)});
