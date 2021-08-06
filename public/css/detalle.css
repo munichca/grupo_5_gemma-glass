@@ -9,14 +9,8 @@
 *{
     margin: 0;
     padding: 0;
-<<<<<<< HEAD
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
-=======
-    margin: 0;    
-    font-family: sans-serif;
-    box-sizing: border-box;    
->>>>>>> 24641e2f38918b71eb730bcbfc57bf948b08de6a
 }
 a{
     text-decoration: none;
