@@ -8,9 +8,9 @@ footer{
     height: 20%;
     display: flex ;
     justify-content: space-around;
- color: white;
-background-color: #152847;  
-font-family: "Ubuntu", sans-serif;
+    color: white;
+    background-color: #152847;  
+    font-family: "Ubuntu", sans-serif;
 }
 
 .footer-2{
