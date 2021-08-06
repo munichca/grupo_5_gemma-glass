@@ -1,0 +1,227 @@
+.carritext {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.hrc {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.uprBtn {
+    background-color: var(--header);
+    border: 1px solid black;
+    margin: 30px 0 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+    position: absolute;
+    top: 18%;
+    left: 85%;
+}
+
+.uprBtn:hover {
+    background-color: var(--navbar);
+}
+
+.cartProduct {
+    width: 95%;
+    height: 150px;
+    display:flex;
+    flex-wrap:wrap;
+    text-align:center;
+    margin:auto;
+    position: relative;
+    background-color: var(--navbar);
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.cartProduct img {
+    align-self: center;
+    margin-left: 10px;
+    height: 130px;
+    width: 130px;
+    position: absolute;
+}
+
+.cartProduct .span1 {
+    margin-top: 10px;
+    margin-left: 150px;
+    position: absolute;
+}
+
+.cartProduct .span2 {
+    margin-top: 30px;
+    margin-left: 150px;
+    position: absolute;
+}
+
+.cartProduct label {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    bottom: 62%;
+    left: 70%;
+}
+
+.cartProduct input {
+    height: 20px;
+    width: 40px;
+    position: absolute;
+    bottom: 50%;
+    left: 70%;
+}
+
+.cartProduct i {
+    position: absolute;
+    left: 95%;
+    top: 20%;
+}
+
+.subBar {
+    width: 95%;
+    height: 150px;
+    display:flex;
+    flex-wrap:wrap;
+    text-align:center;
+    margin:auto;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.span3 {
+    position: absolute;
+    bottom: 50%;
+    right: 5%;
+    font-size: larger;
+}
+
+.subtotext {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+.subtonum {
+    display: block;
+    position: relative;
+    text-align: right;
+    font-size: 40px;
+    margin-right: 10px;
+    }
+
+.shipping {
+    margin-top: 10px;
+    position: absolute;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.lowrbtn {
+    background-color: var(--header);
+    border: 1px solid black;
+    margin: 30px  0 15px 0;
+    width: 250px;
+    height: 70px;
+    font-size: 26px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+    left: 40%;
+    }
+
+.lowrbtn:hover {
+    background-color: var(--navbar);
+}
+
+.keep {
+    position: relative;
+    left: 43%;
+    margin-bottom: 10px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .span3 {
+        position: absolute;
+        bottom: 20%;
+        right: 5%;
+        font-size: larger;
+    }
+
+    .cartProduct label {
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        bottom: 30%;
+        left: 47%;
+    }
+    
+    .cartProduct input {
+        height: 20px;
+        width: 40px;
+        position: absolute;
+        bottom: 15%;
+        left: 47%;
+    }
+    
+    .cartProduct i {
+        position: absolute;
+        left: 95%;
+        top: 50%;
+    }
+
+    .uprBtn {
+        width: 100px;
+        left: 65%;
+    }
+    
+    .subtotext{
+         font-size: 30px;
+    }
+    .subtonum {
+        font-size: 30px;
+    }    
+
+    .shipping {
+        font-size: 15px;
+    }
+    
+    .lowrbtn {
+        width: 130px;
+        height: 50px;
+        font-size: small;
+        left: 40%;
+
+    }
+
+    .keep {
+        left: 40%;
+        font-size: 15px;
+    }
+}
+
+/*  TABLET  */
+@media (min-width: 768px){
+    .uprBtn {
+        width: 100px;
+        left: 84%;
+        top: 22%
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+    .uprBtn {
+        width: 130px;
+        left: 85%;
+        top: 20%
+    }
+
+    
+}
+
