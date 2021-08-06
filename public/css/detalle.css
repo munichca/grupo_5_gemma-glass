@@ -628,7 +628,7 @@ a{
     .hr-desktop{
         display: initial;
     }
-    body{
+    .detalle-body{
         display: flex;              
         flex-direction: row;
         flex-wrap: wrap; 

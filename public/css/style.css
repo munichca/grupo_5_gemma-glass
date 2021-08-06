@@ -5,6 +5,8 @@
 @import url(turnos.css);
 @import url(home.css);
 @import url(cart.css);
+@import url(registro.css);
+@import url(detalle.css);
 
 *{
     margin: 0;
