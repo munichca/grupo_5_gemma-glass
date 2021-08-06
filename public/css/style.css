@@ -4,6 +4,7 @@
 @import url(login.css);
 @import url(turnos.css);
 @import url(home.css);
+@import url(detalle.css);
 
 *{
     margin: 0;
