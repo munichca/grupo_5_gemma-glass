@@ -24,7 +24,12 @@ a{
     margin: 0 auto 0;   
     justify-content: center;
     align-items: center; 
+    color: var(--tipos);
 }
+/* .container-register .borde{
+    border-radius: 45px;
+    border-color: white;
+} */
 
 .container-register .welcome{
     margin: 25px auto 0px;
@@ -37,6 +42,7 @@ a{
 .container-register .welcome p{
     margin-bottom: 10px;
 }
+
 .container-register .my-data{
     display: flex;
     flex-direction: column;   
@@ -49,17 +55,25 @@ a{
     text-decoration: underline;
     margin-bottom: 10px;    
 }
+.container-register input{
+    border: 1px solid var(--tipos);
+    padding-left: 20px;
+}
+.container-register input:hover{
+    border: 2px solid var(--header);
+}
 .container-register .my-data input{
     margin-bottom: 5px;
     height: 5vh;
-    border: 1px solid var(--tipos);
+    /* border: 1px solid red; */
     outline: none;
 }
 .container-register .my-data #myInput{
-    width: 95%;
+    width: 100%;
+    
 }
 .container-register .my-data #myInput2{
-    width: 95%;
+    width: 100%;
 }
 .container-register .name{
     display: flex;
@@ -72,10 +86,24 @@ a{
     display: flex;
     flex-direction: column;
 }
+.container-register .left-side input{
+    border: 1px solid var(--tipos);
+    padding-left: 20px;
+}
+.container-register .left-side input:hover{
+    border: 2px solid var(--header);
+}
 .container-register .right-side{
     width: 48%;
     display: flex;
     flex-direction: column;   
+}
+.container-register .right-side input{
+    border: 1px solid var(--tipos);
+    padding-left: 20px;
+}
+.container-register .right-side input:hover{
+    border: 2px solid var(--header);
 }
 .container-register .name label{
     width: 40%;
@@ -88,17 +116,23 @@ a{
 }
 .container-register .pass1{
     display: flex;
-    flex-direction: row;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
+}
+.container-register .pass1 #eye1{
+    position: absolute;
+    top: 7px;
+    right: 10px;
 }
 .container-register .pass2{
     display: flex;
-    flex-direction: row;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
+}
+.container-register .pass2 #eye2{
+    position: absolute;
+    top: 7px;
+    right: 10px;
 }
 .container-register .register-button{
     width: 50%;
@@ -112,9 +146,21 @@ a{
     color: white;
     font-weight: bold;    
 }
-.container-register .my-data a{
-    text-align: center;
-    font-weight: bold;
+.container-register .my-data .login-cont{
+    display: flex;
+    justify-content: center;
+}
+.container-register .my-data .ingresa{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    
+    
+    color: var(--tipos);
+}
+.container-register .my-data .ingresa:hover{
+    
+    color: var(--header);
 }
 .container-register ::placeholder{
     color: var(--header);

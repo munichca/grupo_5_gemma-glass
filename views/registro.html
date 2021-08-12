@@ -8,10 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<!-- header -->
 
-
-<!-- fin header -->
 <body>
     <!-- header -->
 
@@ -69,14 +66,14 @@
                     </div>
                     <div class="right-side">
                         <label for="" id="lana">Apellido</label>
-                        <input type="text" name="last-name" id="lastName">
+                        <input class="color" type="text" name="last-name" id="lastName">
                     </div>                   
                 </div>            
                 <label for="">e-mail</label>
-                <input type="email" name="" placeholder="  mail@domain.com" id="email">
-                
+                <input class="borde" type="email" name="" placeholder="mail@domain.com" >
+               
                 <label for="">Telefono</label>
-                <input type="phone" name="phone" id="">
+                <input type="number" name="phone" id="">
                 <label for="">Contraseña</label>
                 <div class="pass1">
                     <input type="password" onclick="validateOff()" name="pass" id="myInput">
@@ -91,9 +88,12 @@
                     <span class="val">¡Las contraseñas no coinciden!</span>
                 </div>
                 <button class="register-button" onclick="validate()" id="button" type="submit">Registrarse</button>
-                <a href="/login">
-                    ¿Ya tenés cuenta? Ingresá
-                </a>            
+                <div class="login-cont">
+                    <a class="ingresa" href="/login">
+                        ¿Ya tenés cuenta? Ingresá
+                    </a>
+                </div>
+                            
             </div>
         </div>               
     </div>
