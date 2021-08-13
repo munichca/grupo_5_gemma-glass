@@ -1,0 +1,104 @@
+.menuBurger {
+  width: 33%;
+  padding: 5px 13px;
+  font-size: 32px;
+}
+
+.modal-burger {
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#btn-modal:checked ~ .modal-burger {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contenedor-burger {
+  height: 278px;
+  background: #fff;
+  box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
+  transition: all 500ms ease;
+  transform: translateX(-10%);
+}
+
+#btn-modal:checked ~ .modal-burger .contenedor-burger {
+  transform: translateX(0%);
+}
+
+.contenedor-burger h2 {
+  padding: 10px;
+  background-color: #152847;
+  color: white;
+  font-size: 18px;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.contenedor-burger label {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 20px;
+  height: 14px;
+  cursor: pointer;
+  color: white;
+}
+
+.lbl-modal {
+  background-color: #4f8df0;
+  color: #152847;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#btn-modal {
+  display: none;
+}
+
+.lbl-modal i {
+  font-size: 25px;
+}
+
+.contenido-burger ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.contenido-burger ul a li {
+  text-decoration: none;
+  color: #152847;
+  font-size: 18px;
+  padding: 8px 5px; 
+  border:solid 1.3px gray;
+  list-style: none;
+}
+.contenido-burger ul a {
+  text-decoration: none;
+  background-color: white;
+  color: white;
+  font-weight: bold;
+}
+
+.contenido-burger ul a li:hover {
+    background-color: #4f8df0;
+    color: white;
+    font-weight: bold;
+}
+
+@media (min-width: 992px) {
+    .menuBurger{
+        display: none;
+    }
+}
