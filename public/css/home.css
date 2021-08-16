@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
 
 :root {
     --header : rgb(79, 141,240);
@@ -6,9 +6,9 @@
     --footer : rgb(21, 40, 72);
     --fondo : #fafafa;
     /* Fonts */
-    --font-primary : 'Roboto', sans-serif;
+    /* --font-primary : 'Roboto', sans-serif; */
     /* Font size */
-    --paragraph : 12px;
+    /* --paragraph : 12px; */
     --title : 24px;
     --price : 18px;
     --descriptions : 16px;
@@ -79,36 +79,59 @@ h4{
 }
 
 /* Destacados */
-
+/*  cambios simples realizados */
 .cont {
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-evenly;
+    gap: 40px;
 }
 
 .cont .prod {
-    border: 1px solid;
-    background-color: var(--footer);
-}
-
-.cont .prod:hover {
-    background-color: var(--navbar);
     border: none;
-}
-
-.cont .prod2 {
-    border: 1px solid;
     height: 250px;
     width: 250px;
-    background-color: var(--footer);
+    
 }
 
-.cont .prod2:hover {
-    background-color: var(--navbar);
+.cont .prod a {    /* se agregó */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
 }
+.cont .prod a img{  /* se agregó */
+    width: 100%;
+    border: 1px solid var(--footer);
+    border-radius: 25px;
+}
+.cont .prod a img:hover{  /* se agregó */
+    width: 100%;
+    border: 1px solid var(--header);
+    filter: opacity(85%);
+}
+.cont .prod2 {
+    height: 250px;
+    width: 250px;
+    border: none;
+}
+.cont .prod2 a {    /* se agregó */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont .prod2 a img{  /* se agregó */
+    width: 100%;
+    border: 1px solid var(--footer);
+    border-radius: 25px;
+}
+.cont .prod2 a img:hover{  /* se agregó */
+    width: 100%;
+    border: 1px solid var(--header);
+    filter: opacity(85%);
+}
+/*  fin cambios simples realizados */
 
 /* Sucursales */
 

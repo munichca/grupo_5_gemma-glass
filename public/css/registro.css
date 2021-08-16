@@ -26,19 +26,11 @@ a{
     align-items: center; 
     color: var(--tipos);
 }
-/* .container-register .borde{
-    border-radius: 45px;
-    border-color: white;
-} */
 
 .container-register .welcome{
     margin: 25px auto 0px;
     text-align: center;
 }
-/* .container-register .welcome h2{
-    font-size: 22px;
-    margin-bottom: 10px;
-} */
 .container-register .welcome p{
     margin-bottom: 10px;
 }
@@ -47,7 +39,6 @@ a{
     display: flex;
     flex-direction: column;   
     width: 100%;
-    
 }
 .container-register .my-data p{
     font-weight: bold;
@@ -70,7 +61,6 @@ a{
 }
 .container-register .my-data #myInput{
     width: 100%;
-    
 }
 .container-register .my-data #myInput2{
     width: 100%;
@@ -154,12 +144,9 @@ a{
     display: flex;
     width: 40%;
     justify-content: center;
-    
-    
     color: var(--tipos);
 }
 .container-register .my-data .ingresa:hover{
-    
     color: var(--header);
 }
 .container-register ::placeholder{
@@ -167,7 +154,6 @@ a{
 }
 .container-register #eye1,
 .container-register #eye2{
-    
     color: var(--header);
 }
 .container-register #eye1:hover{
@@ -188,8 +174,6 @@ a{
 .container-register .validate{
     display: none;
 }
-
-
 @media (min-width: 768px) {
     .container-register{
         width: 50vw;
