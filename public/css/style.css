@@ -7,6 +7,7 @@
 @import url(cart.css);
 @import url(registro.css);
 @import url(detalleProducto.css);
+@import url(productos.css);
 
 *{
     margin: 0;

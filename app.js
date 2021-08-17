@@ -10,7 +10,8 @@ const registrateRouter = require ("./routes/registrate");
 const trolleyRouter = require ("./routes/trolley");
 const loginRouter = require ("./routes/login");
 const turnosRouter = require ("./routes/turnos")
-/* const headerRouter = require ("./routes/header"); */
+const productRouter = require ("./routes/product")
+
 /* ################################ */
 
 /* VIEWS */
@@ -22,17 +23,14 @@ app.use("/detail", detailRouter);
 app.use("/registro", registrateRouter);
 app.use("/carrito", trolleyRouter);
 app.use("/login", loginRouter);
-app.use("/turnos", turnosRouter)
-/* app.use("/header", headerRouter); */
+app.use("/turnos", turnosRouter);
+app.use("/product", productRouter);
+
 
 /* ##################################### */
 
 app.use(express.static('public'));
 
-
-/* app.get('/turnos',(req, res)=>{
-    res.sendFile(path.join(__dirname, '/views/turnos.html'))
-}); */
 app.listen(port, ()=>{
     console.log(`Puerto corriendo en ${port}\n http://localhost:${port}`)});
 
