@@ -13,43 +13,13 @@
     <title>GemmaGlass</title>
   </head>
   <body>
-    <header>
-      <div class="container-burger"><i class="fa fa-bars"></i></div>
-      <div class="container-1">
-        <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo" /></a>
-      </div>
-      <div class="container-2">
-        <p class="number">(011)15555555</p>
-        <br />
-        <div class="barra-busqueda">
-          <input class="search" type="search" placeholder="Buscá un producto" />
-          <button class="lupa"><i class="fa fa-search"></i></button>
-        </div>
-      </div>
-      <div class="container-3">
-        <ul>
-          <li><a href="/login">Inicia sesión</a></li>
-          <li><a href="/registro">Registrate</a></li>
-        </ul>
-      </div>
-      <div class="container-4">
-        <a href="/carrito">
-          <i class="fa fa-shopping-cart"></i> <br />
-          Mi carrito
-        </a>
-      </div>
-      <nav class="container-nav">
-        <ul>
-          <a href=""> <li>Lentes recetados</li></a>
-          <a href=""> <li>Lentes de sol</li></a>
-          <a href=""> <li>Lentes de contacto</li></a>
-          <a href=""> <li>Lentes gaming</li></a>
-          <a href=""> <li>Ofertas</li></a>
-          <a href="/turnos"> <li>Pedí una consulta</li></a>
-        </ul>
-      </nav>
-    </header>
 
+<!-- header -->
+
+<%- include("partials/header")  %> 
+<!-- fin header  -->
+
+    
     <h2 class="titulo-login">¡Bienvenido de vuelta!</h2>
     <div class="container-form">
       <form action="" class="form-login">
@@ -74,37 +44,8 @@
       </form>
     </div>
 
-    <footer>
-      <div class="footer-1">
-        <h4>Métodos de pago</h4>
-        <i class="fab fa-cc-visa"></i>
-        <i class="fab fa-cc-mastercard"></i>
-        <i class="fab fa-cc-amex"></i>
-      </div>
-
-      <div class="footer-2">
-        <h4>Ayuda</h4>
-        <ul>
-          <a href=""> <li>¿Quienes somos?</li></a>
-          <a href=""><li>Preguntas frecuentes</li></a>
-          <a href=""><li>Sucursales</li></a>
-        </ul>
-      </div>
-
-      <div class="footer-3">
-        <h4>Contactanos</h4>
-        <p>0800-0000-0000</p>
-        <p>(011) 15555555</p>
-        <a href="mailto: ejemplo@ejemplo.com"> ejemplo@ejemplo.com</a>
-      </div>
-
-      <div class="footer-4">
-        <h4>Nuestras redes</h4>
-        <a href=""><i class="fab fa-whatsapp"></i></a>
-        <a href=""><i class="fab fa-facebook-square"></i></a>
-        <a href=""> <i class="fab fa-instagram"></i></a>
-        <a href=""> <i class="fab fa-twitter-square"></i> </a>
-      </div>
-    </footer>
+<!-- footer -->
+<%- include("partials/footer")  %> 
+<!-- fin footer  -->
   </body>
 </html>
