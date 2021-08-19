@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-   
+    background-image: url(/image/fondo.png);
 }
 a{
     text-decoration: none;
@@ -70,7 +70,7 @@ width: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-image: url(/image/fondo.png);
+    /* background-image: url(/image/fondo.png); */
 }
 .external-container .product-card{
     display: flex;
@@ -192,6 +192,7 @@ width: 100%;
         justify-content: initial;
         font-size: 22px;
         border-right: 1px solid var(--tipos);
+        background-color: white;
         background-image: url(/image/lateral.png);
         background-repeat: no-repeat;
     }
