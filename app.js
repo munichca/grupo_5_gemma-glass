@@ -11,6 +11,8 @@ const trolleyRouter = require ("./routes/trolley");
 const loginRouter = require ("./routes/login");
 const turnosRouter = require ("./routes/turnos")
 const productRouter = require ("./routes/product")
+const editRouter = require ("./routes/edit")
+const addRouter = require ("./routes/add")
 
 /* ################################ */
 
@@ -25,6 +27,8 @@ app.use("/carrito", trolleyRouter);
 app.use("/login", loginRouter);
 app.use("/turnos", turnosRouter);
 app.use("/product", productRouter);
+app.use("/edit", editRouter);
+app.use("/add", addRouter);
 
 
 /* ##################################### */

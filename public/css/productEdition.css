@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --header : rgb(79, 141,240);
+    --navbar : rgb(182, 209, 252);
+    --footer : rgb(21, 40, 72);
+    --fondo : #fafafa;
+    /* Fonts */
+    --font-primary : 'Roboto', sans-serif;
+    /* Font size */
+    --paragraph : 12px;
+    --title : 24px;
+    --price : 18px;
+    --descriptions : 16px;
+}
+
+.editBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.editTitle {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.editSubtitles {
+    text-align: center;
+}
+
+.editBody label {
+    height: 35px;
+    width: 300px;
+    border: solid 2px grey;
+    padding: 7px;
+    margin-bottom: 10px; 
+}
+
+.update label {
+    display: flex;
+    flex-direction: column;
+    height: 15px;
+    width: 300px;
+    border: solid 2px grey;
+    text-align: center;
+    background-color: var(--navbar);
+}
+
+.update input {
+    height: 35px;
+    width: 300px;
+    border: solid 2px grey;
+    padding: 7px;
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.update textarea {
+    width: 300px;
+    border: solid 2px grey;
+    padding: 7px;
+    margin: 0px 0px 10px 0px;
+}
+
+.update div label {
+    height: 50px;
+}
+
+.update div input {
+    height: 35px;
+    width: 280px;
+    border: solid 2px grey;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn {
+    background-color: var(--header);
+    border: 1px solid black;
+    margin: 30px  10px 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+    width: 130px;
+    height: 50px;
+}
+
+.btn:hover {
+    background-color: var(--navbar);
+}
+
+
+/*  VERSIÓN TABLET  */
+@media (min-width: 768px) {
+    .editBody label {
+        height: 25px;
+        width: 500px;
+    }
+    .update input {
+        height: 35px;
+        width: 500px;
+    }
+    .update textarea {
+        width: 500px;
+    }
+    .update div input {
+        width: 480px;
+    }
+}
+       /*  VERSIÓN DESKTOP  */
+@media (min-width: 992px) {
+    .editBody label {
+        height: 25px;
+        width: 1000px;
+    }
+    .update input {
+        height: 35px;
+        width: 1000px;
+    }
+    .update textarea {
+        width: 1000px;
+    }
+    .update div input {
+        width: 980px;
+    }
+}

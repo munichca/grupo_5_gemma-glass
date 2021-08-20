@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
     --header : rgb(79, 141,240);
@@ -6,9 +6,9 @@
     --footer : rgb(21, 40, 72);
     --fondo : #fafafa;
     /* Fonts */
-    /* --font-primary : 'Roboto', sans-serif; */
+    --font-primary : 'Roboto', sans-serif;
     /* Font size */
-    /* --paragraph : 12px; */
+    --paragraph : 12px;
     --title : 24px;
     --price : 18px;
     --descriptions : 16px;
@@ -79,7 +79,7 @@ h4{
 }
 
 /* Destacados */
-/*  cambios simples realizados */
+
 .cont {
     padding: 30px;
     display: flex;
@@ -95,18 +95,18 @@ h4{
     
 }
 
-.cont .prod a {    /* se agregó */
+.cont .prod a {   
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
 }
-.cont .prod a img{  /* se agregó */
+.cont .prod a img{ 
     width: 100%;
     border: 1px solid var(--footer);
     border-radius: 25px;
 }
-.cont .prod a img:hover{  /* se agregó */
+.cont .prod a img:hover{ 
     width: 100%;
     border: 1px solid var(--header);
     filter: opacity(85%);
@@ -116,22 +116,21 @@ h4{
     width: 250px;
     border: none;
 }
-.cont .prod2 a {    /* se agregó */
+.cont .prod2 a {   
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.cont .prod2 a img{  /* se agregó */
+.cont .prod2 a img{ 
     width: 100%;
     border: 1px solid var(--footer);
     border-radius: 25px;
 }
-.cont .prod2 a img:hover{  /* se agregó */
+.cont .prod2 a img:hover{ 
     width: 100%;
     border: 1px solid var(--header);
     filter: opacity(85%);
 }
-/*  fin cambios simples realizados */
 
 /* Sucursales */
 
@@ -146,8 +145,23 @@ h4{
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     margin: 0px 10px 10px 0px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+    color: var(--header);
+}
+
+.sucursal:hover {
+    background-color: var(--header);
+    border-radius: 30%;
+    font-size: larger;
+    font-weight: bolder;
+    color:rgb(182, 209, 252)
 }
 
 .turnBanner {

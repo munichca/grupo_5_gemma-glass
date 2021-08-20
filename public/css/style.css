@@ -8,6 +8,7 @@
 @import url(registro.css);
 @import url(detalleProducto.css);
 @import url(productos.css);
+@import url(productEdition.css);
 
 *{
     margin: 0;

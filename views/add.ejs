@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Gemma | Agregá un producto</title>
+</head>
+<body class="editBody">
+
+  <%- include('./partials/header.ejs') %> 
+
+    <h2 class="editTitle">Agregá un producto:</h2>
+
+    <div class="update">
+    <h3 class="editSubtitles">Ingresá la información del producto:</h3>
+    <%- include('./partials/editForm.ejs') %> 
+
+          <div class="buttons">
+         <button class="btn">Aceptar</button>
+         <button class="btn" type="cancel">Cancelar</button>
+        </div>
+
+        <%- include('./partials/footer.ejs') %> 
+</body>
+</html>
