@@ -5,14 +5,10 @@ const path = require('path');
 
 /*  ENRUTADORES */
 const homeRouter = require("./routes/home");
-const detailRouter = require ("./routes/detail");
-const registrateRouter = require ("./routes/registrate");
-const trolleyRouter = require ("./routes/trolley");
-const loginRouter = require ("./routes/login");
-const turnosRouter = require ("./routes/turnos")
+const usersRouter = require ("./routes/users");
 const productRouter = require ("./routes/product")
-const editRouter = require ("./routes/edit")
-const addRouter = require ("./routes/add")
+const adminRouter = require ("./routes/admin")
+
 
 /* ################################ */
 
@@ -21,14 +17,10 @@ app.set("view engine", "ejs");
 
 /*  RUTAS,  */
 app.use("/",homeRouter);
-app.use("/detail", detailRouter);
-app.use("/registro", registrateRouter);
-app.use("/carrito", trolleyRouter);
-app.use("/login", loginRouter);
-app.use("/turnos", turnosRouter);
+app.use("/users", usersRouter);
 app.use("/product", productRouter);
-app.use("/edit", editRouter);
-app.use("/add", addRouter);
+app.use("/admin", adminRouter);
+
 
 
 /* ##################################### */
