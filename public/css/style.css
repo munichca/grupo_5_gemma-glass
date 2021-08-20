@@ -9,6 +9,7 @@
 @import url(detalleProducto.css);
 @import url(productos.css);
 @import url(productEdition.css);
+@import url(modal.css);
 
 *{
     margin: 0;
