@@ -67,7 +67,7 @@ width: 100%;
 .external-container{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     justify-content: center;
     align-items: center;
     /* background-image: url(/image/fondo.png); */
@@ -208,6 +208,7 @@ width: 100%;
     .external-container{
         width: 75%;
         justify-content: space-between;
+        margin: auto;
     }
     .external-container .product-card{
         width: 180px;
