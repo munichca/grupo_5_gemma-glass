@@ -297,71 +297,7 @@ a{
     display: none;
 }
 /* fin bloque 3 postal desktop */
-
-
-
-
-
 /* fin bloque desktop */ /* &--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&--&-- */
-
-/* bloque compartido */
-
-.external-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-.external-container .product-card{
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
-.external-container .images{
-    display: flex;
-    width: 70%;
-    height: 50vw;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--tipos);
-    border-radius: 30px;
-    margin-bottom: 10px;
-}
-.external-container .images img{
-    width: fit-content;
-    height: 98%;
-    position: absolute;
-    animation: twist 7s infinite ;
-    border-radius: 35px;
-    
-}
-.external-container .images .rear{
-    transform: perspective(600px) rotateY(180deg);
-    backface-visibility: hidden;
-}
-.external-container .product-name{
-    text-align: center;
-    text-transform: uppercase;
-}
-.external-container .price{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.external-container .price i{
-    margin-right: 5px;
-}
-@keyframes twist {
-    from { transform: rotateY(0deg) }
-    to { transform: rotateY(360deg) }
-}
-
-/* fin de bloque compartido */
 
 /* bloque mobile */ /* ############################################################################ */
 .mobile{
