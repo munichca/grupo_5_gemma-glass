@@ -33,14 +33,19 @@
     margin-bottom: 10px;
 }
 .btn-turno{
-    border: solid 2px grey;
+    border: solid 1px #4f8df0;
     background-color: #4f8df0;
     width: 130px;
     height: 40px;
     align-self: center;
     margin: 30px  0 15px 0;
     font-size: 16px;
+
+}
+.btn-turno:hover{
     font-weight: bold;
+    color: white;
+    background-color: #79a9f7;
 }
 
 /*  VERSIÓN TABLET  */
