@@ -58,6 +58,7 @@ border-radius: 20%;
 }
 .footer-3 p {
     padding-bottom: 8px;
+    margin-bottom: 0;
 } 
 .footer-4 i{
     font-size: 25px;

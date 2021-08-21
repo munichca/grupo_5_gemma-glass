@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>GemmaGlass</title>
-</head>
-
-<body>
-
     <header>
-        <div class="container-burger"><i class="fa fa-bars"></i></div>
+        <div class="menuBurger">
+            <input type="checkbox" name="burger" id="btn-modal">
+            <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
+            
+            <div class="modal-burger">
+                <div class="contenedor-burger">
+                    <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
+                    <h2>Gemma Glass</h2>
+                    <div class="contenido-burger">
+                        <ul>
+                            <a href="/product/product"> <li>Lentes recetados</li></a>
+                            <a href="/product/product"> <li>Lentes de sol</li></a>
+                            <a href="/product/product"> <li>Lentes de contacto</li></a>
+                            <a href="/product/product"> <li>Lentes gaming</li></a>
+                            <a href="/product/product"> <li>Ofertas</li></a>
+                            <a href="/turnos"> <li>Pedí una consulta</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-1">
 
             <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo"></a>
@@ -25,8 +28,13 @@
             <p class="number">(011)15555555</p> <br>
             <div class="barra-busqueda">
                 <input class="search" type="search" placeholder="Buscá un producto">
-                <button class="lupa"><i class="fa fa-search "></i></button>
+                <button class="lupa" onclick="mostrar()"><i class="fa fa-search "></i></button>
+                <button class="lupa-1" ><i class="fa fa-search "></i></button>
             </div>
+        </div>
+        <div id="buscador">
+                <input class="search-2" type="search" placeholder="Buscá un producto">
+                <button class="lupa-2"><i class="fa fa-search "></i></button>
         </div>
         <div class="container-3">
             <ul>
@@ -50,12 +58,15 @@
                 <a href="/turnos"> <li>Pedí una consulta</li></a>
             </ul>
         </nav>
-
+        <script>
+    function mostrar() {
+        var x = document.getElementById("buscador");
+           if (x.style.display === "block") {
+           x.style.display = "none";
+           } else {
+                  x.style.display = "block";
+    }
+}
+        </script>
     </header>
-</body>
-</html>
 
-
-<footer>
-
-</footer>

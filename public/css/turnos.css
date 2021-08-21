@@ -28,10 +28,13 @@
 .form-turno input,
 .form-turno select{
     height: 35px;
-    border: solid 2px grey;
     padding: 7px;
     margin-bottom: 10px;
 }
+.form-turno input:hover,
+.form-turno select:hover{
+    border:solid 2px #4f8df0;
+    }
 .btn-turno{
     border: solid 1px #4f8df0;
     background-color: #4f8df0;
