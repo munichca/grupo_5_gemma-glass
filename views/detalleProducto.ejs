@@ -14,59 +14,62 @@
 
         <!-- slider para descktop -->
 
-    <section class="container-slide">
-        <div class="title">
-            <p class="name">nombre del producto</p>
-        </div>
-        <div class="pictures">
-            <img class="images" id="images1" src="/image/1.jpg" alt="">
-            <img class="images" id="images2" src="/image/2.jpg" alt="">
-            <img class="images" id="images3" src="/image/3.jpg" alt="">
-        </div>
-     
-        <nav class="navegadorImagenes">
-            <ul class="menu">
-                <li><a  href="#images1"><img class="mini" src="/image/1.jpg" alt=""></a></li>
-                <li><a  href="#images2"><img class="mini" src="/image/2.jpg" alt=""></a></li>
-                <li><a  href="#images3"><img class="mini" src="/image/3.jpg" alt=""></a></li>                      
-            </ul>
-        </nav>        
-    </section> 
-    <!-- fin de slider para descktop -->
-
-    <!-- bloque precio boton detalles desktop -->
-
-    <section class="block2-desktop">
-        <div class="price">
-            <i class="fas fa-dollar-sign"></i>
-            <h4>0000.-</h4>
-        </div>
-        <div class="button-buy">
-            <button type="submit" class="btn btn-submit">comprar</button>
-        </div>
-        <div class ="detail">
-            <h4>Detalles:</h4>
-            <div>
-                <p>material del marco:</p>                    
-                <p>metal:</p>
+        <section class="arriba">
+            <div class="containerExt">
+                <div class="title">
+                    <span >nombre del producto</span>
+                </div>
+                <div class="images">
+                    <div class="image" >
+                      <img src="/image/1.jpg" alt=""  onclick="cambiar(this);">
+                    </div>
+                    <div class="image">
+                      <img src="/image/2.jpg" alt=""  onclick="cambiar(this);">
+                    </div>
+                    <div class="image">
+                      <img src="/image/3.jpg" alt=""  onclick="cambiar(this);">
+                    </div>
+                    
+                </div>
+                  
+                <div class="containerPr">
+                    <img id="principal" src="/image/1.jpg" >
+                    
+                </div>
+               
             </div>
-        </div>    
-        <div class="info">
-            <div>
-                <h5>Información adicional</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, neque.</p>
-            </div>            
-        </div>           
-        <div class="measures">
-            <div>
-                 <h4>Medidas:</h4>
-                <div>
-                    <p>alto del marco:</p>
-                    <p>ancho del marco:</p>
-                </div>                                        
-            </div>                
-         </div>
-    </section>
+            <section class="block2-desktop">
+                <div class="price">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>0000.-</h4>
+                </div>
+                <div class="button-buy">
+                    <button type="submit" class="btn_btn-submit">comprar</button>
+                </div>
+                <div class ="detail">
+                    <h4>Detalles:</h4>
+                    <!-- <div> -->
+                        <p>material del marco:</p>                    
+                        <!-- <p>metal:</p> -->
+                    <!-- </div> -->
+                </div>    
+                <div class="info">
+                    <div>
+                        <h4>Información adicional</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, neque.</p>
+                    </div>            
+                </div>           
+                <div class="measures">
+                    <div>
+                         <h4>Medidas:</h4>
+                        <div>
+                            <p>alto del marco:</p>
+                            <p>ancho del marco:</p>
+                        </div>                                        
+                    </div>                
+                 </div>
+            </section>
+        </section>  
     
     <!-- fin bloque precio boton detalles desktop -->
 
@@ -74,11 +77,11 @@
 
     <hr class="hr-desktop">
     <div class="block3-postal">         
-        <div class="postal-code"> 
+        <div class="postalCode"> 
             <p>Calculá el costo de envío, ingresá tu código postal:</p>
             <input type="text">
             <p>O retirá gratis en nuestras sucursales</p>
-            <ul class="branch-office">
+            <ul class="branchOffice">
                 <a href=""><li>San cristobal</li></a>
                 <a href=""><li>Villa Urquisa</li></a>
                 <a href=""><li>Palermo</li></a> 
@@ -119,7 +122,7 @@
     <!-- cuerpo mobile -->  
 <section class="mobile">   
     <div class="block1-body-mobile">
-        <h4>nombre del producto</h4>
+        <h4 class="titleMov">nombre del producto</h4>
         <div class="ani">
             <div class="container">
                 <div id="slider"></div>
@@ -127,11 +130,11 @@
         </div> 
         <div class="price"> 
             <i class="fas fa-dollar-sign"></i>
-             <h4>0000.-</h4>
+             <h4>0000.</h4>
         </div>
         <div class="pay">   
             <div class="hs5">
-                <h5>6 cuotas sin interes de 0000</h5>
+                <h5 class="cuotas">6 cuotas sin interes de $0000</h5>
                 <h5>Metodos de pago</h5>
             </div>
             <div class ="credit-card">      
@@ -182,6 +185,7 @@
                     </div>                
                 </div>
         </div>   
+        <hr class="hr-mobile">  
         <div class="social-media">
             <div class="share">
                 <p>compartir</p>
@@ -210,6 +214,11 @@
 <!-- footer -->
 <%- include("partials/footer")  %> 
 <!-- fin footer  -->
-    
+<script>
+    function cambiar(imagen) {
+      let principal = document.getElementById("principal");
+      principal.src = imagen.src;
+    }
+    </script>
 </body>
 </html>
