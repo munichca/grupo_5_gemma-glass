@@ -4,6 +4,9 @@ module.exports = {
     },
     register: (req, res)=>{
         res.render("registro")
+    },
+    user: (req, res)=>{
+        res.render("user")
     }
     
 
