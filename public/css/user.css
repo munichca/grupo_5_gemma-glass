@@ -5,6 +5,7 @@ flex-wrap: wrap;
 }
 .titulo-login{
  width: 100%;
+ font-weight: bold;    
 }
 .datos-user  .item-data{
 display: inline;
@@ -12,6 +13,7 @@ font-size: 14px;
 }
 .datos-user p{
 display: flex;
+margin-bottom: 5px;
 }
 .imagen-perfil{
     display: flex;
@@ -55,19 +57,85 @@ display: flex;
 .btn-user:hover{
     color: white;
     background-color: #3b7adf;
+    font-weight: bold;    
 } 
 .profile-btn{
     display: flex;
     justify-content: center;
 }
 
-    /*  VERSIÓN TABLET  */
+/*CSS PARA EDICIÓN DE PERFIL DE USUARIO*/
+.datos-user .data-edit{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.data-edit input{
+    width: 50%;
+    font-size: 14px;
+    margin-bottom: 4px;
+    padding-left: 10px;
+}
+.data-edit input:hover{
+    border:solid 2px #4f8df0;
+    }
+    
+.data-edit{
+/*     margin-bottom: 5px; */
+    margin: auto;
+}
+.data-edit .item-data{
+    padding-top: 6px;
+    }
+.img-edit{
+    color:#4f8df0;
+font-size: 10px;
+}
+/* .container-user-edit{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.
+ */
+ .carga-imagen{
+     text-align: center;
+ }
+ .imagen-perfil-edit{
+    display: flex;
+    width: 90px;
+    height: 90px;
+    background-color: rgb(12, 12, 92);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    margin-top: 15px;
+    color:  white;
+    font-weight:  bold;
+    margin:15px 23px 8px 50px;
+}
+/*  VERSIÓN TABLET  */
     @media (min-width: 768px) {
         .imagen-perfil{
             width: 180px;
             height: 180px;
             margin:  50px auto;
             font-size:  16px;
+        }
+        .imagen-perfil-edit{
+            width: 180px;
+            height: 180px;
+            margin:  50px auto;
+            font-size:  16px;
+            margin: 30px 11px 10px 80px;
+        }
+        .img-edit{
+            color:#4f8df0;
+        font-size: 14px;
+        margin-left: 40px;
         }
         .datos-user{
             width: 50%;
@@ -100,7 +168,7 @@ display: flex;
         }
         .datos-user .data{
             width: 100%;
-            font-size:  24px;
+            font-size:  22px;
             justify-content: space-around;
         }
         .img-user{
@@ -116,5 +184,10 @@ display: flex;
                 width: 160px;
                 height: 45px;
                 font-size: 22px;
+            }
+            .img-edit{
+                color:#4f8df0;
+            font-size: 16px;
+            margin-left: 40px;
             }
         }

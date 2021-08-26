@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+  <body>
+
+<!-- header -->
+
+<%- include("partials/header")  %> 
+<!-- fin header  -->
+
+
+<div class="container-user">
+    <div class="img-user">
+        <form action="">
+        <div class="imagen-perfil-edit"> <p>Imagen de perfil </p></div>   
+        <div class="carga-imagen">
+        <input  class="img-edit" type="file"></div>
+    </div>
+    <div class="datos-user">  
+
+            <h2 class="titulo-login">Mis datos</h2>
+            <div class="data-edit">
+                <h5 class="item-data">Nombre</h5>
+                    <input type="text" value="Nombre">
+            </div>
+            <div class="data-edit">
+                <h5 class="item-data">Apellido</h5>
+                <input type="text" value="Apellido">
+            </div>
+            <div class="data-edit">
+                <h5 class="item-data">Email</h5>
+                <input type="email" value="Email">
+            </div>
+            <div class="data-edit">
+                <h5 class="item-data">Contraseña</h5>
+                <input type="password" value="Contraseña">
+            </div>
+            <div class="data-edit">
+                <h5 class="item-data">Teléfono</h5>
+                <input type="number" value="Teléfono">
+            </div>
+            <div class="profile-btn">
+            <button class="btn-user">Guardar datos</button>
+        </form>
+        </div>
+    </div>
+<!-- footer -->
+<%- include("partials/footer")  %> 
+<!-- fin footer  -->
+  </body>
+</html>

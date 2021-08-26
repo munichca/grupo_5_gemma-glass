@@ -7,6 +7,9 @@ module.exports = {
     },
     user: (req, res)=>{
         res.render("user")
+    },
+    editProfileUser: (req, res)=>{
+        res.render("editProfileUser")
     }
     
 

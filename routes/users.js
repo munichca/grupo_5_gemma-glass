@@ -5,7 +5,7 @@ let controller = require ("../controllers/usersController");
 router.get("/login", controller.login);
 router.get("/registro", controller.register);
 router.get("/user", controller.user);
-
+router.get("/userEdit", controller.editProfileUser);
 
 
 
