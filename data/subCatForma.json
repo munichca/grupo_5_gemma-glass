@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "shape" : "Aviador"
+    },
+    {
+        "id" : 2,
+        "shape" : "Browline"
+    },
+    {
+        "id" : 3,
+        "shape" : "Cateye"
+    },
+    {
+        "id" : 4,
+        "shape" : "Cuadrado"
+    },
+    {
+        "id" : 5,
+        "shape" : "Rectangular"
+    },
+    {
+        "id" : 6,
+        "shape" : "Round"
+    }
+]

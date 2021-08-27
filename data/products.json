@@ -1,0 +1,274 @@
+[
+    {
+        "id": 1,
+        "name": "Piccaso",
+        "price": 7500,
+        "discount": 0, /* esto genera la seccion ofertas */
+        "category": "1", /* define la categoria principal, es lo que pondremos en detalle */
+        "subCatForma": "1", /* define la forma */
+        "subCatMarca": "1", /* define la marca  */
+        "subCatmaterial": "1", /* define el material , las subCat, son lo que ponemos en informacion adicional */
+        "height": 5, /* campo para la altura de los anteojos */
+        "width": 12, /* campo para el ancho */
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Ray-Ban 4187L",
+        "price": 12500,
+        "discount": 25,
+        "category": "2",
+        "subCatForma": "1",
+        "subCatMarca": "4",
+        "subCatmaterial": "1",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Dali",
+        "price": 8100,
+        "discount": 5,
+        "category": "2",
+        "subCatForma": "3",
+        "subCatMarca": "3",
+        "subCatmaterial": "2",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "DaVinci",
+        "price": 12500,
+        "discount": 5,
+        "category": "1",
+        "subCatForma": "6",
+        "subCatMarca": "2",
+        "subCatmaterial": "1",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "VanGogh",
+        "price": 15200,
+        "discount": 15,
+        "category": "2",
+        "subCatForma": "2",
+        "subCatMarca": "7",
+        "subCatmaterial": "3",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Monet",
+        "price": 9100,
+        "discount": 0,
+        "category": "1",
+        "subCatForma": "5",
+        "subCatMarca": "3",
+        "subCatmaterial": "2",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Rembrandt",
+        "price": 12700,
+        "discount": 15,
+        "category": "2",
+        "subCatForma": "4",
+        "subCatMarca": "2",
+        "subCatmaterial": "3",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Goya",
+        "price": 7500,
+        "discount": 0,
+        "category": "1",
+        "subCatForma": "6",
+        "subCatMarca": "9",
+        "subCatmaterial": "2",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Chagall",
+        "price": 5500,
+        "discount": 0,
+        "category": "2",
+        "subCatForma": "4",
+        "subCatMarca": "6",
+        "subCatmaterial": "2",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Botticelli",
+        "price": 7500,
+        "discount": 0,
+        "category": "2",
+        "subCatForma": "6",
+        "subCatMarca": "5",
+        "subCatmaterial": "1",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Jude Watson",
+        "price": 12500,
+        "discount": 5,
+        "category": "3",
+        "subCatForma": "",
+        "subCatMarca": "",
+        "subCatmaterial": "",
+        "height": -1,
+        "width": -1,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Kevin J.Anderson",
+        "price": 11200,
+        "discount": 10,
+        "category": "3",
+        "subCatForma": "",
+        "subCatMarca": "",
+        "subCatmaterial": "",
+        "height": -1,
+        "width": -1,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Roger MacBride",
+        "price": 14500,
+        "discount": 10,
+        "category": "3",
+        "subCatForma": "",
+        "subCatMarca": "",
+        "subCatmaterial": "",
+        "height": -1,
+        "width": -1,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Michael A.Stackpole",
+        "price": 7500,
+        "discount": 0,
+        "category": "4",
+        "subCatForma": "2",
+        "subCatMarca": "5",
+        "subCatmaterial": "1",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Bounty Hunter",
+        "price": 7500,
+        "discount": 0,
+        "category": "4",
+        "subCatForma": "1",
+        "subCatMarca": "2",
+        "subCatmaterial": "3",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "R.A.Salvatore",
+        "price": 7500,
+        "discount": 0,
+        "category": "4",
+        "subCatForma": "2",
+        "subCatMarca": "4",
+        "subCatmaterial": "1",
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+]

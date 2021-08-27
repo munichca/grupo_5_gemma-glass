@@ -1,0 +1,14 @@
+[
+    {
+        "id" : 1,
+        "material" : "Acetato"
+    },
+    {
+        "id" : 2,
+        "material" : "Grilamid"
+    },
+    {
+        "id" : 3,
+        "material" : "Metal"
+    }
+]

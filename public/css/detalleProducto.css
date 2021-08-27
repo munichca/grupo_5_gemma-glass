@@ -428,8 +428,6 @@ a{
     font-size: 5vw;   
     text-align: center; 
     padding-bottom: 10px;  
-    
-    
     font-weight: 500;
     line-height: initial;
     margin-block-start: 0;
@@ -600,6 +598,44 @@ a{
     .block3-postal{
         margin-top: 10px;      
     }
+    
+    /* ################### */
+
+
+    .block3-postal .postalCode{
+        width: 50%;
+    }
+    .block3-postal .postalCode p{
+        font-size: 1.3vw;   
+    }
+    .block3-postal .postalCode input{
+       width: 90%;
+       height: 2.8vw;
+    }
+    
+    .block3-postal .postalCode li{
+        font-size: 1.5vw;
+    }
+    .block3-postal .branchOffice{
+        padding: 0;
+    }
+    .block3-postal .branchOffice a{
+        margin: 0 auto 0;
+        justify-content: center;
+        color: var(--tipos);
+    }
+
+
+
+    /* ###################### */
+
+
+
+
+
+
+    
+    
     .block3-postal .pay{
         width: 70%;
     }
