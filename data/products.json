@@ -17,7 +17,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "Ray-Ban 4187L",
         "price": 12500,
         "discount": 25,
@@ -34,7 +34,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 3,
         "name": "Dali",
         "price": 8100,
         "discount": 5,
@@ -51,7 +51,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 4,
         "name": "DaVinci",
         "price": 12500,
         "discount": 5,
@@ -68,7 +68,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 5,
         "name": "VanGogh",
         "price": 15200,
         "discount": 15,
@@ -85,7 +85,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 6,
         "name": "Monet",
         "price": 9100,
         "discount": 0,
@@ -102,7 +102,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 7,
         "name": "Rembrandt",
         "price": 12700,
         "discount": 15,
@@ -119,7 +119,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 8,
         "name": "Goya",
         "price": 7500,
         "discount": 0,
@@ -136,7 +136,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 9,
         "name": "Chagall",
         "price": 5500,
         "discount": 0,
@@ -153,7 +153,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 10,
         "name": "Botticelli",
         "price": 7500,
         "discount": 0,
@@ -170,7 +170,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 11,
         "name": "Jude Watson",
         "price": 12500,
         "discount": 5,
@@ -187,7 +187,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 12,
         "name": "Kevin J.Anderson",
         "price": 11200,
         "discount": 10,
@@ -204,7 +204,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 13,
         "name": "Roger MacBride",
         "price": 14500,
         "discount": 10,
@@ -221,7 +221,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 14,
         "name": "Michael A.Stackpole",
         "price": 7500,
         "discount": 0,
@@ -238,7 +238,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 15,
         "name": "Bounty Hunter",
         "price": 7500,
         "discount": 0,
@@ -255,7 +255,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 16,
         "name": "R.A.Salvatore",
         "price": 7500,
         "discount": 0,
