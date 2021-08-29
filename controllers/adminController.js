@@ -1,9 +1,14 @@
+let {category} = require ('../data/dataBase');
 module.exports = {
     add: (req, res)=>{
-         res.render("add")
+         res.render("add",{
+            category
+         })
     },
     edit: (req, res)=>{
-        res.render("edit")
+        res.render("edit",{
+            category
+        })
     }
 
 }
