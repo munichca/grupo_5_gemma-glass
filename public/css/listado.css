@@ -1,0 +1,89 @@
+a{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: red;
+}
+ul{
+    padding-left: 0;
+}
+.tama{
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    
+   
+    
+    
+}
+.lista{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    border: 1px solid blue;
+    align-items: center;
+    
+   
+}
+p{
+    border-right: 1px solid red;
+    /* padding: 3px auto 3px; */
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+} 
+.containerList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 0;
+    
+}
+.id{
+    width: 2.5vw;
+}
+.name{
+    width: 24.7vw;
+}
+.price{
+    width: 7vw;
+}
+.category{
+    width: 10vw;
+}
+.shape{
+    width: 7vw;
+}
+.brand{
+    width: 8vw;
+}
+.material{
+    width: 8vw;
+}
+.height{
+    width: 5vw;
+}
+.width{
+    width: 5vw;
+}
+.discount{
+    width: 8vw;
+}
+.far{
+    margin: 0 4px 0;
+}
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-let {category} = require ('../data/dataBase');
+let {productos, category, subCatForma, subCatMarca, subCatMaterial} = require ('../data/dataBase');
 module.exports = {
     add: (req, res)=>{
          res.render("add",{
@@ -8,6 +8,16 @@ module.exports = {
     edit: (req, res)=>{
         res.render("edit",{
             category
+        })
+    },
+    lista: (req, res)=>{
+        let prod = productos;
+        
+        
+        res.render("listado",{
+            category,
+            prod
+
         })
     }
 

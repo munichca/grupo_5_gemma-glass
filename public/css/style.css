@@ -12,6 +12,7 @@
 @import url(modal.css);
 @import url(burger.css);
 @import url(user.css);
+@import url(listado.css);
 
 *{
     margin: 0;
