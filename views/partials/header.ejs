@@ -50,10 +50,9 @@
         </div>
         <nav class="container-nav">
             <ul>
-                <a href="/product/product"> <li>Lentes recetados</li></a>
-                <a href=""> <li>Lentes de sol</li></a>
-                <a href=""> <li>Lentes de contacto</li></a>
-                <a href=""> <li>Lentes gaming</li></a>
+                <% category.forEach(item => {%>
+                <a href="/product/product/:category"> <li><%- item.name  %></li></a>                
+                <% })  %> 
                 <a href=""> <li>Ofertas</li></a>
                 <a href="/turnos"> <li>Pedí una consulta</li></a>
             </ul>
@@ -67,6 +66,8 @@
                   x.style.display = "block";
     }
 }
+
+    
         </script>
     </header>
 

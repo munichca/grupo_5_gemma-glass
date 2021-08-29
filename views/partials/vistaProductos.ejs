@@ -1,130 +1,21 @@
-<section class="external-container" >
-    <a class="product-card" href="/product/detail">
+<section class="external-container" id="externalContainer" >
+    <% productos.forEach(item => {%> 
+    <a class="product-card" href="/product/detail/<%- item.id %>  ">
             <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
+                <img class="frontal" src="/image/<%- item.image[0] %> "  alt="">
+                <img class="rear" id="gira" src="/image/<%- item.image[1] %>  "  alt="">
             </div>
         <div class="product-name">
-            <p class="pes">nombre del producto</p>
+            <p class="pes"><%- item.name %>  </p>
             <div class="price" id="dollar">                
                 <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
+                <p class="pes"><%- item.price %>  .-</p>
             </div>
         </div>
     </a> 
+    <% })  %> 
     <hr class="hr-mobile">         
-    <a class="product-card" href="/product/detail">
-            <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
-            </div>
-        <div class="product-name">
-            <p class="pes">nombre del producto</p>
-            <div class="price" id="dollar">                
-                <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
-            </div>
-        </div>
-    </a> 
-    <hr class="hr-mobile">         
-    <a class="product-card" href="/product/detail">
-            <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
-            </div>
-        <div class="product-name">
-            <p class="pes">nombre del producto</p>
-            <div class="price" id="dollar">                
-                <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
-            </div>
-        </div>
-    </a> 
-    <hr class="hr-mobile">         
-    <a class="product-card" href="/product/detail">
-            <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
-            </div>
-        <div class="product-name">
-            <p class="pes">nombre del producto</p>
-            <div class="price" id="dollar">                
-                <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
-            </div>
-        </div>
-    </a> 
-    <hr class="hr-mobile">         
-    <a class="product-card" href="/product/detail">
-            <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
-            </div>
-        <div class="product-name">
-            <p class="pes">nombre del producto</p>
-            <div class="price" id="dollar">                
-                <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
-            </div>
-        </div>
-    </a> 
-    <hr class="hr-mobile">         
-    <a class="product-card" href="/product/detail">
-            <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
-            </div>
-        <div class="product-name">
-            <p class="pes">nombre del producto</p>
-            <div class="price" id="dollar">                
-                <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
-            </div>
-        </div>
-    </a> 
-    <hr class="hr-mobile">         
-    <a class="product-card" href="/product/detail">
-            <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
-            </div>
-        <div class="product-name">
-            <p class="pes">nombre del producto</p>
-            <div class="price" id="dollar">                
-                <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
-            </div>
-        </div>
-    </a> 
-    <hr class="hr-mobile">         
-    <a class="product-card" href="/product/detail">
-            <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
-            </div>
-        <div class="product-name">
-            <p class="pes">nombre del producto</p>
-            <div class="price" id="dollar">                
-                <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
-            </div>
-        </div>
-    </a> 
-    <hr class="hr-mobile">         
-    <a class="product-card" href="/product/detail">
-            <div class="images" id=twist >
-                <img class="frontal" src="/image/3.jpg"  alt="">
-                <img class="rear" id="gira" src="/image/4.jpg"  alt="">
-            </div>
-        <div class="product-name">
-            <p class="pes">nombre del producto</p>
-            <div class="price" id="dollar">                
-                <i class="fas fa-dollar-sign"></i>
-                <p class="pes">0000.-</p>
-            </div>
-        </div>
-    </a> 
-    <hr class="hr-mobile">         
+
     
             
 </section>  

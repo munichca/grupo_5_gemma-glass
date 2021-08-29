@@ -17,23 +17,23 @@
         <section class="arriba">
             <div class="containerExt">
                 <div class="title">
-                    <span >nombre del producto</span>
+                    <span ><%- product.name %>  </span>
                 </div>
                 <div class="images">
                     <div class="image" >
-                      <img src="/image/1.jpg" alt=""  onclick="cambiar(this);">
+                      <img src="/image/<%- product.image[0] %>" alt=""  onclick="cambiar(this);">
                     </div>
                     <div class="image">
-                      <img src="/image/2.jpg" alt=""  onclick="cambiar(this);">
+                      <img src="/image/<%- product.image[1] %>" alt=""  onclick="cambiar(this);">
                     </div>
                     <div class="image">
-                      <img src="/image/3.jpg" alt=""  onclick="cambiar(this);">
+                      <img src="/image/<%- product.image[2] %>" alt=""  onclick="cambiar(this);">
                     </div>
                     
                 </div>
                   
                 <div class="containerPr">
-                    <img id="principal" src="/image/1.jpg" >
+                    <img id="principal" src="/image/<%- product.image[0] %>" >
                     
                 </div>
                
@@ -41,29 +41,29 @@
             <section class="block2-desktop">
                 <div class="price">
                     <i class="fas fa-dollar-sign"></i>
-                    <h4>0000.-</h4>
+                    <h4><%- product.price %> .-</h4>
                 </div>
                 <div class="button-buy">
                     <button type="submit" class="btn_btn-submit">comprar</button>
                 </div>
                 <div class ="detail">
                     <h4>Detalles:</h4>
-                        <p>Lentes Recetados</p>
+                        <p><%- categ.name %> </p>
                 </div>    
                 <div class="info">
                     <div>
                         <h4>Información adicional</h4>
-                        <p>Forma:   Aviador</p>
-                        <p>Marca:   Reef</p>
-                        <p>Material:    Acetato</p>
+                        <p>Forma: <%- formas.shape %> </p>
+                        <p>Marca: <%- marcas.brand %> </p>
+                        <p>Material: <%- materials.mater %> </p>
                     </div>            
                 </div>           
                 <div class="measures">
                     <div>
                          <h4>Medidas:</h4>
                         <div>
-                            <p>alto del marco:</p>
-                            <p>ancho del marco:</p>
+                            <p>alto del marco: <%- product.height %> mm.</p>
+                            <p>ancho del marco: <%- product.width %> mm.</p>
                         </div>                                        
                     </div>                
                  </div>
@@ -88,7 +88,7 @@
         </div>
         <div class="pay"> 
             <div class="hs3">
-                <h3>6 cuotas sin interes de $0000</h2>
+                <h3>6 cuotas sin interes de $<%= (product.price/6).toFixed(2) %> </h2>
                 <h3>Metodos de pago</h2>
             </div>
             <div class ="credit-card">      
@@ -214,6 +214,11 @@
 <%- include("partials/footer")  %> 
 <!-- fin footer  -->
 <script>
+ window.onload = function tamano() {
+let container = document.getElementById("externalContainer");
+container.style.width = "90vw";
+}
+
     function cambiar(imagen) {
       let principal = document.getElementById("principal");
       principal.src = imagen.src;

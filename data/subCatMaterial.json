@@ -1,14 +1,18 @@
 [
     {
         "id" : 1,
-        "material" : "Acetato"
+        "mater" : "Acetato"
     },
     {
         "id" : 2,
-        "material" : "Grilamid"
+        "mater" : "Grilamid"
     },
     {
         "id" : 3,
-        "material" : "Metal"
+        "mater" : "Metal"
+    },
+    {
+        "id" : 0,
+        "mater" : " "
     }
 ]
