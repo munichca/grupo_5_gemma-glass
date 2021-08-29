@@ -12,25 +12,25 @@ module.exports = {
          })
     },
     productCat: (req, res)=>{
-        /* let categName = req.params.name;
+        let categName = req.params.name;
         let categ = category.find(categ => categ.mane === categName);
         let categId = categ.id;
         let product = productos.filter(product => product.category === categId);        
         let formas = subCatForma.find(forma => forma.id === product.subCatForma);
         let marcas = subCatMarca.find(marca => marca.id === product.subCatMarca);
         let materials = subCatMaterial.find(item2 => item2.id === product.subCatmaterial);
-        productos = product; */
+        productos = product;
         res.render("productos",{            
             category,
             subCatForma,
             subCatMarca,
             subCatMaterial,
-            productos
-            /* categ, */
-            /* product, */
-           /*  formas,
+            productos,
+            categ,
+            product,
+            formas,
             marcas,
-            materials */
+            materials
         })
     },
     detail: (req, res)=>{
