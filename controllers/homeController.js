@@ -32,8 +32,7 @@ module.exports = {
         })
     },
     product: (req, res)=>{
-        let categName = req.params.category;
-        let categoria = productos.find(prod => prod.category === categName);
+        
         
         res.render("productos",{            
             productos,
