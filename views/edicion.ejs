@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+<body>
+
+  <%- include('./partials/header.ejs') %> 
+
+  <section class="wb">
+    <h5 class="editSubtitles">Ingresá la información actualizada:</h5>
+            <form class="tamanioFondo" action="" method="">
+              <label class="tamanio" for="name">Nombre del producto: </label>
+               <input class="tamanio" type="text" name="name" id="name">
+              <label class="tamanio" for="price">Precio: </label>
+               <input class="tamanio" type="text" name="price" id="price">
+              <label class="tamanio" for="discount">Descuento: </label>
+               <input class="tamanio" type="text" name="discount" id="discount">
+              <label class="tamanio" for="category">Categoria: </label>
+               <input class="tamanio" type="text" name="category" id="category">
+              <label class="tamanio" for="shape">Forma: </label>
+               <input class="tamanio" type="text" name="shape" id="shape">
+              <label class="tamanio" for="brand">Marca: </label>
+               <input class="tamanio" type="text" name="brand" id="brand">
+              <label class="tamanio" for="material">Material: </label>
+               <input class="tamanio" type="text" name="material" id="material">
+              <label class="tamanio" for="height">Altura: </label>
+               <input class="tamanio" type="text" name="height" id="height">
+              <label class="tamanio" for="width">Ancho: </label>
+               <input class="tamanio" type="text" name="width" id="width">
+            </form> 
+            <div>           
+              <label class="label" for="archivos">Subí fotos del producto:</label><br>
+              <input class="archivos" type="file" name="archivos"  multiple>
+            </div>
+            <div class="buttons">
+              <button class="btn">Aceptar</button>
+              <button class="btn" type="cancel">Cancelar</button>
+            </div>
+  </section>
+
+
+
+        
+            
+
+      <%- include('./partials/footer.ejs') %> 
+</body>
+</html>

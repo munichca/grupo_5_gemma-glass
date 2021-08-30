@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --header : rgb(79, 141,240);
+    --navbar : rgb(182, 209, 252);
+    --footer : rgb(21, 40, 72);
+    --fondo : #fafafa;
+    /* Fonts */
+    --font-primary : 'Roboto', sans-serif;
+    /* Font size */
+    --paragraph : 12px;
+    --title : 24px;
+    --price : 18px;
+    --descriptions : 16px;
+}
+
+.wb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 0;
+    justify-content: space-evenly;
+    width: 50vw;
+    border: 1px solid gray;
+    text-align: center;
+    
+}
+
+
+
+.editSubtitles {
+    text-align: center;
+    font-size: 13px ;
+    margin: 10px auto 10px;
+    text-transform: uppercase;
+}
+
+.wb .tamanio{
+    /* height: 35px; */
+    width: 23vw;
+    border: solid 1px var(--navbar);
+    padding: 2px;
+    margin: 0 5px 5px; 
+    font-size: 12px;
+    
+}
+.tamanioFondo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.label{
+    font-size: 14px;
+}
+.archivos{
+    font-size: 12px;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn {
+    background-color: var(--header);
+    border: 1px solid black;
+    margin: 10px  10px 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+    width: 130px;
+    height: 50px;
+}
+
+.btn:hover {
+    background-color: var(--navbar);
+}
+
+
+/*  VERSIÓN TABLET  */
+@media (min-width: 768px) {
+    .editBody label {
+        height: 25px;
+        width: 500px;
+    }
+    .update input {
+        height: 35px;
+        width: 500px;
+    }
+    .update textarea {
+        width: 500px;
+    }
+    .update div input {
+        width: 480px;
+    }
+}
+       /*  VERSIÓN DESKTOP  */
+@media (min-width: 992px) {
+    .editBody label {
+        height: 25px;
+        width: 1000px;
+    }
+    .update input {
+        height: 35px;
+        width: 1000px;
+    }
+    .update textarea {
+        width: 1000px;
+    }
+    .update div input {
+        width: 980px;
+    }
+}

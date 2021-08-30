@@ -6,7 +6,7 @@ module.exports = {
          })
     },
     edit: (req, res)=>{
-        res.render("edit",{
+        res.render("edicion",{
             category
         })
     },

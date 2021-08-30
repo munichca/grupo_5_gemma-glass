@@ -13,6 +13,7 @@
 @import url(burger.css);
 @import url(user.css);
 @import url(listado.css);
+@import url(edition.css);
 
 *{
     margin: 0;
