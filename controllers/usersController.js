@@ -1,14 +1,14 @@
-let {category} = require ('../data/dataBase');
+let {categoria} = require ('../data/dataBase');
 
 module.exports = {
     login: (req, res)=>{
          res.render("login",{
-            category
+            categoria
          })
     },
     register: (req, res)=>{
         res.render("registro",{
-            category
+            categoria
         })
     },
     user: (req, res)=>{

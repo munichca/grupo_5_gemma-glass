@@ -5,25 +5,26 @@
     <%- include("partials/head")  %> 
     <!-- fin head-->
 <body>
-    <h1>nada</h1>
+    <h3 class="titlePrincipal">Listado de Productos</h3>
     <div class="containerList">
-        <ul class="title">
-            <li class="lista">
-                <p class="id">id</p>
-                <p class="name">nombre del producto</p>
-                <p class="price">precio</p>
-                <p class="category">categoria</p>
-                <p class="shape">forma</p>
-                <p class="brand">marca</p>
-                <p class="material">material</p>
-                <p class="height">alto</p>
-                <p class="width">ancho</p>
-                <p class="discount">descuento</p>
-                
-    
-            </li>
+           
         <section class="tama">
-            
+            <ul class="title">
+                <li class="lista">
+                    <p class="id claro">id</p>
+                    <p class="name normal">nombre del producto</p>
+                    <p class="price claro">precio</p>
+                    <p class="category normal">categoria</p>
+                    <p class="shape claro">forma</p>
+                    <p class="brand normal">marca</p>
+                    <p class="material claro">material</p>
+                    <p class="height normal">alto</p>
+                    <p class="width claro">ancho</p>
+                    <p class="discount normal">descuento</p>
+                    <i class="far fa-edit fuera"></i>
+                    <i class="far fa-trash-alt fuera"></i>
+                </li>
+            </ul>
             <ul class="list">
                 <% prod.forEach(item => { %> 
                 <li class="lista">
@@ -31,15 +32,15 @@
                     <p class="name"><%- item.name %></p>
                     <p class="price"><%- item.price.toFixed(2) %></p>
                    
-                    <p class="category">dfgdf</p>
+                    <p class="category"><%- item.category %></p>
                     
-                    <p class="shape">forma</p>
+                    <p class="shape"><%- item.subCatForma %></p>
 
-                    <p class="brand">marca</p>
-                    <p class="material">material</p>
-                    <p class="height">alto</p>
-                    <p class="width">ancho</p>
-                    <p class="discount">descuento</p>
+                    <p class="brand"><%- item.subCatMarca %></p>
+                    <p class="material"><%- item.subCatmaterial %></p>
+                    <p class="height"><%- item.height %></p>
+                    <p class="width"><%- item.width %></p>
+                    <p class="discount"><%- item.discount %></p>
                     <a href=""><i class="far fa-edit"></i></a>
                     <a href=""><i class="far fa-trash-alt"></i></a>    
                 </li>

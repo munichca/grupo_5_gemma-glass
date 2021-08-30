@@ -1,4 +1,4 @@
-let {productos, category, subCatForma, subCatMarca, subCatMaterial} = require ('../data/dataBase');
+let {productos, categoria, subCatForma, subCatMarca, subCatMaterial} = require ('../data/dataBase');
 
 module.exports = {
     home: (req, res)=>{
@@ -12,10 +12,7 @@ module.exports = {
         let product = productos;
          res.render("home",{             
             productos,
-            category,
-            subCatForma,
-            subCatMarca,
-            subCatMaterial,
+            categoria,            
             product
             /* product,
             categ,
@@ -26,13 +23,22 @@ module.exports = {
     },
     turnos: (req, res)=>{
         res.render("turnos",{
-            category 
+            categoria 
         })
     },
     trolley: (req, res)=>{
         res.render("carrito",{
-            category
+            categoria
         })
-    }
+    },
+    product: (req, res)=>{
+        
+        
+        res.render("productos",{            
+            productos,
+            categoria
+            
+        })
+    },
 
 }

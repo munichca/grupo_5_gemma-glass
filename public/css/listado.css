@@ -1,33 +1,42 @@
+:root{
+    --grey : #444444;
+    --red : #b92519;
+    --tipos:#152847;
+    --header:#4F8DF0;
+    
+}
+
 a{
     margin: 0;
     padding: 0;
 }
-h1{
-    color: red;
+.titlePrincipal{
+    color: var(--tipos);
+    text-align: center;
 }
 ul{
     padding-left: 0;
 }
 .tama{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 90vw;
-    
-   
-    
-    
+}
+.claro{
+    background-color: lightcyan;
+}
+.normal{
+    background-color: lightskyblue;
 }
 .lista{
     display: flex;
     flex-direction: row;
     list-style: none;
-    border: 1px solid blue;
+    border: 1px solid var(--tipos);
     align-items: center;
-    
-   
 }
 p{
-    border-right: 1px solid red;
+    border-right: 1px solid var(--tipos);
     /* padding: 3px auto 3px; */
     margin: 0;
     text-align: center;
@@ -38,7 +47,6 @@ p{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
 }
 
 .list{
@@ -46,43 +54,106 @@ p{
     flex-direction: column;
     justify-content: center;
     margin: 0 auto 0;
-    
+    width: 90vw;
 }
 .id{
-    width: 2.5vw;
+    width: 6vw;
 }
 .name{
-    width: 24.7vw;
+    width: 52vw;
 }
 .price{
-    width: 7vw;
+    width: 20vw;
 }
 .category{
     width: 10vw;
+    display: none;
 }
 .shape{
     width: 7vw;
+    display: none;
 }
 .brand{
     width: 8vw;
+    display: none;
 }
 .material{
     width: 8vw;
+    display: none;
 }
 .height{
     width: 5vw;
+    display: none;
 }
 .width{
     width: 5vw;
+    display: none;
 }
 .discount{
     width: 8vw;
+    display: none;
 }
 .far{
     margin: 0 4px 0;
 }
-
-
+.fuera{
+    opacity: 0;
+}
+/* .containerList{
+    display: none;
+} */
+@media (min-width: 768px){
+    .containerList{
+        display: flex;
+    }
+    .tama{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+    .id{
+        width: 2.5vw;
+        
+    }
+    .name{
+        width: 25vw;
+    }
+    .price{
+        width: 7vw;
+        
+    }
+    .category{
+        width: 10vw;
+        display: initial;
+    }
+    .shape{
+        width: 7vw;
+        display: initial;
+    }
+    .brand{
+        width: 8vw;
+        display: initial;
+    }
+    .material{
+        width: 8vw;
+        display: initial;
+    }
+    .height{
+        width: 5vw;
+        display: initial;
+    }
+    .width{
+        width: 5vw;
+        display: initial;
+    }
+    .discount{
+        width: 8vw;
+        display: initial;
+    }
+    .far{
+        margin: 0 4px 0;
+    }   
+}
 
 
 

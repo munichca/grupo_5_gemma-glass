@@ -20,7 +20,7 @@
     align-items: center;
     margin: 0 auto 0;
     justify-content: space-evenly;
-    width: 50vw;
+    width: 100vw;
     border: 1px solid gray;
     text-align: center;
     
@@ -37,7 +37,7 @@
 
 .wb .tamanio{
     /* height: 35px; */
-    width: 23vw;
+    width: 45vw;
     border: solid 1px var(--navbar);
     padding: 2px;
     margin: 0 5px 5px; 
@@ -81,35 +81,12 @@
 
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
-    .editBody label {
-        height: 25px;
-        width: 500px;
+    .wb {
+        width: 50vw;
     }
-    .update input {
-        height: 35px;
-        width: 500px;
+    
+    .wb .tamanio{
+        width: 23vw;
+        
     }
-    .update textarea {
-        width: 500px;
-    }
-    .update div input {
-        width: 480px;
-    }
-}
-       /*  VERSIÓN DESKTOP  */
-@media (min-width: 992px) {
-    .editBody label {
-        height: 25px;
-        width: 1000px;
-    }
-    .update input {
-        height: 35px;
-        width: 1000px;
-    }
-    .update textarea {
-        width: 1000px;
-    }
-    .update div input {
-        width: 980px;
-    }
-}
+} 
