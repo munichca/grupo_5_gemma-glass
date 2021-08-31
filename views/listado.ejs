@@ -30,7 +30,7 @@
                 <li class="lista">
                     <p class="id"><%- item.id %></p>
                     <p class="name"><%- item.name %></p>
-                    <p class="price"><%- item.price.toFixed(2) %></p>
+                    <p class="price"><%- item.price %></p>
                    
                     <p class="category"><%- item.category %></p>
                     
@@ -41,7 +41,10 @@
                     <p class="height"><%- item.height %></p>
                     <p class="width"><%- item.width %></p>
                     <p class="discount"><%- item.discount %></p>
-                    <a href=""><i class="far fa-edit"></i></a>
+
+
+
+                    <a href="/admin/edit/<%- item.id%>"><i class="far fa-edit"></i></a>
                     <a href=""><i class="far fa-trash-alt"></i></a>    
                 </li>
                 <% }) %>
