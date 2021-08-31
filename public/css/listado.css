@@ -35,7 +35,7 @@ ul{
     border: 1px solid var(--tipos);
     align-items: center;
 }
-p{
+.pe{
     border-right: 1px solid var(--tipos);
     /* padding: 3px auto 3px; */
     margin: 0;

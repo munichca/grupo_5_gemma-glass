@@ -11,16 +11,16 @@
         <section class="tama">
             <ul class="title">
                 <li class="lista">
-                    <p class="id claro">id</p>
-                    <p class="name normal">nombre del producto</p>
-                    <p class="price claro">precio</p>
-                    <p class="category normal">categoria</p>
-                    <p class="shape claro">forma</p>
-                    <p class="brand normal">marca</p>
-                    <p class="material claro">material</p>
-                    <p class="height normal">alto</p>
-                    <p class="width claro">ancho</p>
-                    <p class="discount normal">descuento</p>
+                    <p class="id claro pe">id</p>
+                    <p class="name normal pe">nombre del producto</p>
+                    <p class="price claro pe">precio</p>
+                    <p class="category normal pe">categoria</p>
+                    <p class="shape claro pe">forma</p>
+                    <p class="brand normal pe">marca</p>
+                    <p class="material claro pe">material</p>
+                    <p class="height normal pe">alto</p>
+                    <p class="width claro pe">ancho</p>
+                    <p class="discount normal pe">descuento</p>
                     <i class="far fa-edit fuera"></i>
                     <i class="far fa-trash-alt fuera"></i>
                 </li>
@@ -28,19 +28,20 @@
             <ul class="list">
                 <% prod.forEach(item => { %> 
                 <li class="lista">
-                    <p class="id"><%- item.id %></p>
-                    <p class="name"><%- item.name %></p>
-                    <p class="price"><%- item.price.toFixed(2) %></p>
-                   
-                    <p class="category"><%- item.category %></p>
-                    
-                    <p class="shape"><%- item.subCatForma %></p>
-
-                    <p class="brand"><%- item.subCatMarca %></p>
-                    <p class="material"><%- item.subCatmaterial %></p>
-                    <p class="height"><%- item.height %></p>
-                    <p class="width"><%- item.width %></p>
-                    <p class="discount"><%- item.discount %></p>
+                    <p class="id pe"><%- item.id %></p>
+                    <p class="name pe"><%- item.name %></p>
+                    <p class="price pe"><%- item.price.toFixed(2) %></p>
+                    <% let categoryFind = categoria.find(category => category.id === item.category) %>
+                    <p class="category pe"><%- categoryFind.name %></p>
+                    <% let formaFind = formas.find(forma => forma.id === item.subCatForma) %> 
+                    <p class="shape pe"><%- formaFind.shape %></p>
+                    <% let marcaFind =marcas.find(marca => marca.id === item.subCatForma) %>
+                    <p class="brand pe"><%- marcaFind.brand %></p>
+                    <% let materialFind =materials.find(material => material.id === item.subCatmaterial) %>
+                    <p class="material pe"><%- materialFind.mater %></p>
+                    <p class="height pe"><%- item.height %></p>
+                    <p class="width pe"><%- item.width %></p>
+                    <p class="discount pe"><%- item.discount %></p>
                     <a href=""><i class="far fa-edit"></i></a>
                     <a href=""><i class="far fa-trash-alt"></i></a>    
                 </li>

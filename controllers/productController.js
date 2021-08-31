@@ -1,34 +1,37 @@
-let {productos, categoria } = require ('../data/dataBase');
+let {productos, categoria, formas, marcas, materials } = require ('../data/dataBase');
 
 module.exports = {
-    product: (req, res)=>{
-        let categName = req.params.id;
-        let categoria = productos.find(prod => prod.category === categName);
-         res.render("productos",{
-            productos,
-            categoria           
-         })
-    },
+    
     productCat: (req, res)=>{
+        let caca = [];
         let categName = req.params.id;
-        let categoria = productos.find(prod => prod.category === categName);
+        
+        let product = productos.filter(product => product.category === +categName);
+        let arrayProduct = product;
         
         res.render("productos",{            
-            productos,
-            categoria
+            arrayProduct,
+            categoria, formas, marcas, materials
             
             
         })
     },
     detail: (req, res)=>{
         let productId = +req.params.id;
-        let product = productos.find(prod => prod.id === productId);
-        
+        let productFind = productos.find(prod => prod.id === productId);
+        let categ = categoria.find(cate => cate.id === productFind.category);
+        let forma = formas.find(forma =>forma.id === productFind.subCatForma);
+        let marca = marcas.find(marca => marca.id === productFind.subCatMarca);
+        let material = materials.find(material => material.id === productFind.subCatmaterial);
+        let arrayProduct = productos;
         res.render("detalleProducto",{
-            productos,
+            arrayProduct,
             categoria,
-            product
+            productFind,
+            categ,
+            forma,
+            marca,
+            material
         })
     }
-
 }

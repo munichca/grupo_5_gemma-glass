@@ -1,4 +1,5 @@
 [
+    
     {
         "id" : 1,
         "brand" : "Armani"
@@ -34,11 +35,8 @@
     {
         "id" : 9,
         "brand" : "Vulk"
-    },
-    {
-        "id" : 0,
-        "brand" : " "
     }
+    
 ]
 
                     
