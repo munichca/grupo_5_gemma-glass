@@ -28,12 +28,10 @@
             </a>
             <div class="sub-menu">
                 <ul>
-                    <li><a href="">aviador</a></li>
-                    <li><a href="">browline</a></li>
-                    <li><a href="">cateye</a></li>
-                    <li><a href="">cuadrado</a></li>
-                    <li><a href="">rectangular</a></li>
-                    <li><a href="">round</a></li>
+                    <% formas.forEach(element => { %>
+                    <a href="/product/productForma/<%- element.id %>"><li><%- element.shape %></li></a>
+                    
+                    <% }) %>
                 </ul>          
             </div>
         </div>

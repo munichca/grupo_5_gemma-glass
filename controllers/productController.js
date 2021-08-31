@@ -3,7 +3,7 @@ let {productos, categoria, formas, marcas, materials } = require ('../data/dataB
 module.exports = {
     
     productCat: (req, res)=>{
-        let caca = [];
+        
         let categName = req.params.id;
         
         let product = productos.filter(product => product.category === +categName);
@@ -32,6 +32,24 @@ module.exports = {
             forma,
             marca,
             material
+        })
+    },
+    productOferta: (req, res) =>{
+        let arrayProduct = productos.filter(prod => prod.discount > 0);        
+
+        res.render("productos",{
+            arrayProduct,
+            categoria, formas, marcas, materials
+        })
+    },
+    productForma: (req, res) =>{
+        let forma = +req.params.id;
+        let arrayProduct = productos.filter(prod => prod.subCatForma === forma);    
+        /* res.send(formas) */    
+        res.render("productos",{
+            arrayProduct,
+            categoria,
+            formas
         })
     }
 }

@@ -30,15 +30,12 @@ module.exports = {
         res.render("carrito",{
             categoria
         })
-    },
-    product: (req, res)=>{
-        
-        
+    }
+    /* product: (req, res)=>{
         res.render("productos",{            
             productos,
             categoria
-            
         })
-    },
+    }, */
 
 }
