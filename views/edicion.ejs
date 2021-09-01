@@ -9,55 +9,57 @@
 
   <section class="wb">
     <h5 class="editSubtitles">Ingresá la información actualizada:</h5>
-            <form class="tamanioFondo" action="" method="">
-              <label class="tamanio" for="name">Nombre del producto: </label>
-               <input class="tamanio" type="text" name="name" id="name">
+            <form class="tamanioFondo" action="/admin/edit/<%= productoAEditar.id %>?_method=PUT" method="POST">
+              <label class="tamanio" for="nombre">Nombre del producto: </label>
+               <input class="tamanio" type="text" name="nombre" id="name" value="<%= productoAEditar.name %>">
               <label class="tamanio" for="price">Precio: </label>
-               <input class="tamanio" type="text" name="price" id="price">
+               <input class="tamanio" type="text" name="price" id="price" value="<%= productoAEditar.price %>">
               <label class="tamanio" for="discount">Descuento: </label>
-               <input class="tamanio" type="text" name="discount" id="discount">
+               <input class="tamanio" type="text" name="discount" id="discount" value="<%= productoAEditar.discount %>">
               <label class="tamanio" for="category">Categoria: </label>
               <!--  <input class="tamanio" type="text" name="category" id="category"> -->
-              <input class="tamanio" list="editCategories" name="Categorías" /></label>
+              <input class="tamanio" list="editCategories" name="Categorías" value="<%= categ.name %>">
                 <datalist id="editCategories">
                   <% categoria.forEach(item => { %>
                     <option value=  <%= item.name %>>
                   <% }) %> 
               </datalist>
               <label class="tamanio" for="shape">Forma: </label>
-              <input class="tamanio" list="editForma" name="shape" /></label>
+              <input class="tamanio" list="editForma" name="shape" value="<%= forma.shape %>">
               <datalist id="editForma">
                 <% formas.forEach(item => { %>
                   <option value= <%= item.shape %>>
                 <% }) %> 
             </datalist>
               <label class="tamanio" for="brand">Marca: </label>
-              <input class="tamanio" list="editMarca" name="brand" /></label>
+              <input class="tamanio" list="editMarca" name="brand" value="<%= marca.brand %>">
               <datalist id="editMarca">
                 <% marcas.forEach(item => { %>
                   <option value= <%= item.brand %>>
                 <% }) %> 
             </datalist>
               <label class="tamanio" for="material">Material: </label>
-              <input class="tamanio" list="editMaterial" name="material" /></label>
+              <input class="tamanio" list="editMaterial" name="material" value="<%= material.mater %>">
               <datalist id="editMaterial">
                 <% materials.forEach(item => { %>
                   <option value= <%= item.mater %>>
                 <% }) %> 
             </datalist>
               <label class="tamanio" for="height">Altura: </label>
-               <input class="tamanio" type="text" name="height" id="height">
+               <input class="tamanio" type="text" name="height" id="height" value="<%= productoAEditar.height %>">
               <label class="tamanio" for="width">Ancho: </label>
-               <input class="tamanio" type="text" name="width" id="width">
-            </form> 
-            <div>           
-              <label class="label" for="archivos">Subí fotos del producto:</label><br>
-              <input class="archivos" type="file" name="archivos"  multiple>
-            </div>
-            <div class="buttons">
-              <button class="btn">Aceptar</button>
-              <button class="btn" type="cancel">Cancelar</button>
-            </div>
+               <input class="tamanio" type="text" name="width" id="width" value="<%= productoAEditar.width %>">
+               <div class="buttons">
+                <button type="submit" class="btn">Aceptar</button>
+                <button class="btn" type="cancel">Cancelar</button>
+              </div>
+            
+          </form> 
+          <div>           
+            <label class="label" for="archivos">Subí fotos del producto:</label><br>
+            <input class="archivos" type="file" name="archivos"  multiple>
+          </div>
+          
   </section>
 
 

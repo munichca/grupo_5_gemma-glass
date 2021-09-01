@@ -26,7 +26,7 @@
                 </li>
             </ul>
             <ul class="list">
-                <% prod.forEach(item => { %> 
+                <% productos.forEach(item => { %> 
                 <li class="lista">
                     <p class="id pe"><%- item.id %></p>
                     <p class="name pe"><%- item.name %></p>
@@ -42,8 +42,13 @@
                     <p class="height pe"><%- item.height %></p>
                     <p class="width pe"><%- item.width %></p>
                     <p class="discount pe"><%- item.discount %></p>
-                    <a href=""><i class="far fa-edit"></i></a>
-                    <a href=""><i class="far fa-trash-alt"></i></a>    
+                    <form action="">
+                        <a href="/admin/edit/<%= item.id %>"><i class="far fa-edit"></i></a>
+                    </form>
+                    <form action="/admin/eliminarProducto/<%- item.id %>?_method=DELETE" method="POST">
+                        <a href=""><i class="far fa-trash-alt"></i></a> 
+                    </form>
+                       
                 </li>
                 <% }) %>
             </ul>

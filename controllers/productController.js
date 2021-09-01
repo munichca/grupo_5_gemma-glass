@@ -11,8 +11,7 @@ module.exports = {
         
         res.render("productos",{            
             arrayProduct,
-            categoria, formas, marcas, materials
-            
+            categoria, formas, marcas, materials,
             
         })
     },
@@ -25,21 +24,14 @@ module.exports = {
         let material = materials.find(material => material.id === productFind.subCatmaterial);
         let arrayProduct = productos;
         res.render("detalleProducto",{
-            arrayProduct,
-            categoria,
-            productFind,
-            categ,
-            forma,
-            marca,
-            material
+            arrayProduct, categoria, productFind, categ, forma, marca, material
         })
     },
     productOferta: (req, res) =>{
         let arrayProduct = productos.filter(prod => prod.discount > 0);        
 
         res.render("productos",{
-            arrayProduct,
-            categoria, formas, marcas, materials
+            arrayProduct, categoria, formas, marcas, materials
         })
     },
     productForma: (req, res) =>{
@@ -47,9 +39,7 @@ module.exports = {
         let arrayProduct = productos.filter(prod => prod.subCatForma === forma);    
         /* res.send(formas) */    
         res.render("productos",{
-            arrayProduct,
-            categoria,
-            formas
+            arrayProduct, categoria, formas
         })
     }
 }

@@ -87,6 +87,12 @@ color: var(--tipos);
     margin:7px auto 7px;
     color: var(--tipos);
 }
+.fantasma {
+    width: 30px;
+    height: 15pc;
+    background-color: #152847;
+    display: none;
+}
 .external-container{
     display: flex;
     flex-direction: column;
