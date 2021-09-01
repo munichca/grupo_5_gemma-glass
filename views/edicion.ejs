@@ -25,21 +25,21 @@
                   <% }) %> 
               </datalist>
               <label class="tamanio" for="shape">Forma: </label>
-              <input class="tamanio" list="editForma" name="shape" value="<%= forma.shape %>">
+              <input class="tamanio" list="editForma" name="shape" value="">
               <datalist id="editForma">
                 <% formas.forEach(item => { %>
                   <option value= <%= item.shape %>>
                 <% }) %> 
             </datalist>
               <label class="tamanio" for="brand">Marca: </label>
-              <input class="tamanio" list="editMarca" name="brand" value="<%= marca.brand %>">
+              <input class="tamanio" list="editMarca" name="brand" value="">
               <datalist id="editMarca">
                 <% marcas.forEach(item => { %>
                   <option value= <%= item.brand %>>
                 <% }) %> 
             </datalist>
               <label class="tamanio" for="material">Material: </label>
-              <input class="tamanio" list="editMaterial" name="material" value="<%= material.mater %>">
+              <input class="tamanio" list="editMaterial" name="material" value="">
               <datalist id="editMaterial">
                 <% materials.forEach(item => { %>
                   <option value= <%= item.mater %>>
