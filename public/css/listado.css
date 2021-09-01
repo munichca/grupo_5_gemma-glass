@@ -37,7 +37,7 @@ ul{
 }
 .pe{
     border-right: 1px solid var(--tipos);
-    /* padding: 3px auto 3px; */
+    padding: 4.2px 0 4px;
     margin: 0;
     text-align: center;
     font-size: 12px;
@@ -97,7 +97,20 @@ ul{
     margin: 0 4px 0;
 }
 .fuera{
-    opacity: 0;
+    opacity: 0; 
+    
+}
+.boton {
+    background-color: red;
+    padding: 0;
+    border: none;
+    padding: 1px;
+}
+
+.fSize{
+    background-color: lightskyblue;
+    padding: 5px;
+    
 }
 /* .containerList{
     display: none;

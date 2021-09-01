@@ -11,25 +11,21 @@ const productRouter = require ("./routes/product")
 const adminRouter = require ("./routes/admin")
 
 
-/* ################################ */
-
-/* VIEWS */
-app.set("view engine", "ejs"); 
+/* Middleware */
+app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended : false}));
 app.use(express.json());
+
+/* VIEWS */
+app.set("view engine", "ejs"); 
+
 /*  RUTAS,  */
 app.use("/",homeRouter);
 app.use("/users", usersRouter);
 app.use("/product", productRouter);
 app.use("/admin", adminRouter);
-
-
-
 /* ##################################### */
-
-app.use(express.static('public'));
-
 app.listen(port, ()=>{
     console.log(`Puerto corriendo en ${port}\n http://localhost:${port}`)});
 
