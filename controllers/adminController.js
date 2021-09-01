@@ -1,4 +1,5 @@
 let {productos, categoria, formas, marcas, materials} = require ('../data/dataBase');
+const { report } = require('../routes/home');
 module.exports = {
     add: (req, res)=>{
          res.render("add",{
@@ -28,8 +29,9 @@ module.exports = {
         })
     },
     update: (req, res)=>{
-        productos.forEach(producto =>{
-            if (producto.id === +req.params.id){
+        /* productos.forEach(producto =>{
+            if (producto.id === +req.params.id){ */
+            let producto = productos.find(producto => producto.id === +req.params.id)
                 producto.id = producto.id,
                 producto.name = req.body.nombre ? req.body.nombre : producto.name,
                 producto.price = req.body.price ? req.body.price : producto.price,
@@ -42,8 +44,9 @@ module.exports = {
                 producto.width = req.body.width ? req.body.width : producto.width
 
 
-            }
-        })
+            /* } */
+       /*  }) */
+        /* res.send(producto); */
         writeJson(productos)
         res.redirect("/listado")
     },
