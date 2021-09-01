@@ -18,7 +18,7 @@
                <input class="tamanio" type="text" name="discount" id="discount" value="<%= productoAEditar.discount %>">
               <label class="tamanio" for="category">Categoria: </label>
               <!--  <input class="tamanio" type="text" name="category" id="category"> -->
-              <input class="tamanio" list="editCategories" name="category" value="<%= categ.name %>">
+              <input class="tamanio" list="editCategories" name="category" value="">
                 <datalist id="editCategories">
                   <% categoria.forEach(item => { %>
                     <option value=  <%= item.name %>>
