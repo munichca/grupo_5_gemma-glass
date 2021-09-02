@@ -1,1 +1,223 @@
-[{"id":3,"name":"Dali","price":"45645","discount":"564564","category":2,"subCatForma":1,"subCatMarca":5,"subCatmaterial":2,"height":"545645","width":"1245645","image":["5.jpg","6.jpg","logoC.png"]},{"id":4,"name":"DaVinci","price":12500,"discount":5,"category":1,"subCatForma":6,"subCatMarca":2,"subCatmaterial":1,"height":5,"width":12,"image":["7.jpg","8.jpg","logoC.png"]},{"id":5,"name":"VanGogh","price":15200,"discount":15,"category":2,"subCatForma":2,"subCatMarca":7,"subCatmaterial":3,"height":5,"width":12,"image":["9.jpg","10.jpg","logoC.png"]},{"id":6,"name":"Monet","price":9100,"discount":0,"category":1,"subCatForma":5,"subCatMarca":3,"subCatmaterial":2,"height":5,"width":12,"image":["1.jpg","2.jpg","logoC.png"]},{"id":7,"name":"Rembrandt","price":12700,"discount":15,"category":2,"subCatForma":4,"subCatMarca":2,"subCatmaterial":3,"height":5,"width":12,"image":["3.jpg","4.jpg","logoC.png"]},{"id":8,"name":"Goya","price":7500,"discount":0,"category":1,"subCatForma":6,"subCatMarca":9,"subCatmaterial":2,"height":5,"width":12,"image":["5.jpg","6.jpg","logoC.png"]},{"id":9,"name":"Chagall","price":5500,"discount":0,"category":2,"subCatForma":4,"subCatMarca":6,"subCatmaterial":2,"height":5,"width":12,"image":["7.jpg","8.jpg","logoC.png"]},{"id":10,"name":"Botticelli","price":7500,"discount":0,"category":2,"subCatForma":6,"subCatMarca":5,"subCatmaterial":1,"height":5,"width":12,"image":["9.jpg","10.jpg","logoC.png"]},{"id":11,"name":"Jude Watson","price":12500,"discount":5,"category":3,"subCatForma":7,"subCatMarca":5,"subCatmaterial":0,"height":"-","width":"-","image":["1.jpg","2.jpg","logoC.png"]},{"id":12,"name":"Kevin J.Anderson","price":11200,"discount":10,"category":3,"subCatForma":7,"subCatMarca":5,"subCatmaterial":0,"height":"-","width":"-","image":["3.jpg","4.jpg","logoC.png"]},{"id":13,"name":"Roger MacBride","price":14500,"discount":10,"category":3,"subCatForma":7,"subCatMarca":5,"subCatmaterial":0,"height":"-","width":"-","image":["5.jpg","6.jpg","logoC.png"]},{"id":14,"name":"Michael A.Stackpole","price":7500,"discount":0,"category":4,"subCatForma":2,"subCatMarca":5,"subCatmaterial":1,"height":6,"width":13,"image":["7.jpg","8.jpg","logoC.png"]},{"id":15,"name":"Bounty Hunter","price":7500,"discount":0,"category":4,"subCatForma":1,"subCatMarca":2,"subCatmaterial":3,"height":5,"width":12,"image":["9.jpg","10.jpg","logoC.png"]},{"id":16,"name":"R.A.Salvatore","price":7500,"discount":0,"category":4,"subCatForma":2,"subCatMarca":4,"subCatmaterial":1,"height":5,"width":12,"image":["1.jpg","2.jpg","logoC.png"]}]
+[
+    {
+        "id": 4,
+        "name": "DaVinci",
+        "price": "1232",
+        "discount": "5",
+        "category": "Lentes Recetados",
+        "subCatForma": "6",
+        "subCatMarca": "2",
+        "subCatmaterial": "1",
+        "height": 5,
+        "width": "12",
+        "image": [
+            "7.jpg",
+            "8.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "VanGogh",
+        "price": 15200,
+        "discount": 15,
+        "category": 2,
+        "subCatForma": 2,
+        "subCatMarca": 7,
+        "subCatmaterial": 3,
+        "height": 5,
+        "width": 12,
+        "image": [
+            "9.jpg",
+            "10.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Monet",
+        "price": 9100,
+        "discount": 0,
+        "category": 1,
+        "subCatForma": 5,
+        "subCatMarca": 3,
+        "subCatmaterial": 2,
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Rembrandt",
+        "price": 12700,
+        "discount": 15,
+        "category": 2,
+        "subCatForma": 4,
+        "subCatMarca": 2,
+        "subCatmaterial": 3,
+        "height": 5,
+        "width": 12,
+        "image": [
+            "3.jpg",
+            "4.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Goya",
+        "price": 7500,
+        "discount": 0,
+        "category": 1,
+        "subCatForma": 6,
+        "subCatMarca": 9,
+        "subCatmaterial": 2,
+        "height": 5,
+        "width": 12,
+        "image": [
+            "5.jpg",
+            "6.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Chagall",
+        "price": 5500,
+        "discount": 0,
+        "category": 2,
+        "subCatForma": 4,
+        "subCatMarca": 6,
+        "subCatmaterial": 2,
+        "height": 5,
+        "width": 12,
+        "image": [
+            "7.jpg",
+            "8.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Botticelli",
+        "price": 7500,
+        "discount": 0,
+        "category": 2,
+        "subCatForma": 6,
+        "subCatMarca": 5,
+        "subCatmaterial": 1,
+        "height": 5,
+        "width": 12,
+        "image": [
+            "9.jpg",
+            "10.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Jude Watson",
+        "price": 12500,
+        "discount": 5,
+        "category": 3,
+        "subCatForma": 7,
+        "subCatMarca": 5,
+        "subCatmaterial": 0,
+        "height": "-",
+        "width": "-",
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Kevin J.Anderson",
+        "price": 11200,
+        "discount": 10,
+        "category": 3,
+        "subCatForma": 7,
+        "subCatMarca": 5,
+        "subCatmaterial": 0,
+        "height": "-",
+        "width": "-",
+        "image": [
+            "3.jpg",
+            "4.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Roger MacBride",
+        "price": 14500,
+        "discount": 10,
+        "category": 3,
+        "subCatForma": 7,
+        "subCatMarca": 5,
+        "subCatmaterial": 0,
+        "height": "-",
+        "width": "-",
+        "image": [
+            "5.jpg",
+            "6.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Michael A.Stackpole",
+        "price": 7500,
+        "discount": 0,
+        "category": 4,
+        "subCatForma": 2,
+        "subCatMarca": 5,
+        "subCatmaterial": 1,
+        "height": 6,
+        "width": 13,
+        "image": [
+            "7.jpg",
+            "8.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Bounty Hunter",
+        "price": 7500,
+        "discount": 0,
+        "category": 4,
+        "subCatForma": 1,
+        "subCatMarca": 2,
+        "subCatmaterial": 3,
+        "height": 5,
+        "width": 12,
+        "image": [
+            "9.jpg",
+            "10.jpg",
+            "logoC.png"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "R.A.Salvatore",
+        "price": 7500,
+        "discount": 0,
+        "category": 4,
+        "subCatForma": 2,
+        "subCatMarca": 4,
+        "subCatmaterial": 1,
+        "height": 5,
+        "width": 12,
+        "image": [
+            "1.jpg",
+            "2.jpg",
+            "logoC.png"
+        ]
+    }
+]

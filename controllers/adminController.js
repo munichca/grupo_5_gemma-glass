@@ -16,6 +16,7 @@ module.exports = {
         })
     },
 edicion: (req, res) => {
+    /* res.send(req.body) */
         productos.forEach( product => {
             if(product.id === +req.params.id){
                 product.id = product.id,
@@ -26,7 +27,7 @@ edicion: (req, res) => {
                 product.subCatForma =  req.body.subCatForma ? req.body.subCatForma : product.subCatForma,
                 product.subCatMarca =  req.body.subCatMarca ? req.body.subCatMarca : product.subCatMarca,
                 product.subCatmaterial =  req.body.subCatmaterial ? req.body.subCatmaterial : product.subCatmaterial,
-                product.heigth =  req.body.heigth ? req.body.heigth : product.heigth,
+                product.height =  req.body.height ? req.body.height : product.height,
                 product.width =  req.body.width ? req.body.width : product.width
             }
         })
