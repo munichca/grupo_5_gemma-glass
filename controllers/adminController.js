@@ -1,5 +1,5 @@
 
-let {productos, categoria, formas, marcas, materials, writeJson} = require ('../data/dataBase');
+let {productos, categoria, formas, marcas, materials, writeProductJson} = require ('../data/dataBase');
 const { report } = require('../routes/home');
 module.exports = {
     add: (req, res)=>{
@@ -31,14 +31,10 @@ edicion: (req, res) => {
             }
         })
 
-        writeJson(productos)
+        writeProductJson(productos)
 
         res.redirect('/admin/listado')
     },
-
-
-
-   
     lista: (req, res)=>{
         let prod = productos;
         
@@ -48,18 +44,17 @@ edicion: (req, res) => {
             prod
         })
            
-        writeJson(productos)
+        writeProductJson(productos)
         res.redirect("/admin/listado")
     },
-    borrarProducto:(req, res)=> {
-        /* res.send(req.params.id) */
+    borrarProducto:(req, res)=> {        
         productos.forEach(producto => {
             if(producto.id === +req.params.id){
             let productoAEliminar = productos.indexOf(producto);
             productos.splice(productoAEliminar, 1)
         }
         })
-        writeJson(productos)
+        writeProductJson(productos)
 
         res.redirect('/admin/listado/')
     }

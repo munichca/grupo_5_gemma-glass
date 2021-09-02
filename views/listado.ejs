@@ -30,7 +30,7 @@
                 <li class="lista">
                     <p class="id pe"><%- producto.id %></p>
                     <p class="name pe"><%- producto.name %></p>
-                    <p class="price pe"><%- producto.price/* .toFixed(2) */ %></p>
+                    <p class="price pe"><%- producto.price.toFixed(2) %></p>
                     <% let category = categoria.find(categ => categ.id === producto.category) %>
                     <p class="category pe"><%- category.name %></p>
                     <% let forma = formas.find(forma => forma.id === producto.subCatForma) %> 
@@ -60,15 +60,4 @@
     
     
 </body>
-</html>/*         let {
-    name, 
-    price, 
-    discount, 
-    category, 
-    shape,
-    brand,
-    material,
-    heigth,
-    width
-    
-    } = req.body; */
+</html>
