@@ -50,8 +50,6 @@ edicion: (req, res) => {
             /* } */
        /*  }) */
         /* res.send(producto); */
-        writeJson(productos)
-        res.redirect("/admin/listado")
     },
     borrarProducto:(req, res)=> {
         /* res.send(req.params.id) */
