@@ -18,7 +18,6 @@
                <input class="tamanio" type="text" name="discount" id="discount" value="<%= product.discount %>">
               <label class="tamanio" for="category">Categoria: </label>
               <select id="specificSizeSelect" name="category"  class="tamanio">
-                <option selected hidden>Categorias</option>
                <% categoria.forEach(category => { %>
                   <option value="<%- category.name %>" <%= product.category == category.id ? "selected" : null %>><%- category.name %></option>
                <% }) %>
@@ -29,8 +28,8 @@
                <input class="tamanio" type="text" name="subCatMarca" id="brand" value="<%= product.subCatMarca %>">
               <label class="tamanio" for="subCatmaterial">Material: </label>
                <input class="tamanio" type="text" name="subCatmaterial" id="material" value="<%= product.subCatmaterial %>">
-              <label class="tamanio" for="height">Altura: </label>
-               <input class="tamanio" type="text" name="height" id="height" value="<%= product.height %>">
+              <label class="tamanio" for="heigth">Altura: </label>
+               <input class="tamanio" type="text" name="heigth" id="heigth" value="<%= product.heigth %>">
               <label class="tamanio" for="width">Ancho: </label>
                <input class="tamanio" type="text" name="width" id="width" value="<%= product.width %>">
        
