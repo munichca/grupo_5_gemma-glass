@@ -9,7 +9,7 @@
 
   <section class="wb">
     <h5 class="editSubtitles">Ingresá la información actualizada:</h5>
-    <form class="tamanioFondo" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form class="tamanioFondo" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" >
               <label class="tamanio" for="name">Nombre del producto: </label>
                <input class="tamanio" type="text" name="name" id="name" value="<%= product.name %>">
               <label class="tamanio" for="price">Precio: </label>
@@ -20,15 +20,15 @@
               <select id="specificSizeSelect" name="category"  class="tamanio">
                 <option selected hidden>Categorias</option>
                <% categoria.forEach(category => { %>
-                  <option value="<%- category.id %>" <%= product.category == category.id ? "selected" : null %>><%- category.name %></option>
+                  <option value="<%- category.name %>" <%= product.category == category.id ? "selected" : null %>><%- category.name %></option>
                <% }) %>
               </select>
-              <label class="tamanio" for="shape">Forma: </label>
-               <input class="tamanio" type="text" name="shape" id="shape" value="<%= product.shape %>">
-              <label class="tamanio" for="brand">Marca: </label>
-               <input class="tamanio" type="text" name="brand" id="brand" value="<%= product.brand %>">
-              <label class="tamanio" for="material">Material: </label>
-               <input class="tamanio" type="text" name="material" id="material" value="<%= product.material %>">
+              <label class="tamanio" for="subCatForma">Forma: </label>
+               <input class="tamanio" type="text" name="subCatForma" id="shape" value="<%= product.subCatForma %>">
+              <label class="tamanio" for="subCatMarca">Marca: </label>
+               <input class="tamanio" type="text" name="subCatMarca" id="brand" value="<%= product.subCatMarca %>">
+              <label class="tamanio" for="subCatmaterial">Material: </label>
+               <input class="tamanio" type="text" name="subCatmaterial" id="material" value="<%= product.subCatmaterial %>">
               <label class="tamanio" for="height">Altura: </label>
                <input class="tamanio" type="text" name="height" id="height" value="<%= product.height %>">
               <label class="tamanio" for="width">Ancho: </label>
@@ -39,8 +39,8 @@
               <input class="archivos" type="file" name="archivos"  multiple>
             </div>
             <div class="buttons">
-              <button class="btn">Aceptar</button>
-              <button class="btn" type="cancel">Cancelar</button>
+              <button class="btn" type="submit">Aceptar</button>
+              <button class="btn" type="reset">Cancelar</button>
 
             </div>
           </form> 

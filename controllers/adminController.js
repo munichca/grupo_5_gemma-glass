@@ -14,7 +14,7 @@ module.exports = {
         })
     },
 edicion: (req, res) => {
-        let {
+/*         let {
             name, 
             price, 
             discount, 
@@ -25,20 +25,20 @@ edicion: (req, res) => {
             heigth,
             width
             
-            } = req.body;
+            } = req.body; */
         
         productos.forEach( product => {
             if(product.id === +req.params.id){
                 product.id = product.id,
-                product.name = name,
-                product.price = price,
-                product.discount = discount,
-                product.category = category,
-                product.shape = shape,
-                product.brand = brand,
-                product.material = material,
-                product.heigth = heigth,
-                product.width = width
+                product.name = req.body.name ? req.body.name : product.name,
+                product.price =  req.body.price ? req.body.price : product.price,
+                product.discount =  req.body.discount ? req.body.discount : product.discount,
+                product.category = req.body.category ? req.body.category : product.category,
+                product.subCatForma =  req.body.subCatForma ? req.body.subCatForma : product.subCatForma,
+                product.subCatMarca =  req.body.subCatMarca ? req.body.subCatMarca : product.subCatMarca,
+                product.subCatmaterial =  req.body.subCatmaterial ? req.body.subCatmaterial : product.subCatmaterial,
+                product.heigth =  req.body.heigth ? req.body.heigth : product.heigth,
+                product.width =  req.body.width ? req.body.width : product.width
             }
         })
 
