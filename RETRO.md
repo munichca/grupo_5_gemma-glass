@@ -22,3 +22,20 @@ Empezar a hacer:
 Dejar de hacer:
 -Dejar plantado a Mati.
 
+
+Sprint 3:
+Seguir haciendo:  
+-Reunicón fija los jueves para dividir tareas y ver como vamos en el proyecto.
+-Asignar tareas lo más rápido posible.
+
+Hacer más:
+-Cumplir con las reuniones y sus horarios.
+
+Hacer menos:
+-Olvidar de actualizar trello.
+
+Empezar a hacer:
+-Pedir ayuda lo antes posible ante cualquier inconveniente.
+
+Dejar de hacer:
+-No contestar los mensajes a tiempo.
