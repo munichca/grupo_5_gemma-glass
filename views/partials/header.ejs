@@ -50,12 +50,12 @@
         </div>
         <nav class="container-nav">
             <ul>
-                <a href="/product/product"> <li>Lentes recetados</li></a>
-                <a href=""> <li>Lentes de sol</li></a>
-                <a href=""> <li>Lentes de contacto</li></a>
-                <a href=""> <li>Lentes gaming</li></a>
-                <a href=""> <li>Ofertas</li></a>
-                <a href="/turnos"> <li>Pedí una consulta</li></a>
+                <% categoria.forEach(item => {%>
+                <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
+                <% })  %> 
+                <a  href="/product/productOfertas"> <li>Ofertas</li></a>
+                <!-- <a href="/admin/listado"> <li>Ofertas</li></a> -->
+                <a  href="/turnos"> <li>Pedí una consulta</li></a>
             </ul>
         </nav>
         <script>
@@ -67,6 +67,12 @@
                   x.style.display = "block";
     }
 }
+    function ver(){
+        globalThis (prueba) = [123, 232131, 54]
+        send($.ajax(prueba))
+        
+    }
+    
         </script>
     </header>
 

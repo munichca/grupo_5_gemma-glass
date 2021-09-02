@@ -1,13 +1,16 @@
 const fs = require ("fs");
-const path = require ("path");
+
 
 
 module.exports = {
-    pruducts: JSON.parse(fs.readFileSync(path.join(__dirname, "/products.json"), "utf-8")),
-    category: JSON.parse(fs.readFileSync(path.join(__dirname, "/category.json"), "utf-8")),
-    subCatForma: JSON.parse(fs.readFileSync(path.join(__dirname, "/subCatForma.json"), "utf-8")),
-    subCatMarca: JSON.parse(fs.readFileSync(path.join(__dirname, "/subCatMarca.json"), "utf-8")),
-    subCatMaterial: JSON.parse(fs.readFileSync(path.join(__dirname, "/subCatMaterial.json"), "utf-8")),
+    productos: JSON.parse(fs.readFileSync("./data/products.json", "utf-8")),
+    categoria: JSON.parse(fs.readFileSync("./data/category.json", "utf-8")),
+    formas: JSON.parse(fs.readFileSync("./data/subCatForma.json", "utf-8")),
+    marcas: JSON.parse(fs.readFileSync("./data/subCatMarca.json", "utf-8")),
+    materials: JSON.parse(fs.readFileSync("./data/subCatMaterial.json", "utf-8")),
+    writeJson : (dataBase) => {
+        fs.writeFileSync("./data/products.json", JSON.stringify(dataBase), "utf-8")
+    }
 
 
 }

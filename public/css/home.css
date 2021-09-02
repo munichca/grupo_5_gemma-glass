@@ -80,7 +80,7 @@ h4{
 
 /* Destacados */
 
-.cont {
+/* .cont {
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -130,7 +130,8 @@ h4{
     width: 100%;
     border: 1px solid var(--header);
     filter: opacity(85%);
-}
+} */
+
 
 /* Sucursales */
 
@@ -139,7 +140,11 @@ h4{
     justify-content: center;
     
 }*/
-
+.cont{
+    display: flex;
+    justify-content: center;
+    padding: 0 25px 0;
+}
 .sucursal {
     background-color: var(--navbar);
     width: 200px;
@@ -195,7 +200,13 @@ a {
 
 /* MOBILE */
 
+
+
 @media (min-width: 320px) {
+    .cont{
+        padding: 0;
+    }
+    
     .btn {
         width: 130px;
         height: 50px;
@@ -282,5 +293,4 @@ a {
         display: flex;
     }
 }
-
 
