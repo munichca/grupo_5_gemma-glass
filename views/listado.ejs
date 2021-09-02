@@ -26,30 +26,26 @@
                 </li>
             </ul>
             <ul class="list">
-                <% productos.forEach(producto => { %> 
+                <% prod.forEach(item => { %> 
                 <li class="lista">
-                    <p class="id pe"><%- producto.id %></p>
-                    <p class="name pe"><%- producto.name %></p>
-                    <p class="price pe"><%- producto.price.toFixed(2) %></p>
-                    <% let category = categoria.find(categ => categ.id === producto.category) %>
-                    <p class="category pe"><%- category.name %></p>
-                    <% let forma = formas.find(forma => forma.id === producto.subCatForma) %> 
-                    <p class="shape pe"><%= forma.shape %></p>
-                    <% let marca =marcas.find(marca => marca.id === producto.subCatMarca) %>
-                    <p class="brand pe"><%= marca.brand %></p>
-                    <% let material =materials.find(material => material.id === producto.subCatmaterial) %>
-                    <p class="material pe"><%= material.mater %></p>
-                    <p class="height pe"><%- producto.height %></p>
-                    <p class="width pe"><%- producto.width %></p>
-                    <p class="discount pe"><%- producto.discount %></p>
-                    <form action="">
-                        <a href="/admin/edit/<%= producto.id %>"><i class="far fa-edit fSize"></i></a>
-                    </form>
-                    <form action="/admin/eliminarProducto/<%= producto.id %>?_method=DELETE" method="POST">
-                        <button  class ="boton" type="submit"><i class="far fa-trash-alt"></i></button>
-                        <!-- <a  href=""></i></a>  -->
-                    </form>
-                       
+                    <p class="id"><%- item.id %></p>
+                    <p class="name"><%- item.name %></p>
+                    <p class="price"><%- item.price %></p>
+                   
+                    <p class="category"><%- item.category %></p>
+                    
+                    <p class="shape"><%- item.subCatForma %></p>
+
+                    <p class="brand"><%- item.subCatMarca %></p>
+                    <p class="material"><%- item.subCatmaterial %></p>
+                    <p class="height"><%- item.height %></p>
+                    <p class="width"><%- item.width %></p>
+                    <p class="discount"><%- item.discount %></p>
+
+
+
+                    <a href="/admin/edit/<%- item.id%>"><i class="far fa-edit"></i></a>
+                    <a href=""><i class="far fa-trash-alt"></i></a>    
                 </li>
                 <% }) %>
             </ul>

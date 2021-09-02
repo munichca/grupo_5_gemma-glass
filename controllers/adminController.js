@@ -43,9 +43,6 @@ edicion: (req, res) => {
             categoria,
             prod
         })
-           
-        writeProductJson(productos)
-        res.redirect("/admin/listado")
     },
     borrarProducto:(req, res)=> {        
         productos.forEach(producto => {
