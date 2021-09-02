@@ -1,4 +1,6 @@
-let {productos, categoria,writeProductsJSON} = require ('../data/dataBase');
+
+let {productos, categoria, formas, marcas, materials, writeJson} = require ('../data/dataBase');
+const { report } = require('../routes/home');
 module.exports = {
     add: (req, res)=>{
          res.render("add",{
@@ -14,19 +16,6 @@ module.exports = {
         })
     },
 edicion: (req, res) => {
-/*         let {
-            name, 
-            price, 
-            discount, 
-            category, 
-            shape,
-            brand,
-            material,
-            heigth,
-            width
-            
-            } = req.body; */
-        
         productos.forEach( product => {
             if(product.id === +req.params.id){
                 product.id = product.id,
@@ -42,7 +31,7 @@ edicion: (req, res) => {
             }
         })
 
-        writeProductsJSON(productos)
+        writeJson(productos)
 
         res.redirect('/admin/listado')
     },
@@ -57,8 +46,23 @@ edicion: (req, res) => {
         res.render("listado",{
             categoria,
             prod
-
         })
-    }
+            /* } */
+       /*  }) */
+        /* res.send(producto); */
+        writeJson(productos)
+        res.redirect("/admin/listado")
+    },
+    borrarProducto:(req, res)=> {
+        /* res.send(req.params.id) */
+        productos.forEach(producto => {
+            if(producto.id === +req.params.id){
+            let productoAEliminar = productos.indexOf(producto);
+            productos.splice(productoAEliminar, 1)
+        }
+        })
+        writeJson(productos)
 
+        res.redirect('/admin/listado/')
+    }
 }

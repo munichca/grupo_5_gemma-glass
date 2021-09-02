@@ -11,41 +11,45 @@
         <section class="tama">
             <ul class="title">
                 <li class="lista">
-                    <p class="id claro">id</p>
-                    <p class="name normal">nombre del producto</p>
-                    <p class="price claro">precio</p>
-                    <p class="category normal">categoria</p>
-                    <p class="shape claro">forma</p>
-                    <p class="brand normal">marca</p>
-                    <p class="material claro">material</p>
-                    <p class="height normal">alto</p>
-                    <p class="width claro">ancho</p>
-                    <p class="discount normal">descuento</p>
-                    <i class="far fa-edit fuera"></i>
-                    <i class="far fa-trash-alt fuera"></i>
+                    <p class="id claro pe">id</p>
+                    <p class="name normal pe">nombre del producto</p>
+                    <p class="price claro pe">precio</p>
+                    <p class="category normal pe">categoria</p>
+                    <p class="shape claro pe">forma</p>
+                    <p class="brand normal pe">marca</p>
+                    <p class="material claro pe">material</p>
+                    <p class="height normal pe">alto</p>
+                    <p class="width claro pe">ancho</p>
+                    <p class="discount normal pe">descuento</p>
+                    <i class="far fa-edit fuera fSize"></i>
+                    <button class="fuera boton caca" type="submit"><i class="far fa-trash-alt"></i></button>
                 </li>
             </ul>
             <ul class="list">
-                <% prod.forEach(item => { %> 
+                <% productos.forEach(producto => { %> 
                 <li class="lista">
-                    <p class="id"><%- item.id %></p>
-                    <p class="name"><%- item.name %></p>
-                    <p class="price"><%- item.price %></p>
-                   
-                    <p class="category"><%- item.category %></p>
-                    
-                    <p class="shape"><%- item.subCatForma %></p>
-
-                    <p class="brand"><%- item.subCatMarca %></p>
-                    <p class="material"><%- item.subCatmaterial %></p>
-                    <p class="height"><%- item.height %></p>
-                    <p class="width"><%- item.width %></p>
-                    <p class="discount"><%- item.discount %></p>
-
-
-
-                    <a href="/admin/edit/<%- item.id%>"><i class="far fa-edit"></i></a>
-                    <a href=""><i class="far fa-trash-alt"></i></a>    
+                    <p class="id pe"><%- producto.id %></p>
+                    <p class="name pe"><%- producto.name %></p>
+                    <p class="price pe"><%- producto.price/* .toFixed(2) */ %></p>
+                    <% let category = categoria.find(categ => categ.id === producto.category) %>
+                    <p class="category pe"><%- category.name %></p>
+                    <% let forma = formas.find(forma => forma.id === producto.subCatForma) %> 
+                    <p class="shape pe"><%= forma.shape %></p>
+                    <% let marca =marcas.find(marca => marca.id === producto.subCatMarca) %>
+                    <p class="brand pe"><%= marca.brand %></p>
+                    <% let material =materials.find(material => material.id === producto.subCatmaterial) %>
+                    <p class="material pe"><%= material.mater %></p>
+                    <p class="height pe"><%- producto.height %></p>
+                    <p class="width pe"><%- producto.width %></p>
+                    <p class="discount pe"><%- producto.discount %></p>
+                    <form action="">
+                        <a href="/admin/edit/<%= producto.id %>"><i class="far fa-edit fSize"></i></a>
+                    </form>
+                    <form action="/admin/eliminarProducto/<%= producto.id %>?_method=DELETE" method="POST">
+                        <button  class ="boton" type="submit"><i class="far fa-trash-alt"></i></button>
+                        <!-- <a  href=""></i></a>  -->
+                    </form>
+                       
                 </li>
                 <% }) %>
             </ul>
@@ -56,4 +60,15 @@
     
     
 </body>
-</html>
+</html>/*         let {
+    name, 
+    price, 
+    discount, 
+    category, 
+    shape,
+    brand,
+    material,
+    heigth,
+    width
+    
+    } = req.body; */

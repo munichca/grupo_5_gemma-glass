@@ -64,12 +64,12 @@ color: var(--tipos);
     width: 100%;
     text-align: left;  
 }
-.menu-lateral .sub-menu li a{
+.menu-lateral .sub-menu a li{
     font-size: 15px;
     text-transform: capitalize;
     color: var(--tipos);
 }
-.menu-lateral .sub-menu li a:hover{
+.menu-lateral .sub-menu a li:hover{
     color: var(--header);
     text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
 }
@@ -87,11 +87,17 @@ color: var(--tipos);
     margin:7px auto 7px;
     color: var(--tipos);
 }
+.fantasma {
+    width: 30px;
+    height: 15pc;
+    background-color: #152847;
+    display: none;
+}
 .external-container{
     display: flex;
     flex-direction: column;
     width: 100vw;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     /* background-image: url(/image/fondo.png); */
 }
@@ -101,6 +107,7 @@ color: var(--tipos);
     width: 75%;
     justify-content: center;
     align-items: center;
+    
     margin-bottom: 15px;
 }
 .external-container .images{
@@ -143,11 +150,14 @@ color: var(--tipos);
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: auto;
 }
 .external-container .price i{
     margin-right: 5px;
     font-size: 5vw;
 }
+
 @keyframes twist {
     from { transform: rotateY(0deg) }
     to { transform: rotateY(360deg) }
@@ -256,7 +266,7 @@ color: var(--tipos);
     .external-container{
         width: 70% ;
         justify-content: space-between;
-        margin: auto;
+        margin: 0 auto 0;
     }
     .external-container .product-card{
         width: 20vw;

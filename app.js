@@ -28,13 +28,7 @@ app.use("/",homeRouter);
 app.use("/users", usersRouter);
 app.use("/product", productRouter);
 app.use("/admin", adminRouter);
-
-
-
 /* ##################################### */
-
-app.use(express.static('public'));
-
 app.listen(port, ()=>{
     console.log(`Puerto corriendo en ${port}\n http://localhost:${port}`)});
 

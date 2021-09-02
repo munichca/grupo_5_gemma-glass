@@ -9,11 +9,11 @@ module.exports = {
         let marcas = subCatMarca.find(marca => marca.id === +product.subCatMarca);
         let materials = subCatMaterial.find(item2 => item2.id === +product.subCatmaterial); */
         
-        let product = productos;
+        let arrayProduct = productos;
          res.render("home",{             
-            productos,
-            categoria,            
-            product
+            arrayProduct,
+            categoria            
+            
             /* product,
             categ,
             formas,
@@ -30,15 +30,12 @@ module.exports = {
         res.render("carrito",{
             categoria
         })
-    },
-    product: (req, res)=>{
-        
-        
+    }
+    /* product: (req, res)=>{
         res.render("productos",{            
             productos,
             categoria
-            
         })
-    },
+    }, */
 
 }

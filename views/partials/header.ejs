@@ -51,10 +51,11 @@
         <nav class="container-nav">
             <ul>
                 <% categoria.forEach(item => {%>
-                <a href="/product/product/"> <li><%- item.name  %></li></a>                
+                <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
                 <% })  %> 
-                <a href="/admin/listado"> <li>Ofertas</li></a>
-                <a href="/turnos"> <li>Pedí una consulta</li></a>
+                <a  href="/product/productOfertas"> <li>Ofertas</li></a>
+                <!-- <a href="/admin/listado"> <li>Ofertas</li></a> -->
+                <a  href="/turnos"> <li>Pedí una consulta</li></a>
             </ul>
         </nav>
         <script>
@@ -66,7 +67,11 @@
                   x.style.display = "block";
     }
 }
-
+    function ver(){
+        globalThis (prueba) = [123, 232131, 54]
+        send($.ajax(prueba))
+        
+    }
     
         </script>
     </header>

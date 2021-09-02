@@ -17,23 +17,23 @@
         <section class="arriba">
             <div class="containerExt">
                 <div class="title">
-                    <span ><%- product.name %>  </span>
+                    <span ><%- productFind.name %>  </span>
                 </div>
                 <div class="images">
                     <div class="image" >
-                      <img src="/image/<%- product.image[0] %>" alt=""  onclick="cambiar(this);">
+                      <img src="/image/<%- productFind.image[0] %>" alt=""  onclick="cambiar(this);">
                     </div>
                     <div class="image">
-                      <img src="/image/<%- product.image[1] %>" alt=""  onclick="cambiar(this);">
+                      <img src="/image/<%- productFind.image[1] %>" alt=""  onclick="cambiar(this);">
                     </div>
                     <div class="image">
-                      <img src="/image/<%- product.image[2] %>" alt=""  onclick="cambiar(this);">
+                      <img src="/image/<%- productFind.image[2] %>" alt=""  onclick="cambiar(this);">
                     </div>
                     
                 </div>
                   
                 <div class="containerPr">
-                    <img id="principal" src="/image/<%- product.image[0] %>" >
+                    <img id="principal" src="/image/<%- productFind.image[0] %>" >
                     
                 </div>
                
@@ -41,29 +41,29 @@
             <section class="block2-desktop">
                 <div class="price">
                     <i class="fas fa-dollar-sign"></i>
-                    <h4><%- product.price %> .-</h4>
+                    <h4><%- productFind.price %> .-</h4>
                 </div>
                 <div class="button-buy">
                     <button type="submit" class="btn_btn-submit">comprar</button>
                 </div>
                 <div class ="detail">
                     <h4>Detalles:</h4>
-                        <p><%-product.category %> </p>
+                        <p><%-categ.name %> </p>
                 </div>    
                 <div class="info">
                     <div>
                         <h4>Información adicional</h4>
-                        <p>Forma: <%- product.subCatForma %> </p>
-                        <p>Marca: <%- product.subCatMarca %> </p>
-                        <p>Material: <%- product.subCatmaterial %> </p>
+                        <p>Forma: <%- forma.shape %> </p>
+                        <p>Marca: <%- marca.brand %> </p>
+                        <p>Material: <%- material.mater %> </p>
                     </div>            
                 </div>           
                 <div class="measures">
                     <div>
                          <h4>Medidas:</h4>
                         <div>
-                            <p>alto del marco: <%- product.height %> mm.</p>
-                            <p>ancho del marco: <%- product.width %> mm.</p>
+                            <p>alto del marco: <%- productFind.height %> mm.</p>
+                            <p>ancho del marco: <%- productFind.width %> mm.</p>
                         </div>                                        
                     </div>                
                  </div>
@@ -88,7 +88,7 @@
         </div>
         <div class="pay"> 
             <div class="hs3">
-                <h3>6 cuotas sin interes de $<%= (product.price/6).toFixed(2) %> </h2>
+                <h3>6 cuotas sin interes de $<%= (productFind.price/6).toFixed(2) %> </h2>
                 <h3>Metodos de pago</h2>
             </div>
             <div class ="credit-card">      

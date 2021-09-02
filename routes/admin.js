@@ -1,15 +1,10 @@
 let express = require ("express");
 let router = express.Router();
-let controller = require ("../controllers/adminController.js");
-/* GET Ruta para detalleProducto */
-router.get("/add", controller.add);
+let {add, edit, lista, edicion, borrarProducto} = require ("../controllers/adminController.js");
 
-router.get("/listado", controller.lista);
-/*RUTA DE EDICION*/
-router.get("/edit/:id", controller.edit);
-router.put("/edit/:id", controller.edicion);
-
-
-
-
+router.get("/add", add);
+router.get("/edit/:id", edit);
+router.get("/listado", lista);
+router.put("/edit/:id", edicion);
+router.delete("/eliminarProducto/:id", borrarProducto)
 module.exports = router;
