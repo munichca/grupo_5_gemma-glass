@@ -47,9 +47,7 @@ edicion: (req, res) => {
             categoria,
             prod
         })
-            /* } */
-       /*  }) */
-        /* res.send(producto); */
+           
         writeJson(productos)
         res.redirect("/admin/listado")
     },
