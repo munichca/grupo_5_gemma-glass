@@ -31,13 +31,14 @@
                     <p class="id pe"><%- item.id %></p>
                     <p class="name pe"><%- item.name %></p>
                     <p class="price pe"><%- item.price %></p>
-                   
-                    <p class="category pe"><%- item.category %></p>
-                    
-                    <p class="shape pe"><%- item.subCatForma %></p>
-
-                    <p class="brand pe"><%- item.subCatMarca %></p>
-                    <p class="material pe"><%- item.subCatmaterial %></p>
+                    <% let category = categoria.find(cate => cate.id === item.category) %> 
+                    <p class="category pe"><%- category.name %></p>
+                    <% let forma = formas.find(forma => forma.id === item.subCatForma) %> 
+                    <p class="shape pe"><%- forma.shape %></p>
+                    <% let marca = marcas.find(marca => marca.id === item.subCatMarca) %> 
+                    <p class="brand pe"><%- marca.brand %></p>
+                    <% let material = materials.find(material => material.id === item.subCatmaterial) %>
+                    <p class="material pe"><%- material.mater %></p>
                     <p class="height pe"><%- item.height %></p>
                     <p class="width pe"><%- item.width %></p>
                     <p class="discount pe"><%- item.discount %></p>

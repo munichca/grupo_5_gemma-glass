@@ -36,11 +36,12 @@
   
   .contenedor-burger h2 {
     padding: 10px;
-    background-color: #152847;
+    background-color: #4f8df0;
     color: white;
     font-size: 18px;
     text-align: right;
     margin-bottom: 0;
+    /* #152847 */
   }
   
   .contenedor-burger label {

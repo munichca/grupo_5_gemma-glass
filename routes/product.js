@@ -5,7 +5,8 @@ let controller = require ("../controllers/productController");
 
 router.get("/productCat/:id", controller.productCat);
 router.get("/productOfertas", controller.productOferta);
-router.get("/productForma/:id", controller.productForma);
+router.get("/proForma/:id", controller.proFormas);
+router.get("/proMarca/:id", controller.proMarcas);
 router.get("/detail/:id", controller.detail);
 
 

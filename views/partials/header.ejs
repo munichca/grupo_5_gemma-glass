@@ -9,11 +9,10 @@
                     <h2>Gemma Glass</h2>
                     <div class="contenido-burger">
                         <ul>
-                            <a href="/product/product"> <li>Lentes recetados</li></a>
-                            <a href="/product/product"> <li>Lentes de sol</li></a>
-                            <a href="/product/product"> <li>Lentes de contacto</li></a>
-                            <a href="/product/product"> <li>Lentes gaming</li></a>
-                            <a href="/product/product"> <li>Ofertas</li></a>
+                            <% categoria.forEach(item => {%>
+                                <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
+                                <% })  %>
+                                <a  href="/product/productOfertas"> <li>Ofertas</li></a>
                             <a href="/turnos"> <li>Pedí una consulta</li></a>
                         </ul>
                     </div>
@@ -67,11 +66,7 @@
                   x.style.display = "block";
     }
 }
-    function ver(){
-        globalThis (prueba) = [123, 232131, 54]
-        send($.ajax(prueba))
-        
-    }
+    
     
         </script>
     </header>

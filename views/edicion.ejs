@@ -22,12 +22,24 @@
                   <option value="<%- category.name %>" <%= product.category == category.id ? "selected" : null %>><%- category.name %></option>
                <% }) %>
               </select>
-              <label class="tamanio" for="subCatForma">Forma: </label>
-               <input class="tamanio" type="text" name="subCatForma" id="shape" value="<%= product.subCatForma %>">
-              <label class="tamanio" for="subCatMarca">Marca: </label>
-               <input class="tamanio" type="text" name="subCatMarca" id="brand" value="<%= product.subCatMarca %>">
-              <label class="tamanio" for="subCatmaterial">Material: </label>
-               <input class="tamanio" type="text" name="subCatmaterial" id="material" value="<%= product.subCatmaterial %>">
+              <label class="tamanio" for="forma">Forma: </label>
+              <select id="specificSizeSelect" name="forma"  class="tamanio">
+              <% formas.forEach(forma => { %>
+                <option value="<%- forma.shape %>" <%= product.subCatForma == forma.id ? "selected" : null %>><%- forma.shape %></option>
+             <% }) %>
+            </select>
+              <label class="tamanio" for="marca">Marca: </label>
+              <select id="specificSizeSelect" name="marca"  class="tamanio">
+                <% marcas.forEach(marca => { %>
+                   <option value="<%- marca.brand %>" <%= product.subCatMarca == marca.id ? "selected" : null %>><%- marca.brand %></option>
+                <% }) %>
+               </select>
+              <label class="tamanio" for="material">Material: </label>
+              <select id="specificSizeSelect" name="material"  class="tamanio">
+                <% materials.forEach(material => { %>
+                  <option value="<%- material.mater %>" <%= product.subCatmaterial == material.id ? "selected" : null %>><%- material.mater %></option>
+               <% }) %>
+              </select>
               <label class="tamanio" for="heigth">Altura: </label>
                <input class="tamanio" type="text" name="height" id="heigth" value="<%= product.height %>">
               <label class="tamanio" for="width">Ancho: </label>

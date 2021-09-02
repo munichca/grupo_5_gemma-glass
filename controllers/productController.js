@@ -34,12 +34,20 @@ module.exports = {
             arrayProduct, categoria, formas, marcas, materials
         })
     },
-    productForma: (req, res) =>{
+    proFormas: (req, res) =>{
         let forma = +req.params.id;
         let arrayProduct = productos.filter(prod => prod.subCatForma === forma);    
         /* res.send(formas) */    
         res.render("productos",{
-            arrayProduct, categoria, formas
+            arrayProduct, categoria, formas, marcas
+        })
+    },
+    proMarcas: (req, res) =>{
+        let marca = +req.params.id;
+        let arrayProduct = productos.filter(prod => prod.subCatMarca === marca);    
+        /* res.send(marcas) */    
+        res.render("productos",{
+            arrayProduct, categoria, formas, marcas
         })
     }
 }

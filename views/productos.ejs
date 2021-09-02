@@ -29,7 +29,7 @@
             <div class="sub-menu">
                 <ul>
                     <% formas.forEach(element => { %>
-                    <a href="/product/productForma/<%- element.id %>"><li><%- element.shape %></li></a>
+                    <a href="/product/proForma/<%- element.id %>"><li><%- element.shape %></li></a>
                     
                     <% }) %>
                 </ul>          
@@ -41,15 +41,10 @@
             </a>
             <div class="sub-menu">
                 <ul>
-                    <li><a href="">3Momi</a></li>
-                    <li><a href="">armani</a></li>
-                    <li><a href="">nyol</a></li>
-                    <li><a href="">ralph</a></li>
-                    <li><a href="">ray-ban</a></li>
-                    <li><a href="">reef</a></li>
-                    <li><a href="">rusty</a></li>
-                    <li><a href="">vogue</a></li>
-                    <li><a href="">vulk</a></li>
+                    <% marcas.forEach(element => { %>
+                        <a href="/product/proMarca/<%- element.id %>"><li><%- element.brand %></li></a>
+                        
+                        <% }) %>
                 </ul>
             </div>
         </div>

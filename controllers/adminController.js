@@ -12,23 +12,28 @@ module.exports = {
             return product.id === +req.params.id})
         res.render('edicion', {
             categoria, 
-            product
+            product, formas, marcas, materials
         })
     },
 edicion: (req, res) => {
     /* res.send(req.body) */
+    let category = categoria.find(cate => cate.name === req.body.category)
+    let forma = formas.find(forma => forma.shape === req.body.forma)
+    let marca = marcas.find(marca => marca.brand === req.body.marca)
+    let material = materials.find(material => material.mater === req.body.material)
+
         productos.forEach( product => {
             if(product.id === +req.params.id){
                 product.id = product.id,
                 product.name = req.body.name ? req.body.name : product.name,
-                product.price =  req.body.price ? req.body.price : product.price,
-                product.discount =  req.body.discount ? req.body.discount : product.discount,
-                product.category = req.body.category ? req.body.category : product.category,
-                product.subCatForma =  req.body.subCatForma ? req.body.subCatForma : product.subCatForma,
-                product.subCatMarca =  req.body.subCatMarca ? req.body.subCatMarca : product.subCatMarca,
-                product.subCatmaterial =  req.body.subCatmaterial ? req.body.subCatmaterial : product.subCatmaterial,
-                product.height =  req.body.height ? req.body.height : product.height,
-                product.width =  req.body.width ? req.body.width : product.width
+                product.price =  +req.body.price ? +req.body.price : product.price,
+                product.discount =  +req.body.discount ? +req.body.discount : product.discount,
+                product.category = category.id,
+                product.subCatForma = forma.id,
+                product.subCatMarca =  marca.id,
+                product.subCatmaterial =  material.id,
+                product.height =  +req.body.height ? +req.body.height : product.height,
+                product.width =  +req.body.width ? +req.body.width : product.width
             }
         })
 
@@ -42,7 +47,7 @@ edicion: (req, res) => {
         
         res.render("listado",{
             categoria,
-            prod
+            prod, formas, marcas, materials
         })
     },
     borrarProducto:(req, res)=> {        
