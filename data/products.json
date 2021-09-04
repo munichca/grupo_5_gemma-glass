@@ -185,5 +185,22 @@
             "10.jpg",
             "logoC.png"
         ]
+    },
+    {
+        "id": 16,
+        "name": "Producto",
+        "price": 1800,
+        "discount": 0,
+        "category": 4,
+        "subCatForma": 1,
+        "subCatMarca": 2,
+        "subCatmaterial": 3,
+        "height": 5,
+        "width": 14,
+        "image": [
+            "9.jpg",
+            "10.jpg",
+            "logoC.png"
+        ]
     }
 ]
