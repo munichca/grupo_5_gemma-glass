@@ -3,21 +3,61 @@
 <!-- head -->
 <%- include("partials/head")  %> 
 <!-- fin head-->
-<body class="editBody">
+<body>
 
   <%- include('./partials/header.ejs') %> 
 
-    <h2 class="editTitle">Agregá un producto:</h2>
+  <section class="wb">
+    <h5 class="editSubtitles">Agregá un producto nuevo:</h5>
+    <form class="tamanioFondo" action="/admin/add" method="POST" enctype="multipart/form-data">
+              <label class="tamanio" for="name">Nombre del producto: </label>
+               <input class="tamanio" type="text" name="name" id="name">
+              <label class="tamanio" for="price">Precio: </label>
+               <input class="tamanio" type="text" name="price" id="price">
+              <label class="tamanio" for="discount">Descuento: </label>
+               <input class="tamanio" type="text" name="discount" id="discount">
+              <label class="tamanio" for="category">Categoria: </label>
+              <select id="specificSizeSelect" name="category"  class="tamanio">
+               <% categoria.forEach(category => { %>
+                  <option value="<%- category.name %>"><%- category.name %></option>
+               <% }) %>
+              </select>
+              <label class="tamanio" for="forma">Forma: </label>
+              <select id="specificSizeSelect" name="forma"  class="tamanio">
+              <% formas.forEach(forma => { %>
+                <option value="<%- forma.shape %>"><%- forma.shape %></option>
+             <% }) %>
+            </select>
+              <label class="tamanio" for="marca">Marca: </label>
+              <select id="specificSizeSelect" name="marca"  class="tamanio">
+                <% marcas.forEach(marca => { %>
+                   <option value="<%- marca.brand %>"><%- marca.brand %></option>
+                <% }) %>
+               </select>
+              <label class="tamanio" for="material">Material: </label>
+              <select id="specificSizeSelect" name="material"  class="tamanio">
+                <% materials.forEach(material => { %>
+                  <option value="<%- material.mater %>"><%- material.mater %></option>
+               <% }) %>
+              </select>
+              <label class="tamanio" for="heigth">Altura: </label>
+               <input class="tamanio" type="text" name="height" id="heigth">
+              <label class="tamanio" for="width">Ancho: </label>
+               <input class="tamanio" type="text" name="width" id="width">
+       
+            <div>           
+              <label class="label" for="archivos">Subí fotos del producto:</label><br>
+              <input class="archivos" type="file" name="archivos"  multiple>
+            </div>
+            <div class="buttons">
+              <button class="btn" type="submit">Aceptar</button>
+              <button class="btn" type="reset">Cancelar</button>
 
-    <div class="update">
-    <h3 class="editSubtitles">Ingresá la información del producto:</h3>
-    <%- include('./partials/editForm.ejs') %> 
+            </div>
+          </form> 
+  </section>
 
-          <div class="buttons">
-         <button class="btn">Aceptar</button>
-         <button class="btn" type="cancel">Cancelar</button>
-        </div>
-
+      
         <%- include('./partials/footer.ejs') %> 
 </body>
 </html>

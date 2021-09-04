@@ -4,9 +4,54 @@ const { report } = require('../routes/home');
 module.exports = {
     add: (req, res)=>{
          res.render("add",{
-            categoria
+            productos, categoria, formas, marcas, materials
          })
     },
+    nuevoProducto: (req, res) => {
+        let lastId = 1;
+
+        productos.forEach(product => {
+            if(product.id > lastId){
+                lastId = product.id
+            }
+        })
+
+        let {
+            name, 
+            price, 
+            discount, 
+            category, 
+            subCatForma, 
+            subCatMarca,
+            subCatmaterial,
+            height,
+            width
+            } = req.body;
+
+        let productoNuevo = {
+            id: lastId + 1,
+            name,
+            price,
+            discount,
+            category,
+            subCatForma,
+            subCatMarca,
+            subCatmaterial,
+            height,
+            width,
+            image: [
+                "9.jpg",
+                "10.jpg",
+                "logoC.png"
+            ]
+        };
+
+        productos.push(productoNuevo);
+
+        writeProductJson(productos)
+
+        res.redirect('/')
+    }, 
   edit: (req, res) => {
         let product = productos.find(product => {
             return product.id === +req.params.id})
@@ -15,32 +60,32 @@ module.exports = {
             product, formas, marcas, materials
         })
     },
-edicion: (req, res) => {
-    /* res.send(req.body) */
-    let category = categoria.find(cate => cate.name === req.body.category)
-    let forma = formas.find(forma => forma.shape === req.body.forma)
-    let marca = marcas.find(marca => marca.brand === req.body.marca)
-    let material = materials.find(material => material.mater === req.body.material)
+    edicion: (req, res) => {
+        /* res.send(req.body) */
+        let category = categoria.find(cate => cate.name === req.body.category)
+        let forma = formas.find(forma => forma.shape === req.body.forma)
+        let marca = marcas.find(marca => marca.brand === req.body.marca)
+        let material = materials.find(material => material.mater === req.body.material)
 
-        productos.forEach( product => {
-            if(product.id === +req.params.id){
-                product.id = product.id,
-                product.name = req.body.name ? req.body.name : product.name,
-                product.price =  +req.body.price ? +req.body.price : product.price,
-                product.discount =  +req.body.discount ? +req.body.discount : product.discount,
-                product.category = category.id,
-                product.subCatForma = forma.id,
-                product.subCatMarca =  marca.id,
-                product.subCatmaterial =  material.id,
-                product.height =  +req.body.height ? +req.body.height : product.height,
-                product.width =  +req.body.width ? +req.body.width : product.width
-            }
-        })
+            productos.forEach( product => {
+                if(product.id === +req.params.id){
+                    product.id = product.id,
+                    product.name = req.body.name ? req.body.name : product.name,
+                    product.price =  +req.body.price ? +req.body.price : product.price,
+                    product.discount =  +req.body.discount ? +req.body.discount : product.discount,
+                    product.category = category.id,
+                    product.subCatForma = forma.id,
+                    product.subCatMarca =  marca.id,
+                    product.subCatmaterial =  material.id,
+                    product.height =  +req.body.height ? +req.body.height : product.height,
+                    product.width =  +req.body.width ? +req.body.width : product.width
+                }
+            })
 
-        writeProductJson(productos)
+            writeProductJson(productos)
 
-        res.redirect('/admin/listado')
-    },
+            res.redirect('/admin/listado')
+        },
     lista: (req, res)=>{
         let prod = productos;
         
@@ -60,5 +105,5 @@ edicion: (req, res) => {
         writeProductJson(productos)
 
         res.redirect('/admin/listado/')
-    }
+    },
 }
