@@ -10,29 +10,43 @@
 a{
     text-decoration: none;
 }
+.main{
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+.main label{
+    font-size: 12px;
+}
 .exterior{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 2px solid green; */
 }
 .container-register{
     display: flex;
     flex-direction: column;
-    width: 90vw;
+    width: 100vw;
     height: 100%;    
     margin: 0 auto 0;   
     justify-content: center;
     align-items: center; 
     color: var(--tipos);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
 
 }
 
 .container-register .welcome{
-    margin: 10px auto 0px;
+    margin: 5px auto 0px;
     text-align: center;
+    /* border: 1px solid black; */
 }
-.container-register .welcome p{
+.welcome h3{
+    margin: 0;
+}
+.subTitle {
     margin-bottom: 10px;
 }
 
@@ -40,95 +54,176 @@ a{
     display: flex;
     flex-direction: column;   
     width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.container-register .my-data p{
+.section1{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    margin: 0%;
+    padding: 0;
+    /* border: .5px solid black; */
+}
+.section2{
+    width: 50%;
+    margin: 0%;
+    padding: 0;
+    /* border: .5px solid black; */
+}
+.section3{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 50%;
+    padding-top:5px;
+    padding-bottom: 5px;
+    /* border: .5px solid black; */
+}
+
+.complete{
     font-weight: bold;
     font-size: 13px;
     text-decoration: underline;
-    margin-bottom: 10px;    
+    margin-bottom: 10px; 
+       
 }
-.container-register input{
+
+.input{
     border: 1px solid var(--tipos);
-    padding-left: 20px;
+    margin-bottom: 5px;
+    height: 4vh;
+    outline: none;
+    font-size: 12px;
+    padding-left: 10px;
+    
 }
-.container-register input:hover{
+.input:hover{
     border: 2px solid var(--header);
 }
-.container-register .my-data input{
-    margin-bottom: 5px;
-    height: 5vh;
-    /* border: 1px solid red; */
-    outline: none;
+.inputMask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: var(--tipos);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 auto 0;    
+    overflow: hidden;   
+    position: relative;
+    width: 70%;
+    height: 3vw;
+    border: 1px solid var(--tipos);
+    border-radius: 35px;
 }
+.inputOut{
+    border: 10000px solid transparent;
+    cursor: pointer;
+    font-size: 10000px;
+    margin: 0;
+    opacity: 0;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -1000px;
+    top: -1000px;
+}
+/* .inputFileSize::before{
+    content: "seleccione una imagen";
+} */
+
+
+
 .container-register .my-data #myInput{
     width: 100%;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
 }
 .container-register .my-data #myInput2{
     width: 100%;
+    margin-bottom: 0px;
 }
 .container-register .name{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
 }
-.container-register .left-side{
+.left-side{
     width: 48%;
     display: flex;
     flex-direction: column;
 }
-.container-register .left-side input{
+.left-side .nameInput{
     border: 1px solid var(--tipos);
-    padding-left: 20px;
+    padding-left: 10px;
 }
-.container-register .left-side input:hover{
+.left-side .nameInput:hover{
     border: 2px solid var(--header);
 }
-.container-register .right-side{
+.right-side{
     width: 48%;
     display: flex;
     flex-direction: column;   
 }
-.container-register .right-side input{
+.right-side .nameInput{
     border: 1px solid var(--tipos);
     padding-left: 20px;
 }
-.container-register .right-side input:hover{
+.right-side .nameInput:hover{
     border: 2px solid var(--header);
 }
-.container-register .name label{
+ .name .nameLabel{
     width: 40%;
+    font-size: 12px;
 }
-.container-register .name input{
-    width: 100%;
-    height: 5vh;    
-    margin-bottom: 5px;
-    border: 1px solid var(--tipos);
-}
-.container-register .pass1{
+
+.section2 .pass1{
     display: flex;
     width: 100%;
     position: relative;
 }
-.container-register .pass1 #eye1{
+.section2 .pass1 #eye1{
     position: absolute;
-    top: 7px;
+    align-items: center;
+    margin-top: 2px;
+    color: var(--header);
     right: 10px;
 }
-.container-register .pass2{
+.section2 .pass1 #eye1:hover{
+    color: var(--tipos);
+}
+.midle{
+    width: 100%;
+}
+.section2 .pass2{
     display: flex;
     width: 100%;
     position: relative;
 }
-.container-register .pass2 #eye2{
+.section2 .pass2 #eye2{
     position: absolute;
-    top: 7px;
+    align-items: center;
+    margin-top: 2px;
+    color: var(--header);
     right: 10px;
+}
+.section2 .pass2 #eye2:hover{
+    color: var(--tipos);
 }
 .container-register .register-button{
     width: 50%;
     height: 5vh;
-    margin: 10px auto 15px;
+    margin: 10px auto 5px;
     background-color: var(--header);
     border: none;
 }
@@ -137,52 +232,81 @@ a{
     color: white;
     font-weight: bold;    
 }
-.container-register .my-data .login-cont{
+.login-cont{
     display: flex;
     justify-content: center;
 }
-.container-register .my-data .ingresa{
+.ingresa{
     display: flex;
-    width: 40%;
+   /*  width: 40%; */
     justify-content: center;
     color: var(--tipos);
 }
-.container-register .my-data .ingresa:hover{
+.
+.ingresa:hover{
     color: var(--header);
 }
 .container-register ::placeholder{
     color: var(--header);
 }
-.container-register #eye1,
-.container-register #eye2{
-    color: var(--header);
+.images{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 10vw;
+    height: 10vw;
+    margin: 5px;
+    /* border: .5px solid black; */
+    
+
 }
-.container-register #eye1:hover{
-    color: var(--tipos);
+.images img {
+    /* width: 100%; */
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+    border-radius: 50%;
+    border: .5px solid var(--header);
+    box-shadow: 0px 0px 10px rgba(6, 40, 140, 0.25);
+    
 }
-.container-register #eye2:hover{
-    color: var(--tipos);
+.section3 #errorImage{
+    font-size: 11px;
+    color: var(--red);
 }
-.container-register .validate{
+.validate{
     display: flex;
     width: 100%;
     justify-content: center;    
 }
-.container-register .validate .val{
+.validate .val{
     text-decoration:none;
     color: var(--red);
 }
-.container-register .validate{
+.validate{
     display: none;
 }
 @media (min-width: 768px) {
+    
     .container-register{
-        width: 50%;
+        
+        width:68%;    
+        /* justify-content: center;    
+        align-items: center; */
+        
+        
+    }
+    .images{
+        /* width: 40%; */
+    }
+    .exterior {
+        width: 90%;
+        
     }
 }
 @media (min-width: 1024px){
-    .container-register{
+    /* .container-register{
         width: 50%;
-    }
+    } */
 }
 
