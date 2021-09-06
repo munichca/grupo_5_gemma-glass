@@ -38,7 +38,8 @@ module.exports = {
             phone: req.body.phone,
             email: req.body.email,
             pass: req.body.pass,
-            avatar: "avatar.png"
+            avatar: req.file? req.file.filename : "avatar.png"
+            /* avatar: req.file.filename */
         }
         users.push(newUser);
         writeUsersJSON(users)

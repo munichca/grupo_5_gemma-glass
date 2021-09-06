@@ -10,7 +10,7 @@
 <!-- fin header  -->
 
     <main class="main">
-        <form action="/users/agregarUser/" method="POST">
+        <form id="form" action="/users/agregarUser/" method="POST" enctype="multipart/form-data"><!-- debo poner enctype para que suba el archivo -->
             <div class="container-register">
                 <div class="welcome">
                     <h3>¡Bienvenido!</h3>
@@ -51,7 +51,7 @@
                             </div>
                             <label class="midle"for="">Confirmar contraseña</label>
                             <div class="pass2">                                    
-                                <input type="password" class="input" onclick="validateOff()" name="" id="myInput2">
+                                <input type="password" class="input" onblur ="validate()" onclick="validateOff()" name="" id="myInput2">
                                 <i class="far fa-eye"  onclick="myFunction2()" id="eye2"></i>
                             </div>  
                             <div class="validate" id="validate">
@@ -60,10 +60,10 @@
                         </section>
                         <section class="section3">
                             <div class="images" id="imagePreview" >
-                                <img id="old" src="/image/avatar.png " alt="">
+                                <img id="old" src="/image/userAvatars/avatar.png " alt="">
                             </div>
                             <div class="inputMask bordeColor">
-                                <input class="inputOut" type="file" id="examinar">
+                                <input class="inputOut" type="file" id="examinar" name="avatar"> <!-- este nombre va en el metodo post al cargar en multer -->
                                 Elija una Imagen
                             </div> 
                             <p id="errorImage"></p>
@@ -75,7 +75,7 @@
                     </div>
                 </div> 
                 
-                <button class="register-button" onclick="validate()" id="button" type="submit">Registrarse</button>
+                <button class="register-button"  id="button" type="submit">Registrarse</button>
                         <div class="login-cont">
                             <a class="ingresa" href="/login">
                                 ¿Ya tenés cuenta? Ingresá
@@ -86,9 +86,11 @@
         
     
     <script>
+    var button = document.getElementById("button")
     function validateOff(){
         let mesage = document.getElementById("validate");
         mesage.style.display="none";
+        button.style.display = "none"
     }
     function myFunction() {
         let x = document.getElementById("myInput");      
@@ -111,10 +113,14 @@
         let vali1 = document.getElementById("myInput");
         let vali2 = document.getElementById("myInput2");
         let mesage = document.getElementById("validate")
-        let button = document.getElementById("button")
+        
+        let form = document.getElementById("form")
         if (vali1.value !== vali2.value){
-            mesage.style.display="flex"
-        }        
+            mesage.style.display ="flex"
+            
+        }else{
+            button.style.display = "initial"
+        }
     }
     let inputImage = document.getElementById('examinar')
 inputImage.addEventListener('change', 
@@ -126,7 +132,7 @@ function fileValidation(){
         let error = 'La imagen no es válida, usá extensiones (.jpg - .jpeg - .png - .gif)'
         errorImage.innerHTML = error;
         inputImage.value = '';
-        document.getElementById('imagePreview').innerHTML = '<img src="/image/avatar.png "/>'; //mantengo la imagen po default
+        document.getElementById('imagePreview').innerHTML = '<img src="/image/userAvatars/avatar.png"/>'; //mantengo la imagen po default
         return false;
     }else{
         // Image preview
