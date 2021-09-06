@@ -1,73 +1,76 @@
-    <header>
-        <div class="menuBurger">
-            <input type="checkbox" name="burger" id="btn-modal">
-            <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
-            
-            <div class="modal-burger">
-                <div class="contenedor-burger">
-                    <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
-                    <h2>Gemma Glass</h2>
-                    <div class="contenido-burger">
-                        <ul>
-                            <% categoria.forEach(item => {%>
-                                <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
-                                <% })  %>
-                                <a  href="/product/productOfertas"> <li>Ofertas</li></a>
-                            <a href="/turnos"> <li>Pedí una consulta</li></a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-1">
+<header>
+  <div class="menuBurger">
+    <input type="checkbox" name="burger" id="btn-modal" />
+    <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
 
-            <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo"></a>
+    <div class="modal-burger">
+      <div class="contenedor-burger">
+        <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
+        <h2>Gemma Glass</h2>
+        <div class="contenido-burger">
+          <ul>
+            <% categoria.forEach(item => {%>
+            <a href="/product/productcat/<%- item.id %>">
+              <li><%= item.name %></li></a
+            >
+            <% }) %>
+            <a href="/product/productOfertas"> <li>Ofertas</li></a>
+            <a href="/turnos"> <li>Pedí una consulta</li></a>
+          </ul>
         </div>
-        <div class="container-2">
-            <p class="number">(011)15555555</p> <br>
-            <div class="barra-busqueda">
-                <input class="search" type="search" placeholder="Buscá un producto">
-                <button class="lupa" onclick="mostrar()"><i class="fa fa-search "></i></button>
-                <button class="lupa-1" ><i class="fa fa-search "></i></button>
-            </div>
-        </div>
-        <div id="buscador">
-                <input class="search-2" type="search" placeholder="Buscá un producto">
-                <button class="lupa-2"><i class="fa fa-search "></i></button>
-        </div>
-        <div class="container-3">
-            <ul>
-                <li><a href="/users/login">Inicia sesión</a></li>
-                <li><a href="/users/registro">Registrate</a></li>
-            </ul>
-        </div>
-        <div class="container-4">
-            <a href="/trolley">
-                <i class="fa fa-shopping-cart"></i> <br> Mi carrito
-            </a>
-
-        </div>
-        <nav class="container-nav">
-            <ul>
-                <% categoria.forEach(item => {%>
-                <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
-                <% })  %> 
-                <a  href="/product/productOfertas"> <li>Ofertas</li></a>
-                <!-- <a href="/admin/listado"> <li>Ofertas</li></a> -->
-                <a  href="/turnos"> <li>Pedí una consulta</li></a>
-            </ul>
-        </nav>
-        <script>
+      </div>
+    </div>
+  </div>
+  <div class="container-1">
+    <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo" /></a>
+  </div>
+  <div class="container-2">
+    <p class="number">(011)15555555</p>
+    <br />
+    <form class="barra-busqueda" action="search" method="GET">
+      <input class="search" name="keywords" type="search" placeholder="Buscá un producto" />
+      <button class="lupa" onclick="mostrar()">
+        <i class="fa fa-search"></i>
+      </button>
+      <button class="lupa-1"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <form id="buscador" class="barra-busqueda" action="search" method="GET">
+    <input class="search-2" name="keywords" type="search" placeholder="Buscá un producto" />
+    <button class="lupa-2"><i class="fa fa-search"></i></button>
+  </form>
+  <div class="container-3">
+    <ul>
+      <li><a href="/users/login">Inicia sesión</a></li>
+      <li><a href="/users/registro">Registrate</a></li>
+    </ul>
+  </div>
+  <div class="container-4">
+    <a href="/trolley">
+      <i class="fa fa-shopping-cart"></i> <br />
+      Mi carrito
+    </a>
+  </div>
+  <nav class="container-nav">
+    <ul>
+      <% categoria.forEach(item => {%>
+      <a href="/product/productcat/<%- item.id %>">
+        <li><%= item.name %></li></a
+      >
+      <% }) %>
+      <a href="/product/productOfertas"> <li>Ofertas</li></a>
+      <!-- <a href="/admin/listado"> <li>Ofertas</li></a> -->
+      <a href="/turnos"> <li>Pedí una consulta</li></a>
+    </ul>
+  </nav>
+  <script>
     function mostrar() {
-        var x = document.getElementById("buscador");
-           if (x.style.display === "block") {
-           x.style.display = "none";
-           } else {
-                  x.style.display = "block";
+      var x = document.getElementById("buscador");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
     }
-}
-    
-    
-        </script>
-    </header>
-
+  </script>
+</header>

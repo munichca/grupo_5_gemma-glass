@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+<body>
+<!-- header -->
+<%- include("partials/header")  %> 
+<!-- fin header  -->
+<div class="base">
+    <section class="menu-lateral">
+        <div class="men1">
+            <a class="sub-titulo" >
+                <p>forma</p>
+            </a>
+            <div class="sub-menu">
+                <ul>
+                    <% formas.forEach(element => { %>
+                    <a href="/product/proForma/<%- element.id %>"><li><%- element.shape %></li></a>
+                    
+                    <% }) %>
+                </ul>          
+            </div>
+        </div>
+        <div class="men2">
+            <a class="sub-titulo">
+                <p>marca</p>
+            </a>
+            <div class="sub-menu">
+                <ul>
+                    <% marcas.forEach(element => { %>
+                        <a href="/product/proMarca/<%- element.id %>"><li><%- element.brand %></li></a>
+                        
+                        <% }) %>
+                </ul>
+            </div>
+        </div>
+        <div class="men3">
+            <a class="sub-titulo">
+                <p>material</p>
+            </a>
+            <div class="sub-menu">
+                <ul>
+                    <li><a href="">acetato</a></li>
+                    <li><a href="">grilamid</a></li>
+                    <li><a href="">metal</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- fin menu lateral -->
+<section class="external-container" id="externalContainer" >
+    <% result.forEach(item => {%> 
+    <a class="product-card" href="/product/detail/<%- item.id %>  ">
+            <div class="images" id=twist >
+                <img class="frontal" src="/image/<%- item.image[0] %> "  alt="">
+                <img class="rear" id="gira" src="/image/<%- item.image[1] %>  "  alt="">
+            </div>
+        <div class="product-name">
+            <p class="pes"><%- item.name %>  </p>
+            <div class="price" id="dollar">                
+                <i id="dollar" class="fas fa-dollar-sign"></i>
+                <p class="pes"><%- item.price %>  .-</p>
+            </div>
+        </div>
+    </a> 
+    <% })  %> 
+    <hr class="hr-mobile">
+</section>  
+</div>
+</body>
+<!-- footer -->
+<%- include("partials/footer")  %> 
+</html>
