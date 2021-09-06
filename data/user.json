@@ -1,0 +1,30 @@
+[
+    {
+        "id": 0,
+        "name": "",
+        "lastName": "",
+        "adress": "",
+        "email": "",
+        "phone": 123,
+        "pass": "",
+        "avatar": "avatar.png"
+    },
+    {
+        "id": 2,
+        "name": "pepe",
+        "adress": "calle falsa 123",
+        "phone": "15151515151",
+        "email": "mail@mail.com",
+        "pass": "123",
+        "avatar": "avatar.png"
+    },
+    {
+        "id": 3,
+        "name": "qws",
+        "adress": "qwqw",
+        "phone": "2323",
+        "email": "mail@mail.com",
+        "pass": "234",
+        "avatar": "avatar.png"
+    }
+]

@@ -10,78 +10,80 @@
 <!-- fin header  -->
 
     <main class="main">
-        <div class="container-register">
-            <div class="welcome">
-                <h3>¡Bienvenido!</h3>
-                <p class="subTitle">Creá tu cuenta para comprar con mas facilidad</p>
-            </div>
-            <div class="exterior">
-                <div class="my-data">
-                    <p class="complete">Completá tus datos</p>
-                    <section class="section1">
-                        <div class="name">
-                            <div class="left-side">
-                                <label class="nameLabel" for="">Nombre</label>
-                                <input class="input" type="text" name="name" id="">
-                            </div>
-                            <div class="right-side">
-                                <label class="nameLabel" for="" id="lana">Apellido</label>
-                                <input class="input" type="text" name="last-name" id="lastName">
-                            </div>                   
-                            <div class="left-side">
-                                <label class="nameLabel" for="">Dirección</label>
-                                <input class="input" type="adress" name="adress">
-                            </div>
-                            <div class="right-side">
-                                <label class="nameLabel" for="" >Teléfono</label>
-                                <input class="input" type="number" name="phone" >
-                            </div>                   
-                        </div>            
-                        
-                    </section>
-                    
-                    <section class="section2">
-                        <label class="midle "for="">Correo Electrónico</label>
-                        <input class="midle input"type="email" name="email" placeholder="mail@domain.com">
-                        <label class="midle "for="">Contraseña</label>
-                        <div class="pass1">
-                            <input type="password" class="input" onclick="validateOff()" name="pass" id="myInput">
-                            <i class="far fa-eye"  onclick="myFunction()" id="eye1"></i>
-                        </div>
-                        <label class="midle"for="">Confirmar contraseña</label>
-                        <div class="pass2">                                    
-                            <input type="password" class="input" onclick="validateOff()" name="conf-pass" id="myInput2">
-                            <i class="far fa-eye"  onclick="myFunction2()" id="eye2"></i>
-                        </div>  
-                        <div class="validate" id="validate">
-                            <span class="val">¡Las contraseñas no coinciden!</span>
-                        </div>
-                    </section>
-                    <section class="section3">
-                        <div class="images" id="imagePreview" >
-                            <img id="old" src="/image/avatar.png " alt="">
-                        </div>
-                        <div class="inputMask bordeColor">
-                            <input class="inputOut" type="file" id="examinar">
-                            Elija una Imagen
-                        </div> 
-                        <p id="errorImage"></p>
-
-                        
-                    </section>
-                    
-                                
+        <form action="/users/agregarUser/" method="POST">
+            <div class="container-register">
+                <div class="welcome">
+                    <h3>¡Bienvenido!</h3>
+                    <p class="subTitle">Creá tu cuenta para comprar con mas facilidad</p>
                 </div>
-            </div> 
-            
-            <button class="register-button" onclick="validate()" id="button" type="submit">Registrarse</button>
-                    <div class="login-cont">
-                        <a class="ingresa" href="/login">
-                            ¿Ya tenés cuenta? Ingresá
-                        </a>
-                    </div>              
-        </div>
-    </main>
+                <div class="exterior">
+                    <div class="my-data">
+                        <p class="complete">Completá tus datos</p>
+                        <section class="section1">
+                            <div class="name">
+                                <div class="left-side">
+                                    <label class="nameLabel" for="">Nombre</label>
+                                    <input class="input" type="text" name="name" id="">
+                                </div>
+                                <div class="right-side">
+                                    <label class="nameLabel" for="" id="lana">Apellido</label>
+                                    <input class="input" type="text" name="last-name" id="lastName">
+                                </div>                   
+                                <div class="left-side">
+                                    <label class="nameLabel" for="">Dirección</label>
+                                    <input class="input" type="adress" name="adress">
+                                </div>
+                                <div class="right-side">
+                                    <label class="nameLabel" for="" >Teléfono</label>
+                                    <input class="input" type="number" name="phone" >
+                                </div>                   
+                            </div>            
+                            
+                        </section>
+                        
+                        <section class="section2">
+                            <label class="midle "for="">Correo Electrónico</label>
+                            <input class="midle input"type="email" name="email" placeholder="mail@domain.com">
+                            <label class="midle "for="">Contraseña</label>
+                            <div class="pass1">
+                                <input type="password" class="input" onclick="validateOff()" name="pass" id="myInput">
+                                <i class="far fa-eye"  onclick="myFunction()" id="eye1"></i>
+                            </div>
+                            <label class="midle"for="">Confirmar contraseña</label>
+                            <div class="pass2">                                    
+                                <input type="password" class="input" onclick="validateOff()" name="" id="myInput2">
+                                <i class="far fa-eye"  onclick="myFunction2()" id="eye2"></i>
+                            </div>  
+                            <div class="validate" id="validate">
+                                <span class="val">¡Las contraseñas no coinciden!</span>
+                            </div>
+                        </section>
+                        <section class="section3">
+                            <div class="images" id="imagePreview" >
+                                <img id="old" src="/image/avatar.png " alt="">
+                            </div>
+                            <div class="inputMask bordeColor">
+                                <input class="inputOut" type="file" id="examinar">
+                                Elija una Imagen
+                            </div> 
+                            <p id="errorImage"></p>
+    
+                            
+                        </section>
+                        
+                                    
+                    </div>
+                </div> 
+                
+                <button class="register-button" onclick="validate()" id="button" type="submit">Registrarse</button>
+                        <div class="login-cont">
+                            <a class="ingresa" href="/login">
+                                ¿Ya tenés cuenta? Ingresá
+                            </a>
+                        </div>              
+            </div>
+        </form>
+        
     
     <script>
     function validateOff(){
