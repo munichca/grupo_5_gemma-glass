@@ -24,6 +24,10 @@
                                 <div class="left-side">
                                     <label class="nameLabel" for="">Nombre</label>
                                     <input class="input" type="text" name="name" id="">
+                                    <% if (locals.errors && errors.name) { %>
+                                        <span class="text-danger"><%= errors.name.msg %> </span>
+                                        
+                                    <% } %>
                                 </div>
                                 <div class="right-side">
                                     <label class="nameLabel" for="" id="lana">Apellido</label>
@@ -51,7 +55,7 @@
                             </div>
                             <label class="midle"for="">Confirmar contraseña</label>
                             <div class="pass2">                                    
-                                <input type="password" class="input" onblur ="validate()" onclick="validateOff()" name="" id="myInput2">
+                                <input type="password" class="input"  onclick="validateOff()" name="" id="myInput2">
                                 <i class="far fa-eye"  onclick="myFunction2()" id="eye2"></i>
                             </div>  
                             <div class="validate" id="validate">
@@ -90,7 +94,7 @@
     function validateOff(){
         let mesage = document.getElementById("validate");
         mesage.style.display="none";
-        button.style.display = "none"
+        
     }
     function myFunction() {
         let x = document.getElementById("myInput");      

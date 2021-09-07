@@ -10,6 +10,9 @@
 a{
     text-decoration: none;
 }
+.text-danger{
+    font-size: 10px;
+}
 .main{
     width: 95%;
     height: 100vh;
@@ -290,9 +293,7 @@ a{
 .validate{
     display: none;
 }
-.register-button{
-    display: none;
-}
+
 @media (min-width: 768px) {
     /* ################# */
     .container-register{

@@ -1,5 +1,5 @@
 let {categoria,users, writeUsersJSON} = require ('../data/dataBase');
-
+let {validationResult} = require ("express-validator");
 module.exports = {
     login: (req, res)=>{
          res.render("login",{
@@ -23,8 +23,9 @@ module.exports = {
         })
     },
     crearUser: (req, res)=>{
-        /* res.send(req.body) */
-        let lastId = 1;
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            let lastId = 1;
         users.forEach(user =>{
             if(user.id > lastId){
                 lastId = user.id
@@ -44,6 +45,16 @@ module.exports = {
         users.push(newUser);
         writeUsersJSON(users)
         res.redirect("/")
+        }else{
+            /* res.send(errors) */
+            res.render("registro",{
+                categoria,
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
+        /* res.send(req.body) */
+        
     }
     
 
