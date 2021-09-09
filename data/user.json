@@ -1,18 +1,5 @@
 [
     {
-<<<<<<< HEAD
-        "id": 1,
-        "name": "",
-        "lastName":"",
-        "adress": "",
-        "phone": 2,
-        "email": "",
-        "pass": "",
-        "image": ""
-    }
-
-
-=======
         "id": 0,
         "name": "",
         "lastName": "",
@@ -184,5 +171,4 @@
         "pass": "1",
         "avatar": "avatar.png"
     }
->>>>>>> antonio
 ]
