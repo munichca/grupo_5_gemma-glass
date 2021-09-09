@@ -41,18 +41,18 @@
     -ms-transform: translate(-50%, -50%);
 }
 
-.section-2 {
+.section2 {
     margin-bottom: 10px;
     position: relative;
     width: 100%;
 }
 
-.section-2 img {
+.section2 img {
     width: 100%;
     height: auto;
 }
 
-.section-2 .btn {
+.section2 .btn {
     position: absolute;
     top: 80%;
     left: 15%;
@@ -219,7 +219,7 @@ a {
         left: 75%;
     }
 
-    .section-2 .btn {
+    .section2 .btn {
         position: absolute;
         top: 50%;
         left: 25%;
@@ -258,7 +258,7 @@ a {
         left: 85%;
     }
 
-    .section-2 .btn {
+    .section2 .btn {
         position: absolute;
         top: 80%;
         left: 15%;

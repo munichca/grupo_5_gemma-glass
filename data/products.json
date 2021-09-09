@@ -110,8 +110,8 @@
         "subCatForma": 7,
         "subCatMarca": 5,
         "subCatmaterial": 0,
-        "height": "-",
-        "width": "-",
+        "height": 2,
+        "width": 3,
         "image": [
             "1.jpg",
             "2.jpg",
@@ -127,8 +127,8 @@
         "subCatForma": 7,
         "subCatMarca": 5,
         "subCatmaterial": 0,
-        "height": "-",
-        "width": "-",
+        "height": 4,
+        "width": 4,
         "image": [
             "3.jpg",
             "4.jpg",
@@ -144,8 +144,8 @@
         "subCatForma": 7,
         "subCatMarca": 5,
         "subCatmaterial": 0,
-        "height": "-",
-        "width": "-",
+        "height": 4,
+        "width": 4,
         "image": [
             "5.jpg",
             "6.jpg",

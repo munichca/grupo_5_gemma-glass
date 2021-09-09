@@ -10,6 +10,9 @@
 a{
     text-decoration: none;
 }
+.text-danger{
+    font-size: 10px;
+}
 .main{
     width: 95%;
     height: 100vh;
@@ -139,9 +142,7 @@ a{
     right: -1000px;
     top: -1000px;
 }
-/* .inputFileSize::before{
-    content: "seleccione una imagen";
-} */
+
 
 
 
@@ -189,6 +190,7 @@ a{
  .name .nameLabel{
     width: 40%;
     font-size: 12px;
+   
 }
 
 .section2 .pass1{
@@ -208,6 +210,7 @@ a{
 }
 .midle{
     width: 100%;
+    margin-bottom: 0;
 }
 .section2 .pass2{
     display: flex;
@@ -236,6 +239,17 @@ a{
     color: white;
     font-weight: bold;    
 }
+.container_check{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+.checkRegister{
+    padding-left:5px;
+}
 .login-cont{
     display: flex;
     justify-content: center;
@@ -246,7 +260,7 @@ a{
     justify-content: center;
     color: var(--tipos);
 }
-.
+
 .ingresa:hover{
     color: var(--header);
 }
@@ -260,10 +274,10 @@ a{
     width: 20vw;
     height: 20vw;
     margin: 5px;
+    /* border: .5px solid black; */
     border-radius: 50%;
     border: .5px solid var(--header);
     box-shadow: 0px 0px 10px rgba(6, 40, 140, 0.25);
-    
 
 }
 .images img {
@@ -272,6 +286,7 @@ a{
     height: 20vw;
     object-fit: cover;
     border-radius: 50%;
+    
     
 }
 .section3 #errorImage{
@@ -290,9 +305,7 @@ a{
 .validate{
     display: none;
 }
-.register-button{
-    display: none;
-}
+
 @media (min-width: 768px) {
     /* ################# */
     .container-register{
@@ -360,9 +373,7 @@ a{
         width: 10vw;
         height: 10vw;
         object-fit: cover;
-        border-radius: 50%;
-        border: .5px solid var(--header);
-        box-shadow: 0px 0px 10px rgba(6, 40, 140, 0.25);
+        
         
     }
     .container-register .my-data{
