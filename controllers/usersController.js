@@ -6,47 +6,46 @@ module.exports = {
             categoria
          })
     },
-    /* register: (req, res)=>{
-        res.render("registro",{
-            categoria
-        })
-    }, */
     user: (req, res)=>{
         res.render("user")
     },
     editProfileUser: (req, res)=>{
         res.render("editProfileUser")
     },
-    agregarUser: (req, res)=>{
+    addUser: (req, res)=>{
         res.render("registro",{
             categoria
         })
     },
-    crearUser: (req, res)=>{
+    createUser: (req, res)=>{
         let errors = validationResult(req)
         if(errors.isEmpty()){
-            let lastId = 1;
+            /* res.send(req.body) */
+            let lastId = 0;
         users.forEach(user =>{
             if(user.id > lastId){
                 lastId = user.id
             }
         });
+        let {name, lastName, email, pass,phone, address } = req.body
         let newUser = {
             id: lastId + 1,
-            name: req.body.name,
-            lastName: req.body.lastName,
-            adress: req.body.adress,
-            phone: req.body.phone,
-            email: req.body.email,
-            pass: req.body.pass,
+            name,
+            lastName,
+            address,
+            phone,
+            email,
+            pass,
+            pCode:"",
+            city:"",
+            province:"",
+            rol:"ROL_USER",
             avatar: req.file? req.file.filename : "avatar.png"
-            /* avatar: req.file.filename */
         }
         users.push(newUser);
         writeUsersJSON(users)
-        res.redirect("/")
+        res.redirect("/users/login")
         }else{
-            /* res.send(errors) */
             res.render("registro",{
                 categoria,
                 errors: errors.mapped(),
@@ -55,7 +54,20 @@ module.exports = {
         }
         /* res.send(req.body) */
         
-    }
+    },
+    processLogin: (req, res)=>{
+        res.send(req.body)
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+
+        }else{
+            res.render("login",{
+                categoria,
+                errors: errors.mapped(),
+            })
+        }
     
+
+    }
 
 }

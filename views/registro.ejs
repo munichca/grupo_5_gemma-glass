@@ -10,7 +10,7 @@
 <!-- fin header  -->
 
     <main class="main">
-        <form id="form" action="/users/agregarUser/" method="POST" enctype="multipart/form-data"><!-- debo poner enctype para que suba el archivo -->
+        <form id="form" action="/users/addUser/" method="POST" enctype="multipart/form-data"><!-- debo poner enctype para que suba el archivo -->
             <div class="container-register">
                 <div class="welcome">
                     <h3>¡Bienvenido!</h3>
@@ -23,7 +23,7 @@
                             <div class="name">
                                 <div class="left-side">
                                     <label class="nameLabel" for="">Nombre</label>
-                                    <input class="input" type="text" name="name" id="">
+                                    <input class="input" type="text" name="name" id="" value="<%= locals.old && old.name %>">
                                     <% if (locals.errors && errors.name) { %>
                                         <span class="text-danger"><%= errors.name.msg %> </span>
                                         
@@ -31,15 +31,22 @@
                                 </div>
                                 <div class="right-side">
                                     <label class="nameLabel" for="" id="lana">Apellido</label>
-                                    <input class="input" type="text" name="last-name" id="lastName">
+                                    <input class="input" type="text" name="lastName" id="lastName" value="<%= locals.old && old.lastName %>">
+                                    <% if (locals.errors && errors.lastName) { %>
+                                        <span class="text-danger"><%= errors.lastName.msg %> </span>
+                                        
+                                    <% } %>
                                 </div>                   
                                 <div class="left-side">
                                     <label class="nameLabel" for="">Dirección</label>
-                                    <input class="input" type="adress" name="adress">
+                                    <input class="input" type="adress" name="adress" value="<%= locals.old && old.adress %>">
                                 </div>
                                 <div class="right-side">
                                     <label class="nameLabel" for="" >Teléfono</label>
-                                    <input class="input" type="number" name="phone" >
+                                    <input class="input" type="text" name="phone" value="<%= locals.old && old.phone %>"> <!-- este es similar a un if ternario pero sin el else -->
+                                    <% if (locals.errors && errors.phone) { %>
+                                        <span class="text-danger"><%= errors.phone.msg %> </span>
+                                    <% } %>
                                 </div>                   
                             </div>            
                             
@@ -47,27 +54,36 @@
                         
                         <section class="section2">
                             <label class="midle "for="">Correo Electrónico</label>
-                            <input class="midle input"type="email" name="email" placeholder="mail@domain.com">
+                            <input class="midle input"type="email" name="email" placeholder="mail@domain.com" value="<%= locals.old && old.email %>">
+                            <% if (locals.errors && errors.email) { %>
+                                <span class="text-danger"><%= errors.email.msg %> </span>
+                            <% } %>
                             <label class="midle "for="">Contraseña</label>
                             <div class="pass1">
-                                <input type="password" class="input" onclick="validateOff()" name="pass" id="myInput">
+                                <input type="password" class="input"  name="pass" id="myInput" value="<%= locals.old && old.pass %>">
+                                
                                 <i class="far fa-eye"  onclick="myFunction()" id="eye1"></i>
                             </div>
+                            <% if (locals.errors && errors.pass) { %>
+                                <span class="text-danger"><%= errors.pass.msg %> </span>
+                            <% } %>
                             <label class="midle"for="">Confirmar contraseña</label>
                             <div class="pass2">                                    
-                                <input type="password" class="input"  onclick="validateOff()" name="" id="myInput2">
+                                <input type="password" class="input"   name="pass2" id="myInput2" value="<%= locals.old && old.pass2 %>">
+                                
                                 <i class="far fa-eye"  onclick="myFunction2()" id="eye2"></i>
                             </div>  
-                            <div class="validate" id="validate">
-                                <span class="val">¡Las contraseñas no coinciden!</span>
-                            </div>
+                            <% if (locals.errors && errors.pass2) { %>
+                                <span class="text-danger"><%= errors.pass2.msg %> </span>
+                            <% } %>
+                            
                         </section>
                         <section class="section3">
                             <div class="images" id="imagePreview" >
                                 <img id="old" src="/image/userAvatars/avatar.png " alt="">
                             </div>
                             <div class="inputMask bordeColor">
-                                <input class="inputOut" type="file" id="examinar" name="avatar"> <!-- este nombre va en el metodo post al cargar en multer -->
+                                <input class="inputOut" type="file" id="examinar" name="avatar" value=""> <!-- este nombre va en el metodo post al cargar en multer -->
                                 Elija una Imagen
                             </div> 
                             <p id="errorImage"></p>
@@ -78,6 +94,13 @@
                                     
                     </div>
                 </div> 
+                <div class="container_check">
+                    <input type="checkbox" name="terms" id="check" >
+                    <label class="checkRegister" for="check">Acepto los Terminos y Condiciones</label>
+                </div>
+                <% if (locals.errors && errors.terms) { %>
+                    <span class="text-danger"><%= errors.terms.msg %> </span>
+                <% } %>
                 
                 <button class="register-button"  id="button" type="submit">Registrarse</button>
                         <div class="login-cont">
@@ -92,25 +115,36 @@
     <script>
     var button = document.getElementById("button")
     function validateOff(){
+       
         let mesage = document.getElementById("validate");
         mesage.style.display="none";
         
     }
     function myFunction() {
         let x = document.getElementById("myInput");      
-          
+        let eye1 = document.getElementById("eye1")
+        let input = document.getElementById("muInput1")
+        /* let valor1 = input.value; */
         if (x.type === "password") {
             x.type = "text";
+            eye1.style.color= "red";
+            
         } else {
             x.type = "password";
+            eye1.style.color= "#4F8DF0";
+            
         }           
     }    
     function myFunction2() {
         let x = document.getElementById("myInput2");
+        let eye2 = document.getElementById("eye2")
         if (x.type === "password") {
             x.type = "text";
+            eye2.style.color= "red";
         } else {
             x.type = "password";
+            eye2.style.color= "#4F8DF0";
+            
         }
     }
     function validate(){
