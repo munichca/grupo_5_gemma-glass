@@ -5,12 +5,16 @@ let {login,
      addUser,
      createUser,
      editProfileUser,
-     processLogin} = require ("../controllers/usersController");
+     processLogin,
+logout } = require ("../controllers/usersController");
 let uploadUserAvatar = require('../middlewares/uploadUserAvatar');
 let userCreateValidator = require("../validations/userCreateValidator");
+let loginValidator = require('../validations/userLoginValidator')
 /* GET RUta para login */
 router.get("/login", login);
-router.post("/login", processLogin);
+router.post("/login",loginValidator, processLogin);
+router.get("/logout", logout);
+
 router.get("/user", user);
 router.get("/addUser", addUser);
 router.post("/addUser", uploadUserAvatar.single("avatar"), userCreateValidator, createUser);

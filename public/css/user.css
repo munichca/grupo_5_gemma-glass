@@ -19,7 +19,8 @@ margin-bottom: 5px;
     display: flex;
     width: 90px;
     height: 90px;
-    background-color: rgb(12, 12, 92);
+    background-color: white;
+    border-radius: 1px  #4f8df0;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -28,6 +29,10 @@ margin-bottom: 5px;
     color:  white;
     font-weight:  bold;
 }
+.avatar-user{
+    width: 75px;
+}
+
 .img-user{
     width: 100%;
     display: flex;
@@ -125,6 +130,9 @@ font-size: 10px;
             margin:  50px auto;
             font-size:  16px;
         }
+        .avatar-user{
+            width: 150px;
+        }
         .imagen-perfil-edit{
             width: 180px;
             height: 180px;
@@ -165,6 +173,9 @@ font-size: 10px;
         .imagen-perfil{
             width: 200px;
             height: 200px;
+        }
+        .avatar-user{
+            width: 200px;
         }
         .datos-user .data{
             width: 100%;

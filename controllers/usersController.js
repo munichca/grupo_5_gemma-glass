@@ -1,5 +1,6 @@
 let {categoria,users, writeUsersJSON} = require ('../data/dataBase');
 let {validationResult} = require ("express-validator");
+let bcrypt=require('bcryptjs')
 module.exports = {
     login: (req, res)=>{
          res.render("login",{
@@ -7,10 +8,17 @@ module.exports = {
          })
     },
     user: (req, res)=>{
-        res.render("user")
+        let user= users.find(user => user.id === +req.session.user.id)
+        res.render("user", {
+            categoria,
+            user,
+            session: req.session
+        })
     },
     editProfileUser: (req, res)=>{
-        res.render("editProfileUser")
+        res.render("editProfileUser",{
+            categoria
+        })
     },
     addUser: (req, res)=>{
         res.render("registro",{
@@ -35,7 +43,7 @@ module.exports = {
             address,
             phone,
             email,
-            pass,
+            pass:bcrypt.hashSync(pass,12),
             pCode:"",
             city:"",
             province:"",
@@ -56,10 +64,20 @@ module.exports = {
         
     },
     processLogin: (req, res)=>{
-        res.send(req.body)
         let errors = validationResult(req)
         if(errors.isEmpty()){
+            let user = users.find(user => user.email === req.body.email)
 
+            req.session.user={
+                id : user.id,
+                name :user.name,
+                lastName: user.lastName,
+                email: user.email,
+                avatar: user.avatar,
+                rol: user.rol
+            }
+            res.locals.user= req.session.user
+            res.redirect('/')
         }else{
             res.render("login",{
                 categoria,
@@ -68,6 +86,9 @@ module.exports = {
         }
     
 
-    }
+    },
+    logout: (req,res)=>{
+
+    },
 
 }

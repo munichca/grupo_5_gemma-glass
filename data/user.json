@@ -1,15 +1,15 @@
 [
-    {
-        "id": 1,
-        "name": "asdasaasd",
-        "lastName": "rterte",
-        "phone": "1232345345",
-        "email": "mail@mail.com",
-        "pass": "123456",
-        "pCode": "",
-        "city": "",
-        "province": "",
-        "rol": "ROL_USER",
-        "avatar": "1631102751134_img_.jpg"
-    }
+  {
+    "id": 1,
+    "name": "Evelyn",
+    "lastName": "Gerez",
+    "phone": "11111111111",
+    "email": "eve@eve.com",
+    "pass": "$2a$12$JpwEHQsZGQAr83BPbiiFb.e9QlwT2I3Pwf00ut7jANDdyxCyc8ok.",
+    "pCode": "",
+    "city": "",
+    "province": "",
+    "rol": "ROL_USER",
+    "avatar": "avatar.png"
+  }
 ]
