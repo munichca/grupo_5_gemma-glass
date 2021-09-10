@@ -9,41 +9,42 @@
 
   <section class="wb">
     <h5 class="editSubtitles">Agregá un producto nuevo:</h5>
-    <form class="tamanioFondo" action="/admin/add" method="POST" enctype="multipart/form-data">
+    <form class="tamanioFondo" action="/admin/add/" method="POST" enctype="multipart/form-data">
               <label class="tamanio" for="name">Nombre del producto: </label>
                <input class="tamanio" type="text" name="name" id="name">
               <label class="tamanio" for="price">Precio: </label>
-               <input class="tamanio" type="text" name="price" id="price">
+               <input class="tamanio" type="number" name="price" id="price">
               <label class="tamanio" for="discount">Descuento: </label>
-               <input class="tamanio" type="text" name="discount" id="discount">
+               <input class="tamanio" type="number" name="discount" id="discount">
               <label class="tamanio" for="category">Categoria: </label>
               <select id="specificSizeSelect" name="category"  class="tamanio">
                <% categoria.forEach(category => { %>
-                  <option value="<%- category.name %>"><%- category.name %></option>
+                  <option value="<%= category.name %>"><%- category.name %></option>
                <% }) %>
               </select>
               <label class="tamanio" for="forma">Forma: </label>
-              <select id="specificSizeSelect" name="forma"  class="tamanio">
+              <select id="specificSizeSelect" name="subCatForma"  class="tamanio">
               <% formas.forEach(forma => { %>
-                <option value="<%- forma.shape %>"><%- forma.shape %></option>
+                
+                <option value="<%= +forma.id %>"><%- forma.shape %></option>
              <% }) %>
             </select>
               <label class="tamanio" for="marca">Marca: </label>
-              <select id="specificSizeSelect" name="marca"  class="tamanio">
+              <select id="specificSizeSelect" name="subCatMarca"  class="tamanio">
                 <% marcas.forEach(marca => { %>
-                   <option value="<%- marca.brand %>"><%- marca.brand %></option>
+                   <option value="<%= +marca.id %>"><%- marca.brand %></option>
                 <% }) %>
                </select>
               <label class="tamanio" for="material">Material: </label>
-              <select id="specificSizeSelect" name="material"  class="tamanio">
+              <select id="specificSizeSelect" name="subCatmaterial"  class="tamanio">
                 <% materials.forEach(material => { %>
-                  <option value="<%- material.mater %>"><%- material.mater %></option>
+                  <option value="<%= +material.id %>"><%- material.mater %></option>
                <% }) %>
               </select>
               <label class="tamanio" for="heigth">Altura: </label>
-               <input class="tamanio" type="text" name="height" id="heigth">
+               <input class="tamanio" type="number" name="height" id="heigth">
               <label class="tamanio" for="width">Ancho: </label>
-               <input class="tamanio" type="text" name="width" id="width">
+               <input class="tamanio" type="number" name="width" id="width">
        
             <div>           
               <label class="label" for="archivos">Subí fotos del producto:</label><br>
@@ -54,7 +55,7 @@
               <button class="btn" type="reset">Cancelar</button>
 
             </div>
-          </form> 
+      </form> 
   </section>
 
       

@@ -3,19 +3,25 @@ let {productos, categoria, formas, marcas, materials, writeProductJson} = requir
 const { report } = require('../routes/home');
 module.exports = {
     add: (req, res)=>{
+        
          res.render("add",{
             productos, categoria, formas, marcas, materials
          })
     },
     nuevoProducto: (req, res) => {
         let lastId = 1;
-
+/* res.send(req.body) */
         productos.forEach(product => {
             if(product.id > lastId){
                 lastId = product.id
             }
         })
-
+        let arrayImages = [];
+            if(req.files){
+                req.files.forEach(image => {
+                    arrayImages.push(image.filename)
+                })
+            }
         let {
             name, 
             price, 
@@ -27,30 +33,26 @@ module.exports = {
             height,
             width
             } = req.body;
-
+        let cate = categoria.find(cate => cate.name === category); 
         let productoNuevo = {
             id: lastId + 1,
             name,
-            price,
-            discount,
-            category,
-            subCatForma,
-            subCatMarca,
-            subCatmaterial,
-            height,
-            width,
-            image: [
-                "9.jpg",
-                "10.jpg",
-                "logoC.png"
-            ]
+            price: +price,
+            discount: +discount,
+            category: cate.id,
+            subCatForma: +subCatForma,
+            subCatMarca: +subCatMarca,
+            subCatmaterial: +subCatmaterial,
+            height: +height,
+            width: +width,
+            image: arrayImages.length > 0 ? arrayImages : ["logo.png"]
         };
 
         productos.push(productoNuevo);
 
         writeProductJson(productos)
 
-        res.redirect('/')
+        res.redirect('/admin/listado')
     }, 
   edit: (req, res) => {
         let product = productos.find(product => {
