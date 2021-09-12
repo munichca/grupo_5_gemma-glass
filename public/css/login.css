@@ -1,4 +1,8 @@
 
+.mainLogin{
+    
+    padding: 15px;
+}
 .titulo-login{
     text-align: center;
     margin: 20px 0;
@@ -14,9 +18,12 @@
 }
 .container-form{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 30px 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+   /*  border: 1px solid red; */
+   
 }
 .form-login label{
     padding: 5px 0;

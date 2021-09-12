@@ -20,20 +20,20 @@
                     <span ><%- productFind.name %>  </span>
                 </div>
                 <div class="images">
-                    <div class="image" >
-                      <img src="/image/<%- productFind.image[0] %>" alt=""  onclick="cambiar(this);">
+                    <div class="imageMini" >
+                      <img class="img" src="/image/productImages/<%- productFind.image[0]? productFind.image[0] : "logoC.png" %>" alt=""  onclick="cambiar(this);">
                     </div>
-                    <div class="image">
-                      <img src="/image/<%- productFind.image[1] %>" alt=""  onclick="cambiar(this);">
+                    <div class="imageMini">
+                      <img class="img" src="/image/productImages/<%- productFind.image[1]? productFind.image[1] : "logoC.png" %>" alt=""  onclick="cambiar(this);">
                     </div>
-                    <div class="image">
-                      <img src="/image/<%- productFind.image[2] %>" alt=""  onclick="cambiar(this);">
+                    <div class="imageMini">
+                      <img class="img" src="/image/productImages/<%- productFind.image[2]? productFind.image[2] : "logoC.png" %>" alt=""  onclick="cambiar(this);">
                     </div>
                     
                 </div>
                   
                 <div class="containerPr">
-                    <img id="principal" src="/image/<%- productFind.image[0] %>" >
+                    <img id="principal" src="/image/productImages/<%- productFind.image[0]? productFind.image[0] : "logoC.png" %>" >
                     
                 </div>
                

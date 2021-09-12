@@ -10,9 +10,10 @@
 <%- include("partials/header")  %> 
 <!-- fin header  -->
 
-    
-    <h2 class="titulo-login">¡Bienvenido de vuelta!</h2>
+<main class="mainLogin">
+  
     <div class="container-form">
+      <h2 class="titulo-login">¡Bienvenido de vuelta!</h2>
       <form action="/users/login/" class="form-login" method="POST"  >
         <label for="email">Ingresá tu Email</label>
         <input type="email" name="email" id="email-login" placeholder="ejemplo@ejemplo.com"/>
@@ -36,6 +37,8 @@
         </p>
       </form>
     </div>
+</main>
+    
 
 <!-- footer -->
 <%- include("partials/footer")  %> 

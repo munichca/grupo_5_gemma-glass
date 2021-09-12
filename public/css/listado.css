@@ -10,17 +10,48 @@ a{
     margin: 0;
     padding: 0;
 }
+.mainListado{
+    display: flex;
+    flex-direction: column;
+   padding-left: 5vw;
+   padding-right: 5vw;
+}
 .titlePrincipal{
     color: var(--tipos);
     text-align: center;
+    margin: 0;
 }
 ul{
     padding-left: 0;
 }
+
+/* .btn{
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+    border: 5px solid var(--tipos);    
+    background-color: var(--header);
+    color: white;
+    font-weight: 700;
+    margin: 0 0 5px;
+    border-radius: 5px;
+    outline: initial;
+}
+.bAdd:hover{
+    border: .5px solid var(--header);
+    background-color: #83b3ff;
+    color: var(--tipos);
+} */
 .tama{
     display: flex;
     flex-direction: column;
     width: 90vw;
+}
+.btnAddCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* width: 94vw; */
 }
 .claro{
     background-color: lightcyan;
@@ -116,6 +147,10 @@ ul{
     display: none;
 } */
 @media (min-width: 768px){
+    
+    .btn{
+        margin: 10px 0px 0px 0;
+    }
     .containerList{
         display: flex;
     }
@@ -124,23 +159,30 @@ ul{
         flex-direction: column;
         width: 90vw;
     }
+    .btnAddCont{
+        display: flex;
+        flex-direction: row;
+       /*  justify-content: flex-end; */
+        
+        /* border: 1px solid red; */
+    }
     .id{
         width: 2.5vw;
         
     }
     .name{
-        width: 25vw;
+        width: 18vw;
     }
     .price{
         width: 7vw;
         
     }
     .category{
-        width: 10vw;
+        width: 15vw;
         display: initial;
     }
     .shape{
-        width: 7vw;
+        width: 9vw;
         display: initial;
     }
     .brand{

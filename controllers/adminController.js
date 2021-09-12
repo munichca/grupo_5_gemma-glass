@@ -34,6 +34,7 @@ module.exports = {
             width
             } = req.body;
         let cate = categoria.find(cate => cate.name === category); 
+        
         let productoNuevo = {
             id: lastId + 1,
             name,
@@ -45,7 +46,7 @@ module.exports = {
             subCatmaterial: +subCatmaterial,
             height: +height,
             width: +width,
-            image: arrayImages.length > 0 ? arrayImages : ["logo.png"]
+            image: arrayImages.length > 0 ? arrayImages : []
         };
 
         productos.push(productoNuevo);
@@ -68,7 +69,12 @@ module.exports = {
         let forma = formas.find(forma => forma.shape === req.body.forma)
         let marca = marcas.find(marca => marca.brand === req.body.marca)
         let material = materials.find(material => material.mater === req.body.material)
-
+        let arrayImages = [];
+            if(req.files){
+                req.files.forEach(image => {
+                    arrayImages.push(image.filename)
+                })
+            }
             productos.forEach( product => {
                 if(product.id === +req.params.id){
                     product.id = product.id,
@@ -81,6 +87,7 @@ module.exports = {
                     product.subCatmaterial =  material.id,
                     product.height =  +req.body.height ? +req.body.height : product.height,
                     product.width =  +req.body.width ? +req.body.width : product.width
+                    product.image= arrayImages.length > 0 ? arrayImages : []
                 }
             })
 

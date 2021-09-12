@@ -9,6 +9,8 @@
 <%- include("partials/header")  %> 
 <!-- fin header  -->
 
+
+
     <main class="main">
         <form id="form" action="/users/addUser/" method="POST" enctype="multipart/form-data"><!-- debo poner enctype para que suba el archivo -->
             <div class="container-register">
@@ -79,7 +81,7 @@
                             
                         </section>
                         <section class="section3">
-                            <div class="images" id="imagePreview" >
+                            <div class="imagesReg" id="imagePreview" >
                                 <img id="old" src="/image/userAvatars/avatar.png " alt="">
                             </div>
                             <div class="inputMask bordeColor">
@@ -102,7 +104,7 @@
                     <span class="text-danger"><%= errors.terms.msg %> </span>
                 <% } %>
                 
-                <button class="register-button"  id="button" type="submit">Registrarse</button>
+                <button class="btn "  id="button" type="submit">Registrarse</button>
                         <div class="login-cont">
                             <a class="ingresa" href="/login">
                                 ¿Ya tenés cuenta? Ingresá
@@ -111,7 +113,7 @@
             </div>
         </form>
         
-    
+    </main>
     <script>
     var button = document.getElementById("button")
     function validateOff(){
@@ -189,7 +191,8 @@ function fileValidation(){
 <!-- footer -->
 
 <!-- fin footer  -->
+<%- include("partials/footer")  %> 
 </body>
 <!-- footer -->
-<%- include("partials/footer")  %> 
+
 </html>
