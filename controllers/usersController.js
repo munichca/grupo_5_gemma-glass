@@ -17,10 +17,10 @@ module.exports = {
     },
     profileUser: (req, res)=>{
         /* res.send(req.session.user) */
-        let user = users.find(user => user.id === +req.session.user.id)
+        /* let user = users.find(user => user.id === +req.session.user.id) */
         res.render("profileUser",{
-            categoria,
-            user
+            categoria
+            /* user */
         })
     },
     updateProfile:(req, res)=>{
