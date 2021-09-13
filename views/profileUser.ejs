@@ -49,23 +49,23 @@
                     <input class="input1" type="text" value=""name="address">
                 </div>
                 <div class="data-edit">
-                    <label class="midle1" for="">Código Postal</label>
-                    <input class="input1" type="text" value=""name="pCode">
+                    <label class="midle1 out" for="" id="lcp" >Código Postal</label>
+                    <input class="input1 out" type="text" value=""name="pCode" id="cp">
                 </div>
                 <div class="data-edit">
-                    <label class="midle1" for="">Ciudad</label>
-                    <input class="input1" type="text" value=""name="city">
+                    <label class="midle1 out" for="" id="lcity" >Ciudad</label>
+                    <input class="input1 out" type="text" value=""name="city" id="city">
                 </div>
                 <div class="data-edit">
-                    <label class="midle1" for="">Provincia</label>
-                    <input class="input1" type="text" value=""name="province">
+                    <label class="midle1 out" for="" id="lprov" >Provincia</label>
+                    <input class="input1 out" type="text" value=""name="province" id="prov">
                 </div>
                 <div class="contbutton" id="contbutton" action="">
-                    <div class="prueba" id="prueba">
-
-                    </div>
+                    
                     <button  type="submin" class="btn-user bSave" id="bSave">Guardar datos</button>
-                    <button  onclick="edit()" type="submin" class="btn-user bEdit">Editar datos</button>
+                    <div onclick="edit()"class="btn-user bEdit" id="pEdit">
+                        <p class="pEdit">Editar datos</p>
+                    </div>
                 </div>
             </div>
          </div>
@@ -100,11 +100,26 @@ function fileValidation(){
     }
 })
 
-let prueba = document.getElementById('prueba')
+let bSave = document.getElementById('bSave')
 let cb = document.getElementById("contbutton");
+let cp = document.getElementById("cp");
+let lcp = document.getElementById("lcp");
+let city = document.getElementById("city");
+let lcity = document.getElementById("lcity");
+let prov = document.getElementById("prov");
+let lprov = document.getElementById("lprov");
+let pEdit = document.getElementById("pEdit");
 function edit() {
-        prueba.style.display="flex"; 
-            
+        bSave.style.display="inline-block"; 
+        cb.style.justifyContent = "space-between" 
+        cp.style.display = "inherit"
+        lcp.style.display = "inherit"
+        city.style.display = "inherit"
+        lcity.style.display = "inherit"
+        prov.style.display = "inherit"
+        lprov.style.display = "inherit"
+        pEdit.style.display = "none"
+        
     }
 </script>   
 <!-- footer -->

@@ -82,11 +82,7 @@ margin-bottom: 5px;
     margin-bottom: 5px;
    /*  border: 1px solid green; */
 }
-.prueba{
-    width: 20px;
-    height: 30px;
-    background-color: lawngreen;
-}
+
 .btn-user{
     display: inline-block;
     background-color: #4f8df0;
@@ -98,14 +94,38 @@ margin-bottom: 5px;
     margin: 0;
     border-radius: 5px;
 }
-.prueba{
+.bSave{
     display: none;
 }
+.out{
+    display: none;
+}
+
 .btn-user:hover{
     color: white;
     background-color: #3b7adf;
     font-weight: bold;    
 } 
+.bEdit{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    /* background-color: #4f8df0;
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    border: solid 1px #4f8df0;
+    text-align: center;
+    margin: 0;
+    border-radius: 5px; */
+}
+.pEdit{
+    
+    font-size: 14px;
+    margin-top: 5px;
+    
+}
 .datos-user{
     display: flex;
     flex-direction: column;
@@ -192,7 +212,7 @@ margin-bottom: 5px;
         .btn-user{
             width: 130px;
             height: 40px;
-            font-size: 20px;
+            font-size: 14px;
         }
         
 
