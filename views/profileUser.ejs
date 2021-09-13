@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+  <body>
+
+<!-- header -->
+<%- include("partials/header")  %>
+ 
+<!-- fin header  -->
+
+<main class="mainEditUser">
+    <form action="">
+    <div class="container-user">
+        <p class="title1">Mis datos</p>
+        <section class="sectionM">
+            
+                <div class="imagesReg1" id="imagePreview"  >
+                    <img id="old1" src="/image/userAvatars/<%= user.avatar %> " alt="">
+                </div>
+                <div class="inputMask bordeColor">
+                    <input class="inputOut" type="file" id="examinar" name="avatar" value=""> <!-- este nombre va en el metodo post al cargar en multer -->
+                    Elija una Imagen
+                </div> 
+                <p id="errorImage"></p>
+
+                
+            
+        </section >
+        <div class="datos-user">
+            
+            <div class="data-edit">
+                <!-- <h5 class="item-data">Nombre</h5> -->
+                <label class="midle1" for="">Nombre</label>
+                <input class="input1" type="text" value="<%= user.name %>" name="name">
+            </div>
+            <div class="data-edit">
+                <!-- <h5 class="item-data">Apellido</h5> -->
+                <label class="midle1" for="">Apellido</label>
+                <input class="input1" type="text" value="<%= user.lastName %>"name="last_name">
+            </div>
+            <div class="data-edit">
+                
+                <label class="midle1" for="">E-mail</label>
+                <input class="input1" type="email" value="<%= user.email %>"name="mail">
+            </div>
+            
+            <div class="data-edit">
+                <label class="midle1" for="">Teléfono</label>
+                <input class="input1" type="number" value="<%= user.phone %>"name="phone">
+            </div>
+            <div class="data-edit">
+                <label class="midle1" for="">Direcciòn</label>
+                <input class="input1" type="text" value="<%= user.address ? user.address : "------" %>>"name="address">
+            </div>
+            <div class="data-edit">
+                <label class="midle1" for="">Código Postal</label>
+                <input class="input1" type="text" value="<%= user.pCode ? user.pCode : "------" %>"name="pCode">
+            </div>
+            <div class="data-edit">
+                <label class="midle1" for="">Ciudad</label>
+                <input class="input1" type="text" value="<%= user.city ? user.city : "------" %>"name="city">
+            </div>
+            <div class="data-edit">
+                <label class="midle1" for="">Provincia</label>
+                <input class="input1" type="text" value="<%= user.province ? user.province : "------" %>"name="province">
+            </div>
+            <div class="contbutton" action="">
+                <button  type="submin" class="btn-user">Guardar datos</button>
+            </div>
+        </div>
+</div>
+    </form>
+    
+</main>
+<script>
+    let inputImage = document.getElementById('examinar')
+inputImage.addEventListener('change', 
+function fileValidation(){
+    var errorImage = document.getElementById('errorImage')
+    var filePath = inputImage.value; //Capturo el valor del input
+    var allowefExtensions = /(.jpg|.jpeg|.png|.gif)$/i; //Extensiones permitidas
+    if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+        let error = 'Solo usá extensiones (.jpg - .jpeg - .png - .gif)'
+        errorImage.innerHTML = error;
+        inputImage.value = '';
+        document.getElementById('imagePreview').innerHTML = '<img src="/image/userAvatars/avatar.png"/>'; //mantengo la imagen po default
+        return false;
+    }else{
+        // Image preview
+        if(inputImage.files && inputImage.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                document.getElementById('imagePreview').innerHTML = '<img src="' + e.target.result +'"/>';
+            };
+            reader.readAsDataURL(inputImage.files[0]);
+            errorImage.innerHTML = '';
+        }
+    }
+})
+</script>   
+<!-- footer -->
+<%- include("partials/footer")  %> 
+<!-- fin footer  -->
+  </body>
+</html>

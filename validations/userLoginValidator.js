@@ -12,7 +12,7 @@ module.exports =[
     body("email")
         .custom(value =>{
             let user = users.find(user => user.email === value)
-            if (user !== undefined){
+            if (user !== undefined){ /* revisar si es igual o distinto */
                 return true
             }else{
               return  false

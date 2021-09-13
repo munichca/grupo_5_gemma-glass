@@ -15,10 +15,16 @@ module.exports = {
             session: req.session
         })
     },
-    editProfileUser: (req, res)=>{
-        res.render("editProfileUser",{
-            categoria
+    profileUser: (req, res)=>{
+        /* res.send(req.session.user) */
+        let user = users.find(user => user.id === +req.session.user.id)
+        res.render("profileUser",{
+            categoria,
+            user
         })
+    },
+    updateProfile:(req, res)=>{
+
     },
     addUser: (req, res)=>{
         res.render("registro",{

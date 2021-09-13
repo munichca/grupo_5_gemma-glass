@@ -41,7 +41,7 @@
                                 </div>                   
                                 <div class="left-side">
                                     <label class="nameLabel" for="">Dirección</label>
-                                    <input class="input" type="adress" name="adress" value="<%= locals.old && old.adress %>">
+                                    <input class="input" type="adress" name="address" value="<%= locals.old && old.adress %>">
                                 </div>
                                 <div class="right-side">
                                     <label class="nameLabel" for="" >Teléfono</label>
@@ -60,7 +60,7 @@
                             <% if (locals.errors && errors.email) { %>
                                 <span class="text-danger"><%= errors.email.msg %> </span>
                             <% } %>
-                            <label class="midle "for="">Contraseña</label>
+                            <label class="midle" for="">Contraseña</label>
                             <div class="pass1">
                                 <input type="password" class="input"  name="pass" id="myInput" value="<%= locals.old && old.pass %>">
                                 

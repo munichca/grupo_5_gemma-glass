@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+<body>
+    <!-- header -->
+    <%- include("partials/header")  %> 
+    <!-- fin header  -->
+    <main class="mainResult">
+        <div class="boxResults">
+            
+            <h3 class="titleSearch">El resultado de la búsqueda de "<%- search %>" es:</h3>
+            <% if(arrayProduct.length != 0) { %>
+            <%- include("partials/vistaProductos")  %> 
+            <% } else { %>
+				
+					<span class="notFinded">No hay productos que coincidan con esa búsqueda</h2>
+				
+			<% } %>
+        </div>
+        
+    </main>
+       
+
+
+    <!-- footer -->
+    <%- include("partials/footer")  %> 
+    <!-- fin footer  -->
+    </body>
+    
+    
+    </html>

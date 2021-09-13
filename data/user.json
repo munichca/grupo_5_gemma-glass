@@ -1,28 +1,16 @@
 [
     {
         "id": 1,
-        "name": "Evelyn",
-        "lastName": "Gerez",
-        "phone": "11111111111",
-        "email": "eve@eve.com",
-        "pass": "$2a$12$JpwEHQsZGQAr83BPbiiFb.e9QlwT2I3Pwf00ut7jANDdyxCyc8ok.",
+        "name": "Antonio",
+        "lastName": "Diaz",
+        "address": "calle false 458",
+        "phone": "23421312",
+        "email": "mail@mail.com",
+        "pass": "$2a$12$HGyDR3OMIDCT6sq1.TE5MurRAGusC6pfo6/eYEsA2nZrWb9NONqHK",
         "pCode": "",
         "city": "",
         "province": "",
         "rol": "ROL_USER",
-        "avatar": "avatar.png"
-    },
-    {
-        "id": 2,
-        "name": "Antonio",
-        "lastName": "Diaz",
-        "phone": "1232345345",
-        "email": "mail@mail.com",
-        "pass": "$2a$12$jT9ByXwWWGQsHxOyfYD0..FeqpBD8wm8nKssUczOdltu3r6QbR8L6",
-        "pCode": "",
-        "city": "",
-        "province": "",
-        "rol": "ROL_ADMIN",
-        "avatar": "1631374332372_img_.jpg"
+        "avatar": "1631489995184_img_.jpg"
     }
 ]

@@ -24,7 +24,26 @@ module.exports = {
         res.render("carrito",{
             categoria
         })
-    }
+    },
+    search: (req, res) => {
+		let searchResult = []
+        
+        productos.forEach(product => {
+            if(product.name.toLowerCase().includes(req.query.keywords.toLowerCase() ) ){
+                searchResult.push(product)
+            }
+        });
+        
+        /* res.send(searchResult) */
+        let arrayProduct=searchResult;
+        
+        
+        res.render('results', {
+			arrayProduct, 
+            categoria,
+			search: req.query.keywords
+		})
+	},
     
 
 }

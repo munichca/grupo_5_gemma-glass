@@ -31,7 +31,7 @@
 .form-login input{
     height: 35px;
     padding: 5px;
-    margin-bottom: 10px;
+   /*  margin-bottom: 10px; */
 }
 .form-login input:hover{
 border:solid 2px #4f8df0;
@@ -51,7 +51,7 @@ border:solid 2px #4f8df0;
     width: 130px;
     height: 40px;
     align-self: center;
-    margin: 30px  0 10px 0;
+    margin: 10px  0 10px 0;
     font-size: 16px;
     border: solid 1px #4f8df0;
 }
@@ -71,6 +71,20 @@ font-weight: bold;
 .new-account-login a:hover{
     color: #152847;
 }
+.container_check{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.checkRegister{
+    margin: 0 5px 0;
+}
+.labelRegister{
+    font-size: 4px;
+}
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
     .container-form{
@@ -86,14 +100,17 @@ font-weight: bold;
         text-align: center;
         margin: 20px 0;
     }
-    .form-login label{
+    .form-login .label{
         padding: 8px 0;
         font-size: 20px;
     }
     .form-login input{
         height: 40px;
         padding: 5px;
-        margin-bottom: 15px;
+        /* margin-bottom: 15px; */
+    }
+    .labelRegister{
+        font-size: 14px;
     }
     .recupero-login{
         font-size: 15px;

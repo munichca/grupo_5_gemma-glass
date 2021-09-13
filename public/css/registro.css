@@ -13,9 +13,7 @@ a{
 .text-danger{
     font-size: 10px;
 }
-body{
-    /* height: 100vh; */
-}
+
 .main{
     width: 95%;
    /*  height: 100vh; */
@@ -129,7 +127,7 @@ body{
     overflow: hidden;   
     position: relative;
     width: 85%;
-    height: 5vw;
+    height: 8vw;
     border: 1px solid var(--tipos);
     border-radius: 35px;
 }

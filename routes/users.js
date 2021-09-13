@@ -4,8 +4,9 @@ let {login,
      user,
      addUser,
      createUser,
-     editProfileUser,
+     profileUser,
      processLogin,
+     updateProfile,
 logout } = require ("../controllers/usersController");
 let uploadUserAvatar = require('../middlewares/uploadUserAvatar');
 let userCreateValidator = require("../validations/userCreateValidator");
@@ -18,7 +19,8 @@ router.get("/logout", logout);
 router.get("/user", user);
 router.get("/addUser", addUser);
 router.post("/addUser", uploadUserAvatar.single("avatar"), userCreateValidator, createUser);
-router.get("/userEdit", editProfileUser);
+router.get("/editUser/", profileUser);
+router.put('/editUser', uploadUserAvatar.single('avatar'),updateProfile)
 
 
 
