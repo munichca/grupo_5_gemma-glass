@@ -94,12 +94,8 @@ margin-bottom: 5px;
     margin: 0;
     border-radius: 5px;
 }
-.bSave{
-    display: none;
-}
-.out{
-    display: none;
-}
+
+
 
 .btn-user:hover{
     color: white;

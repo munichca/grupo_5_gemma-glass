@@ -11,7 +11,7 @@
 <!-- fin header  -->
 
 <main class="mainEditUser">
-    <form class="form" action="">
+    <form class="form" action="/users/editUser/<%= user.id%>?_method=PUT" method="POST">
         <div class="container-user">
             <div class="titleC">
                 <span class="title1">Mis datos</span>
@@ -19,7 +19,7 @@
             
             <section class="sectionM">
                     <div class="imagesReg1" id="imagePreview"  >
-                        <img id="old1" src="/image/userAvatars/avatar.png " alt="">
+                        <img id="old1" src="/image/userAvatars/<%= user.avatar %> " alt="">
                     </div>
                     <div class="inputMask bordeColor">
                         <input class="inputOut" type="file" id="examinar" name="avatar" value=""> <!-- este nombre va en el metodo post al cargar en multer -->
@@ -30,42 +30,40 @@
             <div class="datos-user">
                 <div class="data-edit">
                     <label class="midle1" for="">Nombre</label>
-                    <input class="input1" type="text" value="" name="name">
+                    <input class="input1" type="text" value="<%= user.name %>" name="name">
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">Apellido</label>
-                    <input class="input1" type="text" value=""name="last_name">
+                    <input class="input1" type="text" value="<%= user.lastName %>"name="last_name">
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">E-mail</label>
-                    <input class="input1" type="email" value=""name="mail">
+                    <input class="input1" type="email" value="<%= user.email %>"name="mail">
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">Teléfono</label>
-                    <input class="input1" type="number" value=""name="phone">
+                    <input class="input1" type="number" value="<%= user.phone %>"name="phone">
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">Direcciòn</label>
-                    <input class="input1" type="text" value=""name="address">
+                    <input class="input1" type="text" value="<%= user.address ? user.address : "------" %>"name="address">
                 </div>
                 <div class="data-edit">
                     <label class="midle1 out" for="" id="lcp" >Código Postal</label>
-                    <input class="input1 out" type="text" value=""name="pCode" id="cp">
+                    <input class="input1 out" type="text" value="<%= user.pCode ? user.pCode : "------" %>"name="pCode" id="cp">
                 </div>
                 <div class="data-edit">
                     <label class="midle1 out" for="" id="lcity" >Ciudad</label>
-                    <input class="input1 out" type="text" value=""name="city" id="city">
+                    <input class="input1 out" type="text" value="<%= user.city ? user.city : "------" %>"name="city" id="city">
                 </div>
                 <div class="data-edit">
                     <label class="midle1 out" for="" id="lprov" >Provincia</label>
-                    <input class="input1 out" type="text" value=""name="province" id="prov">
+                    <input class="input1 out" type="text" value="<%= user.province ? user.province : "------" %>"name="province" id="prov">
                 </div>
                 <div class="contbutton" id="contbutton" action="">
                     
                     <button  type="submin" class="btn-user bSave" id="bSave">Guardar datos</button>
-                    <div onclick="edit()"class="btn-user bEdit" id="pEdit">
-                        <p class="pEdit">Editar datos</p>
-                    </div>
+                    
                 </div>
             </div>
          </div>

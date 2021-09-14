@@ -17,14 +17,54 @@ module.exports = {
     },
     profileUser: (req, res)=>{
         /* res.send(req.session.user) */
-        /* let user = users.find(user => user.id === +req.session.user.id) */
+        let user = users.find(user => user.id === +req.session.user.id)
         res.render("profileUser",{
-            categoria
-            /* user */
+            categoria,
+            user
         })
     },
-    updateProfile:(req, res)=>{
+    updateProfile: (req, res) =>{
+        let errors = validationResult(req)
+            
+        if(errors.isEmpty()){
+            let user = users.find(user => user.id === +req.params.id)
+            
+            let { 
+                name, 
+                last_name,
+                phone,
+                address,
+                pCode,
+                province,
+                city
+            } = req.body;
 
+            user.id = user.id
+            user.name = name
+            user.last_name = last_name
+            user.phone = phone
+            user.address = address
+            user.pCode = pCode
+            user.province = province
+            user.city = city
+            user.avatar = req.file ? req.file.filename : user.avatar
+
+            writeUsersJSON(users)
+
+            delete user.pass
+            
+            req.session.user = user
+
+            res.redirect("/users/user")
+                  
+        } else{
+            res.render('profileUser', {
+                categoria,
+                errors: errors.mapped(),
+                old: req.body,
+                session:req.session 
+            })   
+        }
     },
     addUser: (req, res)=>{
         res.render("registro",{
@@ -41,13 +81,13 @@ module.exports = {
                 lastId = user.id
             }
         });
-        let {name, lastName, email, pass,phone, address } = req.body
+        let {name, lastName, email, pass, phone, address } = req.body
         let newUser = {
             id: lastId + 1,
             name,
             lastName,
             address,
-            phone,
+            phone: +phone,
             email,
             pass:bcrypt.hashSync(pass,12),
             pCode:"",
@@ -78,6 +118,8 @@ module.exports = {
                 id : user.id,
                 name :user.name,
                 lastName: user.lastName,
+                address: user.address,
+                phone: user.phone,
                 email: user.email,
                 avatar: user.avatar,
                 rol: user.rol

@@ -1,16 +1,1 @@
-[
-    {
-        "id": 1,
-        "name": "Antonio",
-        "lastName": "Diaz",
-        "address": "calle false 458",
-        "phone": "23421312",
-        "email": "mail@mail.com",
-        "pass": "$2a$12$HGyDR3OMIDCT6sq1.TE5MurRAGusC6pfo6/eYEsA2nZrWb9NONqHK",
-        "pCode": "",
-        "city": "",
-        "province": "",
-        "rol": "ROL_USER",
-        "avatar": "1631489995184_img_.jpg"
-    }
-]
+[{"id":1,"name":"Antonio","lastName":"Diaz","address":"calle false 458","phone":23421312,"email":"mail@mail.com","pass":"$2a$12$HGyDR3OMIDCT6sq1.TE5MurRAGusC6pfo6/eYEsA2nZrWb9NONqHK","pCode":12345,"city":"Bs.As","province":"Bs.As","rol":"ROL_USER","avatar":"1631489995184_img_.jpg"},{"id":2,"name":"gato","lastName":"malo","address":"calle false 34","phone":1515151515,"email":"gato@mail.com","pass":"$2a$12$y10z9S4e73lyRpLWMDoMnu.wr.WRwUnDhoRg2JLaWIODw33iaDhsW","pCode":"","city":"","province":"","rol":"ROL_USER","avatar":"1631571640462_img_.jpg"},{"id":3,"name":"gallo","lastName":"feo","address":"calle lejana 1234","phone":"15254875","email":"gallo@mail.com","pass":"$2a$12$obrY0/IUeY6dvi.vqXkj6eluBYSiKlC9X48JhB9SwEG6ZFF31vvWa","pCode":"1548","city":"sdfsdfsdf","province":"------","rol":"ROL_USER","avatar":"1631572072826_img_.jpg","last_name":"feo"}]

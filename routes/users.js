@@ -15,12 +15,15 @@ let loginValidator = require('../validations/userLoginValidator')
 router.get("/login", login);
 router.post("/login",loginValidator, processLogin);
 router.get("/logout", logout);
-
-router.get("/user", user);
+/* register */
 router.get("/addUser", addUser);
 router.post("/addUser", uploadUserAvatar.single("avatar"), userCreateValidator, createUser);
-router.get("/editUser/", profileUser);
-router.put('/editUser', uploadUserAvatar.single('avatar'),updateProfile)
+
+/*  */
+router.get("/user", user);
+
+router.get("/editUser/:id", profileUser);
+router.put("/editUser/:id", uploadUserAvatar.single('avatar'),updateProfile)
 
 
 
