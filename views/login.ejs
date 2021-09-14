@@ -31,6 +31,9 @@
                     <small class="text-danger"><%= errorMsg %> </small>
             <% } %>
             <div class="container_check">
+                <input class="checkRegister" type="checkbox" name="remember" id="remember">
+               <label class="checkRegister labelRegister" for="remember">Recordar contraseña</label>
+
               <input class="checkRegister" type="checkbox" name="terms" id="check" >
               <label class="checkRegister labelRegister" for="check">Acepto los Terminos y Condiciones</label>
           </div>
@@ -40,7 +43,7 @@
         <button type="submit" class="btn-login">Iniciar sesión</button>
 
         <p class="new-account-login">
-          ¿Sos nuevo? <a href="/registro">Creá tu cuenta</a>
+          ¿Sos nuevo? <a href="/users/addUser">Creá tu cuenta</a>
         </p>
       </form>
     </div>

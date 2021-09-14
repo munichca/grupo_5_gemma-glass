@@ -40,12 +40,24 @@
                 <button class="lupa-2"><i class="fa fa-search "></i></button>
         </div>
         <div class="container-3">
-            <ul>
-                <li><a href="/users/login">Inicia sesión</a></li>
-                <li><a href="/users/addUser">Registrate</a></li>
-            </ul>
-        </div>
-        
+             <% if (typeof session.user != "undefined") { %>
+                <ul>
+               <li>  ¡Bienvenido <%= session.user.name %>! <a href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"> </a>
+            </li> 
+                 <li><a href="/users/logout">Cerrar Sesion</a></li> 
+                 </ul>
+              <% }else{ %>
+                <ul>
+                    <li><a href="/users/login">Inicia sesión</a></li>
+                     <li><a href="/users/addUser">Registrate</a></li>
+                </ul>
+    <% }  %> 
+</div> 
+</div>
+
+
+
+
         <div class="container-4">
             
             <div class="trolley"></div>

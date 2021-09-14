@@ -6,7 +6,8 @@ module.exports = {
         let arrayProduct = productos;
          res.render("home",{             
             arrayProduct,
-            categoria            
+            categoria ,
+            session: req.session           
             
             /* product,
             categ,
@@ -17,12 +18,14 @@ module.exports = {
     },
     turnos: (req, res)=>{
         res.render("turnos",{
-            categoria 
+            categoria ,
+            session: req.session
         })
     },
     trolley: (req, res)=>{
         res.render("carrito",{
-            categoria
+            categoria,
+            session: req.session
         })
     },
     search: (req, res) => {
@@ -41,7 +44,8 @@ module.exports = {
         res.render('results', {
 			arrayProduct, 
             categoria,
-			search: req.query.keywords
+			search: req.query.keywords,
+            session: req.session
 		})
 	},
     

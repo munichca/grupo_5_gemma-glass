@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+  <body>
+
+<!-- header -->
+<%- include("partials/header")  %>
+ 
+<!-- fin header  -->
+
+<div class="container-user">
+    <div class="img-user">
+        <div class="imagen-perfil">
+           <img class="avatar-user" id="old" src="/image/userAvatars/<%=session.user.avatar %>" alt=""></div>   
+    </div>
+    <div class="datos-user">  
+            <h2 class="titulo-login">Mis datos</h2>
+            <div class="data">
+                <h5 class="item-data">Nombre</h5>
+                <p><%= user.name %></p>
+            </div>
+            <div class="data">
+                <h5 class="item-data">Apellido</h5>
+                <p><%= user.lastName %></p>
+            </div>
+            
+            <section class="sectionM">
+                    <div class="imagesReg1" id="imagePreview"  >
+                        <img id="old1" src="/image/userAvatars/<%= user.avatar %> " alt="">
+                    </div>
+                    
+            </section >
+            <div class="datos-user">
+                <div class="data-edit">
+                    <label class="midle1" for="">Nombre</label>
+                    <input class="input1" type="text" value="<%= user.name %>" name="name">
+                </div>
+                <div class="data-edit">
+                    <label class="midle1" for="">Apellido</label>
+                    <input class="input1" type="text" value="<%= user.lastName %>"name="last_name">
+                </div>
+                <div class="data-edit">
+                    <label class="midle1" for="">E-mail</label>
+                    <input class="input1" type="email" value="<%= user.email %>"name="mail">
+                </div>
+                <div class="data-edit">
+                    <label class="midle1" for="">Teléfono</label>
+                    <input class="input1" type="number" value="<%= user.phone %>"name="phone">
+                </div>
+                <div class="data-edit">
+                    <label class="midle1" for="">Direcciòn</label>
+                    <input class="input1" type="text" value="<%= user.address ? user.address : "------" %>"name="address">
+                </div>
+                
+                <div class="contbutton" id="contbutton" action="">
+                    <a href="/users/editUser/<%= user.phone %>" class="btn-user">EDITAR DATOS</a>
+                    
+                    
+                </div>
+            </div>
+         </div>
+    </form>
+    
+</main>
+<script>
+  
+
+            <div class="data">
+                <h5 class="item-data">Teléfono</h5>
+                <p><%= user.phone ? user.phone : "------" %></p>
+            </div>
+            <div class="profile-btn">   <a href="/users/editUser" class="btn-user">Editar datos</a> </div>
+        </div>
+        <!-- <div class="profile-btn">   <a href="" class="btn-user">Editar datos</a> -->
+    </div>
+<!-- footer -->
+<%- include("partials/footer")  %> 
+<!-- fin footer  -->
+  </body>
+</html>

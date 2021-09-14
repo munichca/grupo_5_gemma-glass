@@ -24,7 +24,6 @@ app.use(session({
     secret: "gemmaGlass",
     resave: false,
     saveUninitialized : true,
-    cookie:{maxAge: 600000000}
 }))
 
 

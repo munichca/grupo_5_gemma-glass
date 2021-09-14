@@ -1,10 +1,11 @@
-let {categoria,users, writeUsersJSON} = require ('../data/dataBase');
+let {categoria, users, writeUsersJSON} = require('../data/dataBase');
 let {validationResult} = require ("express-validator");
 let bcrypt=require('bcryptjs')
 module.exports = {
     login: (req, res)=>{
          res.render("login",{
-            categoria
+            categoria,
+            session: req.session
          })
     },
     user: (req, res)=>{
@@ -18,20 +19,22 @@ module.exports = {
     profileUser: (req, res)=>{
         /* res.send(req.session.user) */
         let user = users.find(user => user.id === +req.session.user.id)
-        res.render("profileUser",{
+        res.render("editProfileUser",{
             categoria,
-            user
+            user,
+            session: req.session
         })
     },
     updateProfile: (req, res) =>{
+        
         let errors = validationResult(req)
-            
+        res.send(req.body)
         if(errors.isEmpty()){
             let user = users.find(user => user.id === +req.params.id)
             
             let { 
                 name, 
-                last_name,
+                lastName,
                 phone,
                 address,
                 pCode,
@@ -39,15 +42,16 @@ module.exports = {
                 city
             } = req.body;
 
+            
             user.id = user.id
             user.name = name
-            user.last_name = last_name
-            user.phone = phone
+            user.lastName = lastName
+            user.phone = +phone
             user.address = address
-            user.pCode = pCode
+            user.pCode = +pCode
             user.province = province
             user.city = city
-            user.avatar = req.file ? req.file.filename : user.avatar
+            user.avatar = req.file? req.file.filename : user.avatar
 
             writeUsersJSON(users)
 
@@ -55,8 +59,8 @@ module.exports = {
             
             req.session.user = user
 
-            res.redirect("/users/user")
-                  
+            res.redirect("/")
+                 
         } else{
             res.render('profileUser', {
                 categoria,
@@ -68,7 +72,8 @@ module.exports = {
     },
     addUser: (req, res)=>{
         res.render("registro",{
-            categoria
+            categoria,
+              session: req.session
         })
     },
     createUser: (req, res)=>{
@@ -103,7 +108,8 @@ module.exports = {
             res.render("registro",{
                 categoria,
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
         /* res.send(req.body) */
@@ -124,19 +130,31 @@ module.exports = {
                 avatar: user.avatar,
                 rol: user.rol
             }
+
+
+            if(req.body.remember){
+                    res.cookie('cookieGlass', req.session.user , { maxAge: 5000*60})
+            }
             res.locals.user= req.session.user
             res.redirect('/')
+
         }else{
             res.render("login",{
                 categoria,
                 errors: errors.mapped(),
+                session: req.session
             })
         }
     
 
     },
-    logout: (req,res)=>{
+ logout:(req,res)=> {
+        req.session.destroy();
 
-    },
+        if(req.cookies.cookieGlass){
+            res.cookie('cookieGlass','', {maxAge: -1})
+        }
+        res.redirect('/')
+    }
 
 }
