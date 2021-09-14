@@ -14,7 +14,7 @@
 <div class="container-user">
     <div class="img-user">
         <div class="imagen-perfil">
-           <img class="avatar-user" id="old" src="/image/userAvatars/avatar.png " alt=""></div>   
+           <img class="avatar-user" id="old" src="/image/userAvatars/<%=session.user.avatar %>" alt=""></div>   
     </div>
     <div class="datos-user">  
             <h2 class="titulo-login">Mis datos</h2>
@@ -35,7 +35,7 @@
                 <h5 class="item-data">Teléfono</h5>
                 <p><%= user.phone ? user.phone : "------" %></p>
             </div>
-            <div class="profile-btn">   <a href="" class="btn-user">Editar datos</a> </div>
+            <div class="profile-btn">   <a href="/users/editUser" class="btn-user">Editar datos</a> </div>
         </div>
         <!-- <div class="profile-btn">   <a href="" class="btn-user">Editar datos</a> -->
     </div>

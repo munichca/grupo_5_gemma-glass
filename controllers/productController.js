@@ -12,6 +12,7 @@ module.exports = {
         res.render("productos",{            
             arrayProduct,
             categoria, formas, marcas, materials,
+            session: req.session
             
         })
     },
@@ -24,14 +25,16 @@ module.exports = {
         let material = materials.find(material => material.id === productFind.subCatmaterial);
         let arrayProduct = productos;
         res.render("detalleProducto",{
-            arrayProduct, categoria, productFind, categ, forma, marca, material
+            arrayProduct, categoria, productFind, categ, forma, marca, material,
+            session: req.session
         })
     },
     productOferta: (req, res) =>{
         let arrayProduct = productos.filter(prod => prod.discount > 0);        
 
         res.render("productos",{
-            arrayProduct, categoria, formas, marcas, materials
+            arrayProduct, categoria, formas, marcas, materials,
+            session: req.session
         })
     },
     proFormas: (req, res) =>{
@@ -39,7 +42,8 @@ module.exports = {
         let arrayProduct = productos.filter(prod => prod.subCatForma === forma);    
         /* res.send(formas) */    
         res.render("productos",{
-            arrayProduct, categoria, formas, marcas
+            arrayProduct, categoria, formas, marcas,
+            session: req.session
         })
     },
     proMarcas: (req, res) =>{
@@ -47,7 +51,8 @@ module.exports = {
         let arrayProduct = productos.filter(prod => prod.subCatMarca === marca);    
         /* res.send(marcas) */    
         res.render("productos",{
-            arrayProduct, categoria, formas, marcas
+            arrayProduct, categoria, formas, marcas,
+            session: req.session
         })
     }
 }

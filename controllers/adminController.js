@@ -5,7 +5,8 @@ module.exports = {
     add: (req, res)=>{
         
          res.render("add",{
-            productos, categoria, formas, marcas, materials
+            productos, categoria, formas, marcas, materials,
+            session: req.session
          })
     },
     nuevoProducto: (req, res) => {
@@ -60,7 +61,8 @@ module.exports = {
             return product.id === +req.params.id})
         res.render('edicion', {
             categoria, 
-            product, formas, marcas, materials
+            product, formas, marcas, materials,
+            session: req.session
         })
     },
     edicion: (req, res) => {
@@ -101,7 +103,8 @@ module.exports = {
         
         res.render("listado",{
             categoria,
-            prod, formas, marcas, materials
+            prod, formas, marcas, materials,
+            session: req.session
         })
     },
     borrarProducto:(req, res)=> {        

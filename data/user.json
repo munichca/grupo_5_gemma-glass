@@ -1,16 +1,30 @@
 [
-    {
-        "id": 1,
-        "name": "Antonio",
-        "lastName": "Diaz",
-        "address": "calle false 458",
-        "phone": "23421312",
-        "email": "mail@mail.com",
-        "pass": "$2a$12$HGyDR3OMIDCT6sq1.TE5MurRAGusC6pfo6/eYEsA2nZrWb9NONqHK",
-        "pCode": "",
-        "city": "",
-        "province": "",
-        "rol": "ROL_USER",
-        "avatar": "1631489995184_img_.jpg"
-    }
+  {
+    "id": 1,
+    "name": "Antonio",
+    "lastName": "Diaz",
+    "address": "calle false 458",
+    "phone": "23421312",
+    "email": "mail@mail.com",
+    "pass": "$2a$12$HGyDR3OMIDCT6sq1.TE5MurRAGusC6pfo6/eYEsA2nZrWb9NONqHK",
+    "pCode": "",
+    "city": "",
+    "province": "",
+    "rol": "ROL_USER",
+    "avatar": "1631489995184_img_.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Evelyn",
+    "lastName": "Gerez",
+    "address": "erfd",
+    "phone": "11111111111",
+    "email": "eve@eve.com",
+    "pass": "$2a$12$45.NFKNRrBDhRPkaYG0N.eNuF7wnWT7mRJUkn0jBdNaP4DQz2c7M.",
+    "pCode": "",
+    "city": "",
+    "province": "",
+    "rol": "ROL_USER",
+    "avatar": "1631585870767_img_.png"
+  }
 ]
