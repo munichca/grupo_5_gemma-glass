@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+b@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
     --header : rgb(79, 141,240);
@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto 0;
+    margin: 50px auto 0  ;
     justify-content: space-evenly;
     width: 100vw;
     border: 1px solid gray;

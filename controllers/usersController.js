@@ -29,7 +29,7 @@ module.exports = {
     updateProfile: (req, res) =>{
         
         let errors = validationResult(req)
-        res.send(errors)
+        
         if(errors.isEmpty()){
             let user = users.find(user => user.id === +req.params.id)
             

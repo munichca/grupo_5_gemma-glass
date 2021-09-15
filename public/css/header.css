@@ -92,7 +92,7 @@ font-size: 19px;
 }
 
 .container-3 {
-  width: 70%;
+  width: 70vw;
   padding-left: 5px;
   text-align: start;
   font-size: 15px;
@@ -205,6 +205,13 @@ text-align: center;
   .container-3 {
     padding-left: 20px;
     font-size: 20px;
+    
+  }
+  .container-3 ul li{
+    font-size: 20px;
+  }
+  .container-3 ul .tBold{
+    font-weight: bold;
   }
   .container-3 ul{
     padding-left: 0;

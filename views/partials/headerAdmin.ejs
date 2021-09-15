@@ -1,5 +1,5 @@
     <header>
-        <div class="menuBurger">
+        <!-- <div class="menuBurger">
             <input type="checkbox" name="burger" id="btn-modal">
             <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
             
@@ -18,13 +18,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="container-1">
 
             <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo"></a>
         </div>
         <div class="container-2">
-            <p class="number">(011)15555555</p>
+            <p class="number">Gemma Glass</p>
              <br>
             <form action="/search" method="GET">
                 <div class="barra-busqueda">
@@ -45,8 +45,6 @@
                <li>  ¡Bienvenido <%= session.user.name %>! <a href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"> </a>
             </li> 
                  <li><a href="/users/logout">Cerrar Sesion</a></li> 
-                 <!-- <li class="tBold"><a href="/admin/listado">Admin</a></li> --> 
-
                  </ul>
               <% }else{ %>
                 <ul>
@@ -56,31 +54,8 @@
     <% }  %> 
 </div> 
 </div>
-
-
-
-
-        <div class="container-4">
-            
-            <div class="trolley"></div>
-                <a href="/trolley">
-                
-                    <i class="sixeC fa fa-shopping-cart"></i>
-                    <p class="carrito">Mi carrito</p>
-                </a>
-            </div>
-
         </div>
-        <nav class="container-nav">
-            <ul>
-                <% categoria.forEach(item => {%>
-                <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
-                <% })  %> 
-                <a  href="/product/productOfertas"> <li>Ofertas</li></a>
-            
-                <a  href="/turnos"> <li>Pedí una consulta</li></a>
-            </ul>
-        </nav>
+       
         <script>
     function mostrar() {
         var x = document.getElementById("buscador");

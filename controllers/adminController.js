@@ -3,11 +3,15 @@ let {productos, categoria, formas, marcas, materials, writeProductJson} = requir
 const { report } = require('../routes/home');
 module.exports = {
     add: (req, res)=>{
-        
-         res.render("add",{
-            productos, categoria, formas, marcas, materials,
-            session: req.session
-         })
+        if(req.session.user.rol === "ROL_ADMIN"){
+            res.render("add",{
+                productos, categoria, formas, marcas, materials,
+                session: req.session
+             })
+        }else{
+            res.redirect('/')
+        }
+         
     },
     nuevoProducto: (req, res) => {
         let lastId = 1;
@@ -94,18 +98,27 @@ module.exports = {
             })
 
             writeProductJson(productos)
-
-            res.redirect('/admin/listado')
+            
+            if(req.session.user.rol === "ROL_ADMIN"){
+                res.redirect('/admin/listado')
+            }else{
+                res.redirect('/')
+            }
+           
         },
     lista: (req, res)=>{
         let prod = productos;
+        if(req.session.user.rol === "ROL_ADMIN"){
+            res.render("listado",{
+                categoria,
+                prod, formas, marcas, materials,
+                session: req.session
+            })
+        }else{
+            res.redirect('/')
+        }
         
         
-        res.render("listado",{
-            categoria,
-            prod, formas, marcas, materials,
-            session: req.session
-        })
     },
     borrarProducto:(req, res)=> {        
         productos.forEach(producto => {
