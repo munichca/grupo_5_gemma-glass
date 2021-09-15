@@ -11,7 +11,7 @@
         "city": "------",
         "province": "------",
         "rol": "ROL_USER",
-        "avatar": "1631489995184_img_.jpg",
+        "avatar": "1631668054040_img_.jpg",
         "last_name": "Diaz"
     },
     {
@@ -55,5 +55,19 @@
         "province": "------",
         "rol": "ROL_USER",
         "avatar": "1631600782716_img_.jpg"
+    },
+    {
+        "id": 5,
+        "name": "perro",
+        "lastName": "peludo",
+        "address": "calle false  123",
+        "phone": 1232345345,
+        "email": "perrito@mail.com",
+        "pass": "$2a$12$vRdfF4/Gb3tqHUQF7ibVCuDpG/WR4QbayHvCvJmsm91vkIe5N0dzC",
+        "pCode": null,
+        "city": "------",
+        "province": "------",
+        "rol": "ROL_USER",
+        "avatar": "1631665847131_img_.jpg"
     }
 ]

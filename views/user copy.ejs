@@ -10,20 +10,11 @@
  
 <!-- fin header  -->
 
-<div class="container-user">
-    <div class="img-user">
-        <div class="imagen-perfil">
-           <img class="avatar-user" id="old" src="/image/userAvatars/<%=session.user.avatar %>" alt=""></div>   
-    </div>
-    <div class="datos-user">  
-            <h2 class="titulo-login">Mis datos</h2>
-            <div class="data">
-                <h5 class="item-data">Nombre</h5>
-                <p><%= user.name %></p>
-            </div>
-            <div class="data">
-                <h5 class="item-data">Apellido</h5>
-                <p><%= user.lastName %></p>
+<main class="mainEditUser">
+    <form class="form" action="">
+        <div class="container-user">
+            <div class="titleC">
+                <span class="title1">Mis datos</span>
             </div>
             
             <section class="sectionM">
@@ -67,14 +58,12 @@
 <script>
   
 
-            <div class="data">
-                <h5 class="item-data">Teléfono</h5>
-                <p><%= user.phone ? user.phone : "------" %></p>
-            </div>
-            <div class="profile-btn">   <a href="/users/editUser" class="btn-user">Editar datos</a> </div>
-        </div>
-        <!-- <div class="profile-btn">   <a href="" class="btn-user">Editar datos</a> -->
-    </div>
+
+    
+
+        
+   
+</script>   
 <!-- footer -->
 <%- include("partials/footer")  %> 
 <!-- fin footer  -->

@@ -9,6 +9,7 @@ module.exports = {
          })
     },
     user: (req, res)=>{
+        
         let user= users.find(user => user.id === +req.session.user.id)
         res.render("user", {
             categoria,

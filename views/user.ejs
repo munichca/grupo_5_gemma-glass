@@ -26,27 +26,32 @@
             <div class="datos-user">
                 <div class="data-edit">
                     <label class="midle1" for="">Nombre</label>
-                    <input class="input1" type="text" value="<%= user.name %>" name="name">
+                    <p class="input1"><%= user.name %></p>
+                    
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">Apellido</label>
-                    <input class="input1" type="text" value="<%= user.lastName %>"name="last_name">
+                    <p class="input1"><%= user.lastName %></p>
+                    
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">E-mail</label>
-                    <input class="input1" type="email" value="<%= user.email %>"name="mail">
+                    <p class="input1"><%= user.email %></p>
+                    
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">Teléfono</label>
-                    <input class="input1" type="number" value="<%= user.phone %>"name="phone">
+                    <p class="input1"><%= user.phone %></p>
+                    
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">Direcciòn</label>
-                    <input class="input1" type="text" value="<%= user.address ? user.address : "------" %>"name="address">
+                    <p class="input1"><%= user.address ? user.address : "------" %></p>
+                    
                 </div>
                 
                 <div class="contbutton" id="contbutton" action="">
-                    <a href="/users/editUser/<%= user.phone %>" class="btn-user">EDITAR DATOS</a>
+                    <a href="/users/editUser/<%= user.id %>" class="btn-user">EDITAR DATOS</a>
                     
                     
                 </div>

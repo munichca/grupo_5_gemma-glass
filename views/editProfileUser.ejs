@@ -11,7 +11,7 @@
 <!-- fin header  -->
 
 <main class="mainEditUser">
-    <form class="form" action="/users/editUser/<%= user.id%>?_method=PUT" method="POST">
+    <form class="form" action="/users/editUser/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
         <div class="container-user">
             <div class="titleC">
                 <span class="title1">Mis datos</span>
