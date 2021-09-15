@@ -30,15 +30,22 @@
             <div class="datos-user">
                 <div class="data-edit">
                     <label class="midle1" for="">Nombre</label>
-                    <input class="input1" type="text" value="<%= user.name %>" name="name">
+                    <input class="input1" type="text" value="<%= locals.old ? old.name : user.name %>" name="name">
+                    <% if (locals.errors && errors.name) { %>
+                        
+                        <span class="text-danger"><%= errors.name.msg %> </span>
+                    <% } %>
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">Apellido</label>
-                    <input class="input1" type="text" value="<%= user.lastName %>"name="lastName">
+                    <input class="input1" type="text" value="<%= locals.old ? old.lastName : user.lastName %>"name="lastName">
+                    <% if (locals.errors && errors.lastName) { %>
+                        <small class="text-danger"><%= errors.lastName.msg %> </small>
+                    <% } %>
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">E-mail</label>
-                    <input class="input1" type="email" value="<%= user.email %>"name="mail">
+                    <input class="input1" type="email" readonly value="<%= user.email %>"name="mail">
                 </div>
                 <div class="data-edit">
                     <label class="midle1" for="">Teléfono</label>
