@@ -69,7 +69,7 @@
                 </div>
                 <div class="contbutton" id="contbutton" action="">
                     
-                    <button  type="submin" class="btn-user bSave" id="bSave">Guardar datos</button>
+                    <button  type="submit" class="btn-user bSave" id="bSave">Guardar datos</button>
                     
                 </div>
             </div>
@@ -105,27 +105,6 @@ function fileValidation(){
     }
 })
 
-let bSave = document.getElementById('bSave')
-let cb = document.getElementById("contbutton");
-let cp = document.getElementById("cp");
-let lcp = document.getElementById("lcp");
-let city = document.getElementById("city");
-let lcity = document.getElementById("lcity");
-let prov = document.getElementById("prov");
-let lprov = document.getElementById("lprov");
-let pEdit = document.getElementById("pEdit");
-function edit() {
-        bSave.style.display="inline-block"; 
-        cb.style.justifyContent = "space-between" 
-        cp.style.display = "inherit"
-        lcp.style.display = "inherit"
-        city.style.display = "inherit"
-        lcity.style.display = "inherit"
-        prov.style.display = "inherit"
-        lprov.style.display = "inherit"
-        pEdit.style.display = "none"
-        
-    }
 </script>   
 <!-- footer -->
 <%- include("partials/footer")  %> 

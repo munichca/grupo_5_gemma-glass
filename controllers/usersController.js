@@ -29,7 +29,7 @@ module.exports = {
     updateProfile: (req, res) =>{
         
         let errors = validationResult(req)
-        /* res.send(req.body) */
+        res.send(errors)
         if(errors.isEmpty()){
             let user = users.find(user => user.id === +req.params.id)
             
@@ -137,7 +137,12 @@ module.exports = {
                     res.cookie('cookieGlass', req.session.user , { maxAge: 5000*60})
             }
             res.locals.user= req.session.user
-            res.redirect('/')
+            if(req.session.user.rol === "ROL_ADMIN"){
+                res.redirect('/admin/listado')
+            }else{
+                res.redirect('/')
+            }
+            
 
         }else{
             res.render("login",{
