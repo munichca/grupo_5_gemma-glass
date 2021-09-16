@@ -23,7 +23,7 @@ router.post("/addUser", uploadUserAvatar.single("avatar"), userCreateValidator, 
 router.get("/user", user);
 
 router.get("/editUser/:id", profileUser);
-router.put("/editUser/:id", uploadUserAvatar.single('avatar'),updateProfile)
+router.put("/editUser/:id", uploadUserAvatar.single('avatar'), updateProfile)
 
 
 

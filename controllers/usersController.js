@@ -29,9 +29,11 @@ module.exports = {
     updateProfile: (req, res) =>{
         
         let errors = validationResult(req)
-        
+        /* res.send(req.params.id) */
         if(errors.isEmpty()){
+            
             let user = users.find(user => user.id === +req.params.id)
+            
             
             let { 
                 name, 
@@ -56,14 +58,14 @@ module.exports = {
 
             writeUsersJSON(users)
 
-            delete user.pass
+            /* delete user.pass */
             
             req.session.user = user
 
-            res.redirect("/")
+            res.redirect("/users/user")
                  
         } else{
-            res.render('profileUser', {
+            res.render('editProfileUser', {
                 categoria,
                 errors: errors.mapped(),
                 old: req.body,
