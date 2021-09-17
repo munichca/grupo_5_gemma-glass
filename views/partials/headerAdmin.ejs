@@ -1,29 +1,29 @@
     <header>
         
-        <div class="container-1">
+        <div class="container-1 cont1Admin">
 
-            <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo"></a>
+            <a href="/"> <img class="logo logoAdmin" src="/image/logo.png" alt="Logo"></a>
         </div>
-        <div class="container-2">
-            <p class="number">ADMINISTADOR</p>
+        <div class="container-2 cont2Admin">
+            <p class="number numbreAdmin">ADMINISTADOR</p>
              <br>
             <form action="/search" method="GET">
-                <div class="barra-busqueda">
-                    <input class="search"  name="keywords" placeholder="Buscá un producto">
-                    <button type="submit" class="lupa" onclick="mostrar()"><i class="fa fa-search "></i></button>
-                    <button type="submit" class="lupa-1" ><i class="fa fa-search "></i></button>
+                <div class="barra-busqueda bbAdmin">
+                    <input class="search searchAdmin"  name="keywords" placeholder="Buscá un producto">
+                    <button type="submit" class="lupa lupaAdmin" onclick="mostrar()"><i class="fa fa-search "></i></button>
+                    <button type="submit" class="lupa-1 lupa1Admin" ><i class="fa fa-search "></i></button>
                 </div>
             </form>
             
         </div>
         <div id="buscador">
-                <input class="search-2" type="search" placeholder="Buscá un producto">
-                <button class="lupa-2"><i class="fa fa-search "></i></button>
+                <input class="search-2 search2Admin" type="search" placeholder="Buscá un producto">
+                <button class="lupa-2 lupa2Admin"><i class="fa fa-search "></i></button>
         </div>
-        <div class="container-3">
+        <div class="container-3 cont3Admin">
              <% if (typeof session.user != "undefined") { %>
                 <ul>
-               <li>  ¡Bienvenido <%= session.user.name %>! <a href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"> </a>
+               <li>  ¡Bienvenido <%= session.user.name %>! <a href="/users/user"><img class="avatar-header avatarAdmin" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"> </a>
             </li> 
                  <li><a href="/users/logout">Cerrar Sesion</a></li> 
                  </ul>

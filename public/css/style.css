@@ -14,6 +14,7 @@
 @import url(listado.css);
 @import url(edition.css);
 @import url(result.css);
+@import url(general.css);
 
 *{
     margin: 0;

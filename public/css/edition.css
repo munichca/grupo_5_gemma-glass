@@ -62,21 +62,7 @@ b@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     justify-content: center;
 }
 
-.btn {
-    background-color: var(--header);
-    border: 1px solid black;
-    margin: 10px  10px 15px 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: whitesmoke;
-    text-align: center;
-    width: 130px;
-    height: 50px;
-}
 
-.btn:hover {
-    background-color: var(--navbar);
-}
 
 
 /*  VERSIÓN TABLET  */

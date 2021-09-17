@@ -93,10 +93,8 @@ margin-bottom: 5px;
     text-align: center;
     margin: 0;
     border-radius: 5px;
+    
 }
-
-
-
 .btn-user:hover{
     color: white;
     background-color: #3b7adf;
