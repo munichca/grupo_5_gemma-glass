@@ -181,7 +181,21 @@ text-align: center;
    display: inline ;
    text-align: center;
 }
-
+.boton-admin{
+  outline: none;
+  background-color: white;
+  text-decoration: none;
+  display: inline-block;
+  width: 60%;
+  margin-right: 0.625%;
+  text-align: center;
+  line-height: 3;
+  border-radius: 5px;
+}
+.boton-admin:hover{
+  background-color:#152847 ;
+  color: white;
+}
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
   .logo {

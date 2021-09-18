@@ -11,6 +11,8 @@ logout } = require ("../controllers/usersController");
 let uploadUserAvatar = require('../middlewares/uploadUserAvatar');
 let userCreateValidator = require("../validations/userCreateValidator");
 let loginValidator = require('../validations/userLoginValidator')
+let userSession = require('../middlewares/userSession')
+
 const cookie = require("../middlewares/cookie");
 /* GET RUta para login */
 router.get("/login", login);
@@ -21,9 +23,9 @@ router.get("/addUser", addUser);
 router.post("/addUser", uploadUserAvatar.single("avatar"), userCreateValidator, createUser);
 
 /*  */
-router.get("/user",cookie, user);
+router.get("/user",userSession,cookie, user);
 
-router.get("/editUser/:id",cookie, profileUser);
+router.get("/editUser/:id",userSession,cookie, profileUser);
 router.put("/editUser/:id", uploadUserAvatar.single('avatar'),cookie,updateProfile)
 
 

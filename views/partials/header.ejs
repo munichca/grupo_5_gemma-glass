@@ -40,13 +40,11 @@
                 <button class="lupa-2"><i class="fa fa-search "></i></button>
         </div>
         <div class="container-3">
-             <% if (typeof session.user != "undefined") { %>
+             <% if (typeof session.user != "undefined" ) { %>
                 <ul>
                <li>  ¡Bienvenido <%= session.user.name %>! <a href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"> </a>
             </li> 
                  <li><a href="/users/logout">Cerrar Sesion</a></li> 
-                 <!-- <li class="tBold"><a href="/admin/listado">Admin</a></li> --> 
-
                  </ul>
               <% }else{ %>
                 <ul>
@@ -62,12 +60,18 @@
 
         <div class="container-4">
             
+             <% if (typeof session.user == "undefined" || session.user.rol === 'ROL_USER') { %>
             <div class="trolley"></div>
                 <a href="/trolley">
                 
                     <i class="sixeC fa fa-shopping-cart"></i>
                     <p class="carrito">Mi carrito</p>
                 </a>
+                <% }else{ %>
+                <ul>
+                     <li><a class="boton-admin" href="/admin/listado">ADMIN</a></li>
+                </ul>
+    <% }  %> 
             </div>
 
         </div>

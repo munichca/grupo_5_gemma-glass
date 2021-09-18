@@ -138,7 +138,7 @@ module.exports = {
             }
             res.locals.user= req.session.user
             if(req.session.user.rol === "ROL_ADMIN"){
-                res.redirect('/admin/listado')
+                res.redirect('/')
             }else{
                 res.redirect('/')
             }
