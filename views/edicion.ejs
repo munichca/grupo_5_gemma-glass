@@ -9,7 +9,7 @@
 
   <section class="wb">
     <h5 class="editSubtitles">Ingresá la información actualizada:</h5>
-    <form class="tamanioFondo" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" >
+    <form class="tamanioFondo" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
               <label class="tamanio" for="name">Nombre del producto: </label>
                <input class="tamanio" type="text" name="name" id="name" value="<%= product.name %>">
               <label class="tamanio" for="price">Precio: </label>
@@ -44,14 +44,15 @@
                <input class="tamanio" type="text" name="height" id="heigth" value="<%= product.height %>">
               <label class="tamanio" for="width">Ancho: </label>
                <input class="tamanio" type="text" name="width" id="width" value="<%= product.width %>">
-       
-            <div>           
+             
+            <div class="inputFile">           
               <label class="label" for="archivos">Subí fotos del producto:</label><br>
               <input class="archivos" type="file" name="archivos"  multiple>
             </div>
             <div class="buttons">
               <button class="btn" type="submit">Aceptar</button>
               <button class="btn" type="reset">Cancelar</button>
+              
 
             </div>
           </form> 

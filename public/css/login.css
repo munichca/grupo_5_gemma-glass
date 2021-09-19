@@ -1,6 +1,6 @@
 
 .mainLogin{
-    
+   
     padding: 15px;
 }
 
@@ -84,7 +84,7 @@ font-weight: bold;
     margin: 0 5px 0;
 }
 .labelRegister{
-    font-size: 4px;
+    font-size: 12px;
 }
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {

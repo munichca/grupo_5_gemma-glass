@@ -88,6 +88,7 @@ a{
     margin: 0;
     opacity: 1; 
     cursor: pointer; 
+    object-fit: contain;
   }
   .containerExt .imageMini .img:hover {
     opacity: 0.5;
@@ -104,6 +105,7 @@ a{
     display: flex;
    margin-left: 5vw;
    
+   
   }
   .containerExt .containerPr #principal{
     width: 100%;
@@ -111,6 +113,7 @@ a{
     border: 1px solid var(--tipos);
     border-radius: 30px;
     display: block;
+    object-fit: contain;
   }
   /* bloque 2 desktop */
   .block2-desktop{
@@ -157,7 +160,7 @@ a{
     width: 100%;     
   }
   .block2-desktop .button-buy .btn_btn-submit{
-    width:75%;    
+    width:75% !important;    
     background-color: #4F8DF0;
     border: solid 1px white;
     padding: 7px;

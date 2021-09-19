@@ -92,11 +92,11 @@ font-size: 19px;
 }
 
 .container-3 {
-  width: 70vw;
+  width: 80vw;
   padding-left: 5px;
   text-align: start;
   font-size: 15px;
-  padding-top: 15px;
+  padding-top: 7px;
 }
 
 .container-3 ul li a {
@@ -106,6 +106,7 @@ font-size: 19px;
 }
 .container-3 ul{
   padding-left: 0;
+  margin-bottom: 5px !important;
 }
 .container-3 ul li {
   display: inline;
@@ -125,25 +126,45 @@ header a:hover {
     border:solid 3px white;
 }
 
-.container-4 {
-  padding-left: 30px;
-  width: 30%;
+.container_4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 20vw;
   text-align: center;
-  font-size: 11px;
   padding-bottom: 3px;
 }
-
-.container-4 i {
-  font-size: 30px;
+.trolley{
+  margin-right: 7px;
+}
+.container_4 .sixeC {
+  /* font-size: 45px; */
+  font-size: 25px;
 }
 
-.container-4 a {
+.container_4 a {
   padding-bottom: 3px;
   text-decoration: none;
   color: #152847;
 }
+.container_4 .ulMyDiv{
+  margin-bottom: 0 !important;
+}
 .carrito{
   margin-bottom: 0;
+}
+.mydiv{
+  display: flex;
+  /* margin-right: 5px !important; */
+  justify-content: center;
+  padding: 10px 10px 10px 10px;
+  width: 65px !important;
+  font-size: .7rem !important;
+}
+.ulMyDiv{
+  margin-right: 5px;
 }
 
 /*  BARRA DE NAVEGACIÓN  */
@@ -157,7 +178,7 @@ header a:hover {
     display: flex;
     justify-content: space-around;
     background-color:lightblue;
-margin: 0;
+    margin: 0;
 }
 
 .container-nav ul a {
@@ -181,20 +202,9 @@ text-align: center;
    display: inline ;
    text-align: center;
 }
-.boton-admin{
-  outline: none;
-  background-color: white;
-  text-decoration: none;
-  display: inline-block;
-  width: 60%;
-  margin-right: 0.625%;
-  text-align: center;
-  line-height: 3;
-  border-radius: 5px;
-}
-.boton-admin:hover{
-  background-color:#152847 ;
-  color: white;
+.myLi{
+  border: 1px solid #152847 !important;
+  margin: auto auto;
 }
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
@@ -217,7 +227,9 @@ text-align: center;
     font-size: 25px;
   }
   .container-3 {
+    width: 70vw;
     padding-left: 20px;
+    padding-top: 0;
     font-size: 20px;
     
   }
@@ -229,10 +241,33 @@ text-align: center;
   }
   .container-3 ul{
     padding-left: 0;
+    
+    margin-bottom: 0 !important;
   }
-  .container-4 {
-    padding-left: 110px;
-    font-size: 20px;
+  
+  .container_4 {
+    padding-top: 0 !important;
+    padding-bottom: 15px;
+    
+    width: 30vw;
+    text-align: center;
+    padding-bottom: 3px;
+  }
+  .trolley{
+    margin-right: 27px;
+  }
+  .container_4 .sixeC {
+    font-size: 35px;
+  }
+  .mydiv{
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 10px 10px;
+    width: 110px !important;
+    font-size: .7rem !important;
+  }
+  .ulMyDiv{
+    margin-right: 5px !important;
   }
   #buscador{
     margin: 0 auto;
@@ -274,7 +309,7 @@ text-align: center;
     text-align: center;
   }
   .container-2 {
-    width: 35%;
+    width: 30%;
     padding-top: 5px;
     text-align: start;
   }
@@ -311,7 +346,7 @@ text-align: center;
   color:  #4f8df0;
 }
   .container-3 {
-    width: 33%;
+    width: 38%;
     padding-top: 50px;
     padding-left: 5px;
     text-align: center;
@@ -321,9 +356,9 @@ text-align: center;
   .container-3 ul li {
     display: inline;
   }
-  .container-4 {
+  .container_4 {
     padding-left: 48px;
-    width: 15%;
+    width: 15% ;
     text-align: center;
     font-size: 16px;
   }

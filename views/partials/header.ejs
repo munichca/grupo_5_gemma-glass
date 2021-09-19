@@ -58,18 +58,18 @@
 
 
 
-        <div class="container-4">
+        <div class="container_4">
             
              <% if (typeof session.user == "undefined" || session.user.rol === 'ROL_USER') { %>
-            <div class="trolley"></div>
+            <div class="trolley">
                 <a href="/trolley">
                 
                     <i class="sixeC fa fa-shopping-cart"></i>
                     <p class="carrito">Mi carrito</p>
                 </a>
                 <% }else{ %>
-                <ul>
-                     <li><a class="boton-admin" href="/admin/listado">ADMIN</a></li>
+                <ul class="ulMyDiv">
+                     <li class=""><a class="btn mydiv" href="/admin/listado">ADMIN</a></li>
                 </ul>
     <% }  %> 
             </div>

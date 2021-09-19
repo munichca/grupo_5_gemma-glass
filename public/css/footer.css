@@ -26,13 +26,13 @@ footer{
     text-align: center;
     font-size: 14px;
 }
-.footer-1 h4 ,
+/* .footer-1 h4 ,
 .footer-2 h4,
  .footer-3 h4,
   .footer-4 h4{
     font-size: 15px;
     padding-bottom: 4px;
-}
+} */
 .footer-1 i{
     font-size: 25px;
     padding: 3px;
@@ -56,10 +56,10 @@ border-radius: 20%;
 .footer-2 li{
     padding-bottom: 8px;
 }
-.footer-3 p {
+/* .footer-3 p {
     padding-bottom: 8px;
     margin-bottom: 0;
-} 
+}  */
 .footer-4 i{
     font-size: 25px;
     padding: 3px;
@@ -71,7 +71,19 @@ border-radius: 20%;
     background-color: #4f8df0;
     border-radius: 15%;
 }
-
+.h4s{
+    padding: 0;
+    margin: 5px 0 5px 0 !important;
+    font-size: 1rem;
+}
+.peS{
+   padding: 0 !important;
+   margin: 5px 0px 0px 0px !important;
+}
+.ulS{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
     .footer-1 ,
@@ -102,20 +114,25 @@ border-radius: 20%;
     text-align: center;
     font-size: 15px;
 }
-.footer-1 h4 ,
+.h4s{
+    padding: 0;
+    margin: 5px 0 0 0 !important;
+    font-size: 1rem;
+}
+/* .footer-1 h4 ,
 .footer-2 h4,
  .footer-3 h4,
   .footer-4 h4{
     font-size: 18px;
     padding-bottom: 6px;
     padding-top: 10px;
-}
+} */
     .footer-2 li{
     padding-bottom: 8px;
 }
-.footer-3 p {
+/* .footer-3 p {
     padding-bottom: 8px;
-} 
+} */ 
 
     .footer-1 i{
         font-size: 35px;
