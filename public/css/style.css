@@ -15,6 +15,7 @@
 @import url(edition.css);
 @import url(result.css);
 @import url(general.css);
+@import url(vistaProductos.css);
 
 *{
     margin: 0;
