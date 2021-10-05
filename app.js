@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = 3005;
 const path = require('path');
 let cookiepParser = require('cookie-parser')
 let methodOverride = require('method-override');
 let session = require('express-session');
-
+let localsCheck = require("./Middlewares/localsCheck")
 /*  ENRUTADORES */
 const homeRouter = require("./routes/home");
 const usersRouter = require ("./routes/users");
@@ -25,6 +25,7 @@ app.use(session({
     resave: false,
     saveUninitialized : true,
 }))
+app.use(localsCheck)
 
 
 /* VIEWS */

@@ -136,7 +136,7 @@ module.exports = {
 
 
             if(req.body.remember){
-                    res.cookie('cookieGlass', req.session.user , { maxAge: 5000*60})
+                    res.cookie('cookieGlass', req.session.user , {expires: new Date(Date.now() + 900000), httpOnly : true})
             }
             res.locals.user= req.session.user
             if(req.session.user.rol === "ROL_ADMIN"){
