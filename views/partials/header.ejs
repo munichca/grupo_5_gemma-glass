@@ -1,9 +1,9 @@
-    <header>
+    <header >
         <div class="menuBurger">
             <input type="checkbox" name="burger" id="btn-modal">
             <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
             
-            <div class="modal-burger">
+            <div class="modal-burger" id="myModal" >
                 <div class="contenedor-burger">
                     <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
                     <h2>Gemma Glass</h2>
@@ -29,22 +29,27 @@
             <form action="/search" method="GET">
                 <div class="barra-busqueda">
                     <input class="search"  name="keywords" placeholder="Buscá un producto">
-                    <button type="submit" class="lupa" onclick="mostrar()"><i class="fa fa-search "></i></button>
+                    
                     <button type="submit" class="lupa-1" ><i class="fa fa-search "></i></button>
                 </div>
             </form>
-            
+            <!-- este button estaba dentro del form por eso se cortaba
+            agregue codigo en la funcion -->
+            <button type="submit" class="lupa" onclick="mostrar()" id="lupa" ><i class="fa fa-search "></i></button>
         </div>
+        <form class="searchForm" action="/search" method="GET">
         <div id="buscador">
-                <input class="search-2" type="search" placeholder="Buscá un producto">
-                <button class="lupa-2"><i class="fa fa-search "></i></button>
+                <input class="search-2" name="keywords"  placeholder="Buscá un producto" id="search_2" >
+                <button type="submit" class="lupa-2"onclick="mostrar()" ><i class="fa fa-search "></i></button>
         </div>
+        </form>
         <div class="container-3">
              <% if (typeof session.user != "undefined" ) { %>
                 <ul>
-               <li>  ¡Bienvenido <%= session.user.name %>! <a href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"> </a>
-            </li> 
-                 <li><a href="/users/logout">Cerrar Sesion</a></li> 
+                    
+               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"> </a> <a class="tipo" href="/users/logout">Cerrar Sesion</a> </li>
+            
+                 <!-- <li><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>  -->
                  </ul>
               <% }else{ %>
                 <ul>
@@ -88,10 +93,25 @@
         <script>
     function mostrar() {
         var x = document.getElementById("buscador");
+        let lupa = document.getElementById("lupa");
+        let search_2 = document.getElementById("search_2")
            if (x.style.display === "block") {
            x.style.display = "none";
+           
+           /* lupa.style.display = "flex"; */
+           lupa.style.cursor = "pointer";
+           lupa.style.pointerEvents = "initial"
+           lupa.style.opacity = "1";
+           
+           
            } else {
                   x.style.display = "block";
+                 /*  lupa.style.display = "none"; */
+                  lupa.style.opacity = "0";
+                  lupa.style.cursor = "not-allowed";
+                  lupa.style.pointerEvents = "none"
+                  search_2.focus();/* la funcion focus pone el cursor en el elemento al que se le aplica */
+                  
     }
 }
     
