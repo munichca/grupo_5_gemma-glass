@@ -232,8 +232,8 @@ text-align: center;
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
   .logo {
-    width: 110px;
-    height: 75px;
+    width: 100px;
+    height: 70px;
     padding-top: 5px;
   }
 
@@ -260,7 +260,7 @@ text-align: center;
     font-size: 3vw;
   }
   .container-3 ul li a{
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
   .container-3 ul .tBold{
     font-weight: bold;
@@ -289,7 +289,7 @@ text-align: center;
     margin-right: 27px;
   }
   .container_4 .sixeC {
-    font-size: 35px;
+    font-size: 30px;
     
   }
   .avatar-header{

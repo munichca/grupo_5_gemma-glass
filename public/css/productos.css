@@ -118,6 +118,7 @@ color: var(--tipos);
 }
 .ordenar input{
     height: 15px;
+    opacity: 0;
 }
 @media (min-width: 768px){
     .ordenar{
