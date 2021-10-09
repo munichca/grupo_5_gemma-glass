@@ -6,7 +6,9 @@
     --header:#4F8DF0;
     
 }
-
+body{
+    height: 100vh;
+}
 
 .base{
     display: flex;
@@ -100,7 +102,7 @@ color: var(--tipos);
 }
 
 .ordenar{
-    display: flex;
+    
     flex-direction: row;
     width: 100%;
     padding: 0 5vw 10px;
@@ -112,6 +114,7 @@ color: var(--tipos);
     margin-right: 15px;
     margin: 10px 10px 0 0;
     width: 30px;
+    cursor: pointer;
 }
 .ordenar input{
     height: 15px;
