@@ -16,6 +16,7 @@
 @import url(result.css);
 @import url(general.css);
 @import url(vistaProductos.css);
+@import url(modalcat.css);
 
 *{
     margin: 0;

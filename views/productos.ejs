@@ -62,18 +62,72 @@
         </div>
     </section>
     <!-- fin menu lateral -->
+   <!-- modal -->
+    
    
+<div class="aBaseD">
+    <div class="aMenuModal">
+        <div class="aPes" id="btnModal1" onclick="btnModal(this.id)">Forma</div>
+        <div class="aPes" id="btnModal2" onclick="btnModal(this.id)">marca</div>
+        <div class="aPes" id="btnModal3" onclick="btnModal(this.id)">material</div>
+    </div> 
+    <div class="aModal" id="tvesModal" >
+        <div class="aModalContainer">
+            <!-- <div class="aHeaderModal">
+                <p>X</i></p>
+                <p>Mi modal</p>
+            </div> -->
+            <div class="aListModal">
+                <ul>
+                    <% formas.forEach(element => { %>
+                        <a  href="/product/proForma/<%- element.id %>"><li class="aList"><%- element.shape.toUpperCase() %></li></a>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="aModal" id="tvesModal2" >
+        <div class="aModalContainer">
+            <!-- <div class="aHeaderModal">
+                <p>X</i></p>
+                <p>Mi modal</p>
+            </div> -->
+            <div class="aListModal">
+                <ul>
+                    <% marcas.forEach(element => { %>
+                        <a  href="/product/proMarca/<%- element.id %>"><li class="aList"><%- element.brand.toUpperCase() %></li></a>
+                        
+                        <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="aModal" id="tvesModal3" >
+        <div class="aModalContainer">
+            <!-- <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
+            <h2>Gemma Glass</h2> -->
+            <div class="aListModal">
+                <ul class="aList">
+                    <a  href="#"><li class="aList">acetato</li></a>
+                    <a  href="#"><li class="aList">grilamid</li></a>
+                    <a  href="#"><li class="aList">metal</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
+    <!-- fin modal -->
    <!-- bloque de mas vendidos mobile -->
-   <div class="fantasma"></div>
+   
    <%-include("partials/vistaProductos.ejs") %> 
 <!-- fin de bloque de mas vendidos mobile -->
     
-</div>
+
 <!-- footer -->
 <%- include("partials/footer")  %> 
 <!-- fin footer  -->
-<script>
+<script src="/js/ventana.js">
     function dos(){
         let products = document.querySelectorAll(".product-card")
         let pes = document.querySelectorAll(".pes")
@@ -105,6 +159,12 @@
             price.style.fontSize = "13px";
         })
     }
+   
+    /* <script src="/js/ventana.js"></script> */
+
+
+
+    
    
 </script>
 </body>

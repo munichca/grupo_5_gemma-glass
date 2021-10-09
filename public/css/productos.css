@@ -32,7 +32,7 @@ ul{
     font-size: 16px;
 }
 .menu-lateral{
-    display: flex;
+    display:none;
     flex-direction: row;
     width: 100%;
     max-width: 380px;
@@ -51,9 +51,7 @@ width: 100%;
 margin-bottom: 0;
 color: var(--tipos);
 }
-.menu-lateral .sub-menu{
-    display: none;
-}
+
 .menu-lateral .sub-menu ul{
     margin-bottom: 0;
     padding: 0 20px 0;
@@ -87,12 +85,7 @@ color: var(--tipos);
     margin:7px auto 7px;
     color: var(--tipos);
 }
-.fantasma {
-    width: 30px;
-    height: 15pc;
-    background-color: #152847;
-    display: none;
-}
+
 @keyframes twist {
     from { transform:  rotateY(0deg) }
     to { transform:  rotateY(360deg) }
@@ -144,6 +137,9 @@ color: var(--tipos);
         align-items: flex-start;
         justify-content: space-evenly;
     }
+    .external-container{
+        width: 70%;
+    }
     .titleCat span{
         font-size: 22px;
     }
@@ -155,8 +151,8 @@ color: var(--tipos);
         flex-direction: column;
         width: 15%;
         /* height: 75vh; */
-        
-        justify-content: initial;
+        left: 0px;
+        /* justify-content: initial; */
         font-size: 22px;
         border-right: 1px solid var(--tipos);
         background-color: white;
