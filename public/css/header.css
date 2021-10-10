@@ -26,11 +26,18 @@ header {
   width: 35%;
 }
 
+.lupa{
+  display: initial;
+}
 .barra-busqueda input,
 .container-2 .number {
   display: none;
 }
-
+/* agregado para centrar el input */
+.searchForm{
+  display: flex;
+  width: 100%;
+}
 #buscador{
   display: none;
   margin: 3px auto;
@@ -42,7 +49,8 @@ padding-left: 5px;
 font-size: 14px;
 }
 .lupa-2{
-background:white;
+  /* display: initial; */
+background:none;
 border: none;
 cursor: pointer;
 position: absolute;
@@ -100,26 +108,38 @@ font-size: 19px;
 }
 
 .container-3 ul li a {
-  padding-right: 16px;
+  padding: 3px;
   text-decoration: none;
   color: #152847;
 }
 .container-3 ul{
   padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 5px !important;
 }
+
 .container-3 ul li {
   display: inline;
+  font-size: 4vw;
+  
 }
-
+.container-3 ul li a{
+  font-size: 4vw;
+  /* width: 65px;
+  border: 1px solid red; */
+}
 header .container-3 ul li a:hover,
 header a:hover {
   color: white;
 }
 .avatar-header{
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border:solid 2px #152847;
 }
 .avatar-header:hover{
@@ -129,10 +149,10 @@ header a:hover {
 .container_4 {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  /* align-items: flex-end; */
+
   width: 20vw;
+  top: 35px;
   text-align: center;
   padding-bottom: 3px;
 }
@@ -141,7 +161,8 @@ header a:hover {
 }
 .container_4 .sixeC {
   /* font-size: 45px; */
-  font-size: 25px;
+  font-size: 30px;
+  pointer-events: initial;
 }
 
 .container_4 a {
@@ -154,13 +175,15 @@ header a:hover {
 }
 .carrito{
   margin-bottom: 0;
+  display: none;
 }
 .mydiv{
   display: flex;
   /* margin-right: 5px !important; */
   justify-content: center;
   padding: 10px 10px 10px 10px;
-  width: 65px !important;
+  width: 55px !important;
+  /* width: 65px !important; */
   font-size: .7rem !important;
 }
 .ulMyDiv{
@@ -234,7 +257,10 @@ text-align: center;
     
   }
   .container-3 ul li{
-    font-size: 20px;
+    font-size: 3vw;
+  }
+  .container-3 ul li a{
+    font-size: 3vw;
   }
   .container-3 ul .tBold{
     font-weight: bold;
@@ -243,21 +269,34 @@ text-align: center;
     padding-left: 0;
     
     margin-bottom: 0 !important;
+    
+      justify-content: space-evenly;
+    
   }
   
   .container_4 {
     padding-top: 0 !important;
     padding-bottom: 15px;
-    
+    align-items: flex-end;
     width: 30vw;
     text-align: center;
     padding-bottom: 3px;
+  }
+  .carrito{
+    display: block;
   }
   .trolley{
     margin-right: 27px;
   }
   .container_4 .sixeC {
     font-size: 35px;
+    
+  }
+  .avatar-header{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border:solid 2px #152847;
   }
   .mydiv{
     display: flex;
@@ -292,7 +331,16 @@ text-align: center;
   .container-burger {
     display: none;
   }
-
+.lupa{
+  display: none;
+}
+.searchForm{
+  display: none;
+  
+}
+#buscador{
+  display: none;
+}
 .logo {
     width: 120px;
     height: 90px;
@@ -352,18 +400,34 @@ text-align: center;
     text-align: center;
     font-size: 21px;
   }
-
+  .container-3 ul{
+    
+   
+    justify-content: center;
+    
+  }
+  .tipo{
+    font-size: 1.7vw;
+  }
+  .container-3 ul{
+    justify-content: space-evenly;
+  }
   .container-3 ul li {
     display: inline;
+    font-size: 1.7vw;
+  }
+  .container-3 ul li a{
+    font-size: 1.7vw;
   }
   .container_4 {
     padding-left: 48px;
     width: 15% ;
     text-align: center;
     font-size: 16px;
+    align-items: flex-end;
   }
 
-  .container-4 i {
+  .container-4 .sixeC {
     font-size: 40px;
   }
 
