@@ -48,20 +48,22 @@ module.exports = {
             height,
             width
             } = req.body;
-            db.Product.create({
-            name, 
-            price, 
-            discount, 
-            categoryId, 
-            shapeId, 
-            brandId,
-            materialId,
-            height,
-            width
-            })
+            /* res.send(req.body) */
+            db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width     })
             .then(product =>{
-                 
-            })
+                if(arrayImages.length > 0){
+                    let images = arrayImages.map(image => {
+                        return {
+                            images: image,
+                            productId: product.id
+                        }
+                    })
+                    /* res.send(images) */
+                    db.productImages.bulkCreate(images)
+                      .then(() => res.redirect('/admin/listado'))
+                      .catch(err => console.log(err))
+                }
+            }) 
         /* let lastId = 1;
 
         productos.forEach(product => {
@@ -106,8 +108,8 @@ module.exports = {
 
         writeProductJson(productos)
 
-        res.redirect('/admin/listado') */
-    },
+        res.redirect('/admin/listado') */ 
+    }},
     edit: (req, res) => {
         let product = productos.find(product => {
             return product.id === +req.params.id

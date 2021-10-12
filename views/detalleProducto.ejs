@@ -21,19 +21,19 @@
                 </div>
                 <div class="images">
                     <div class="imageMini" >
-                      <img class="img" src="/image/productImages/<%- productFind.image.image %>" alt=""  onclick="cambiar(this);">
+                      <img class="img" src="/image/productImages/<%- productFind.image[0]? productFind.image[0].images : "logFN.jpg" %>" alt=""  onclick="cambiar(this);">
                     </div>
                     <div class="imageMini">
-                      <img class="img" src="/image/productImages/<%- productFind.image.image? productFind.image.image : "logFN.jpg" %>" alt=""  onclick="cambiar(this);">
+                      <img class="img" src="/image/productImages/<%- productFind.image[1]? productFind.image[1].images : "logFN.jpg" %>" alt=""  onclick="cambiar(this);">
                     </div>
                     <div class="imageMini">
-                      <img class="img" src="/image/productImages/<%- productFind.image.image? productFind.image.image : "logFN.jpg" %>" alt=""  onclick="cambiar(this);">
+                      <img class="img" src="/image/productImages/<%- productFind.image[2]? productFind.image[2].images : "logFN.jpg" %>" alt=""  onclick="cambiar(this);">
                     </div>
                     
                 </div>
                   
                 <div class="containerPr">
-                    <img id="principal" src="/image/productImages/<%- productFind.image.image? productFind.image.image : "logFN.jpg" %>" >
+                    <img id="principal" src="/image/productImages/<%- productFind.image[0]? productFind.image[0].images : "logFN.jpg" %>" >
                     
                 </div>
                
@@ -126,10 +126,10 @@
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="/image/productImages/<%- productFind.image.image? productFind.image.image : "logFN.jpg" %>" class="d-block w-100 imageSize" alt="Lentes de sol">
+                    <img src="/image/productImages/<%- productFind.image[0]? productFind.image[0].images : "logFN.jpg" %>" class="d-block w-100 imageSize" alt="Lentes de sol">
                   </div>
                   <div class="carousel-item">
-                    <img src="/image/productImages/<%- productFind.image[1]? productFind.image[1] : "logFN.jpg" %>" class="d-block w-100 imageSize" alt="Lentes gaming">
+                    <img src="/image/productImages/<%- productFind.image[1]? productFind.image[1].images : "logFN.jpg" %>" class="d-block w-100 imageSize" alt="Lentes gaming">
                   </div>
                  
                  

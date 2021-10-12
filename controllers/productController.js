@@ -45,7 +45,7 @@ module.exports = {
           })
         
         .then(producto =>{
-            res.send(arrayProduct)
+            /* res.send(arrayProduct) */
             res.render("detalleProducto",{ 
                 productFind: producto,
                 arrayProduct,

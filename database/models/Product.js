@@ -33,13 +33,10 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
-        imageId: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
-        },
+        
         stock: {
             type: dataTypes.INTEGER(11).UNSIGNED,
-            allowNull: false
+            allowNull: true
         },
         height:{
             type: dataTypes.INTEGER(11),
@@ -68,9 +65,9 @@ module.exports = function(sequelize, dataTypes){
             foreignKey: "categoryId",
             timestamps: false
         })
-        Product.belongsTo(models.Image, {
+        Product.hasMany(models.productImages, {
             as: "image",
-            foreignKey: "imageId",
+            foreignKey: "productId",
             timestamps: false
         })
         Product.belongsTo(models.Material, {

@@ -16,7 +16,7 @@ module.exports = {
                     { association: "image"}]
         })
         .then(productos =>{
-            /* res.send(productos) */
+            
             res.render("home",{ 
                 arrayProduct: productos,
                 /* categoria , */
