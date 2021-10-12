@@ -2,69 +2,86 @@ module.exports = function(sequelize, dataTypes){
     let alias = "Product";
     let cols = {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
         name: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         price:{
-            type: dataTypes.DECIMAL(3,1),
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         discount: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
         },
         categoryId: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
         },
         shapeId: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         brandId: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         materialId: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         imageId: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        },
+        stock: {
+            type: dataTypes.INTEGER(11).UNSIGNED,
+            allowNull: false
+        },
+        height:{
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        },
+        width:{
+            type: dataTypes.INTEGER(11),
             allowNull: false
         }
+
     }
     let config = {
-        tableName: "products", //No hace falta
+        tableName: "products",
         timestamps: false
     }
 
     const Product = sequelize.define(alias, cols, config)
 
     Product.associate = models => {
-        Product.hasMany(models.Brand, {
+        Product.belongsTo(models.Brand, {
             as: "brand",
             foreignKey: "brandId"
         })
-        Product.hasMany(models.Category, {
+        Product.belongsTo(models.Category, {
             as: "category",
-            foreignKey: "categoryId"
+            foreignKey: "categoryId",
+            timestamps: false
         })
-        Product.hasMany(models.Image, {
+        Product.belongsTo(models.Image, {
             as: "image",
-            foreignKey: "imageId"
+            foreignKey: "imageId",
+            timestamps: false
         })
-        Product.hasMany(models.Material, {
+        Product.belongsTo(models.Material, {
             as: "material",
-            foreignKey: "materialId"
+            foreignKey: "materialId",
+            timestamps: false
         })
-        Product.hasMany(models.Shape, {
+        Product.belongsTo(models.Shape, {
             as: "shape",
-            foreignKey: "shapeId"
+            foreignKey: "shapeId",
+            timestamps: false
         })
     }
 

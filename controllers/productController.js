@@ -1,23 +1,60 @@
-let {productos, categoria, formas, marcas, materials } = require ('../data/dataBase');
-
+/* let {productos, categoria, formas, marcas, materials } = require ('../data/dataBase'); */
+const db = require ("../database/models")
+const {Op} = require("sequelize")
+/* const arrayProduct */
 module.exports = {
     
     productCat: (req, res)=>{
-        
-        let categName = req.params.id;
-        
-        let product = productos.filter(product => product.category === +categName);
-        let arrayProduct = product;
-        
-        res.render("productos",{            
-            arrayProduct,
-            categoria, formas, marcas, materials,
-            session: req.session
+        db.Product.findAll({
+            where: {
+                categoryId : req.params.id
+                },
             
+            include: [{ association: "category"},
+                    { association: "shape"},
+                    { association: "brand"},
+                    { association: "material"},
+                    { association: "image"}]
+            })
+          
+        
+        .then(producto =>{
+            res.render("productos",{ 
+                /* productFind: producto, */
+                arrayProduct: producto,
+                session: req.session
+            })
         })
     },
     detail: (req, res)=>{
-        let productId = +req.params.id;
+       db.Product.findAll({
+       include: [{ association: "category"},
+                    { association: "shape"},
+                    { association: "brand"},
+                    { association: "material"},
+                    { association: "image"}],
+          })
+        
+       .then((arrayProduct)=>{       
+        db.Product.findByPk(req.params.id, {
+            include: [{ association: "category"},
+                    { association: "shape"},
+                    { association: "brand"},
+                    { association: "material"},
+                    { association: "image"}],
+          })
+        
+        .then(producto =>{
+            res.send(arrayProduct)
+            res.render("detalleProducto",{ 
+                productFind: producto,
+                arrayProduct,
+                session: req.session
+            })
+        })
+    })
+    /*  */
+        /* let productId = +req.params.id;
         let productFind = productos.find(prod => prod.id === productId);
         let categ = categoria.find(cate => cate.id === productFind.category);
         let forma = formas.find(forma =>forma.id === productFind.subCatForma);
@@ -27,7 +64,7 @@ module.exports = {
         res.render("detalleProducto",{
             arrayProduct, categoria, productFind, categ, forma, marca, material,
             session: req.session
-        })
+        }) */
     },
     productOferta: (req, res) =>{
         let arrayProduct = productos.filter(prod => prod.discount > 0);        

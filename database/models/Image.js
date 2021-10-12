@@ -1,13 +1,13 @@
 module.exports = function(sequelize, dataTypes){
-    let alias = "Images";
+    let alias = "Image";
     let cols = {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        images: {
+        image: {
             type: dataTypes.STRING(100),
             allowNull: false
         }
@@ -20,10 +20,12 @@ module.exports = function(sequelize, dataTypes){
     }
 
     const Image = sequelize.define(alias, cols, config)
+   
     Image.associate = models => {
-        Image.belongsTo(models.Product, {
-            as: "prodimage",
-            foreignKey: "imageId"
+        Image.hasMany(models.Product, {
+            as: "pimage",
+            foreignKey: "imageId",
+            timestamps: false
         })
     }
     

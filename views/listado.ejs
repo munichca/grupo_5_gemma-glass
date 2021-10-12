@@ -30,21 +30,22 @@
                         <i class="far fa-edit fuera fSize"></i>
                         <button class="fuera boton caca" type="submit"><i class="far fa-trash-alt"></i></button>
                     </li>
-                </ul>
+                </ul><!--  -->
+                <!--  -->
                 <ul class="list">
-                    <% prod.forEach(item => { %> 
+                    <% products.forEach(item => { %> 
                     <li class="lista">
                         <p class="id pe"><%- item.id %></p>
                         <p class="name pe"><%- item.name %></p>
                         <p class="price pe"><%- item.price %></p>
-                        <% let category = categoria.find(cate => cate.id === item.category) %> 
-                        <p class="category pe"><%- category.name %></p>
-                        <% let forma = formas.find(forma => forma.id === item.subCatForma) %> 
-                        <p class="shape pe"><%- forma.shape %></p>
-                        <% let marca = marcas.find(marca => marca.id === item.subCatMarca) %> 
-                        <p class="brand pe"><%- marca.brand %></p>
-                        <% let material = materials.find(material => material.id === item.subCatmaterial) %>
-                        <p class="material pe"><%- material.mater %></p>
+                        <% /* let category = category.find(cate => cate.id === item.category) */ %>
+                        <p class="category pe"><%- item.categoryId %></p>
+                        <% /* let forma = formas.find(forma => forma.id === item.subCatForma) */ %> 
+                        <p class="shape pe"><%- item.shapeId %></p>
+                        <% /* let marca = marcas.find(marca => marca.id === item.subCatMarca) */ %> 
+                        <p class="brand pe"><%- item.brandId %></p>
+                        <% /* let material = materials.find(material => material.id === item.subCatmaterial) */ %>
+                        <p class="material pe"><%- item.materialId %></p>
                         <p class="height pe"><%- item.height %></p>
                         <p class="width pe"><%- item.width %></p>
                         <p class="discount pe"><%- item.discount %></p>

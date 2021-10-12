@@ -2,7 +2,7 @@ module.exports = function(sequelize, dataTypes){
     let alias = "Material";
     let cols = {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
@@ -21,9 +21,10 @@ module.exports = function(sequelize, dataTypes){
 
     const Material = sequelize.define(alias, cols, config)
     Material.associate = models => {
-        Material.belongsTo(models.Product, {
+        Material.hasMany(models.Product, {
             as: "prodmaterial",
-            foreignKey: "materialId"
+            foreignKey: "materialId",
+            timestamps:false
         })
     }
     

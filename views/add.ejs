@@ -18,27 +18,27 @@
                <input class="tamanio" type="number" name="discount" id="discount">
               <label class="tamanio" for="category">Categoria: </label>
               <select id="specificSizeSelect" name="category"  class="tamanio">
-               <% categoria.forEach(category => { %>
+               <% locals.categories.forEach(category => { %>
                   <option value="<%= category.name %>"><%- category.name %></option>
                <% }) %>
               </select>
               <label class="tamanio" for="forma">Forma: </label>
               <select id="specificSizeSelect" name="subCatForma"  class="tamanio">
-              <% formas.forEach(forma => { %>
+              <% locals.shapes.forEach(shape => { %>
                 
-                <option value="<%= +forma.id %>"><%- forma.shape %></option>
+                <option value="<%= +shape.id %>"><%- shape.name %></option>
              <% }) %>
             </select>
               <label class="tamanio" for="marca">Marca: </label>
               <select id="specificSizeSelect" name="subCatMarca"  class="tamanio">
-                <% marcas.forEach(marca => { %>
-                   <option value="<%= +marca.id %>"><%- marca.brand %></option>
+                <% locals.brands.forEach(brand => { %>
+                   <option value="<%= +brand.id %>"><%- brand.name %></option>
                 <% }) %>
                </select>
               <label class="tamanio" for="material">Material: </label>
               <select id="specificSizeSelect" name="subCatmaterial"  class="tamanio">
-                <% materials.forEach(material => { %>
-                  <option value="<%= +material.id %>"><%- material.mater %></option>
+                <% locals,materials.forEach(material => { %>
+                  <option value="<%= +material.id %>"><%- material.name %></option>
                <% }) %>
               </select>
               <label class="tamanio" for="heigth">Altura: </label>

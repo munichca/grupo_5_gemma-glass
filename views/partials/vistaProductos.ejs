@@ -2,8 +2,8 @@
     <% arrayProduct.forEach(item => {%> 
     <a class="product-card" href="/product/detail/<%- item.id %>  ">
             <div class="images" id=twist >
-                <img class="frontal" src="/image/productImages/<%- item.image[1]? item.image[1] : "logFI.jpg" %> "  alt="">
-                <img class="rear" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0] : "logFN.jpg" %>  "  alt="">
+                <img class="frontal" src="/image/productImages/<%- item.image? item.image.image : "logFI.jpg" %> "  alt="">
+                <img class="rear" id="gira" src="/image/productImages/<%- item.image? item.image.image : "logFN.jpg" %>  "  alt="">
             </div>
         <div class="product-name">
             <p class="pes"><%- item.name %>  </p>

@@ -28,8 +28,8 @@
             </a>
             <div class="sub-menu">
                 <ul>
-                    <% formas.forEach(element => { %>
-                    <a href="/product/proForma/<%- element.id %>"><li><%- element.shape %></li></a>
+                    <% locals.shapes.forEach(element => { %>
+                    <a href="/product/proForma/<%- element.id %>"><li><%- element.name %></li></a>
                     
                     <% }) %>
                 </ul>          
@@ -41,8 +41,8 @@
             </a>
             <div class="sub-menu">
                 <ul>
-                    <% marcas.forEach(element => { %>
-                        <a href="/product/proMarca/<%- element.id %>"><li><%- element.brand %></li></a>
+                    <% locals.brands.forEach(element => { %>
+                        <a href="/product/proMarca/<%- element.id %>"><li><%- element.name %></li></a>
                         
                         <% }) %>
                 </ul>
@@ -79,8 +79,8 @@
             </div> -->
             <div class="aListModal">
                 <ul>
-                    <% formas.forEach(element => { %>
-                        <a  href="/product/proForma/<%- element.id %>"><li class="aList"><%- element.shape.toUpperCase() %></li></a>
+                    <% locals.shapes.forEach(element => { %>
+                        <a  href="/product/proForma/<%- element.id %>"><li class="aList"><%- element.name.toUpperCase() %></li></a>
                     <% }) %>
                 </ul>
             </div>
@@ -94,8 +94,8 @@
             </div> -->
             <div class="aListModal">
                 <ul>
-                    <% marcas.forEach(element => { %>
-                        <a  href="/product/proMarca/<%- element.id %>"><li class="aList"><%- element.brand.toUpperCase() %></li></a>
+                    <% locals.brands.forEach(element => { %>
+                        <a  href="/product/proMarca/<%- element.id %>"><li class="aList"><%- element.name.toUpperCase() %></li></a>
                         
                         <% }) %>
                 </ul>

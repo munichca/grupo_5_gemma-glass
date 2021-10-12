@@ -9,11 +9,11 @@
                     <h2>Gemma Glass</h2>
                     <div class="contenido-burger">
                         <ul>
-                            <% categoria.forEach(item => {%>
+                            <% locals.categories.forEach(item => {%>
                                 <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
                                 <% })  %>
                                 <a  href="/product/productOfertas"> <li>Ofertas</li></a>
-                            <a href="/turnos"> <li>Pedí una consulta</li></a>
+                                <a href="/turnos"> <li>Pedí una consulta</li></a>
                         </ul>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
              <% if (typeof session.user != "undefined" ) { %>
                 <ul>
                     
-               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"> </a> <a class="tipo" href="/users/logout">Cerrar Sesion</a> </li>
+               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
             
                  <!-- <li><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>  -->
                  </ul>
@@ -82,11 +82,10 @@
         </div>
         <nav class="container-nav">
             <ul>
-                <% categoria.forEach(item => {%>
+                <% locals.categories.forEach(item => {%>
                 <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
                 <% })  %> 
                 <a  href="/product/productOfertas"> <li>Ofertas</li></a>
-            
                 <a  href="/turnos"> <li>Pedí una consulta</li></a>
             </ul>
         </nav>
@@ -110,7 +109,7 @@
                   lupa.style.opacity = "0";
                   lupa.style.cursor = "not-allowed";
                   lupa.style.pointerEvents = "none"
-                  search_2.focus();/* la funcion focus pone el cursor en el elemento al que se le aplica */
+                  search_2.focus();/* la funcion focus pone el cursor en el elemento al qyue se le aplica */
                   
     }
 }
