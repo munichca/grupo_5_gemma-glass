@@ -1,21 +1,71 @@
 
-let {productos, categoria, formas, marcas, materials, writeProductJson} = require ('../data/dataBase');
+let { categoria, formas, marcas, materials, writeProductJson } = require('../data/dataBase');
+const db = require('../database/models');
 const { report } = require('../routes/home');
 module.exports = {
-    add: (req, res)=>{
-        if(req.session.user.rol === "ROL_ADMIN"){
-            res.render("add",{
-                productos, categoria, formas, marcas, materials,
-                session: req.session
-             })
-        }else{
-            res.redirect('/')
-        }
-         
+    add: (req, res) => {
+        let categoriesP = db.Category.findAll();
+        let shapesP = db.Shape.findAll();
+        let brandsP = db.Brand.findAll();
+        let materialsP = db.Material.findAll();
+        Promise.all([categoriesP, shapesP, brandsP, materialsP])
+            .then(([categories, shapes, brands, materials]) => {
+                if (req.session.user.rol === "ROL_ADMIN") {
+                    res.render("add", {
+                        categories, shapes, brands, materials,
+                        session: req.session
+                    })
+                } else {
+                    res.redirect('/')
+                }
+            })
+
+
+
     },
     nuevoProducto: (req, res) => {
-        let lastId = 1;
-/* res.send(req.body) */
+
+        let arrayImages = [];
+        if (req.files) {
+            req.files.forEach(image => {
+                arrayImages.push(image.filename)
+            })
+        }
+        if(arrayImages.length > 0){
+            let images = arrayImages.map(image => {
+                return {
+                    image: image
+                }
+            })
+        let {
+            name, 
+            price, 
+            discount, 
+            categoryId, 
+            shapeId, 
+            brandId,
+            materialId,
+            height,
+            width
+            } = req.body;
+            /* res.send(req.body) */
+            db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width     })
+            .then(product =>{
+                if(arrayImages.length > 0){
+                    let images = arrayImages.map(image => {
+                        return {
+                            images: image,
+                            productId: product.id
+                        }
+                    })
+                    /* res.send(images) */
+                    db.productImages.bulkCreate(images)
+                      .then(() => res.redirect('/admin/listado'))
+                      .catch(err => console.log(err))
+                }
+            }) 
+        /* let lastId = 1;
+
         productos.forEach(product => {
             if(product.id > lastId){
                 lastId = product.id
@@ -58,13 +108,14 @@ module.exports = {
 
         writeProductJson(productos)
 
-        res.redirect('/admin/listado')
-    }, 
-  edit: (req, res) => {
+        res.redirect('/admin/listado') */ 
+    }},
+    edit: (req, res) => {
         let product = productos.find(product => {
-            return product.id === +req.params.id})
+            return product.id === +req.params.id
+        })
         res.render('edicion', {
-            categoria, 
+            categoria,
             product, formas, marcas, materials,
             session: req.session
         })
@@ -76,56 +127,58 @@ module.exports = {
         let marca = marcas.find(marca => marca.brand === req.body.marca)
         let material = materials.find(material => material.mater === req.body.material)
         let arrayImages = [];
-            if(req.files){
-                req.files.forEach(image => {
-                    arrayImages.push(image.filename)
-                })
-            }
-            productos.forEach( product => {
-                if(product.id === +req.params.id){
-                    product.id = product.id,
+        if (req.files) {
+            req.files.forEach(image => {
+                arrayImages.push(image.filename)
+            })
+        }
+        productos.forEach(product => {
+            if (product.id === +req.params.id) {
+                product.id = product.id,
                     product.name = req.body.name ? req.body.name : product.name,
-                    product.price =  +req.body.price ? +req.body.price : product.price,
-                    product.discount =  +req.body.discount ? +req.body.discount : product.discount,
+                    product.price = +req.body.price ? +req.body.price : product.price,
+                    product.discount = +req.body.discount ? +req.body.discount : product.discount,
                     product.category = category.id,
                     product.subCatForma = forma.id,
-                    product.subCatMarca =  marca.id,
-                    product.subCatmaterial =  material.id,
-                    product.height =  +req.body.height ? +req.body.height : product.height,
-                    product.width =  +req.body.width ? +req.body.width : product.width
-                    product.image= arrayImages.length > 0 ? arrayImages : []
+                    product.subCatMarca = marca.id,
+                    product.subCatmaterial = material.id,
+                    product.height = +req.body.height ? +req.body.height : product.height,
+                    product.width = +req.body.width ? +req.body.width : product.width
+                product.image = arrayImages.length > 0 ? arrayImages : []
+            }
+        })
+
+        writeProductJson(productos)
+
+        if (req.session.user.rol === "ROL_ADMIN") {
+            res.redirect('/admin/listado')
+        } else {
+            res.redirect('/')
+        }
+
+    },
+    lista: (req, res) => {
+        db.Product.findAll()
+            .then(products => {
+                if (req.session.user.rol === "ROL_ADMIN") {
+                    res.render("listado", {
+                        products,
+                        session: req.session
+                    })
+                } else {
+                    res.redirect('/')
                 }
             })
 
-            writeProductJson(productos)
-            
-            if(req.session.user.rol === "ROL_ADMIN"){
-                res.redirect('/admin/listado')
-            }else{
-                res.redirect('/')
-            }
-           
-        },
-    lista: (req, res)=>{
-        let prod = productos;
-        if(req.session.user.rol === "ROL_ADMIN"){
-            res.render("listado",{
-                categoria,
-                prod, formas, marcas, materials,
-                session: req.session
-            })
-        }else{
-            res.redirect('/')
-        }
-        
-        
+
+
     },
-    borrarProducto:(req, res)=> {        
+    borrarProducto: (req, res) => {
         productos.forEach(producto => {
-            if(producto.id === +req.params.id){
-            let productoAEliminar = productos.indexOf(producto);
-            productos.splice(productoAEliminar, 1)
-        }
+            if (producto.id === +req.params.id) {
+                let productoAEliminar = productos.indexOf(producto);
+                productos.splice(productoAEliminar, 1)
+            }
         })
         writeProductJson(productos)
 

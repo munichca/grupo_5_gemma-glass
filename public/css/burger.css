@@ -27,7 +27,7 @@
     background: #fff;
     box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
     transition: all 500ms ease;
-    transform: translateX(-10%);
+    transform: translateX(-100%);
   }
   
   #btn-modal:checked ~ .modal-burger .contenedor-burger {

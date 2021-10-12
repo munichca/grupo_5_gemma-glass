@@ -1,44 +1,82 @@
-let {productos, categoria, subCatForma, subCatMarca, subCatMaterial} = require ('../data/dataBase');
 
+const db = require("../database/models")
+const {Op} = require("sequelize")
 module.exports = {
     home: (req, res)=>{
-        
-        let arrayProduct = productos;
-         res.render("home",{             
+        db.Product.findAll({
+            where: {
+                discount: {
+                    [Op.gte]:5
+                }
+            },
+            include: [{ association: "category"},
+                    { association: "shape"},
+                    { association: "brand"},
+                    { association: "material"},
+                    { association: "image"}]
+        })
+        .then(productos =>{
+            
+            res.render("home",{ 
+                arrayProduct: productos,
+                /* categoria , */
+                session: req.session
+            })
+        })
+        .catch(err => console.log(err))
+        /* let arrayProduct = productos;
+         res.render("home",{ 
             arrayProduct,
             categoria ,
-            session: req.session           
-            
-            /* product,
-            categ,
-            formas,
-            marcas,
-            materials   */ 
-        })
+            session: req.session
+        }) */
     },
     turnos: (req, res)=>{
         res.render("turnos",{
-            categoria ,
+            
             session: req.session
         })
     },
     trolley: (req, res)=>{
         res.render("carrito",{
-            categoria,
+            
             session: req.session
         })
     },
     search: (req, res) => {
-		let searchResult = []
+        db.Product.findAll({
+            include: [{ association: "category"},
+                    { association: "shape"},
+                    { association: "brand"},
+                    { association: "material"}],
+            where: {
+                
+                name:{
+                    [Op.like] :`%${req.query.keywords}%`
+                }
+            }
+        })
+        .then(prod =>{
+            res.render("results",{
+                arrayProduct:prod,
+                
+                search: req.query.keywords,
+                session: req.session
+            })
+        })
+
+
+
+		/* let searchResult = []
         
-        productos.forEach(product => {
+        Product.forEach(product => {
             if(product.name.toLowerCase().includes(req.query.keywords.toLowerCase() ) ){
                 searchResult.push(product)
             }
-        });
+        }); */
         
         /* res.send(searchResult) */
-        let arrayProduct=searchResult;
+        /* let arrayProduct=searchResult;
         
         
         res.render('results', {
@@ -46,7 +84,7 @@ module.exports = {
             categoria,
 			search: req.query.keywords,
             session: req.session
-		})
+		}) */
 	},
     
 

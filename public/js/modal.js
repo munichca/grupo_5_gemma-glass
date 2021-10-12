@@ -15,5 +15,5 @@ cerrar.addEventListener("click",function(){
     setTimeout(function(){
         modalC.style.opacity= "0";
         modalC.style.visibility= "hidden";
-    },1000)
+    },10000)
 })
