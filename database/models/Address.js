@@ -31,13 +31,13 @@ module.exports = function(sequelize, dataTypes){
     }
 
     const Address = sequelize.define(alias, cols, config)
-    Address.associate = models => {
+/*     Address.associate = models => {
         Address.belongsTo(models.User, {
             as: "userAddress",
             foreignKey: "addressId",
             timestamps: false
         })
-    }
+    } */
     
    
 
