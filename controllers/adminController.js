@@ -174,14 +174,14 @@ module.exports = {
 
     },
     borrarProducto: (req, res) => {
-        productos.forEach(producto => {
-            if (producto.id === +req.params.id) {
-                let productoAEliminar = productos.indexOf(producto);
-                productos.splice(productoAEliminar, 1)
+        db.Product.destroy({
+            where: {
+                id: +req.params.id
             }
         })
-        writeProductJson(productos)
-
-        res.redirect('/admin/listado/')
+        .then(()=>{
+            res.redirect('/admin/listado/')
+        })
+        .catch(err => console.log(err))
     },
 }
