@@ -26,7 +26,7 @@ module.exports = {
             })
         })
     },
-    detail: (req, res)=>{
+    detail: (req, res)=>{   
        db.Product.findAll({
        include: [{ association: "category"},
                     { association: "shape"},

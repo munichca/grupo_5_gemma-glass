@@ -1,5 +1,5 @@
 
-let { categoria, formas, marcas, materials, writeProductJson } = require('../data/dataBase');
+//let { categoria, formas, marcas, materials, writeProductJson } = require('../data/dataBase');
 const db = require('../database/models');
 const { report } = require('../routes/home');
 module.exports = {
@@ -19,12 +19,8 @@ module.exports = {
                     res.redirect('/')
                 }
             })
-
-
-
     },
     nuevoProducto: (req, res) => {
-
         let arrayImages = [];
         if (req.files) {
             req.files.forEach(image => {
@@ -37,19 +33,9 @@ module.exports = {
                     image: image
                 }
             })
-        let {
-            name, 
-            price, 
-            discount, 
-            categoryId, 
-            shapeId, 
-            brandId,
-            materialId,
-            height,
-            width
-            } = req.body;
+        let {name, price, discount, categoryId, shapeId, brandId, materialId, height, width} = req.body;
             /* res.send(req.body) */
-            db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width     })
+            db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width })
             .then(product =>{
                 if(arrayImages.length > 0){
                     let images = arrayImages.map(image => {
@@ -111,21 +97,51 @@ module.exports = {
         res.redirect('/admin/listado') */ 
     }},
     edit: (req, res) => {
-        let product = productos.find(product => {
+        /* let categoriesP = db.Category.findAll();
+        let shapesP = db.Shape.findAll();
+        let brandsP = db.Brand.findAll();
+        let materialsP = db.Material.findAll(); */
+        
+        let productP = db.Product.findOne({
+            where:{
+                id: req.params.id
+            },
+            include: [{ association: "category"},
+                    { association: "shape"},
+                    { association: "brand"},
+                    { association: "material"},
+                    { association: "image"}]
+        })
+        /* Promise.all([categoriesP, shapesP, brandsP, materialsP, productP    ])
+            .then(([categories, shapes, brands, materials, product]) => { */
+            .then(product => { 
+                
+                if (req.session.user.rol === "ROL_ADMIN") {
+                    /* res.send(product) */
+                    res.render("edicion", {
+                        product,
+                        session: req.session
+                    })
+                } else {
+                    res.redirect('/')
+                }
+            })
+        /* let product = productos.find(product => {
             return product.id === +req.params.id
         })
         res.render('edicion', {
             categoria,
             product, formas, marcas, materials,
             session: req.session
-        })
+        }) */
     },
     edicion: (req, res) => {
-        /* res.send(req.body) */
-        let category = categoria.find(cate => cate.name === req.body.category)
-        let forma = formas.find(forma => forma.shape === req.body.forma)
-        let marca = marcas.find(marca => marca.brand === req.body.marca)
-        let material = materials.find(material => material.mater === req.body.material)
+        res.send(req.body)
+        
+        let category = locals.categories.find(category => category.name === req.body.category)
+        let shape = locals.shapes.find(shape => shape.name === req.body.shape)
+        let brand = locals.brands.find(brand => brand.name === req.body.brand)
+        let material = locals.materials.find(material => material.name === req.body.material)
         let arrayImages = [];
         if (req.files) {
             req.files.forEach(image => {
