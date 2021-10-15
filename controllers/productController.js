@@ -19,6 +19,7 @@ module.exports = {
           
         
         .then(producto =>{
+            /* res.send(producto) */
             res.render("productos",{ 
                 /* productFind: producto, */
                 arrayProduct: producto,
@@ -34,8 +35,9 @@ module.exports = {
                     { association: "material"},
                     { association: "image"}],
           })
-        
-       .then((arrayProduct)=>{       
+          
+       .then((arrayProduct)=>{ 
+                 
         db.Product.findByPk(req.params.id, {
             include: [{ association: "category"},
                     { association: "shape"},

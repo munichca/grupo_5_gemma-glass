@@ -48,7 +48,8 @@ module.exports = {
             include: [{ association: "category"},
                     { association: "shape"},
                     { association: "brand"},
-                    { association: "material"}],
+                    { association: "material"},
+                    { association: "image"}],
             where: {
                 
                 name:{
