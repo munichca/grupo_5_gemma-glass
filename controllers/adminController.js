@@ -50,57 +50,8 @@ module.exports = {
                       .catch(err => console.log(err))
                 }
             }) 
-        /* let lastId = 1;
-
-        productos.forEach(product => {
-            if(product.id > lastId){
-                lastId = product.id
-            }
-        })
-        let arrayImages = [];
-            if(req.files){
-                req.files.forEach(image => {
-                    arrayImages.push(image.filename)
-                })
-            }
-        let {
-            name, 
-            price, 
-            discount, 
-            category, 
-            subCatForma, 
-            subCatMarca,
-            subCatmaterial,
-            height,
-            width
-            } = req.body;
-        let cate = categoria.find(cate => cate.name === category); 
-        
-        let productoNuevo = {
-            id: lastId + 1,
-            name,
-            price: +price,
-            discount: +discount,
-            category: cate.id,
-            subCatForma: +subCatForma,
-            subCatMarca: +subCatMarca,
-            subCatmaterial: +subCatmaterial,
-            height: +height,
-            width: +width,
-            image: arrayImages.length > 0 ? arrayImages : []
-        };
-
-        productos.push(productoNuevo);
-
-        writeProductJson(productos)
-
-        res.redirect('/admin/listado') */ 
     }},
     edit: (req, res) => {
-        /* let categoriesP = db.Category.findAll();
-        let shapesP = db.Shape.findAll();
-        let brandsP = db.Brand.findAll();
-        let materialsP = db.Material.findAll(); */
         
         let productP = db.Product.findOne({
             where:{
@@ -112,8 +63,6 @@ module.exports = {
                     { association: "material"},
                     { association: "image"}]
         })
-        /* Promise.all([categoriesP, shapesP, brandsP, materialsP, productP    ])
-            .then(([categories, shapes, brands, materials, product]) => { */
             .then(product => { 
                 
                 if (req.session.user.rol === "ROL_ADMIN") {
@@ -126,14 +75,6 @@ module.exports = {
                     res.redirect('/')
                 }
             })
-        /* let product = productos.find(product => {
-            return product.id === +req.params.id
-        })
-        res.render('edicion', {
-            categoria,
-            product, formas, marcas, materials,
-            session: req.session
-        }) */
     },
     edicion: (req, res) => {
         res.send(req.body)
