@@ -198,6 +198,18 @@ module.exports = {
         })
         writeProductJson(productos)
 
-        res.redirect('/admin/listado/')
+
+
+    },
+    borrarProducto: (req, res) => {
+        db.Product.destroy({
+            where: {
+                id: +req.params.id
+            }
+        })
+        .then(()=>{
+            res.redirect('/admin/listado/')
+        })
+        .catch(err => console.log(err))
     },
 }

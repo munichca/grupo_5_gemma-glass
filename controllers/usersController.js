@@ -9,21 +9,27 @@ module.exports = {
          })
     },
     user: (req, res)=>{
-        
-        let user= users.find(user => user.id === +req.session.user.id)
+    db.User.findByPk(req.session.user.id, {
+    include: [{ association: "addresses" }],
+    }).then((user) => {
         res.render("user", {
             categoria,
             user,
             session: req.session
-        })
+        });
+      });
     },
     profileUser: (req, res)=>{
-        /* res.send(req.session.user) */
-        let user = users.find(user => user.id === +req.session.user.id)
+        /* res.send(req.session.user) 
+        let user = users.find(user => user.id === +req.session.user.id)*/
+    db.User.findByPk(req.session.user.id, {
+    include: [{ association: "addresses" }],
+    }).then((user) => {
         res.render("editProfileUser",{
             categoria,
             user,
             session: req.session
+          });
         })
     },
     updateProfile: (req, res) =>{
@@ -31,22 +37,40 @@ module.exports = {
         let errors = validationResult(req)
         /* res.send(req.params.id) */
         if(errors.isEmpty()){
-            
-            let user = users.find(user => user.id === +req.params.id)
-            
-            
+        /*     let user = users.find(user => user.id === +req.params.id) */
             let { 
                 name, 
                 lastName,
                 phone,
                 address,
+                mail,
                 pCode,
                 province,
                 city
             } = req.body;
-
-            
-            user.id = user.id
+            db.User.update({
+                name,
+                lastName,
+                phone,
+                avatar: req.file ? req.file.filename : req.session.user.avatar
+             },{
+                where:{
+                    id: req.params.id
+                }
+            })
+            .then(()=>{
+                db.Address.create({
+                    street,
+                    numer,
+                    city,
+                    province,
+                    userId: req.params.id
+                })
+                .then(()=>{
+                    res.redirect("/users/user")
+                })
+            })
+            /* user.id = user.id
             user.name = name
             user.lastName = lastName
             user.phone = +phone
@@ -58,11 +82,11 @@ module.exports = {
 
             writeUsersJSON(users)
 
-            /* delete user.pass */
+            delete user.pass 
             
             req.session.user = user
 
-            res.redirect("/users/user")
+            res.redirect("/users/user"); */
                  
         } else{
             res.render('editProfileUser', {
