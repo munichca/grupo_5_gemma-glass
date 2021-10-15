@@ -36,7 +36,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull: true
         },
         rol: {
-            type: dataTypes.STRING(11),
+            type: dataTypes.INTEGER(11),
             allowNull: true
         }
                 

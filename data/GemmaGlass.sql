@@ -28,7 +28,10 @@ CREATE TABLE `addresses` (
   `numer` int(11) DEFAULT NULL,
   `city` varchar(30) DEFAULT NULL,
   `province` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `addressId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `addresses_FK` (`addressId`),
+  CONSTRAINT `addresses_FK` FOREIGN KEY (`addressId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -243,12 +246,9 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `pass` int(11) NOT NULL,
   `avatar` varchar(100) DEFAULT NULL,
-  `addressId` int(11) NOT NULL,
   `phone` int(11) NOT NULL,
-  `rol` varchar(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `users_FK_1` (`addressId`),
-  CONSTRAINT `users_FK_1` FOREIGN KEY (`addressId`) REFERENCES `addresses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  `rol` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -274,4 +274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-12  9:37:19
+-- Dump completed on 2021-10-14 22:53:17
