@@ -124,7 +124,7 @@ CREATE TABLE `productimages` (
   PRIMARY KEY (`id`),
   KEY `productimages_FK` (`productId`),
   CONSTRAINT `productimages_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +133,7 @@ CREATE TABLE `productimages` (
 
 LOCK TABLES `productimages` WRITE;
 /*!40000 ALTER TABLE `productimages` DISABLE KEYS */;
-INSERT INTO `productimages` VALUES (1,'1.jpg',4),(2,'2.jpg',4),(3,NULL,7),(4,NULL,7),(5,NULL,8),(6,NULL,8),(7,NULL,9),(8,NULL,9),(9,NULL,10),(10,NULL,10),(11,NULL,11),(12,NULL,11),(13,'1634011922717_img_.jpg',12),(14,'1634011922741_img_.jpg',12),(15,'1634011944456_img_.jpg',13),(16,'1634011944487_img_.jpg',13);
+INSERT INTO `productimages` VALUES (1,'1.jpg',4),(2,'2.jpg',4),(3,NULL,7),(4,NULL,7),(5,NULL,8),(6,NULL,8),(9,NULL,10),(10,NULL,10),(13,'1634011922717_img_.jpg',12),(14,'1634011922741_img_.jpg',12),(15,'1634011944456_img_.jpg',13),(16,'1634011944487_img_.jpg',13),(17,'1634366575941_img_.jpg',14),(18,'1634366575974_img_.jpg',14);
 /*!40000 ALTER TABLE `productimages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,7 +166,7 @@ CREATE TABLE `products` (
   CONSTRAINT `products_FK_1` FOREIGN KEY (`brandId`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `products_FK_3` FOREIGN KEY (`shapeId`) REFERENCES `shapes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `products_FK_4` FOREIGN KEY (`materialId`) REFERENCES `materials` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,7 +175,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (4,'caca',1,1,1,1,6,5,15555,13,3,'rewrw'),(5,'sdfsd',2,2,2,2,4,4,44,4,NULL,NULL),(6,'dsf',2,2,2,2,5,5,5,5,NULL,NULL),(7,'dsf',2,2,2,2,5,5,5,5,NULL,NULL),(8,'pedro',4,4,3,3,6,15,15432,14,NULL,NULL),(9,'gete',3,3,2,1,2,3,56,2,NULL,NULL),(10,'gete',3,3,2,1,2,3,56,2,NULL,NULL),(11,'gete',3,3,2,1,2,3,56,2,NULL,NULL),(12,'gete',3,3,2,1,2,3,56,2,NULL,NULL),(13,'gete',3,3,2,1,2,3,56,2,NULL,NULL);
+INSERT INTO `products` VALUES (4,'caca',1,1,1,1,6,5,15555,13,3,'rewrw'),(5,'sdfsd',2,2,2,2,4,4,44,4,NULL,NULL),(6,'dsf',2,2,2,2,5,5,5,5,NULL,NULL),(7,'dsf',2,2,2,2,5,5,5,5,NULL,NULL),(8,'pedro',4,4,3,3,6,15,15432,14,NULL,NULL),(10,'gete',3,3,2,1,2,3,56,2,NULL,NULL),(12,'gete',3,3,2,1,2,3,56,2,NULL,NULL),(13,'gete',3,3,2,1,2,3,56,2,NULL,NULL),(14,'t4532',1,1,1,1,5,5,1234,12,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,12 +215,14 @@ CREATE TABLE `users` (
   `name` varchar(100) NOT NULL,
   `lastName` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `pass` int(11) NOT NULL,
+  `pass` varchar(100) NOT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `phone` int(11) NOT NULL,
   `rol` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  `address` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_un` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -229,6 +231,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (3,'asd','qwe','jesica@mail.com','0','default-image.png',534,1,'4we'),(5,'2321','1231','jesica1@mail.com','$2a$12$X9uIQ0dUbnIBricqu0pFG.gXJQ/zz4hu.e2TKgQIqysgAxcSP.u1u','default-image.png',5464,1,'12312'),(6,'es','','anima@mail.com','$2a$12$DshDvwFB8LWCCi8pIPvstu6wJ6SfV1RpjJcDM/B66TsvYui22IjWy','default-image.png',0,1,'as'),(7,'Jesica','aas','asdas@mail.com','$2a$12$LWu1gthAng1hPh2ZEBJ29.KY.j7Tt2j827XcmxVf6uvtKTOdhlE1K','default-image.png',343,1,'asda'),(8,'xxcxx','aas','asdqwe@ma.com','$2a$12$scq7KRwCWQ7SnCIdxw7kteZYUEPEIyge93ax8Td.t2h1XjiuKSEkK','default-image.png',34534,1,'sdfdsd'),(19,'asdef','asdas','jesica2@mail.com','$2a$12$03O7bQaqeev3BJ450baFWubAMBrl2LJjaNX6.YJ3j7wzWSOy4dToa','1634348342515_img_.jpg',34534534,1,''),(20,'jesi','Dillon','jesi@mail.com','$2a$12$tzSu6uiPN.vCSongnWeIOOy3lPlaVU27cz2Aj8G78Q4VNTFDCfdy.','1634362790177_img_.jpg',345346345,1,'aca en casa'),(22,'antonio','diazfierro','anto@mail.com','$2a$12$oItU7M5Xd0b6bVeu/0VcqO1qAlxCjnPDijkdZc1b3IzWQ7D5c80S2','1634363655789_img_.jpg',55555555,2,'aca tambien'),(23,'srfsdfsd','pirulito','user1@mail.com','$2a$12$xJLE9lcLZxPUNAaxnjyJoujGPsyNHxdnmLRH8mk/SI1mGbdITQz7G','1634364394431_img_.jpg',4534,2,'alla lejos');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,4 +248,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-15 20:15:38
+-- Dump completed on 2021-10-16  4:24:10
