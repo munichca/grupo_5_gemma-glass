@@ -71,12 +71,17 @@ module.exports = {
         })
     },
     proFormas: (req, res) =>{
-        let forma = +req.params.id;
-        let arrayProduct = productos.filter(prod => prod.subCatForma === forma);    
-        /* res.send(formas) */    
-        res.render("productos",{
-            arrayProduct, categoria, formas, marcas,
-            session: req.session
+        db.Product.findAll({
+            where:{
+                shapeId:+req.params.id
+            },
+            include:[{association: "image"}]
+        })
+        .then(arrayProduct =>{
+            res.render("productos",{
+                arrayProduct,
+                session: req.session
+            })
         })
     },
     proMarcas: (req, res) =>{
