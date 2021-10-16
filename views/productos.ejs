@@ -109,9 +109,10 @@
             <h2>Gemma Glass</h2> -->
             <div class="aListModal">
                 <ul class="aList">
-                    <a  href="#"><li class="aList">acetato</li></a>
-                    <a  href="#"><li class="aList">grilamid</li></a>
-                    <a  href="#"><li class="aList">metal</li></a>
+                    <% locals.materials.forEach(element => { %>
+                        <a href="/product/proMaterial/<%- element.id %>"><li><%- element.name %></li></a>
+                        
+                        <% }) %>
                 </ul>
             </div>
         </div>
