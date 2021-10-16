@@ -56,12 +56,26 @@ module.exports = {
     },
     
     productOferta: (req, res) =>{
-        let arrayProduct = productos.filter(prod => prod.discount > 0);        
+        db.Product.findAll({
+            where:{
+                discount:{
+                    [Op.gte]:20
+                }
+            },
+            include:[{association: "image"}]
+        })
+        .then(arrayProduct =>{
+            res.render("productos",{
+                arrayProduct,
+                session: req.session
+            })
+        })
+        /* let arrayProduct = productos.filter(prod => prod.discount > 0);        
 
         res.render("productos",{
             arrayProduct, categoria, formas, marcas, materials,
             session: req.session
-        })
+        }) */
     },
     proFormas: (req, res) =>{
         let forma = +req.params.id;
