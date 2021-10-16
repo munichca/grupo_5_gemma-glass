@@ -85,12 +85,17 @@ module.exports = {
         })
     },
     proMarcas: (req, res) =>{
-        let marca = +req.params.id;
-        let arrayProduct = productos.filter(prod => prod.subCatMarca === marca);    
-           
-        res.render("productos",{
-            arrayProduct, categoria, formas, marcas,
-            session: req.session
+        db.Product.findAll({
+            where:{
+                brandId:+req.params.id
+            },
+            include:[{association: "image"}]
         })
-    }
+        .then(arrayProduct =>{
+            res.render("productos",{
+                arrayProduct,
+                session: req.session
+            })
+        })
+}
 }
