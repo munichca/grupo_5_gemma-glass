@@ -27,17 +27,23 @@ module.exports =[
 /*Si el email está registrado true, sino false */
     body('email')
     .custom(value=>{
-            db.User.findOne({
+            return db.User.findOne({
                 where:{
-                    mail:value,
-                }/* ,
-                include:[{
-                    association:"addresses"
-                }] */
+                    email:value,
+                }
+            })
+            .then(user =>{
+                if (user){
+                    return Promise.reject("El mail ya esta registrado")
+                }
             })
 
         
     }),
+    /* .custom((value,{req})=>{
+        let user= users.find(user=> user.email === req.body.email)
+        return bcrypt.compareSync(value,user.pass)
+    }) */
    /*  .withMessage('Email ya registrado'), */
 
 

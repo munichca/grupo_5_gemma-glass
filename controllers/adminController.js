@@ -10,7 +10,7 @@ module.exports = {
         let materialsP = db.Material.findAll();
         Promise.all([categoriesP, shapesP, brandsP, materialsP])
             .then(([categories, shapes, brands, materials]) => {
-                if (req.session.user.rol === "ROL_ADMIN") {
+                if (req.session.user.rol === 1) {
                     res.render("add", {
                         categories, shapes, brands, materials,
                         session: req.session

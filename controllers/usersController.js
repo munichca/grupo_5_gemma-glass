@@ -10,8 +10,9 @@ module.exports = {
          })
     },
     user: (req, res)=>{
+        /* res.send(req.session.user) */
     db.User.findByPk(req.session.user.id, {
-    
+        /* res.send(req.session.user) */
     }).then((user) => {
         res.render("user", {
             
@@ -99,7 +100,7 @@ module.exports = {
             phone,
             pass: bcrypt.hashSync(pass, 12),
             avatar: req.file ? req.file.filename : "default-image.png",
-            rol: 0,
+            rol: 1,
             })
             .then(() => {
                 res.redirect("/users/login")
@@ -116,50 +117,50 @@ module.exports = {
         }
     },
     processLogin: (req, res)=>{
-        /* res.send(req.body) */
+        
         let errors = validationResult(req);
         if(errors.isEmpty()){
             db.User.findOne({
                 where: {
                   email: req.body.email,
                 },
-              })
-              .then((user) =>{
+                
+              }).then(user =>{
+               /*  res.send(user) */
                 req.session.user = {
                     id: user.id,
                     name: user.name,
                     lastName: user.lastName,
                     email: user.email,
                     avatar: user.avatar,
-                    rol: user.rol
+                    rol: user.rol,
                   };
-                  /* res.send(req.session.user) */
+                  
                   if (req.body.remember) {
                     res.cookie("userGG", req.session.user, {
                       expires: new Date(Date.now() + 500000),
                       httpOnly: true,
                     });
                   }
-              })
-            if(req.body.remember){
-                    res.cookie('cookieGlass', req.session.user , {expires: new Date(Date.now() + 900000), httpOnly : true})
-            }
-            res.locals.user= req.session.user
-            if(req.session.user.rol === 0){
+            
+            res.locals.user= req.session.user;
+            res.redirect('/');
+            if(req.session.user.rol === 2){
                 res.redirect('/')
             }else{
                 res.redirect('/')
             }
-            
-
-        }else{
-            res.render("login",{
-                
-                errors: errors.mapped(),
-                session: req.session
-            })
+              });
         }
     
+        else{
+            
+            res.redirect("/users/login",{
+                errors: errors.mapped(),
+                session: req.session
+            });
+       
+        }
 
     },
  logout:(req,res)=> {

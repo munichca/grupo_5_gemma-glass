@@ -9,19 +9,19 @@ module.exports = function(sequelize, dataTypes){
         },
         name: {
             type: dataTypes.STRING(100),
-            allowNull: true
+            allowNull: false
         },
         lastName: {
             type: dataTypes.STRING(100),
-            allowNull: true
+            allowNull: false
         },
         email: {
             type: dataTypes.STRING(100),
-            allowNull: true
+            allowNull: false
         },
         pass: {
-            type: dataTypes.INTEGER(11),
-            allowNull: true
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
         avatar: {
             type: dataTypes.STRING(100),
@@ -29,31 +29,21 @@ module.exports = function(sequelize, dataTypes){
         },
         address: {
             type: dataTypes.STRING(100),
-            
         },
-        
         phone: {
             type: dataTypes.INTEGER(11),
             allowNull: true
         },
         rol: {
             type: dataTypes.INTEGER(11),
-            allowNull: true
+            allowNull: false
         }
-                
-        
-        
     }
     let config = {
         tableName: "users", //No hace falta
         timestamps: false
     }
-
     const User = sequelize.define(alias, cols, config)
-    
-    
-    
-   
 
     return User
 }

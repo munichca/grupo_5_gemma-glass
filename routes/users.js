@@ -20,7 +20,7 @@ router.post("/login",loginValidator, processLogin);
 router.get("/logout", logout);
 /* register */
 router.get("/addUser", addUser);
-router.post("/addUser", uploadUserAvatar.single("avatar"), /* userCreateValidator, */ createUser);
+router.post("/addUser", uploadUserAvatar.single("avatar"), userCreateValidator, createUser);
 
 /*  */
 router.get("/user",userSession,cookie, user);
