@@ -1,7 +1,6 @@
-/* let {productos, categoria, formas, marcas, materials } = require ('../data/dataBase'); */
+
 const db = require ("../database/models")
 const {Op} = require("sequelize")
-/* const arrayProduct */
 module.exports = {
     
     productCat: (req, res)=>{
@@ -19,9 +18,7 @@ module.exports = {
           
         
         .then(producto =>{
-            /* res.send(producto) */
-            res.render("productos",{ 
-                /* productFind: producto, */
+            res.render("productos",{
                 arrayProduct: producto,
                 session: req.session
             })
@@ -57,6 +54,7 @@ module.exports = {
     })
     
     },
+    
     productOferta: (req, res) =>{
         let arrayProduct = productos.filter(prod => prod.discount > 0);        
 
@@ -77,7 +75,7 @@ module.exports = {
     proMarcas: (req, res) =>{
         let marca = +req.params.id;
         let arrayProduct = productos.filter(prod => prod.subCatMarca === marca);    
-        /* res.send(marcas) */    
+           
         res.render("productos",{
             arrayProduct, categoria, formas, marcas,
             session: req.session

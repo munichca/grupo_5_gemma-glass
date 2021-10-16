@@ -18,8 +18,7 @@ module.exports = {
         .then(productos =>{
             
             res.render("home",{ 
-                arrayProduct: productos,
-                /* categoria , */
+                arrayProduct: productos,               
                 session: req.session
             })
         })

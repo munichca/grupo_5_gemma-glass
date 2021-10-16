@@ -1,18 +1,15 @@
-/* let {categoria, users, writeUsersJSON} = require('../data/dataBase'); */
+
 const db = require("../database/models")
 let {validationResult} = require ("express-validator");
 let bcrypt=require('bcryptjs')
 module.exports = {
     login: (req, res)=>{
          res.render("login",{
-            
             session: req.session
          })
     },
     user: (req, res)=>{
-        /* res.send(req.session.user) */
     db.User.findByPk(req.session.user.id, {
-        /* res.send(req.session.user) */
     }).then((user) => {
         res.render("user", {
             
@@ -35,7 +32,6 @@ module.exports = {
     updateProfile: (req, res) =>{
         
         let errors = validationResult(req)
-        /* res.send(req.params.id) */
         if(errors.isEmpty()){
             let { 
                 name, 
@@ -51,24 +47,30 @@ module.exports = {
                 name,
                 lastName,
                 phone,
+                address,
+                mail,
+                pCode,
+                province,
+                city,
                 avatar: req.file ? req.file.filename : req.session.user.avatar
+                
              },{
                 where:{
                     id: req.params.id
                 }
             })
-            .then(()=>{
+            /* .then(()=>{
                 db.Address.create({
                     street,
                     numer,
                     city,
                     province,
                     userId: req.params.id
-                })
+                }) */
                 .then(()=>{
                     res.redirect("/users/user")
                 })
-            })
+           /*  }) */
             
                  
         } else{
@@ -89,7 +91,6 @@ module.exports = {
     createUser: (req, res)=>{
         
         let errors = validationResult(req)
-        /* res.send(req.body) */
         if(errors.isEmpty()){
             let {name, lastName, address, phone, email, pass} = req.body;
             db.User.create({
@@ -99,8 +100,8 @@ module.exports = {
             email,
             phone,
             pass: bcrypt.hashSync(pass, 12),
-            avatar: req.file ? req.file.filename : "default-image.png",
-            rol: 1,
+            avatar: req.file ? req.file.filename : "avatar.png",
+            rol: 2,
             })
             .then(() => {
                 res.redirect("/users/login")
@@ -126,7 +127,6 @@ module.exports = {
                 },
                 
               }).then(user =>{
-               /*  res.send(user) */
                 req.session.user = {
                     id: user.id,
                     name: user.name,

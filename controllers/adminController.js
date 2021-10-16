@@ -1,5 +1,5 @@
 
-//let { categoria, formas, marcas, materials, writeProductJson } = require('../data/dataBase');
+
 const db = require('../database/models');
 const { report } = require('../routes/home');
 module.exports = {
@@ -34,7 +34,6 @@ module.exports = {
                 }
             })
         let {name, price, discount, categoryId, shapeId, brandId, materialId, height, width} = req.body;
-            /* res.send(req.body) */
             db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width })
             .then(product =>{
                 if(arrayImages.length > 0){
@@ -44,7 +43,6 @@ module.exports = {
                             productId: product.id
                         }
                     })
-                    /* res.send(images) */
                     db.productImages.bulkCreate(images)
                       .then(() => res.redirect('/admin/listado'))
                       .catch(err => console.log(err))
@@ -65,8 +63,7 @@ module.exports = {
         })
             .then(product => { 
                 
-                if (req.session.user.rol === "ROL_ADMIN") {
-                    /* res.send(product) */
+                if (req.session.user.rol === 1) {
                     res.render("edicion", {
                         product,
                         session: req.session
@@ -77,8 +74,7 @@ module.exports = {
             })
     },
     edicion: (req, res) => {
-        res.send(req.body)
-        
+        res.send(product)
         let category = locals.categories.find(category => category.name === req.body.category)
         let shape = locals.shapes.find(shape => shape.name === req.body.shape)
         let brand = locals.brands.find(brand => brand.name === req.body.brand)
@@ -105,9 +101,7 @@ module.exports = {
             }
         })
 
-        writeProductJson(productos)
-
-        if (req.session.user.rol === "ROL_ADMIN") {
+        if (req.session.user.rol === 1) {
             res.redirect('/admin/listado')
         } else {
             res.redirect('/')
@@ -117,7 +111,7 @@ module.exports = {
     lista: (req, res) => {
         db.Product.findAll()
             .then(products => {
-                if (req.session.user.rol === "ROL_ADMIN") {
+                if (req.session.user.rol === 1) {
                     res.render("listado", {
                         products,
                         session: req.session
@@ -130,18 +124,7 @@ module.exports = {
 
 
     },
-    borrarProducto: (req, res) => {
-        productos.forEach(producto => {
-            if (producto.id === +req.params.id) {
-                let productoAEliminar = productos.indexOf(producto);
-                productos.splice(productoAEliminar, 1)
-            }
-        })
-        writeProductJson(productos)
-
-
-
-    },
+    
     borrarProducto: (req, res) => {
         db.Product.destroy({
             where: {
