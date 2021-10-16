@@ -7,6 +7,7 @@ router.get("/productCat/:id", controller.productCat);
 router.get("/productOfertas", controller.productOferta);
 router.get("/proForma/:id", controller.proFormas);
 router.get("/proMarca/:id", controller.proMarcas);
+router.get("/proMaterial/:id", controller.proMaterial);
 router.get("/detail/:id", controller.detail);
 
 

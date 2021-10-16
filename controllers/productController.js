@@ -71,6 +71,7 @@ module.exports = {
         })
     },
     proFormas: (req, res) =>{
+        
         db.Product.findAll({
             where:{
                 shapeId:+req.params.id
@@ -97,5 +98,19 @@ module.exports = {
                 session: req.session
             })
         })
-}
+    },
+    proMaterial: (req, res) =>{
+        db.Product.findAll({
+            where:{
+                materialId:+req.params.id
+            },
+            include:[{association: "image"}]
+        })
+        .then(arrayProduct =>{
+            res.render("productos",{
+                arrayProduct,
+                session: req.session
+            })
+        })
+    }
 }

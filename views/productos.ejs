@@ -54,9 +54,10 @@
             </a>
             <div class="sub-menu">
                 <ul>
-                    <li><a href="">acetato</a></li>
-                    <li><a href="">grilamid</a></li>
-                    <li><a href="">metal</a></li>
+                    <% locals.materials.forEach(element => { %>
+                        <a href="/product/proMaterial/<%- element.id %>"><li><%- element.name %></li></a>
+                        
+                        <% }) %>
                 </ul>
             </div>
         </div>
