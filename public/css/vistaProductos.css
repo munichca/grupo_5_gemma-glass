@@ -18,6 +18,7 @@ ul{
     justify-content: space-evenly;
     align-items: center;
     margin: 0 auto 0;
+    padding-top: 15px;
    
 }
 .external-container .product-card{
@@ -29,6 +30,7 @@ ul{
     
     margin-bottom: 15px;
 }
+
 .external-container .images{
     display: flex;
     width: 50vw ;
@@ -41,7 +43,21 @@ ul{
     margin-bottom: 10px;
     background-color: white;
 }
-.external-container .images img{
+.imagDisc{
+    
+    width: 40% !important;
+    height: 30% !important;
+    position: absolute;
+    transform: rotate(45deg);
+    
+    top: -10px !important;
+    right: -18px;
+    z-index: 10;
+    /* opacity:0.7; */
+}
+
+
+.external-container .images .picture{
     width: 98%;
     height: 98%;
     object-fit: contain;
@@ -106,7 +122,7 @@ ul{
 }      
 @media (min-width: 1024px){
    
-    .external-container .images img{
+    .external-container .images .picture{
     transform: scaleX(-1);
     }
     .external-container .images .rear{

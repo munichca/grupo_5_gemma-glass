@@ -2,8 +2,26 @@
     <% arrayProduct.forEach(item => {%> 
     <a class="product-card" href="/product/detail/<%- item.id %>  ">
             <div class="images" id=twist >
-                <img class="frontal" src="/image/productImages/<%- item.image[1]? item.image[1].images : "logFI.jpg" %> "  alt="">
-                <img class="rear" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFN.jpg" %>  "  alt="">
+                <div class="boxCont">
+                    <% if (item.discount == 5) { %>
+                        <img class="imagDisc" src="/image/gemOfer5.png" alt="">
+                    <% } %>
+                    <% if (item.discount == 10) { %>
+                        <img class="imagDisc" src="/image/gemOfer10.png" alt="">
+                    <% } %>
+                    <% if (item.discount == 15) { %>
+                        <img class="imagDisc" src="/image/gemOfer15.png" alt="">
+                    <% } %>
+                    <% if (item.discount == 20) { %>
+                        <img class="imagDisc" src="/image/gemOfer20.png" alt="">
+                    <% } %>
+                    <% if (item.discount == 25) { %>
+                        <img class="imagDisc" src="/image/gemOfer25.png" alt="">
+                    <% } %>
+                </div>
+                
+                <img class="frontal picture" src="/image/productImages/<%- item.image[1]? item.image[1].images : "logFI.jpg" %> "  alt="">
+                <img class="rear picture" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFN.jpg" %>  "  alt="">
             </div>
         <div class="product-name">
             <p class="pes"><%- item.name %>  </p>

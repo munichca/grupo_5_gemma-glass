@@ -58,9 +58,11 @@ module.exports = {
         db.Product.findAll({
             where:{
                 discount:{
-                    [Op.gte]:20
+                    [Op.gte]:5,
+                   
                 }
             },
+            order:[["discount","DESC"]],
             include:[{association: "image"}]
         })
         .then(arrayProduct =>{
@@ -69,6 +71,7 @@ module.exports = {
                 session: req.session
             })
         })
+        .catch(error => console.log(error))
     },
     proFormas: (req, res) =>{
         
