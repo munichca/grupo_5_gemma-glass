@@ -54,7 +54,6 @@ module.exports = {
     })
     
     },
-    
     productOferta: (req, res) =>{
         db.Product.findAll({
             where:{
@@ -70,12 +69,6 @@ module.exports = {
                 session: req.session
             })
         })
-        /* let arrayProduct = productos.filter(prod => prod.discount > 0);        
-
-        res.render("productos",{
-            arrayProduct, categoria, formas, marcas, materials,
-            session: req.session
-        }) */
     },
     proFormas: (req, res) =>{
         let forma = +req.params.id;
