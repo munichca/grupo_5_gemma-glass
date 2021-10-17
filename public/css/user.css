@@ -84,7 +84,9 @@ margin-bottom: 5px;
 }
 
 .btn-user{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #4f8df0;
     width: 120px;
     height: 30px;
@@ -92,6 +94,7 @@ margin-bottom: 5px;
     border: solid 1px #4f8df0;
     text-align: center;
     margin: 0;
+   
     border-radius: 5px;
     
 }
@@ -204,9 +207,12 @@ margin-bottom: 5px;
             width: 95%;
         }
         .btn-user{
+            display: flex;
             width: 130px;
             height: 40px;
             font-size: 14px;
+            justify-content: center;
+            align-items: center;
         }
         
 
