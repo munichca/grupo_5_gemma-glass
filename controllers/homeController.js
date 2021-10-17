@@ -38,11 +38,7 @@ module.exports = {
     },
     search: (req, res) => {
         db.Product.findAll({
-            include: [{ association: "category"},
-                    { association: "shape"},
-                    { association: "brand"},
-                    { association: "material"},
-                    { association: "image"}],
+            include: [{ association: "image"}],
             where: {
                 
                 name:{
