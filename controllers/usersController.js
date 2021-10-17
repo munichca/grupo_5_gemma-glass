@@ -4,6 +4,7 @@ let {validationResult} = require ("express-validator");
 let bcrypt=require('bcryptjs')
 module.exports = {
     login: (req, res)=>{
+       
          res.render("login",{
             session: req.session
          })
@@ -120,6 +121,7 @@ module.exports = {
     processLogin: (req, res)=>{
         
         let errors = validationResult(req);
+        /* res.send(errors) */
         if(errors.isEmpty()){
             db.User.findOne({
                 where: {
@@ -155,7 +157,9 @@ module.exports = {
     
         else{
             
-            res.redirect("/users/login",{
+            /* res.send(req.session) */
+            res.render("login",{
+                
                 errors: errors.mapped(),
                 session: req.session
             });

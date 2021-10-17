@@ -10,27 +10,29 @@ module.exports =[
         .isEmail()
         .withMessage("Ingrese un e-mail válido"),
     
-    body("custom").custom((value, { req }) => {
+    body("pass").custom((value, { req }) => {
         return db.User.findOne({
           where: {
             email: req.body.email,
           },
         })
           .then((user) => {
+            
             if (!bcrypt.compareSync(req.body.pass, user.dataValues.pass)) {
-              return Promise.reject("invalido");
+              return Promise.reject();
+             
             }
           })
-          .catch((error) => {
+          .catch((errors) => {
             return Promise.reject("Credenciales inválidas");
           });
-      })
-       ,
+      }),
+       
 
 
-    check("pass")
+   /*  check("pass")
         .notEmpty()
-        .withMessage("La conrtaseña es obligatoria"),
+        .withMessage("La conrtaseña es obligatoria"), */
     /*  .withMessage("E-mail no registrado")
     body('pass')
     .custom((value,{req})=>{
