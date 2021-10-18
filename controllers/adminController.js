@@ -1,5 +1,6 @@
 
 
+const { localsName } = require('ejs');
 const db = require('../database/models');
 const { report } = require('../routes/home');
 module.exports = {
@@ -51,15 +52,8 @@ module.exports = {
     }},
     edit: (req, res) => {
         
-        let productP = db.Product.findOne({
-            where:{
-                id: req.params.id
-            },
-            include: [{ association: "category"},
-                    { association: "shape"},
-                    { association: "brand"},
-                    { association: "material"},
-                    { association: "image"}]
+        let productP = db.Product.findByPk(+req.params.id,{
+            include: [{ association: "image"}]
         })
             .then(product => { 
                 
@@ -74,39 +68,83 @@ module.exports = {
             })
     },
     edicion: (req, res) => {
-        res.send(product)
-        let category = locals.categories.find(category => category.name === req.body.category)
-        let shape = locals.shapes.find(shape => shape.name === req.body.shape)
-        let brand = locals.brands.find(brand => brand.name === req.body.brand)
-        let material = locals.materials.find(material => material.name === req.body.material)
         let arrayImages = [];
         if (req.files) {
             req.files.forEach(image => {
                 arrayImages.push(image.filename)
             })
         }
-        productos.forEach(product => {
-            if (product.id === +req.params.id) {
-                product.id = product.id,
-                    product.name = req.body.name ? req.body.name : product.name,
-                    product.price = +req.body.price ? +req.body.price : product.price,
-                    product.discount = +req.body.discount ? +req.body.discount : product.discount,
-                    product.category = category.id,
-                    product.subCatForma = forma.id,
-                    product.subCatMarca = marca.id,
-                    product.subCatmaterial = material.id,
-                    product.height = +req.body.height ? +req.body.height : product.height,
-                    product.width = +req.body.width ? +req.body.width : product.width
-                product.image = arrayImages.length > 0 ? arrayImages : []
-            }
+
+        let{id, name, price, discount, height, width } = req.body
+        let categoryP = db.Category.findOne({
+            where:{ name: req.body.category  }})
+        let shapeP = db.Shape.findOne({
+            where:{ name: req.body.shape  }})
+        let brandP = db.Brand.findOne({
+            where:{ name: req.body.brand  }})
+        let materialP = db.Material.findOne({
+            where:{ name: req.body.material  }})
+        Promise.all([categoryP, shapeP, brandP, materialP])
+        .then(([categories, shapes, brands, materials])=>{
+            db.Product.update({
+                name,
+                price,
+                discount,
+                categoryId: categories.id,
+                shapeId: shapes.id,
+                brandId: brands.id,
+                materialId: materials.id,
+                height,
+                width
+            },
+                {
+                where:{
+                    id : +req.params.id
+                }
+            })
+            
+            .then(() =>{
+               
+                if(arrayImages.length > 0){
+                    let images = arrayImages.map(image => {
+                        return {
+                            images: image,
+                            productId: +req.params.id
+                        }
+                    })
+                    db.productImages.findAll({
+                        where:{
+                            productId : +req.params.id
+                        }
+                    })
+                    .then(datos=>{
+                        
+                        datos.forEach(dato=>{
+                            db.productImages.destroy({
+                                where:{
+                                    productId : +req.params.id
+                                }
+                            })
+                        }),
+                        db.productImages.bulkCreate(images)
+                      .then(() => res.redirect('/admin/listado'))
+                      .catch(err => console.log(err))
+                    })
+                    
+                }else{
+                   
+                    let images = arrayImages.map(image => {
+                        return {
+                            images: image,
+                            productId: +req.params.id
+                        }
+                    });
+                    db.productImages.bulkCreate(images)
+                      .then(() => res.redirect('/admin/listado'))
+                      .catch(err => console.log(err))
+                }
+            })
         })
-
-        if (req.session.user.rol === 1) {
-            res.redirect('/admin/listado')
-        } else {
-            res.redirect('/')
-        }
-
     },
     lista: (req, res) => {
         db.Product.findAll()

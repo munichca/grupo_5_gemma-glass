@@ -27,19 +27,5 @@ module.exports =[
             return Promise.reject("Credenciales inválidas");
           });
       }),
-       
-
-
-   /*  check("pass")
-        .notEmpty()
-        .withMessage("La conrtaseña es obligatoria"), */
-    /*  .withMessage("E-mail no registrado")
-    body('pass')
-    .custom((value,{req})=>{
-        let user= users.find(user=> user.email === req.body.email)
-        return bcrypt.compareSync(value,user.pass)
-    })
-    .withMessage('Contraseña inválida')
- */
 
 ]

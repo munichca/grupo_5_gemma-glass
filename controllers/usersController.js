@@ -157,7 +157,7 @@ module.exports = {
     
         else{
             
-            /* res.send(req.session) */
+            /* res.send(errors.mapped()) */
             res.render("login",{
                 
                 errors: errors.mapped(),
