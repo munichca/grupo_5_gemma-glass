@@ -25,10 +25,9 @@
                             <div class="name">
                                 <div class="left-side">
                                     <label class="label nameLabel" for="">Nombre</label>
-                                    <input class="input" type="text" name="name" id="" value="<%= locals.old && old.name %>">
+                                    <input onclick="myFclic()" class="input" type="text" name="name" id="" value="<%= locals.old && old.name %>">
                                     <% if (locals.errors && errors.name) { %>
                                         <span class="text-danger"><%= errors.name.msg %> </span>
-                                        
                                     <% } %>
                                 </div>
                                 <div class="right-side">
@@ -116,6 +115,10 @@
     </main>
     <script>
     var button = document.getElementById("button")
+        
+    
+
+    
     function validateOff(){
        
         let mesage = document.getElementById("validate");

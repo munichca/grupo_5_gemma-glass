@@ -42,7 +42,9 @@ b@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     padding: 2px;
     margin: 0 5px 5px; 
     font-size: 12px;
-    
+}
+.tamanio::placeholder{
+    color: red;
 }
 .tamanioFondo{
     display: flex;

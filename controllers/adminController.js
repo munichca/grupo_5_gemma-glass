@@ -1,19 +1,15 @@
-
-
 const { localsName } = require('ejs');
 const db = require('../database/models');
 const { report } = require('../routes/home');
+let {validationResult} = require ("express-validator");
 module.exports = {
-    add: (req, res) => {
-        let categoriesP = db.Category.findAll();
-        let shapesP = db.Shape.findAll();
-        let brandsP = db.Brand.findAll();
-        let materialsP = db.Material.findAll();
-        Promise.all([categoriesP, shapesP, brandsP, materialsP])
-            .then(([categories, shapes, brands, materials]) => {
+    
+    add: (req, res) => {        
+            db.Category.findAll()
+            .then(categories => {
                 if (req.session.user.rol === 1) {
                     res.render("add", {
-                        categories, shapes, brands, materials,
+                        categories,
                         session: req.session
                     })
                 } else {
@@ -28,12 +24,8 @@ module.exports = {
                 arrayImages.push(image.filename)
             })
         }
-        if(arrayImages.length > 0){
-            let images = arrayImages.map(image => {
-                return {
-                    image: image
-                }
-            })
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
         let {name, price, discount, categoryId, shapeId, brandId, materialId, height, width} = req.body;
             db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width })
             .then(product =>{
@@ -48,15 +40,28 @@ module.exports = {
                       .then(() => res.redirect('/admin/listado'))
                       .catch(err => console.log(err))
                 }
+                res.redirect('/admin/listado')
             }) 
-    }},
+        }else{
+            db.Category.findAll()
+            .then(categories => {
+                if (req.session.user.rol === 1) {
+                    res.render("add", {
+                        categories,
+                        errors: errors.mapped(),
+                        session: req.session
+                    })
+                } else {
+                    res.redirect('/')
+                }
+            })
+        }
+    },
     edit: (req, res) => {
-        
         let productP = db.Product.findByPk(+req.params.id,{
             include: [{ association: "image"}]
         })
             .then(product => { 
-                
                 if (req.session.user.rol === 1) {
                     res.render("edicion", {
                         product,
@@ -74,7 +79,6 @@ module.exports = {
                 arrayImages.push(image.filename)
             })
         }
-
         let{id, name, price, discount, height, width } = req.body
         let categoryP = db.Category.findOne({
             where:{ name: req.body.category  }})
@@ -102,9 +106,7 @@ module.exports = {
                     id : +req.params.id
                 }
             })
-            
             .then(() =>{
-               
                 if(arrayImages.length > 0){
                     let images = arrayImages.map(image => {
                         return {
@@ -130,9 +132,7 @@ module.exports = {
                       .then(() => res.redirect('/admin/listado'))
                       .catch(err => console.log(err))
                     })
-                    
                 }else{
-                   
                     let images = arrayImages.map(image => {
                         return {
                             images: image,
@@ -158,11 +158,7 @@ module.exports = {
                     res.redirect('/')
                 }
             })
-
-
-
     },
-    
     borrarProducto: (req, res) => {
         db.Product.destroy({
             where: {

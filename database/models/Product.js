@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes){
             allowNull: false
         },
         price:{
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.DECIMAL(10, 2),
             allowNull: false
         },
         discount: {
@@ -39,11 +39,11 @@ module.exports = function(sequelize, dataTypes){
             allowNull: true
         },
         height:{
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.DECIMAL(10, 2),
             allowNull: false
         },
         width:{
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.DECIMAL(10, 2),
             allowNull: false
         }
 

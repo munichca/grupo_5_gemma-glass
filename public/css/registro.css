@@ -110,6 +110,10 @@ a{
     font-size: 12px;
     padding-left: 10px;
     
+    
+}
+.input::placeholder{
+    color:red;
 }
 .input:hover{
     border: 2px solid var(--header);

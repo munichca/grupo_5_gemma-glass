@@ -40,11 +40,6 @@ module.exports =[
 
         
     }),
-    /* .custom((value,{req})=>{
-        let user= users.find(user=> user.email === req.body.email)
-        return bcrypt.compareSync(value,user.pass)
-    }) */
-   /*  .withMessage('Email ya registrado'), */
 
 
 
