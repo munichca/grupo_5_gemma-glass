@@ -80,6 +80,11 @@ module.exports = function(sequelize, dataTypes){
             foreignKey: "shapeId",
             timestamps: false
         })
+        Product.hasMany(models.User, {
+            as: "prodUser",
+            foreignKey: "lastProdId",
+            timestamps: false
+        })
     }
 
     return Product

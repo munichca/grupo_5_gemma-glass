@@ -37,6 +37,9 @@ module.exports = function(sequelize, dataTypes){
         rol: {
             type: dataTypes.INTEGER(11),
             allowNull: false
+        },
+        lastProdId: {
+            type: dataTypes.INTEGER(11),
         }
     }
     let config = {
@@ -44,6 +47,12 @@ module.exports = function(sequelize, dataTypes){
         timestamps: false
     }
     const User = sequelize.define(alias, cols, config)
-
+    User.associate = models => {
+        User.belongsTo(models.Product, {
+            as: "prodId",
+            foreignKey: "lastProdId",
+            timestamps: false
+        })
+    }
     return User
 }

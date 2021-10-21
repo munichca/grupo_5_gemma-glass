@@ -7,11 +7,13 @@ module.exports = {
        
          res.render("login",{
             session: req.session
+            
          })
     },
     user: (req, res)=>{
     db.User.findByPk(req.session.user.id, {
     }).then((user) => {
+        res.locals.user = user,
         res.render("user", {
             
             user,
@@ -60,14 +62,7 @@ module.exports = {
                     id: req.params.id
                 }
             })
-            /* .then(()=>{
-                db.Address.create({
-                    street,
-                    numer,
-                    city,
-                    province,
-                    userId: req.params.id
-                }) */
+            
                 .then(()=>{
                     res.redirect("/users/user")
                 })
@@ -103,6 +98,7 @@ module.exports = {
             pass: bcrypt.hashSync(pass, 12),
             avatar: req.file ? req.file.filename : "avatar.png",
             rol: 2,
+            lastProdId:0,
             })
             .then(() => {
                 res.redirect("/users/login")
@@ -136,11 +132,12 @@ module.exports = {
                     email: user.email,
                     avatar: user.avatar,
                     rol: user.rol,
+                    lastProdId: user.lastProdId
                   };
                   
                   if (req.body.remember) {
                     res.cookie("userGG", req.session.user, {
-                      expires: new Date(Date.now() + 500000),
+                      expires: new Date(Date.now() + 5000000),
                       httpOnly: true,
                     });
                   }

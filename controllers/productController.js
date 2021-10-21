@@ -25,32 +25,58 @@ module.exports = {
         })
     },
     detail: (req, res)=>{   
+        /*   {
+
+        }else{
+
+        } */
        db.Product.findAll({
-       include: [{ association: "category"},
-                    { association: "shape"},
-                    { association: "brand"},
-                    { association: "material"},
-                    { association: "image"}],
+       include: [ { association: "image"}],
           })
           
        .then((arrayProduct)=>{ 
                  
         db.Product.findByPk(req.params.id, {
             include: [{ association: "category"},
-                    { association: "shape"},
-                    { association: "brand"},
-                    { association: "material"},
-                    { association: "image"}],
+            { association: "shape"},
+            { association: "brand"},
+            { association: "material"},
+                { association: "image"}],
           })
         
         .then(producto =>{
-            /* res.send(arrayProduct) */
-            res.render("detalleProducto",{ 
-                productFind: producto,
-                arrayProduct,
-                session: req.session
+            /* res.send(res.locals) */
+            /* res.send(arrayProduct) */ // poner aca el ultimo visitado, buscar el user por la session
+            // y cargarle el id del producto encontrato en el campo que evy NO creo, crearlo RR 1:N
+            /* res.send(producto) */
+            if(res.locals.user != undefined && res.locals.user.rol != 1 ){
+                /* res.send(req.session.user ) */
+                db.User.update({
+                    include: [{ association: "prodId"}],
+                    lastProdId: producto.id
+                 },{
+                    where:{
+                        id: res.locals.user.id
+                    }
+                
+              }).then(()=>{
+                /* res.send(producto) */
+                res.render("detalleProducto",{ 
+                    productFind: producto,
+                    arrayProduct,
+                    session: req.session
+
+              })
             })
-        })
+            }else{
+                res.render("detalleProducto",{ 
+                    productFind: producto,
+                    arrayProduct,
+                    session: req.session
+            })
+              
+        }
+    })
     })
     
     },

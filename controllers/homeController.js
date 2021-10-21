@@ -3,26 +3,65 @@ const db = require("../database/models")
 const {Op} = require("sequelize")
 module.exports = {
     home: (req, res)=>{
-        db.Product.findAll({
-            where: {
-                discount: {
-                    [Op.gte]:5
+        
+        if(res.locals.user != undefined && res.locals.user.rol != 1 ){
+            db.Product.findOne({
+                where: {
+                    id : res.locals.user.lastProdId
                 }
-            },
-            include: [{ association: "category"},
-                    { association: "shape"},
-                    { association: "brand"},
-                    { association: "material"},
-                    { association: "image"}]
-        })
-        .then(productos =>{
-            
-            res.render("home",{ 
-                arrayProduct: productos,               
-                session: req.session
             })
-        })
-        .catch(err => console.log(err))
+            .then(product =>{
+                db.Product.findAll({
+                    where: {
+                        shapeId: {
+                            [Op.eq]:product.shapeId
+                        }
+                    },
+                    include: [{ association: "category"},
+                            { association: "shape"},
+                            { association: "brand"},
+                            { association: "material"},
+                            { association: "image"}]
+                })
+                .then(productos =>{
+                    
+                    res.render("home",{ 
+                        arrayProduct: productos,               
+                        session: req.session
+                    })
+                })
+                .catch(err => console.log(err))
+            })
+            
+
+            
+        }else{
+            db.Product.findAll({
+                where: {
+                    discount: {
+                        [Op.gte]:5
+                    }
+                },
+                include: [{ association: "category"},
+                        { association: "shape"},
+                        { association: "brand"},
+                        { association: "material"},
+                        { association: "image"}]
+            })
+            .then(productos =>{
+                
+                res.render("home",{ 
+                    arrayProduct: productos,               
+                    session: req.session
+                })
+            })
+            .catch(err => console.log(err))
+        }
+
+
+
+
+        
     },
     turnos: (req, res)=>{
         res.render("turnos",{

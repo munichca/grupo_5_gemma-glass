@@ -47,7 +47,7 @@
              <% if (typeof session.user != "undefined" ) { %>
                 <ul>
                     
-               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
+               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%- session.user.avatar? session.user.avatar : "logFN.jpg" %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
             
                  <!-- <li><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>  -->
                  </ul>
