@@ -4,16 +4,16 @@ var body = document.getElementsByTagName("body")[0];
 function btnModal(clicked_id){
     switch(clicked_id){
         case "btnModal1":
-            let btn = document.getElementById("btnModal1");
-            let modalWindow = document.getElementById("tvesModal");
+            var btnm = document.getElementById("btnModal1");
+            var modalWindow = document.getElementById("tvesModal");
             break;   
         case "btnModal2":
-            let btn = document.getElementById("btnModal2");
-            let modalWindow = document.getElementById("tvesModal2");
+            var btnm = document.getElementById("btnModal2");
+            var modalWindow = document.getElementById("tvesModal2");
             break;   
         case "btnModal3":
-            let btn = document.getElementById("btnModal3");
-            let modalWindow = document.getElementById("tvesModal3");
+            var btnm = document.getElementById("btnModal3");
+            var modalWindow = document.getElementById("tvesModal3");
             break;   
       }
              modalWindow.style.opacity = "1";

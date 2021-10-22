@@ -12,13 +12,13 @@
 
 <main class="mainEditUser">
     <form class="form" action="/users/editUser/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <div class="container-user">
-            <div class="titleC">
-                <span class="title1">Mis datos</span>
+        <div class="baseProfile">
+            <div class="title_C">
+                <div class="title_1">Mis datos</div>
             </div>
             
             <section class="sectionM">
-                    <div class="imagesReg1" id="imagePreview"  >
+                    <div class="imagesReg1 contImag" id="imagePreview"  >
                         <img id="old1" src="/image/userAvatars/<%= user.avatar %> " alt="">
                     </div>
                     <div class="inputMask bordeColor">

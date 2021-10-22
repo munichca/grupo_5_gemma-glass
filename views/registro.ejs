@@ -24,42 +24,43 @@
                         <section class="section1">
                             <div class="name">
                                 <div class="left-side">
-                                    <label class="label nameLabel" for="">Nombre</label>
+                                    <label class=" nameLabel" for="">Nombre</label>
                                     <input onclick="myFclic()" class="input" type="text" name="name" id="" value="<%= locals.old && old.name %>">
                                     <% if (locals.errors && errors.name) { %>
                                         <span class="text-danger"><%= errors.name.msg %> </span>
                                     <% } %>
                                 </div>
                                 <div class="right-side">
-                                    <label class="label nameLabel" for="" id="lana">Apellido</label>
+                                    <label class=" nameLabel" for="" id="lana">Apellido</label>
                                     <input class="input" type="text" name="lastName" id="lastName" value="<%= locals.old && old.lastName %>">
                                     <% if (locals.errors && errors.lastName) { %>
                                         <span class="text-danger"><%= errors.lastName.msg %> </span>
                                         
                                     <% } %>
                                 </div>                   
-                                <div class="left-side">
+                                <!-- <div class="left-side">
                                     <label class="label nameLabel" for="">Dirección</label>
                                     <input class="input" type="adress" name="address" value="<%= locals.old && old.address %>">
-                                </div>
-                                <div class="right-side">
-                                    <label class="label nameLabel" for="" >Teléfono</label>
-                                    <input class="input" type="text" name="phone" value="<%= locals.old && old.phone %>"> <!-- este es similar a un if ternario pero sin el else -->
-                                    <% if (locals.errors && errors.phone) { %>
-                                        <span class="text-danger"><%= errors.phone.msg %> </span>
-                                    <% } %>
-                                </div>                   
+                                </div> -->
+                                                  
                             </div>            
                             
                         </section>
                         
                         <section class="section2">
-                            <label class="label midle "for="">Correo Electrónico</label>
-                            <input class="midle input"type="email" name="email" placeholder="mail@domain.com" value="<%= locals.old && old.email %>">
+                            
+                                <label class=" midle" for="" >Teléfono</label>
+                                <input class="input" type="text" name="phone" id="myInput" value="<%= locals.old && old.phone %>"> <!-- este es similar a un if ternario pero sin el else -->
+                                <% if (locals.errors && errors.phone) { %>
+                                    <span class="text-danger"><%= errors.phone.msg %> </span>
+                                <% } %>
+                             
+                            <label class=" midle "for="">Correo Electrónico</label>
+                            <input class=" input"type="email" name="email" id="myInput" placeholder="mail@domain.com" value="<%= locals.old && old.email %>">
                             <% if (locals.errors && errors.email) { %>
                                 <span class="text-danger"><%= errors.email.msg %> </span>
                             <% } %>
-                            <label class="label midle" for="">Contraseña</label>
+                            <label class=" midle" for="">Contraseña</label>
                             <div class="pass1">
                                 <input type="password" class="input"  name="pass" id="myInput" value="<%= locals.old && old.pass %>">
                                 
@@ -68,7 +69,7 @@
                             <% if (locals.errors && errors.pass) { %>
                                 <span class="text-danger"><%= errors.pass.msg %> </span>
                             <% } %>
-                            <label class="label midle"for="">Confirmar contraseña</label>
+                            <label class=" midle"for="">Confirmar contraseña</label>
                             <div class="pass2">                                    
                                 <input type="password" class="input"   name="pass2" id="myInput2" value="<%= locals.old && old.pass2 %>">
                                 

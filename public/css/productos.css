@@ -43,6 +43,7 @@ ul{
     /* height: 50px; */
     justify-content: center;
     margin-bottom: 10px;
+    position: sticky;
 }
 .menu-lateral .men1,
 .menu-lateral .men2,
@@ -156,14 +157,14 @@ color: var(--tipos);
         display: flex;
         flex-direction: column;
         width: 15%;
-        /* height: 75vh; */
         left: 0px;
-        /* justify-content: initial; */
         font-size: 22px;
-        border-right: 1px solid var(--tipos);
+        border-right: 1px solid rgba(6, 40, 140, 0.25);
+        box-shadow: 0px 0px 10px rgba(6, 40, 140, 0.25);
         background-color: white;
         background-image: url(/image/lateral.png);
         background-repeat: no-repeat;
+        
     }
     .menu-lateral .sub-menu li a{
         font-size: 16px;

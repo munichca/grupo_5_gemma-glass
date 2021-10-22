@@ -13,13 +13,9 @@ a{
 .text-danger{
     font-size: 10px;
 }
-
 .main{
     width: 95%;
-   /*  height: 100vh; */
-    /* padding: 15px; */
     margin: auto;
-    /* border: 1px solid red; */
 }
 .main label{
     font-size: 12px;
@@ -29,26 +25,19 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid green; */
 }
 .container-register{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    /* height: 100%; */    
-    /* margin: 0 auto 0; */   
+    width: 100%; 
     justify-content: center;
     align-items: center; 
     color: var(--tipos);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
-    /* border: 1px solid red; */
-
+    box-shadow: 0px 0px 10px rgba(21, 40, 71, .25);
 }
-
 .container-register .welcome{
     margin: 5px auto 0px;
     text-align: center;
-    /* border: 1px solid black; */
 }
 .welcome h3{
     margin: 0;
@@ -61,7 +50,6 @@ a{
     display: flex;
     flex-direction: column;   
     width: 100%;
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -70,38 +58,29 @@ a{
 .section1{
     display: flex;
     flex-direction: column;
-
     width: 100%;
     margin: 0%;
     padding: 0;
-    /* border: .5px solid black; */
 }
 .section2{
-    width: 60%;
+    width: 48%;
     margin: 0%;
     padding: 0;
-    /* border: .5px solid black; */
 }
 .section3{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    width: 40%;
-    margin-top: 40px;
-    padding-top:5px;
+    width: 52%;
+    margin-top: 10px;
     padding-bottom: 5px;
-    /* border: .5px solid black; */
 }
-
 .complete{
     font-weight: bold;
     font-size: 13px;
     text-decoration: underline;
     margin-bottom: 10px; 
-       
 }
-
 .input{
     border: 1px solid var(--tipos);
     margin-bottom: 5px;
@@ -109,8 +88,6 @@ a{
     outline: none;
     font-size: 12px;
     padding-left: 10px;
-    
-    
 }
 .input::placeholder{
     color:red;
@@ -147,15 +124,9 @@ a{
     right: -1000px;
     top: -1000px;
 }
-
-
-
-
 .container-register .my-data #myInput{
     width: 100%;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
 }
 .container-register .my-data #myInput2{
     width: 100%;
@@ -195,9 +166,7 @@ a{
  .name .nameLabel{
     width: 40%;
     font-size: 12px;
-   
 }
-
 .section2 .pass1{
     display: flex;
     width: 100%;
@@ -213,9 +182,15 @@ a{
 .section2 .pass1 #eye1:hover{
     color: var(--tipos);
 }
+.input2{
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 10px;
+}
 .midle{
     width: 100%;
     margin-bottom: 0;
+    font-size: 8px;
 }
 .section2 .pass2{
     display: flex;
@@ -232,14 +207,11 @@ a{
 .section2 .pass2 #eye2:hover{
     color: var(--tipos);
 }
-
 .container_check{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content: center; */
     align-items: center;
-    
 }
 .checkRegister{
     padding-left:5px;
@@ -254,13 +226,9 @@ a{
     justify-content: center;
     color: var(--tipos);
 }
-
 .ingresa:hover{
     color: var(--header);
 }
-/* .container-register ::placeholder{
-    color: var(--header);
-} */
 .imagesReg{
     width: 20vw;
     height: 20vw;
@@ -271,16 +239,11 @@ a{
     box-shadow: 0px 0px 10px rgba(6, 40, 140, 0.25);
 }
 .imagesReg img{
-    
     width: 20vw;
     height: 20vw;
     object-fit: cover;
-    /* object-position: center center; */
     border-radius: 50%;
-    
-    
 }
-
 .section3 #errorImage{
     font-size: 11px;
     color: var(--red);
@@ -299,37 +262,29 @@ a{
 }
 
 @media (min-width: 768px) {
-    /* ################# */
     .container-register{
         width:68%;
     }
     .exterior {
         width: 90%;
     }
-    /* ##################### */
     .main{
         width: 100%;
-        /* height: 100vh; */
         padding: 10px;
     }
     .exterior{
-        
         display: flex;
         justify-content: center;
         align-items: center;
-        /* border: 2px solid green; */
     }
     .container-register{
         display: flex;
-        flex-direction: column;
-       
-        /* height: 100%; */    
+        flex-direction: column;   
         margin: 0 auto 0;   
         justify-content: center;
         align-items: center; 
         color: var(--tipos);
         box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
-    
     }
     .inputMask{
         display: flex;
@@ -353,20 +308,15 @@ a{
         height: 10vw;
         margin: 5px;
     }
-    
     .imagesReg img {
-        
         width: 10vw;
         height: 10vw;
         object-fit: cover;
-        
-        
     }
     .container-register .my-data{
         display: flex;
         flex-direction: column;   
         width: 100%;
-        /* border: 1px solid red; */
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -375,38 +325,24 @@ a{
     .section1{
         display: flex;
         flex-direction: column;
-    
         width: 100%;
         margin: 0%;
         padding: 0;
-        /* border: .5px solid black; */
     }
     .section2{
-        width: 50%;
-        margin: 0%;
+        width: 48%;
+        margin-bottom: 10px;
         padding: 0;
-        /* border: .5px solid black; */
     }
     .section3{
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
-        width: 50%;
+        width: 48%;
         padding-top:5px;
         padding-bottom: 5px;
         margin-top: 10px;
-        /* border: .5px solid black; */
     }
-
-
-
-
-
 }
-@media (min-width: 1024px){
-    /* .container-register{
-        width: 50%;
-    } */
-}
+
 
