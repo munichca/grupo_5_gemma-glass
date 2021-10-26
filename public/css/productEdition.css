@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-:root {
+/* :root {
     --header : rgb(79, 141,240);
     --navbar : rgb(182, 209, 252);
     --footer : rgb(21, 40, 72);
     --fondo : #fafafa;
-    /* Fonts */
+   
     --font-primary : 'Roboto', sans-serif;
-    /* Font size */
+    
     --paragraph : 12px;
     --title : 24px;
     --price : 18px;
     --descriptions : 16px;
-}
+} */
 
 .editBody {
     display: flex;

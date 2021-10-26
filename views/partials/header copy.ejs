@@ -19,19 +19,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="colors formColor">
-            <form   class="formOut" name="formOut" id="formOut" action="/users/editUser/<%= locals.user && locals.user.id %>?_method=PATCH"method="POST" >
-            
-            <div   class="sizeA c1" id="c1" onclick="color(this.id)"></div>
-            <div  class="sizeA c2" id="c2" onclick="color(this.id)" ></div>
-            <div  class="sizeA c3" id="c3" onclick="color(this.id)"></div>
-            <div  class="sizeA c4" id="c4" onclick="color(this.id)"></div>
-            <button class="submit" type="submit"></button>
-            <input class = "escon" type="text" name="color" value="" >
-         </form>
-        </div>
-   
         <div class="container-1">
 
             <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo"></a>
@@ -102,13 +89,32 @@
                 <a  href="/turnos"> <li>Pedí una consulta</li></a>
             </ul>
         </nav>
-        <input class = "phanton" type="text" value= "<%= locals.user? locals.user.colorId : "0"%> ">
-        
-        <!-- <script src='/js/changeColor.js' ></script>
-        <script src='/js/colorUser.js' ></script> -->
-         <script src='/js/header.js' ></script>
-         <script src='/js/cargarcolor.js' ></script>
-         
-         
+        <script>
+    function mostrar() {
+        var x = document.getElementById("buscador");
+        let lupa = document.getElementById("lupa");
+        let search_2 = document.getElementById("search_2")
+           if (x.style.display === "block") {
+           x.style.display = "none";
+           
+           /* lupa.style.display = "flex"; */
+           lupa.style.cursor = "pointer";
+           lupa.style.pointerEvents = "initial"
+           lupa.style.opacity = "1";
+           
+           
+           } else {
+                  x.style.display = "block";
+                 /*  lupa.style.display = "none"; */
+                  lupa.style.opacity = "0";
+                  lupa.style.cursor = "not-allowed";
+                  lupa.style.pointerEvents = "none"
+                  search_2.focus();/* la funcion focus pone el cursor en el elemento al qyue se le aplica */
+                  
+    }
+}
+    
+    
+        </script>
     </header>
 

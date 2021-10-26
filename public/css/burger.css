@@ -1,5 +1,5 @@
 .menuBurger {
-    width: 33%;
+    width: 15%;
     padding: 5px 13px;
     font-size: 32px;
   }
@@ -36,7 +36,7 @@
   
   .contenedor-burger h2 {
     padding: 10px;
-    background-color: #4f8df0;
+    background-color: var(--header);
     color: white;
     font-size: 18px;
     text-align: right;
@@ -55,8 +55,8 @@
   }
   
   .lbl-modal {
-    background-color: #4f8df0;
-    color: #152847;
+    background-color: var(--header);
+    color: var(--tipos);
     padding: 5px;
     text-align: center;
     cursor: pointer;
@@ -79,7 +79,7 @@
   
   .contenido-burger ul a li {
     text-decoration: none;
-    color: #152847;
+    color: var(--tipos);
     font-size: 18px;
     padding: 8px 5px; 
     border:solid 1.3px gray;
@@ -93,7 +93,7 @@
   }
   
   .contenido-burger ul a li:hover {
-      background-color: #4f8df0;
+      background-color: var(--header);
       color: white;
       font-weight: bold;
   }

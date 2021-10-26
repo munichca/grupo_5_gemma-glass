@@ -8,12 +8,12 @@
     text-align: center !important;
     width: 95px ;
     height: 40px !important;
-    background-color: #4f8df0;
-    
+    background-color: var(--header);
+    padding: 6px !important;
     align-self: center;
     margin: 10px  0 10px 0;
     
-    border: solid 1px #152847;
+    border: solid 1px var(--tipos);
     border-radius: 5px !important;
 }
 
@@ -26,27 +26,10 @@
     border-radius: 7px !important ;
 }
 input {
-   
     outline: none;
-   
-    
     padding-left : 5px !important;
-   
-    /* border: 2px solid red !important; */
 }
-.input1 {
-    /* color: red ; */
-   /*  outline: none;
-    font-size: 1rem !important;
-    height: 30px !important;
-    padding: 5px !important;
-    margin: 3 0 !important;
-    
-    align-items: center; */
-}
-/* input:focus{
-    border: 1px solid rgb(29, 14, 91);
-} */
+
 .label{
     margin : 3 0 !important;
     font-size: 1rem !important;
@@ -57,6 +40,7 @@ body{
 @media (min-width: 768px){
 .btn{
     width: 110px;
+    transition: 1s;
 }
 }
 @media (min-width: 1024px){

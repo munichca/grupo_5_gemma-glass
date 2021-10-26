@@ -10,7 +10,7 @@ footer{
     justify-content: space-around;
     
     color: white;
-    background-color: #152847;  
+    background-color: var(--tipos);  
     /* font-family: "Ubuntu", sans-serif; */
 }
 

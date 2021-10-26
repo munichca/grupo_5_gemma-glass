@@ -1,8 +1,4 @@
 .aBaseD {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly; */
-
     top: 0;
     width: 100%;
     padding: 5px 13px;
@@ -53,7 +49,6 @@
   }
   .aModalContainer {
    width: 60%;
-   /*  background: #fff; */
     transition: all 500ms ease;
     transform: translateY(0%);
     margin: 0 auto;
@@ -65,7 +60,7 @@
     text-align: center;
     font-size: 14px;
     font-weight: 300;
-    background: rgba(21, 40, 71, .8);
+    background: var(--tipos);
     padding: 4px; 
     border-bottom:solid 1px gray;
     list-style: none;
@@ -75,7 +70,7 @@
   } */
   
   .aListModal ul a li:hover {
-      background-color: #4f8df0;
+      background-color: var(--header);
       color: white;
       font-weight: bold;
   }

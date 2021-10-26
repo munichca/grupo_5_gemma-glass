@@ -40,6 +40,9 @@ module.exports = function(sequelize, dataTypes){
         },
         lastProdId: {
             type: dataTypes.INTEGER(11),
+        },
+        colorId: {
+            type: dataTypes.INTEGER(11),
         }
     }
     let config = {
@@ -47,10 +50,11 @@ module.exports = function(sequelize, dataTypes){
         timestamps: false
     }
     const User = sequelize.define(alias, cols, config)
+    
     User.associate = models => {
-        User.belongsTo(models.Product, {
-            as: "prodId",
-            foreignKey: "lastProdId",
+        User.belongsTo(models.Color, {
+            as: "colId",
+            foreignKey: "colorId",
             timestamps: false
         })
     }

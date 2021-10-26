@@ -4,7 +4,7 @@ const {Op} = require("sequelize")
 module.exports = {
     home: (req, res)=>{
         
-        if(res.locals.user != undefined && res.locals.user.rol != 1 ){
+        if(res.locals.user != undefined && res.locals.user.rol != 1 && res.locals.user.lastProdId != 0){
             db.Product.findOne({
                 where: {
                     id : res.locals.user.lastProdId

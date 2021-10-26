@@ -1,9 +1,3 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
-} */
 
 .logo {
   width: 74px;
@@ -13,7 +7,8 @@
 
 header {
   width: 100%;
-  background-color: #4f8df0;
+  transition: 1s;
+  background-color:  var(--header);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -37,6 +32,33 @@ header {
 .searchForm{
   display: flex;
   width: 100%;
+}
+.colors{
+  width: 22%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.sizeA{
+  width: 23px;
+  height: 25px;
+  /* border: 1px solid black; */
+  margin: 3px;
+  cursor: pointer;
+  outline: 0 none;
+}
+.c1, .c2, .c3, .c4{
+  border-radius: 30px;
+}
+.c1{background-color: var(--header1); border: 1px solid white;}
+.c2{background-color: var(--header2);}
+.c3{background-color: var(--header3);}
+.c4{background-color: var(--header4);}
+.sizeA:hover{
+  
+  border: 1px solid white;
+  
 }
 #buscador{
   display: none;
@@ -66,7 +88,7 @@ font-size: 19px;
 }
 
 .container-1 {
-  width: 33%;
+  width: 27%;
   text-align: center;
 }
 
@@ -89,7 +111,7 @@ font-size: 19px;
 
 .lupa i , .lupa-1 i {
   position: absolute;
-  color: #152847;
+  color: var(--tipos);
   padding-right: 7px;
   font-size: 20px;
   right: 16px;
@@ -110,7 +132,7 @@ font-size: 19px;
 .container-3 ul li a {
   padding: 3px;
   text-decoration: none;
-  color: #152847;
+  color: var(--tipos);
 }
 .container-3 ul{
   padding-left: 0;
@@ -129,8 +151,6 @@ font-size: 19px;
 }
 .container-3 ul li a{
   font-size: 4vw;
-  /* width: 65px;
-  border: 1px solid red; */
 }
 header .container-3 ul li a:hover,
 header a:hover {
@@ -140,7 +160,7 @@ header a:hover {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  border:solid 2px #152847;
+  border:solid 2px var(--tipos);
 }
 .avatar-header:hover{
     border:solid 3px white;
@@ -168,7 +188,7 @@ header a:hover {
 .container_4 a {
   padding-bottom: 3px;
   text-decoration: none;
-  color: #152847;
+  color: var(--tipos);
 }
 .container_4 .ulMyDiv{
   margin-bottom: 0 !important;
@@ -206,7 +226,7 @@ header a:hover {
 
 .container-nav ul a {
 text-decoration: none;
-color: #152847;
+color: var(--tipos);
 font-size: 18px;
 border-right: solid 2px white;
 width: 20%;
@@ -217,7 +237,7 @@ text-align: center;
 
  }
  .container-nav ul a:hover{
-    background-color: #4f8df0;
+    background-color: var(--header);
     color: white;
     font-weight: bold;
 }
@@ -226,8 +246,31 @@ text-align: center;
    text-align: center;
 }
 .myLi{
-  border: 1px solid #152847 !important;
+  border: 1px solid var(--tipos) !important;
   margin: auto auto;
+}
+.phanton{
+  display: flex;
+  /* position: absolute;
+  top: -100;
+  visibility: hidden; */
+}
+.escon{
+  display: flex;
+  /* position: absolute;
+  top:500; */
+  
+  /* visibility: hidden; */
+}
+.submit{
+  visibility: hidden;
+}
+.formColor{
+  display: flex;
+  position: relative;
+  /* position: absolute;
+  top: -200; */
+  visibility: hidden;
 }
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
@@ -355,11 +398,26 @@ text-align: center;
   .container-1 {
     width: 17%;
     text-align: center;
+    order: 0;
+    
+  }
+  .colors{
+    order: 2;
+    width: 8%;
+  }
+  .sizeA{
+    width: 28px;
+  height: 25px;
+  /* border: 1px solid black; */
+  margin: 5px;
+  cursor: pointer;
+  outline: 0 none;
   }
   .container-2 {
     width: 30%;
     padding-top: 5px;
     text-align: start;
+    order: 1;
   }
 
   .barra-busqueda input,
@@ -381,7 +439,7 @@ text-align: center;
   .barra-busqueda .lupa-1 {
     display: block;
   position: absolute;
-  color: #152847;
+  color: var(--tipos);
   font-size: 22px;
   right: -10px;
   bottom: 2.5px;
@@ -391,14 +449,15 @@ text-align: center;
 }
 
 .barra-busqueda .lupa-1 i:hover{
-  color:  #4f8df0;
+  color:  var(--header);
 }
   .container-3 {
-    width: 38%;
+    width: 30%;
     padding-top: 50px;
     padding-left: 5px;
     text-align: center;
     font-size: 21px;
+    order: 3;
   }
   .container-3 ul{
     
@@ -425,6 +484,7 @@ text-align: center;
     text-align: center;
     font-size: 16px;
     align-items: flex-end;
+    order: 4;
   }
 
   .container-4 .sixeC {
@@ -433,10 +493,11 @@ text-align: center;
 
   .container-4 a {
     text-decoration: none;
-    color: #152847;
+    color: var(--tipos);
   }
   .container-nav{
     display: block;
+    order: 6;
 }
 
   

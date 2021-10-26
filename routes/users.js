@@ -7,6 +7,7 @@ let {login,
      profileUser,
      processLogin,
      updateProfile,
+     updateColor,
 logout } = require ("../controllers/usersController");
 let uploadUserAvatar = require('../middlewares/uploadUserAvatar');
 let userCreateValidator = require("../validations/userCreateValidator");
@@ -27,6 +28,7 @@ router.get("/user",userSession,cookie, user);
 
 router.get("/editUser/:id",userSession,cookie, profileUser);
 router.put("/editUser/:id", uploadUserAvatar.single('avatar'),cookie,updateProfile)
+router.patch("/editUser/:id", updateColor)
 
 
 

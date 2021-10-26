@@ -35,20 +35,20 @@
     margin-bottom: 10px;
 }
 .form-login input:hover{
-border:solid 2px #4f8df0;
+border:solid 2px var(--header);
 } */
 
 .recupero-login{
     font-size: 13px;
     text-decoration: none;
-    color: #4f8df0;
+    color: var(--header);
 }
 .recupero-login:hover{
     color: #152847;
 }
 
 .btn-login{
-    background-color: #4f8df0;
+    background-color: var(--header);
     width: 130px;
     height: 40px;
     align-self: center;
@@ -67,10 +67,10 @@ font-weight: bold;
 }
 .new-account-login a{
     text-decoration: none;
-    color: #4f8df0;
+    color: var(--header);
 }
 .new-account-login a:hover{
-    color: #152847;
+    color: var(--tipos);
 }
 .container_check{
     display: flex;

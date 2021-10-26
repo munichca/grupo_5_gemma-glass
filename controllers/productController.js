@@ -45,12 +45,7 @@ module.exports = {
           })
         
         .then(producto =>{
-            /* res.send(res.locals) */
-            /* res.send(arrayProduct) */ // poner aca el ultimo visitado, buscar el user por la session
-            // y cargarle el id del producto encontrato en el campo que evy NO creo, crearlo RR 1:N
-            /* res.send(producto) */
             if(res.locals.user != undefined && res.locals.user.rol != 1 ){
-                /* res.send(req.session.user ) */
                 db.User.update({
                     include: [{ association: "prodId"}],
                     lastProdId: producto.id

@@ -4,7 +4,7 @@ let {validationResult} = require ("express-validator");
 let bcrypt=require('bcryptjs')
 module.exports = {
     login: (req, res)=>{
-       
+         
          res.render("login",{
             session: req.session
             
@@ -89,7 +89,9 @@ module.exports = {
         let errors = validationResult(req)
         if(errors.isEmpty()){
             let {name, lastName, address, phone, email, pass} = req.body;
+
             db.User.create({
+                include: [ { association: "colId"}],
             name,
             lastName,
             address,
@@ -99,8 +101,10 @@ module.exports = {
             avatar: req.file ? req.file.filename : "avatar.png",
             rol: 2,
             lastProdId:0,
+            colorId:1
             })
-            .then(() => {
+            .then(user => {
+                
                 res.redirect("/users/login")
             })
             .catch((error) => console.log(error));
@@ -132,7 +136,8 @@ module.exports = {
                     email: user.email,
                     avatar: user.avatar,
                     rol: user.rol,
-                    lastProdId: user.lastProdId
+                    lastProdId: user.lastProdId,
+                    colorId: user.colorId
                   };
                   
                   if (req.body.remember) {
@@ -143,6 +148,8 @@ module.exports = {
                   }
             
             res.locals.user= req.session.user;
+            
+            /* res.send(locals.user) */
             res.redirect('/');
             if(req.session.user.rol === 2){
                 res.redirect('/')
@@ -163,6 +170,31 @@ module.exports = {
        
         }
 
+    },
+    updateColor:(req, res)=>{
+        db.User.update({
+            
+            colorId : +req.body.color
+         },{
+            where:{
+                id: res.locals.user.id
+            }
+        })
+        
+            .then(()=>{
+                res.send(req.params.id)
+                db.User.findOne({
+                    where: {
+                      id: res.locals.user.colorId,
+                    },
+                    
+                  }).then(() => {
+                    
+                    res.locals.user= req.session.user;
+                      });
+                    })
+                res.redirect("/")
+            /* }) */
     },
  logout:(req,res)=> {
         req.session.destroy();
