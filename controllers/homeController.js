@@ -79,7 +79,6 @@ module.exports = {
         db.Product.findAll({
             include: [{ association: "image"}],
             where: {
-                
                 name:{
                     [Op.like] :`%${req.query.keywords}%`
                 }
@@ -88,7 +87,6 @@ module.exports = {
         .then(prod =>{
             res.render("results",{
                 arrayProduct:prod,
-                
                 search: req.query.keywords,
                 session: req.session
             })

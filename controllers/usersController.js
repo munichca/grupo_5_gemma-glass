@@ -193,7 +193,7 @@ module.exports = {
                     res.locals.user= req.session.user;
                       });
                     })
-                res.redirect("/")
+                res.redirect("/users/login")
             /* }) */
     },
  logout:(req,res)=> {

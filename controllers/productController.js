@@ -15,8 +15,6 @@ module.exports = {
                     { association: "material"},
                     { association: "image"}]
             })
-          
-        
         .then(producto =>{
             res.render("productos",{
                 arrayProduct: producto,

@@ -42,7 +42,7 @@ header {
 }
 .sizeA{
   width: 23px;
-  height: 25px;
+  height: 23px;
   /* border: 1px solid black; */
   margin: 3px;
   cursor: pointer;
@@ -251,6 +251,7 @@ text-align: center;
 }
 .phanton{
   display: flex;
+  
   /* position: absolute;
   top: -100;
   visibility: hidden; */
@@ -270,7 +271,7 @@ text-align: center;
   position: relative;
   /* position: absolute;
   top: -200; */
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
@@ -406,7 +407,7 @@ text-align: center;
     width: 8%;
   }
   .sizeA{
-    width: 28px;
+    width: 25px;
   height: 25px;
   /* border: 1px solid black; */
   margin: 5px;
