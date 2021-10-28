@@ -7,7 +7,7 @@
 
 header {
   width: 100%;
-  transition: 1s;
+  transition: 0.5s;
   background-color:  var(--header);
   display: flex;
   align-items: center;

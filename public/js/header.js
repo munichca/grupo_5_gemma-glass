@@ -7,10 +7,10 @@ let c1 = qs(".c1");
 let c2 = qs(".c2");
 let c3 = qs(".c3");
 let c4 = qs(".c4");
-c1.style.border = "none"
+/* c1.style.border = "none"
 c2.style.border = "none"    
 c3.style.border = "none"    
-c4.style.border = "none" 
+c4.style.border = "none"  */
 function mostrar() {
     var x = document.getElementById("buscador");
     let lupa = document.getElementById("lupa");
@@ -74,30 +74,35 @@ let caca2 = decodedCookie.split(';');
 let micookie = caca2[0];
 var igual = micookie.indexOf("=");
 var valor = micookie.substring(igual+1);
-    switch (valor){
-        
-        case "c1":
-            c1.style.border = "1px solid white"
-            document.documentElement.style.setProperty("--tipos", "var(--tipos1)");
-            document.documentElement.style.setProperty("--header", "var(--header1)");
-            break;   
-        case "c2":
-            c2.style.border = "1px solid white"
-            document.documentElement.style.setProperty("--tipos", "var(--tipos2)");
-            document.documentElement.style.setProperty("--header", "var(--header2)");
-            break;   
-        case "c3":
-            c3.style.border = "1px solid white"
-            document.documentElement.style.setProperty("--tipos", "var(--tipos3)");
-            document.documentElement.style.setProperty("--header", "var(--header3)");
-            break;   
-        case "c4":
-            c4.style.border = "1px solid white"
-            document.documentElement.style.setProperty("--tipos", "var(--tipos4)");
-            document.documentElement.style.setProperty("--header", "var(--header4)");
-            break; 
 
-            
-       }      
-           
+    (function (){
+        c1.style.border = "none"
+c2.style.border = "none"    
+c3.style.border = "none"    
+c4.style.border = "none"
+        switch (valor){
+            case "c1":
+                c1.style.border = "1px solid white"
+                document.documentElement.style.setProperty("--tipos", "var(--tipos1)");
+                document.documentElement.style.setProperty("--header", "var(--header1)");
+                break;   
+            case "c2":
+                c2.style.border = "1px solid white"
+                document.documentElement.style.setProperty("--tipos", "var(--tipos2)");
+                document.documentElement.style.setProperty("--header", "var(--header2)");
+                break;   
+            case "c3":
+                c3.style.border = "1px solid white"
+                document.documentElement.style.setProperty("--tipos", "var(--tipos3)");
+                document.documentElement.style.setProperty("--header", "var(--header3)");
+                break;   
+            case "c4":
+                c4.style.border = "1px solid white"
+                document.documentElement.style.setProperty("--tipos", "var(--tipos4)");
+                document.documentElement.style.setProperty("--header", "var(--header4)");
+                break; 
+
+                
+        }      
+    })()    
       
