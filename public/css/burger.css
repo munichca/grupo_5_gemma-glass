@@ -60,6 +60,7 @@
     padding: 5px;
     text-align: center;
     cursor: pointer;
+    transition: 0.5s;
   }
   
   #btn-modal {
