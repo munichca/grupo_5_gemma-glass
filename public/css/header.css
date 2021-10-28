@@ -199,12 +199,10 @@ header a:hover {
 }
 .mydiv{
   display: flex;
-  /* margin-right: 5px !important; */
   justify-content: center;
-  padding: 10px 10px 10px 10px;
   width: 55px !important;
-  /* width: 65px !important; */
   font-size: .7rem !important;
+  align-items: center;
 }
 .ulMyDiv{
   margin-right: 5px;

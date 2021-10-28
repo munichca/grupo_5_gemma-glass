@@ -127,7 +127,7 @@ module.exports = {
                                     productId : +req.params.id
                                 }
                             })
-                        }),
+                        }),//aca van los })
                         db.productImages.bulkCreate(images)
                       .then(() => res.redirect('/admin/listado'))
                       .catch(err => console.log(err))
@@ -166,6 +166,23 @@ module.exports = {
             }
         })
         .then(()=>{
+            db.productImages.findAll({
+                where:{
+                    productId : +req.params.id
+                }
+            })
+            .then(datos=>{
+                
+                datos.forEach(dato=>{
+                    db.productImages.destroy({
+                        where:{
+                            productId : +req.params.id
+                        }
+                    })
+                }) })
+
+
+
             res.redirect('/admin/listado/')
         })
         .catch(err => console.log(err))
