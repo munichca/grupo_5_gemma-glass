@@ -3,10 +3,11 @@
 <!-- head -->
 <%- include("partials/head")  %> 
 <!-- fin head-->
+<script src='/js/productImages.js' defer></script>
 <body>
 
   <%- include('./partials/headerAdmin.ejs') %> 
-
+  <div class="addBody"> 
   <section class="wb">
     <h5 class="editSubtitles">Ingresá la información actualizada:</h5>
     <form class="tamanioFondo" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -15,7 +16,16 @@
               <label class="tamanio" for="price">Precio: </label>
                <input class="tamanio" type="text" name="price" id="price" value="<%= product.price %>">
               <label class="tamanio" for="discount">Descuento: </label>
-               <input class="tamanio" type="text" name="discount" id="discount" value="<%= product.discount %>">
+              <select class="tamanio" id="specificSizeSelect" name="discount"  >
+                <option value="<%= product.discount %>"><%= product.discount %> % de descuento</option>
+                <option value="0">0 % de descuento</option>
+                <option value="5">5 % de descuento</option>
+                <option value="10">10 % de descuento</option>
+                <option value="15">15 % de descuento</option>
+                <option value="20">20 % de descuento</option>
+            
+            </select>
+               <!-- <input class="tamanio" type="text" name="discount" id="discount" value="<%= product.discount %>"> -->
               <label class="tamanio" for="category">Categoria: </label>
               <select id="specificSizeSelect" name="category"  class="tamanio">
                <% locals.categories.forEach(category => { %>
@@ -45,19 +55,28 @@
               <label class="tamanio" for="width">Ancho: </label>
                <input class="tamanio" type="text" name="width" id="width" value="<%= product.width %>">
              
-            <div class="inputFile">           
-              <label class="label" for="archivos">Subí fotos del producto:</label><br>
-              <input class="archivos" type="file" name="archivos"  multiple>
-            </div>
-            <div class="buttons">
-              <button class="btn" type="submit">Aceptar</button>
-              <button class="btn" type="reset">Cancelar</button>
+            
               
 
-            </div>
+               <div id="img-preview">
+                <% for( let i = 0; i < imageArray.length; i++ ) { %>
+                  <img class="img"+i src="/image/productImages/<%= imageArray[i].images %> " alt="">
+                <% } %>
+                
+              </div>
+              <div class="buttons">
+                <div class="inputFile bordeColor btn">
+                  <input class="archivos " id ="archivos" type="file" name="archivos" onchange="leer(this)" multiple>
+                  Subí fotos del producto
+                </div>
+                <button class="btn cleanImages" type="button">Limpiar Fotos</button>
+                <button class="btn" type="submit">Aceptar</button>
+                <button class="btn" type="reset">Cancelar</button>
+              </div>
           </form> 
+          
   </section>
-
+</div>
 
 
         

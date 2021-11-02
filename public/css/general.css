@@ -1,16 +1,19 @@
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--header) !important;
-    /* border: 1px solid black !important; */
+    line-height: 10px;
     margin: 10px ;
-    font-size: .7rem;
+    font-size: .6rem;
     font-weight: bold !important;
     color: var(--footer) !important;
     text-align: center !important;
-    width: 95px ;
-    height: 40px !important;
+    width: 75px ;
+    height: 30px !important;
     background-color: var(--header);
     padding: 6px !important;
-    align-self: center;
+   /*  align-self: center; */
     margin: 10px  0 10px 0;
     
     border: solid 1px var(--tipos);
@@ -41,11 +44,14 @@ body{
 .btn{
     width: 110px;
     transition: 1s;
+    font-size: 12px;
+    line-height: 12px;
 }
 }
 @media (min-width: 1024px){
     .btn{
         width: 130px !important;
-        font-size: 1rem;
+        font-size: 12px;
+        line-height: 12px;
     }
 }

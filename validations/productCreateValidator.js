@@ -8,18 +8,22 @@ module.exports =[
     .notEmpty()
     .withMessage("El nombre es obligatorio").bail()
     .isLength({ min: 3})
-    .withMessage("Ingrese un nombre con mas de 2 caracteres"),
+    .withMessage("Ingmas de 2 caracteres"),
+
     check("price")
     .notEmpty()
-    .withMessage("Debe cargar el precio"),
+    .withMessage("Debe cargar el precio")
+    .isDecimal()
+    .withMessage("El campo debe ser numérico"),
     
-    check("discount")
-    .notEmpty()
-    .withMessage("Elija un descuento 0, 5, 10, 15, 20 ó 25 %"),
     check("height")
     .notEmpty()
-    .withMessage("debe indicar el alto del lente"),
+    .withMessage("Debe indicar el alto del lente")
+    .isDecimal()
+    .withMessage("El campo debe ser numérico"),
     check("width")
     .notEmpty()
-    .withMessage("debe indicar el ancho del lente"),
+    .withMessage("Debe indicar el ancho del lente")
+    .isDecimal()
+    .withMessage("El campo debe ser numérico"),
 ]

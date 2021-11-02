@@ -103,7 +103,7 @@ a{
     height: 35vw;
     position: relative;
     display: flex;
-   margin-left: 5vw;
+    margin-left: 5vw;
    
    
   }
@@ -209,14 +209,13 @@ a{
 }
 .block3-postal .postalCode input{
     display: flex;
-   margin: 7px auto 7px;
-   
-   width:31vw;
-   height: 4.5vw;
-   border-style: none;    
-   text-align: center;
-   outline: none;  /* elimina el borde amarillo cuando tiene el foco */  
-   color: var(--tipos);  
+    margin: 7px auto 7px;
+    width:31vw;
+    height: 4.5vw;
+    border-style: none;    
+    text-align: center;
+    outline: none;  /* elimina el borde amarillo cuando tiene el foco */  
+    color: var(--tipos);  
    
 }
 
@@ -230,7 +229,6 @@ a{
     
 }
 .block3-postal .branchOffice{
-   
     padding: 0;
 }
 .block3-postal .branchOffice a{
@@ -246,7 +244,6 @@ a{
       
 }
 .block3-postal .pay .hs3{    
-    
     text-align: center;
 }
 .block3-postal .pay .hs3 h3{
@@ -405,7 +402,6 @@ a{
 }
 .block1-body-mobile .button-buy button{
     width:50%;
-        
     border: solid 1px #fff;                                   
     background-color: var(--header);
     color: var(--tipos);
@@ -443,13 +439,12 @@ a{
 }
 .block1-body-mobile .postal-code input{
     display: flex;
-   margin: 0 auto 10px;
-   width: 55vw;
-   height: 8vw;
-   border-style: none;
-   
-   text-align: center;
-   outline: none;  /* elimina el borde amarillo cuando tiene el foco */ 
+    margin: 0 auto 10px;
+    width: 55vw;
+    height: 8vw;
+    border-style: none;
+    text-align: center;
+    outline: none;  /* elimina el borde amarillo cuando tiene el foco */ 
 }
 .block1-body-mobile .branch-office{
     display: flex;
@@ -546,7 +541,6 @@ a{
     margin-bottom: 0;
     font-weight: 600;
     line-height: initial;
-
     position: relative;
     top: 0;
 }
@@ -554,7 +548,6 @@ a{
 /*  pantalla 768 */
 
 @media (min-width: 768px) {
-
     .hr-mobile{
         display: none;
     }
@@ -605,9 +598,6 @@ a{
     .block3-postal{
         margin-top: 10px;      
     }
-    
-    /* ################### */
-
 
     .block3-postal .postalCode{
         width: 50%;
@@ -632,17 +622,6 @@ a{
         color: var(--tipos);
     }
 
-
-
-    /* ###################### */
-
-
-
-
-
-
-    
-    
     .block3-postal .pay{
         width: 70%;
     }

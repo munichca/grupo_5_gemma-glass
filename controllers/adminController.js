@@ -28,7 +28,9 @@ module.exports = {
         if(errors.isEmpty()){
         let {name, price, discount, categoryId, shapeId, brandId, materialId, height, width} = req.body;
             db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width })
+            /* res.send(req.body) */
             .then(product =>{
+                
                 if(arrayImages.length > 0){
                     let images = arrayImages.map(image => {
                         return {
@@ -62,15 +64,27 @@ module.exports = {
             include: [{ association: "image"}]
         })
             .then(product => { 
+                /* res.send(product) */
+                /* ########### */
+                db.productImages.findAll({
+                    where:{
+                        productId : +req.params.id
+                    }
+                })
+                .then(images =>{
+                    let imageArray= []
+                    imageArray = images;
+                
                 if (req.session.user.rol === 1) {
                     res.render("edicion", {
                         product,
+                        imageArray,
                         session: req.session
                     })
                 } else {
                     res.redirect('/')
                 }
-            })
+            })})
     },
     edicion: (req, res) => {
         let arrayImages = [];
@@ -114,6 +128,7 @@ module.exports = {
                             productId: +req.params.id
                         }
                     })
+                    /* ############ */
                     db.productImages.findAll({
                         where:{
                             productId : +req.params.id

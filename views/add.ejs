@@ -3,15 +3,19 @@
 <!-- head -->
 <%- include("partials/head")  %> 
 <!-- fin head-->
-<body>
+<script src='/js/addProduct.js' defer></script>
+<script src='/js/productImages.js' defer></script>
+
+<body >
 
   <%- include('./partials/headerAdmin.ejs') %> 
-
+<div class="addBody"> 
   <section class="wb">
     <h5 class="editSubtitles">Agregá un producto nuevo:</h5>
-    <form class="tamanioFondo" action="/admin/add/" method="POST" enctype="multipart/form-data">
+    <form class="tamanioFondo" id="form" action="/admin/add/" method="POST" enctype="multipart/form-data">
               <label class="tamanio" for="name">Nombre del producto: </label>
                <input  class="tamanio clean" type="text" name="name" id="name">
+               <!-- <span id="nameErrors"></span> -->
                <% if (locals.errors && errors.name) { %>
                 <script>
                 let name = document.getElementsByName('name');
@@ -19,7 +23,7 @@
                 </script>
             <% } %>
               <label class="tamanio" for="price">Precio: </label>
-               <input  class="tamanio clean" type="number" name="price" id="price">
+               <input  class="tamanio clean" type="text" name="price" id="price">
                <% if (locals.errors && errors.price) { %>
                 <script>
                 let price = document.getElementsByName('price');
@@ -27,7 +31,16 @@
                 </script>
             <% } %>
               <label class="tamanio" for="discount">Descuento: </label>
-               <input  class="tamanio clean" type="number" name="discount" id="discount">
+              <select id="specificSizeSelect" name="discount"  class="tamanio">
+                
+                   <option value="0">0 % de descuento</option>
+                   <option value="5">5 % de descuento</option>
+                   <option value="10">10 % de descuento</option>
+                   <option value="15">15 % de descuento</option>
+                   <option value="20">20 % de descuento</option>
+               
+               </select>
+              <!--  <input  class="tamanio clean" type="number" name="discount" id="discount"> -->
                <% if (locals.errors && errors.discount) { %>
                 <script>
                 let discount = document.getElementsByName('discount');
@@ -60,7 +73,7 @@
                <% }) %>
               </select>
               <label class="tamanio" for="heigth">Altura: </label>
-               <input  class="tamanio clean" type="number" name="height" id="height">
+               <input  class="tamanio clean" type="text" name="height" id="height">
                <% if (locals.errors && errors.height) { %>
                 <script>
                 let height = document.getElementsByName('height');
@@ -68,32 +81,41 @@
                 </script>
             <% } %>
               <label class="tamanio" for="width">Ancho: </label>
-               <input  class="tamanio clean" type="number" name="width" id="width">
+               <input  class="tamanio clean" type="text" name="width" id="width">
                <% if (locals.errors && errors.width) { %>
                 <script>
                 let width = document.getElementsByName('width');
                 width[0].placeholder= "<%= errors.width.msg %>";
                 </script>
             <% } %>
-            <div class="inputFile">           
-              <label class="label" for="archivos">Subí fotos del producto:</label><br>
-              <input class="archivos" type="file" name="archivos"  multiple>
+
+            <div id="img-preview">
+
             </div>
             <div class="buttons">
-              <button class="btn" type="submit">Aceptar</button>
-              <button class="btn" type="reset">Limpiar</button>
-
+              <div class="inputFile bordeColor btn">
+                <input class="archivos " id ="archivos" type="file" name="archivos" onchange="leer(this)" multiple>
+                Subí fotos del producto
+              </div>
+              <button class="btn cleanImages" type="button">Limpiar Fotos</button>
+              <button class="btn" type="submit">Aceptar, enviar</button>
+              <button class="btn" type="reset">Limpiar Texto</button>
+      
             </div>
       </form> 
-  </section>
-
       
-  <script>
+  </section>
+  
+</div>
+      
+ <script>
     document.getElementById("name").onclick = function() {let clean = document.getElementsByName("name");  clean[0].placeholder= "";}  
     document.getElementById("price").onclick = function() {let clean = document.getElementsByName("price");  clean[0].placeholder= "";}  
     document.getElementById("discount").onclick = function() {let clean = document.getElementsByName("discount");  clean[0].placeholder= "";}  
     document.getElementById("height").onclick = function() {let clean = document.getElementsByName("height");  clean[0].placeholder= "";}  
     document.getElementById("width").onclick = function() {let clean = document.getElementsByName("width");  clean[0].placeholder= "";}
-  </script>    
+  </script>   
+
+
 </body>
 </html>

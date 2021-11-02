@@ -1,4 +1,4 @@
-b@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
     --header : rgb(79, 141,240);
@@ -13,16 +13,59 @@ b@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     --price : 18px;
     --descriptions : 16px;
 }
-
+.addBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.previous{
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 50px; */
+    align-items: center;
+    border: 1px solid red;
+}
+#img-preview{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 60vw;
+    
+}
+#img-preview img{
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin: auto 20px;
+    object-fit: contain;
+    border: 1px solid var(--tipos);
+}
+.archivos{
+    border: 10000px solid transparent;
+    cursor: pointer;
+    font-size: 10000px;
+    margin: 0;
+    opacity: 0;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -1000px;
+    top: -1000px;
+}
 .wb {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px auto 0  ;
+    /* margin: 50px auto 0  ; */
     justify-content: space-evenly;
     width: 100vw;
     border: 1px solid gray;
     text-align: center;
+    /* border: 1px solid red; */
    
 }
 
@@ -55,35 +98,72 @@ b@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .label{
     font-size: 14px;
 }
-.archivos{
+/* .archivos{
     font-size: 12px;
-}
+} */
 .inputFile{
-    width: 50%;
-    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: var(--tipos);
+    cursor: pointer;
+    font-size: 12px ;
+    font-weight: bold;
+    margin: 0 auto 0;    
+    overflow: hidden;   
+    position: relative;
+    /* width: 25%;
+    height: 3vw; *//* 
+    border: 1px solid var(--tipos);
+    border-radius: 35px; */
 }
    
 .buttons {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     /* border: 1px solid green; */
-    right: 0px;    
+    right: 0px;   
+    
 }
-
-
+.is-invalid{
+    border: 1px solid red !important;
+    background-image: url(/image/error.svg);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+}
+.is-valid{
+    border: 1.5px solid green !important;
+    background-image: url(/image/valid.svg);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    border-radius: 5px;
+}
 
 
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {
     .wb {
-        width: 50vw;
+        width: 70vw;
     }
     
     .wb .tamanio{
-        width: 23vw;
+        width: 25vw;
         
     }
+    
+    #img-preview img{
+        width: 65px;
+        height: 65px;
+        margin-top: 5px;
+        /* border-radius: 12px;
+        margin: auto 20px;
+        object-fit: contain;
+        border: 1px solid var(--tipos); */
 } 
+}

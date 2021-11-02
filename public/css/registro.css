@@ -76,7 +76,7 @@ a{
 }
 .input{
     border: 1px solid var(--tipos);
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     height: 4vh;
     outline: none;
     font-size: 12px;
@@ -118,6 +118,10 @@ a{
     top: -1000px;
 }
 .container-register .my-data #myInput{
+    width: 100%;
+    display: flex;
+}
+.container-register .my-data #myInput1{
     width: 100%;
     display: flex;
 }

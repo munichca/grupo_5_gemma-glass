@@ -62,7 +62,7 @@
                             <% } %>
                             <label class=" midle" for="">Contraseña</label>
                             <div class="pass1">
-                                <input type="password" class="input"  name="pass" id="myInput" value="<%= locals.old && old.pass %>">
+                                <input type="password" class="input"  name="pass" id="myInput1" value="<%= locals.old && old.pass %>">
                                 
                                 <i class="far fa-eye"  onclick="myFunction()" id="eye1"></i>
                             </div>
@@ -77,6 +77,7 @@
                             </div>  
                             <% if (locals.errors && errors.pass2) { %>
                                 <span class="text-danger"><%= errors.pass2.msg %> </span>
+                                <span id="validate">Las contraseñas no coinciden</span>
                             <% } %>
                             
                         </section>
@@ -115,7 +116,7 @@
         
     </main>
     <script>
-    var button = document.getElementById("button")
+    /* var button = document.getElementById("button") */
         
     
 
@@ -127,32 +128,47 @@
         
     }
     function myFunction() {
-        let x = document.getElementById("myInput");      
-        let eye1 = document.getElementById("eye1")
-        let input = document.getElementById("muInput1")
-        /* let valor1 = input.value; */
-        if (x.type === "password") {
-            x.type = "text";
+        let x1 = document.getElementById("myInput1"); 
+        let eye1 = document.getElementById("eye1");
+        if (x1.type == "password") {
+            x1.type = "text";
             eye1.style.color= "red";
-            
         } else {
-            x.type = "password";
+            x2.type = "password";
             eye1.style.color= "#4F8DF0";
             
-        }           
+        } 
+                  
     }    
     function myFunction2() {
-        let x = document.getElementById("myInput2");
+        let x2 = document.getElementById("myInput2");
         let eye2 = document.getElementById("eye2")
-        if (x.type === "password") {
-            x.type = "text";
+        if (x2.type == "password") {
+            x2.type = "text";
             eye2.style.color= "red";
         } else {
-            x.type = "password";
+            x2.type = "password";
             eye2.style.color= "#4F8DF0";
             
         }
     }
+    let $pass1 = document.querySelector("#myInput1")
+    let $pass2 = document.querySelector("#myInput2")
+    let $textDanger = document.querySelector(".text-danger")
+    $pass2.addEventListener('blur', function(){
+    if(!$pass1.value === $pass2.value){
+         $textDanger.innerText = 'Campo requerido';
+         $sexo.classList.add('is-invalid')
+     }else {
+         $sexo.classList.remove('is-invalid');
+         $sexo.classList.add('is-valid');
+         $sexErrors.innerHTML = ''
+     }
+ })
+
+
+
+
     function validate(){
         let vali1 = document.getElementById("myInput");
         let vali2 = document.getElementById("myInput2");
