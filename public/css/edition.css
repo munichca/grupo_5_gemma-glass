@@ -144,7 +144,9 @@
     background-position: right calc(.375em + .1875rem) center;
     border-radius: 5px;
 }
-
+#submitErrors{
+    color: red;
+}
 
 /*  VERSIÓN TABLET  */
 @media (min-width: 768px) {

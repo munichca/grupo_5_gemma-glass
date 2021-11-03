@@ -3,18 +3,18 @@
 <!-- head -->
 <%- include("partials/head")  %> 
 <!-- fin head-->
-<script src='/js/productImages.js' defer></script>
+<script src='/js/editProduct.js' defer></script>
 <body>
 
   <%- include('./partials/headerAdmin.ejs') %> 
   <div class="addBody"> 
   <section class="wb">
     <h5 class="editSubtitles">Ingresá la información actualizada:</h5>
-    <form class="tamanioFondo" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form class="tamanioFondo" id="form" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
               <label class="tamanio" for="name">Nombre del producto: </label>
-               <input class="tamanio" type="text" name="name" id="name" value="<%= product.name %>">
+               <input class="tamanio clean" type="text" name="name" id="name" value="<%= product.name %>">
               <label class="tamanio" for="price">Precio: </label>
-               <input class="tamanio" type="text" name="price" id="price" value="<%= product.price %>">
+               <input class="tamanio clean" type="text" name="price" id="price" value="<%= product.price %>">
               <label class="tamanio" for="discount">Descuento: </label>
               <select class="tamanio" id="specificSizeSelect" name="discount"  >
                 <option value="<%= product.discount %>"><%= product.discount %> % de descuento</option>
@@ -25,7 +25,7 @@
                 <option value="20">20 % de descuento</option>
             
             </select>
-               <!-- <input class="tamanio" type="text" name="discount" id="discount" value="<%= product.discount %>"> -->
+               
               <label class="tamanio" for="category">Categoria: </label>
               <select id="specificSizeSelect" name="category"  class="tamanio">
                <% locals.categories.forEach(category => { %>
@@ -50,20 +50,22 @@
                   <option value="<%- material.name %>" <%= product.materialId == material.id ? "selected" : null %>><%- material.name %></option>
                <% }) %>
               </select>
-              <label class="tamanio" for="heigth">Altura: </label>
-               <input class="tamanio" type="text" name="height" id="heigth" value="<%= product.height %>">
-              <label class="tamanio" for="width">Ancho: </label>
-               <input class="tamanio" type="text" name="width" id="width" value="<%= product.width %>">
+              <label class="tamanio" for="height">Altura: </label>
+               <input class="tamanio" type="text" name="height" id="height" value="<%= product.height %>">
+              <label class="tamanio clean" for="width">Ancho: </label>
+               <input class="tamanio clean" type="text" name="width" id="width" value="<%= product.width %>">
              
             
               
 
                <div id="img-preview">
                 <% for( let i = 0; i < imageArray.length; i++ ) { %>
-                  <img class="img"+i src="/image/productImages/<%= imageArray[i].images %> " alt="">
+                  
+                  <img class="img"+i src="/image/productImages/<%- imageArray[i].images %> " alt="">
                 <% } %>
                 
               </div>
+
               <div class="buttons">
                 <div class="inputFile bordeColor btn">
                   <input class="archivos " id ="archivos" type="file" name="archivos" onchange="leer(this)" multiple>
@@ -71,16 +73,19 @@
                 </div>
                 <button class="btn cleanImages" type="button">Limpiar Fotos</button>
                 <button class="btn" type="submit">Aceptar</button>
-                <button class="btn" type="reset">Cancelar</button>
+                <form action="/admin/listado">
+                  <button class="btn cancel" type="submit">Cancelar</button>
+                </form>
               </div>
           </form> 
           
   </section>
+  <span id="submitErrors"></span>
 </div>
 
 
         
-            
+      
 
        
 </body>

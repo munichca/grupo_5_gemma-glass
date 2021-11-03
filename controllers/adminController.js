@@ -74,7 +74,7 @@ module.exports = {
                 .then(images =>{
                     let imageArray= []
                     imageArray = images;
-                
+                /* res.send(imageArray) */
                 if (req.session.user.rol === 1) {
                     res.render("edicion", {
                         product,

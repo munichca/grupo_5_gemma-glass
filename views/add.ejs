@@ -4,7 +4,7 @@
 <%- include("partials/head")  %> 
 <!-- fin head-->
 <script src='/js/addProduct.js' defer></script>
-<script src='/js/productImages.js' defer></script>
+<!-- <script src='/js/productImages.js' defer></script> -->
 
 <body >
 
@@ -40,7 +40,7 @@
                    <option value="20">20 % de descuento</option>
                
                </select>
-              <!--  <input  class="tamanio clean" type="number" name="discount" id="discount"> -->
+              
                <% if (locals.errors && errors.discount) { %>
                 <script>
                 let discount = document.getElementsByName('discount');
@@ -99,23 +99,23 @@
               </div>
               <button class="btn cleanImages" type="button">Limpiar Fotos</button>
               <button class="btn" type="submit">Aceptar, enviar</button>
-              <button class="btn" type="reset">Limpiar Texto</button>
+              <button class="btn cleanText" type="reset">Limpiar Texto</button>
       
             </div>
       </form> 
       
   </section>
-  
+  <span id="submitErrors"></span> 
 </div>
       
- <script>
-    document.getElementById("name").onclick = function() {let clean = document.getElementsByName("name");  clean[0].placeholder= "";}  
-    document.getElementById("price").onclick = function() {let clean = document.getElementsByName("price");  clean[0].placeholder= "";}  
-    document.getElementById("discount").onclick = function() {let clean = document.getElementsByName("discount");  clean[0].placeholder= "";}  
-    document.getElementById("height").onclick = function() {let clean = document.getElementsByName("height");  clean[0].placeholder= "";}  
-    document.getElementById("width").onclick = function() {let clean = document.getElementsByName("width");  clean[0].placeholder= "";}
-  </script>   
-
+  
+<script>
+  document.getElementById("name").onclick = function() {let clean = document.getElementsByName("name");  clean[0].placeholder= "";}  
+  document.getElementById("price").onclick = function() {let clean = document.getElementsByName("price");  clean[0].placeholder= "";}  
+  document.getElementById("discount").onclick = function() {let clean = document.getElementsByName("discount");  clean[0].placeholder= "";}  
+  document.getElementById("height").onclick = function() {let clean = document.getElementsByName("height");  clean[0].placeholder= "";}  
+  document.getElementById("width").onclick = function() {let clean = document.getElementsByName("width");  clean[0].placeholder= "";}
+</script> 
 
 </body>
 </html>

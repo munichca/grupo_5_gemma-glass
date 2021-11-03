@@ -8,7 +8,22 @@ module.exports =[
     .notEmpty()
     .withMessage("El nombre es obligatorio").bail()
     .isLength({ min: 3})
-    .withMessage("Ingmas de 2 caracteres"),
+    .withMessage("Ingrese mas de 2 caracteres"),
+    body('name')
+    .custom(value=>{
+            return db.Product.findOne({
+                where:{
+                    name:value,
+                }
+            })
+            .then(nam =>{
+                if (nam){
+                    return Promise.reject("Ya existe un producto con ese nombre")
+                }
+            })
+
+        
+    }),
 
     check("price")
     .notEmpty()

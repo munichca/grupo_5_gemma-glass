@@ -15,7 +15,6 @@ function bn(element) {
         $width = qs("#width"),
         $width1 = bn("width"),
         $form = qs("#form"),
-        $cleanText = qs(".cleanText"),
         $preview = qs("#img-preview"),
         $archivos = qs("#archivos"),
         $archivos1 = bn('archivos'),
@@ -114,15 +113,7 @@ function bn(element) {
           $form.submit()
       }
   });
-        $cleanText.addEventListener("click", function(){
-            for (let i = 0; i < elementosForm.length; i++) {
-                elementosForm[i].classList.remove("is-invalid");
-                elementosForm[i].classList.remove("is-valid");
-                elementosForm[i].placeholder = "";
-                $submitErrors.innerHTML = "";
-            }
-            elementosForm[0].focus();
-        });
+       
   /* ############################################# */  
 
 $archivos.addEventListener("change", function(){
