@@ -29,14 +29,18 @@ window.addEventListener('load', ()=>{
     switch (true) {
       case $nombre.value.trim().length <=3:
         $errorNombre.innerHTML = 'Ingrese un nombre con mas de 3 caracteres'
+        $nombre.classList.add('is-invalid')
         validationsErrors= true
       break;
       case !regExAlpha.test($nombre.value):
         $errorNombre.innerHTML = "Debes ingresar un nombre válido"
+        $nombre.classList.add('is-invalid')
          validationsErrors= true
         break;
       default:
         $errorNombre.innerHTML =""
+          $nombre.classList.remove('is-invalid')
+        $nombre.classList.add('is-valid')
          validationsErrors= false
         break;
     }
@@ -45,14 +49,18 @@ window.addEventListener('load', ()=>{
     switch (true) {
       case $apellido.value.trim().length <=3:
         $errorApellido.innerHTML = 'Ingrese un apellido con mas de 3 caracteres'
+        $apellido.classList.add('is-invalid')
          validationsErrors= true
       break;
       case !regExAlpha.test($apellido.value):
         $errorApellido.innerHTML = "Debes ingresar un apellido válido"
+        $apellido.classList.add('is-invalid')
          validationsErrors= true
         break;
       default:
         $errorApellido.innerHTML =""
+          $apellido.classList.remove('is-invalid')
+        $apellido.classList.add('is-valid')
          validationsErrors= false
         break;
     }
@@ -61,10 +69,13 @@ window.addEventListener('load', ()=>{
     switch (true) {
       case $telefono.value.trim().length <=10:
         $errorTelefono.innerHTML = 'Teléfono inválido'
+        $telefono.classList.add('is-invalid')
          validationsErrors= true
       break;
       default:
       $errorTelefono.innerHTML =""
+        $telefono.classList.remove('is-invalid')
+        $telefono.classList.add('is-valid')
        validationsErrors= false
       break;
     }
@@ -73,14 +84,18 @@ window.addEventListener('load', ()=>{
     switch (true) {
       case !$email.value.trim():
         $errorEmail.innerHTML = "El email es obligatorio"
+        $email.classList.add('is-invalid')
          validationsErrors= true
       break;
       case !regExEmail.test($email.value):
         $errorEmail.innerHTML = "Debes ingresar un email válido"
+        $email.classList.add('is-invalid')
          validationsErrors= true
         break;
       default:
         $errorEmail.innerHTML =""
+        $email.classList.remove('is-invalid')
+        $email.classList.add('is-valid')
          validationsErrors= false
         break;
     }
@@ -89,10 +104,13 @@ window.addEventListener('load', ()=>{
     switch (true) {
       case !$contraseña.value.trim():
         $errorContraseña.innerHTML = "La contraseña es obligatoria"
+        $contraseña.classList.add('is-invalid')
          validationsErrors= true
         break;
       default:
         $errorContraseña.innerHTML =""
+        $contraseña.classList.remove('is-invalid')
+        $contraseña.classList.add('is-valid')
          validationsErrors= false
         break;
     }
@@ -101,14 +119,18 @@ window.addEventListener('load', ()=>{
     switch (true) {
       case !$contraseña2.value.trim():
         $errorContraseña2.innerHTML = "Debe repetir su contraseña"
+        $contraseña2.classList.add('is-invalid')
          validationsErrors= true
       break;
       case $contraseña2.value !== $contraseña.value:
         $errorContraseña2.innerHTML = "Las contraseñas no coinciden"
+        $contraseña2.classList.add('is-invalid')
         validationsErrors= true
         break;
       default:
         $errorContraseña2.innerHTML =""
+        $contraseña2.classList.remove('is-invalid')
+        $contraseña2.classList.add('is-valid')
          validationsErrors= false
         break;
     }
@@ -136,7 +158,4 @@ window.addEventListener('load', ()=>{
     }
 
   })
-
-
-  
 })
