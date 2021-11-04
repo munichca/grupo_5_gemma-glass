@@ -25,10 +25,11 @@
                             <div class="name">
                                 <div class="left-side">
                                     <label class=" nameLabel" for="">Nombre</label>
-                                    <input onclick="myFclic()" class="input" type="text" name="name" id="" value="<%= locals.old && old.name %>">
+                                    <input onclick="myFclic()" class="input" type="text" name="name" id="name" value="<%= locals.old && old.name %>">
                                     <% if (locals.errors && errors.name) { %>
                                         <span class="text-danger"><%= errors.name.msg %> </span>
                                     <% } %>
+                                    <span class="text-danger" id="errorNombre"> </span>
                                 </div>
                                 <div class="right-side">
                                     <label class=" nameLabel" for="" id="lana">Apellido</label>
@@ -37,6 +38,7 @@
                                         <span class="text-danger"><%= errors.lastName.msg %> </span>
                                         
                                     <% } %>
+                                    <span class="text-danger" id="errorApellido"> </span>
                                 </div>                   
                                 <!-- <div class="left-side">
                                     <label class="label nameLabel" for="">Dirección</label>
@@ -50,16 +52,18 @@
                         <section class="section2">
                             
                                 <label class=" midle" for="" >Teléfono</label>
-                                <input class="input" type="text" name="phone" id="myInput" value="<%= locals.old && old.phone %>"> <!-- este es similar a un if ternario pero sin el else -->
+                                <input class="input myInput" type="text" name="phone" id="phone" value="<%= locals.old && old.phone %>"> <!-- este es similar a un if ternario pero sin el else -->
                                 <% if (locals.errors && errors.phone) { %>
                                     <span class="text-danger"><%= errors.phone.msg %> </span>
                                 <% } %>
+                                <span class="text-danger" id="errorTelefono"> </span>
                              
                             <label class=" midle "for="">Correo Electrónico</label>
-                            <input class=" input"type="email" name="email" id="myInput" placeholder="mail@domain.com" value="<%= locals.old && old.email %>">
+                            <input class=" input myInput"type="email" name="email" id="email" placeholder="mail@domain.com" value="<%= locals.old && old.email %>">
                             <% if (locals.errors && errors.email) { %>
                                 <span class="text-danger"><%= errors.email.msg %> </span>
                             <% } %>
+                            <span class="text-danger" id="errorEmail"> </span>
                             <label class=" midle" for="">Contraseña</label>
                             <div class="pass1">
                                 <input type="password" class="input"  name="pass" id="myInput1" value="<%= locals.old && old.pass %>">
@@ -69,6 +73,7 @@
                             <% if (locals.errors && errors.pass) { %>
                                 <span class="text-danger"><%= errors.pass.msg %> </span>
                             <% } %>
+                            <span class="text-danger" id="errorContraseña"> </span>
                             <label class=" midle"for="">Confirmar contraseña</label>
                             <div class="pass2">                                    
                                 <input type="password" class="input"   name="pass2" id="myInput2" value="<%= locals.old && old.pass2 %>">
@@ -79,6 +84,7 @@
                                 <span class="text-danger"><%= errors.pass2.msg %> </span>
                                 <span id="validate">Las contraseñas no coinciden</span>
                             <% } %>
+                            <span class="text-danger" id="errorContraseña2"> </span>
                             
                         </section>
                         <section class="section3">
@@ -104,8 +110,9 @@
                 <% if (locals.errors && errors.terms) { %>
                     <span class="text-danger"><%= errors.terms.msg %> </span>
                 <% } %>
-                
+                <span class="text-danger" id="errorTerminos"> </span>
                 <button class="btn "  id="button" type="submit">Registrarse</button>
+                <span class="text-danger" id="errorSubmit"> </span>
                         <div class="login-cont">
                             <a class="ingresa" href="/users/login">
                                 ¿Ya tenés cuenta? Ingresá
@@ -170,7 +177,7 @@
 
 
     function validate(){
-        let vali1 = document.getElementById("myInput");
+        let vali1 = document.getElementsByClassName("myInput");
         let vali2 = document.getElementById("myInput2");
         let mesage = document.getElementById("validate")
         
@@ -212,6 +219,7 @@ function fileValidation(){
 
 <!-- fin footer  -->
 <%- include("partials/footer")  %> 
+<script src="../js/validationRegisterFront.js"></script>
 </body>
 <!-- footer -->
 
