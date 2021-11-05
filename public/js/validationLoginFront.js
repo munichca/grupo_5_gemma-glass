@@ -48,7 +48,7 @@ window.addEventListener('load', ()=>{
     let elementosForm = $form.elements
     
 
-    for (let index = 0; index < elementosForm.length-2; index++) {
+    for (let index = 0; index < elementosForm.length-1; index++) {
         console.log(elementosForm[index])
       if(elementosForm[index].value == "" && elementosForm[index].name !== "avatar" ){
           elementosForm[index].classList.add('is-invalid');
@@ -59,7 +59,7 @@ window.addEventListener('load', ()=>{
 
     if(error == false && !validationsErrors){
         console.log('Formulario Enviado');
-        //$form.submit()
+        $form.submit()
     }
 
   })
