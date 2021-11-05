@@ -1,5 +1,5 @@
 let {check, body} = require ("express-validator");
-let db = require ("../dataBase/models")
+let db = require ("../database/models")
 let bcrypt= require('bcryptjs')
 
 module.exports =[

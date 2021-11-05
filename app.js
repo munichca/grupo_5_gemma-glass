@@ -5,7 +5,7 @@ const path = require('path');
 let cookiepParser = require('cookie-parser')
 let methodOverride = require('method-override');
 let session = require('express-session');
-let localsCheck = require("./Middlewares/localsCheck")
+let localsCheck = require("./middlewares/localsCheck")
 let headerCateg = require("./middlewares/headerCateg")
 /*  ENRUTADORES */
 const homeRouter = require("./routes/home");
