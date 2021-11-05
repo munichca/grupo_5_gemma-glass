@@ -15,7 +15,7 @@
     <form class="tamanioFondo" id="form" action="/admin/add/" method="POST" enctype="multipart/form-data">
               <label class="tamanio" for="name">Nombre del producto: </label>
                <input  class="tamanio clean" type="text" name="name" id="name">
-               <!-- <span id="nameErrors"></span> -->
+               
                <% if (locals.errors && errors.name) { %>
                 <script>
                 let name = document.getElementsByName('name');
@@ -107,15 +107,5 @@
   </section>
   <span id="submitErrors"></span> 
 </div>
-      
-  
-<script>
-  document.getElementById("name").onclick = function() {let clean = document.getElementsByName("name");  clean[0].placeholder= "";}  
-  document.getElementById("price").onclick = function() {let clean = document.getElementsByName("price");  clean[0].placeholder= "";}  
-  document.getElementById("discount").onclick = function() {let clean = document.getElementsByName("discount");  clean[0].placeholder= "";}  
-  document.getElementById("height").onclick = function() {let clean = document.getElementsByName("height");  clean[0].placeholder= "";}  
-  document.getElementById("width").onclick = function() {let clean = document.getElementsByName("width");  clean[0].placeholder= "";}
-</script> 
-
 </body>
 </html>

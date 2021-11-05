@@ -12,7 +12,7 @@ const homeRouter = require("./routes/home");
 const usersRouter = require ("./routes/users");
 const productRouter = require ("./routes/product")
 const adminRouter = require ("./routes/admin")
-
+const apiProductsRoutes = require ("./routes/apis/productRoutes");
 
 /* ################################ */
 /* Middleware */
@@ -38,6 +38,7 @@ app.use("/",homeRouter);
 app.use("/users", usersRouter);
 app.use("/product", productRouter);
 app.use("/admin", adminRouter);
+app.use('/apis', apiProductsRoutes);
 /* ##################################### */
 app.listen(port, ()=>{
     console.log(`Puerto corriendo en ${port}\n http://localhost:${port}`)});

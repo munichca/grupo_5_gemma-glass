@@ -20,6 +20,8 @@ function bn(element) {
         $archivos1 = bn('archivos'),
         $cleanImages = qs(".cleanImages"),
         $submitErrors = qs("#submitErrors"),
+        $cancel = qs(".cancel"),
+        $formCancel =qs("#formCancel"),
         regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,10}$/,
         regExNum = /^[0-9]+(.[0-9]+)?$/;
         elementosForm = document.getElementsByClassName("clean");
@@ -140,5 +142,19 @@ $preview.innerHTML = "";
 $archivos1[0].value = "";
 }           
   /* ############################################# */             
-
+  $name.addEventListener("click", function(){
+    $name1[0].placeholder= "";
+});
+$price.addEventListener("click", function(){
+    $price1[0].placeholder= "";
+});
+$height.addEventListener("click", function(){
+    $height1[0].placeholder= "";
+});
+$width.addEventListener("click", function(){
+    $width1[0].placeholder= "";
+})
+$cancel.addEventListener("click", function(){
+  $formCancel.submit();
+})
   });

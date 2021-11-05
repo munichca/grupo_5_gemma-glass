@@ -24,6 +24,8 @@ function bn(element) {
         regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,10}$/,
         regExNum = /^[0-9]+(.[0-9]+)?$/;
         elementosForm = document.getElementsByClassName("clean");
+
+       
         
     $name.addEventListener("blur", function () {
         switch (true) {
@@ -32,6 +34,7 @@ function bn(element) {
                 $name1[0].classList.add("is-invalid");
                 break;
             case !regExAlphaNumeric.test($name1[0].value) :
+
                 $name1[0].value = "";
                 $name1[0].placeholder= "Deben ser tres o más caracteres";
                 $name1[0].classList.add("is-invalid");
@@ -148,6 +151,21 @@ $cleanImages.onclick = () =>{
 $preview.innerHTML = "";
 $archivos1[0].value = "";
 }           
-  /* ############################################# */             
+  /* ############################################# */   
 
+  
+  $name.addEventListener("click", function(){
+      $name1[0].placeholder= "";
   });
+  $price.addEventListener("click", function(){
+      $price1[0].placeholder= "";
+  });
+  $height.addEventListener("click", function(){
+      $height1[0].placeholder= "";
+  });
+  $width.addEventListener("click", function(){
+      $width1[0].placeholder= "";
+  })
+ 
+
+});
