@@ -29,52 +29,61 @@
                      <span class="text-danger" id="errorAvatar"> </span>
             </section >
             <div class="datos-user">
+                 <span class="text-danger" id="errorNombre"> </span>
                 <div class="data-edit">
                     <label class="midle1" for="">Nombre</label>
                     <input class="input1" id="nombre" type="text" value="<%= locals.old ? old.name : user.name %>" name="name">
+                
                     <% if (locals.errors && errors.name) { %>
                         
                         <span class="text-danger"><%= errors.name.msg %> </span>
-                    <% } %>
-                     <span class="text-danger" id="errorNombre"> </span>
+                    <% } %> 
                 </div>
+                  <span class="text-danger" id="errorApellido"> </span> 
                 <div class="data-edit">
+                    
                     <label class="midle1" for="">Apellido</label>
                     <input class="input1" id="apellido" type="text" value="<%= locals.old ? old.lastName : user.lastName %>"name="lastName">
                     <% if (locals.errors && errors.lastName) { %>
                         <small class="text-danger"><%= errors.lastName.msg %> </small>
                     <% } %>
-                     <span class="text-danger" id="errorApellido"> </span>
+                   
                 </div>
+                
                 <div class="data-edit">
                     <label class="midle1" for="">E-mail</label>
                     <input class="input1" id="emailEdit" type="email" readonly value="<%= user.email %>"name="mail">
-                     <span class="text-danger" id="errorEmail"> </span>
                 </div>
+
+                <span class="text-danger" id="errorTelefono"> </span>
                 <div class="data-edit">
                     <label class="midle1" for="">Teléfono</label>
                     <input class="input1" id="telefonoEdit" type="number" value="<%= user.phone %>"name="phone">
-                     <span class="text-danger" id="errorTelefono> </span>
+                  
                 </div>
+                <span class="text-danger" id="errorDireccion"> </span>
                 <div class="data-edit">
                     <label class="midle1" for="">Direcciòn</label>
-                    <input class="input1" type="text" id="direccionEdit" value="<%= user.address ? user.address : "------" %>"name="address">
-                     <span class="text-danger" id="errorDireccion"> </span>
+                    <input class="input1" type="text" id="direccionEdit" value="<%= user.address%>"name="address" placeholder='ej : Calle 1234'>
+                  
                 </div>
+                   <span class="text-danger" id="errorCp"> </span>
                 <div class="data-edit">
                     <label class="midle1 out" for="" id="lcp" >Código Postal</label>
-                    <input class="input1 out" type="text" id="codigoPostal" value="<%= user.pCode ? user.pCode : "------" %>"name="pCode" id="cp">
-                     <span class="text-danger" id="errorCp"> </span>
+                    <input class="input1 out" type="text" value="<%= user.pCode %>"name="pCode" id="cp" placeholder='ej: 1234'>
+                  
                 </div>
+                <span class="text-danger" id="errorCiudad"> </span>
                 <div class="data-edit">
                     <label class="midle1 out" for="" id="lcity" >Ciudad</label>
-                    <input class="input1 out" type="text" id="ciudadEdit" value="<%= user.city ? user.city : "------" %>"name="city" id="city">
-                     <span class="text-danger" id="errorCiudad"> </span>
+                    <input class="input1 out" type="text" value="<%= user.city %>"name="city" id="city"placeholder='ej: La Plata'>
+               
                 </div>
+                <span class="text-danger" id="errorProvincia"> </span>
                 <div class="data-edit">
                     <label class="midle1 out" for="" id="lprov" >Provincia</label>
-                    <input class="input1 out" type="text" id="provinciaEdit" value="<%= user.province ? user.province : "------" %>"name="province" id="prov">
-                     <span class="text-danger" id="errorProvincia"> </span>
+                    <input class="input1 out" type="text" value="<%= user.province %>"name="province" id="prov" placeholder='ej: Buenos Aires'>
+                     
                 </div>
                 <div class="contbutton" id="contbutton" action="">
                     
@@ -118,7 +127,7 @@ function fileValidation(){
 </script>   
 <!-- footer -->
 <%- include("partials/footer")  %> 
-<script src="..¿/js/validationEditUserFront.js"></script>
+<script src="../../js/validationProfileEditFront.js"></script>
 <!-- fin footer  -->
   </body>
 </html>

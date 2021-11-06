@@ -3,31 +3,34 @@ function qs(element) {
 }
 
 let $form = qs ('#form')
-let $nombre = qs('#name')
-let $errorNombre = qs('#errorNombre')
-let $apellido= qs('#lastName')
-let $errorApellido= qs('#errorApellido')
-let $telefono= qs('#phone')
-let $errorTelefono= qs('#errorTelefono')
-let $email= qs('#email')
-let $errorEmail= qs('#errorEmail')
-let $contraseña= qs('#myInput1')
-let $errorContraseña= qs('#errorContraseña')
-let $contraseña2= qs('#myInput2')
-let $errorContraseña2= qs('#errorContraseña2')
-let $terminos= qs('#check')
-let $errorTerminos= qs('#errorTerminos')
-let $avatar = qs('#examinar')
+let $avatar = qs ('#examinar')
 let $errorImagen = qs('#errorImagen')
+let $nombre = qs('#nombre')
+let $errorNombre = qs('#errorNombre')
+let $apellido= qs('#apellido')
+let $errorApellido= qs('#errorApellido')
+let $telefono= qs('#telefonoEdit')
+let $errorTelefono= qs('#errorTelefono')
+let $direccion= qs('#direccionEdit')
+let $errorDireccion= qs('#errorDireccion')
+let $codigoPostal= qs('#cp')
+let $errorCp= qs('#errorCp')
+let $ciudad= qs('#city')
+let $errorCiudad= qs('#errorCiudad')
+let $provincia= qs('#prov')
+let $errorProvincia= qs('#errorProvincia')
 
 let $error= qs('#errorSumbit')
-regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-regExPass = /^(?=.\d)(?=.[a-z]).{6,12}$/;
-let validationsErrors = false
+regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
+regExphone = /^[0-9]{10,12}$/,
+regExpCp = /^[0-9]{4,5}$/,
+regExAddress = /^[#.0-9a-zA-Z\s,-]+$/;
+
+let validationsErrors= false
+
 
 window.addEventListener('load', ()=>{
-  $nombre.addEventListener('blur',function(){
+  $nombre.addEventListener('change',function(){
     switch (true) {
       case $nombre.value.trim().length <=3:
         $errorNombre.innerHTML = 'Ingrese un nombre con mas de 3 caracteres'
@@ -47,7 +50,7 @@ window.addEventListener('load', ()=>{
         break;
     }
   })
-    $apellido.addEventListener('blur',function(){
+    $apellido.addEventListener('change',function(){
     switch (true) {
       case $apellido.value.trim().length <=3:
         $errorApellido.innerHTML = 'Ingrese un apellido con mas de 3 caracteres'
@@ -67,12 +70,12 @@ window.addEventListener('load', ()=>{
         break;
     }
   })
-    $telefono.addEventListener('blur',function(){
+    $telefono.addEventListener('change',function(){
     switch (true) {
-      case $telefono.value.trim().length <=10:
-        $errorTelefono.innerHTML = 'Teléfono inválido'
-        $telefono.classList.add('is-invalid')
-         validationsErrors= true
+      case $telefono.value.trim().length <=9:
+      $errorTelefono.innerHTML = 'Teléfono inválido'
+      $telefono.classList.add('is-invalid')
+      validationsErrors= true
       break;
       default:
       $errorTelefono.innerHTML =""
@@ -82,62 +85,79 @@ window.addEventListener('load', ()=>{
       break;
     }
   })
-    $email.addEventListener('blur',function(){
+  $direccion.addEventListener('change',function(){
     switch (true) {
-      case !$email.value.trim():
-        $errorEmail.innerHTML = "El email es obligatorio"
-        $email.classList.add('is-invalid')
-         validationsErrors= true
-      break;
-      case !regExEmail.test($email.value):
-        $errorEmail.innerHTML = "Debes ingresar un email válido"
-        $email.classList.add('is-invalid')
-         validationsErrors= true
-        break;
-      default:
-        $errorEmail.innerHTML =""
-        $email.classList.remove('is-invalid')
-        $email.classList.add('is-valid')
-         validationsErrors= false
-        break;
-    }
-  })
-    $contraseña.addEventListener('blur',function(){
-    switch (true) {
-      case !$contraseña.value.trim():
-        $errorContraseña.innerHTML = "La contraseña es obligatoria"
-        $contraseña.classList.add('is-invalid')
-         validationsErrors= true
-        break;
-      default:
-        $errorContraseña.innerHTML =""
-        $contraseña.classList.remove('is-invalid')
-        $contraseña.classList.add('is-valid')
-         validationsErrors= false
-        break;
-    }
-  })
-    $contraseña2.addEventListener('blur',function(){
-    switch (true) {
-      case !$contraseña2.value.trim():
-        $errorContraseña2.innerHTML = "Debe repetir su contraseña"
-        $contraseña2.classList.add('is-invalid')
-         validationsErrors= true
-      break;
-      case $contraseña2.value !== $contraseña.value:
-        $errorContraseña2.innerHTML = "Las contraseñas no coinciden"
-        $contraseña2.classList.add('is-invalid')
+     case !regExAddress.test($direccion.value):
+        $errorDireccion.innerHTML = "Debes ingresar una dirección válida"
+        $direccion.classList.add('is-invalid')
         validationsErrors= true
         break;
       default:
-        $errorContraseña2.innerHTML =""
-        $contraseña2.classList.remove('is-invalid')
-        $contraseña2.classList.add('is-valid')
+        $errorDireccion.innerHTML =""
+        $direccion.classList.remove('is-invalid')
+        $direccion.classList.add('is-valid')
+        validationsErrors= false
+        break;
+    }
+  })
+    $codigoPostal.addEventListener('change',function(){
+    switch (true) {
+     case !regExpCp.test($codigoPostal.value):
+        $errorCp.innerHTML = "Código inválido"
+        $codigoPostal.classList.add('is-invalid')
+        validationsErrors= true
+      break;
+      default:
+      $errorCp.innerHTML =""
+        $telefono.classList.remove('is-invalid')
+        $telefono.classList.add('is-valid')
+       validationsErrors= false
+      break;
+    }
+  })
+
+    $ciudad.addEventListener('change',function(){
+    switch (true) {
+      case $ciudad.value.trim().length <=3:
+        $errorCiudad.innerHTML = 'Ingrese una ciudad válida'
+        $ciudad.classList.add('is-invalid')
+         validationsErrors= true
+      break;
+      case !regExAlpha.test($ciudad.value):
+        $errorCiudad.innerHTML = "Debes ingresar un ciudad válida"
+        $ciudad.classList.add('is-invalid')
+         validationsErrors= true
+        break;
+      default:
+        $errorCiudad.innerHTML =""
+          $ciudad.classList.remove('is-invalid')
+        $ciudad.classList.add('is-valid')
          validationsErrors= false
         break;
     }
   })
-  /*$avatar.addEventListener('change', 
+
+    $provincia.addEventListener('change',function(){
+    switch (true) {
+      case $provincia.value.trim().length <=3:
+        $errorProvincia.innerHTML = 'Ingrese una provincia válida'
+        $provincia.classList.add('is-invalid')
+         validationsErrors= true
+      break;
+      case !regExAlpha.test($provincia.value):
+        $errorProvincia.innerHTML = "Ingrese una provincia válida"
+        $provincia.classList.add('is-invalid')
+         validationsErrors= true
+        break;
+      default:
+        $errorProvincia.innerHTML =""
+          $provincia.classList.remove('is-invalid')
+        $provincia.classList.add('is-valid')
+         validationsErrors= false
+        break;
+    }
+  })
+ /* $avatar.addEventListener('change', 
     function fileValidation(){
         let filePath = $avatar.value,
             allowefExtensions = /(.jpg|.jpeg|.png)$/i //Extensiones permitidas
@@ -161,7 +181,7 @@ window.addEventListener('load', ()=>{
         }
     })*/
   
-  $form.addEventListener('submit',function(event){
+    $form.addEventListener('submit',function(event){
     let error = false;
     event.preventDefault()
     console.log($form.elements)
@@ -170,7 +190,7 @@ window.addEventListener('load', ()=>{
 
     for (let index = 0; index < elementosForm.length-1; index++) {
         console.log(elementosForm[index])
-      if(elementosForm[index].value == "" && elementosForm[index].name !== "avatar" ){
+      if(elementosForm[index].value == "" && elementosForm[index].name !== "avatar" && elementosForm[index].name !== "address" && elementosForm[index].name !== "pCode" && elementosForm[index].name !== "city" && elementosForm[index].name !== "province" ){
           elementosForm[index].classList.add('is-invalid');
           
         error = true
@@ -183,4 +203,7 @@ window.addEventListener('load', ()=>{
     }
 
   })
+
+
+  
 })

@@ -141,7 +141,7 @@ module.exports = {
                   };
                   
                   if (req.body.remember) {
-                    res.cookie("userGG", req.session.user, {
+                    res.cookie("cookieGlass", req.session.user, {
                       expires: new Date(Date.now() + 5000000),
                       httpOnly: true,
                     });
