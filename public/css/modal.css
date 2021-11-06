@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content:space-evenly;
     position: relative;
-    transition: transform 15s;
+    transition: transform 2s;
     transform: translateY(0%) ;
     border-radius: 10px;
     padding: 30px 10px 10px;
