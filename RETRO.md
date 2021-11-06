@@ -39,3 +39,81 @@ Empezar a hacer:
 
 Dejar de hacer:
 -No contestar los mensajes a tiempo.
+
+
+Sprint 4:
+Seguir haciendo:  
+-Reunicón fija los jueves para revisar tareas y ver como vamos con el proyecto.
+-Asignar tareas lo más rápido posible.
+
+Hacer más:
+-Cumplir los horarios de las reuniones.
+
+Hacer menos:
+-Olvidar de actualizar trello.
+
+Empezar a hacer:
+-Pedir ayuda lo antes posible ante cualquier inconveniente.
+
+Dejar de hacer:
+-No contestar los mensajes a tiempo.
+
+
+Sprint 5:
+Seguir haciendo:  
+-Reunión fija los jueves .
+-Asignar tareas rápido.
+-hacer la reunión en cuanto se da el Sprint, por mas que no sea el día asignado.
+
+Hacer más:
+-Cumplir los horarios de las reuniones.
+-Revisar las cosas que faltan
+
+Hacer menos:
+-Olvidar de actualizar trello.
+-quedarnos trabados en algo y no seguir con otra cosa, para retomar el problema mas adelante
+
+Empezar a hacer:
+-Pedir ayuda lo antes posible ante cualquier inconveniente.
+
+Dejar de hacer:
+-No contestar los mensajes a tiempo.
+
+Sprint 6:
+Seguir haciendo:  
+-Reunión fija los jueves .
+-Asignar tareas rápido.
+-hacer la reunión en cuanto se da el Sprint, por mas que no sea el día asignado.
+
+Hacer más:
+-Cumplir los horarios de las reuniones.
+-Revisar las cosas que faltan
+
+Hacer menos:
+-Olvidar de actualizar trello.
+
+Empezar a hacer:
+-revisar las funcionalidades.
+
+Dejar de hacer:
+-No contestar los mensajes a tiempo.
+
+Sprint 7:
+Seguir haciendo:  
+-Reunión fija los jueves .
+-Asignar tareas rápido.
+-hacer la reunión en cuanto se da el Sprint, por mas que no sea el día asignado.
+
+Hacer más:
+-Cumplir los horarios de las reuniones.
+-Revisar las cosas que faltan
+
+Hacer menos:
+-Olvidar de actualizar trello.
+
+Empezar a hacer:
+-revisar las funcionalidades.
+-revisar todo lo que falta y falla
+
+Dejar de hacer:
+-No contestar los mensajes a tiempo.

@@ -47,6 +47,8 @@ module.exports = {
         }else{
             db.Category.findAll()
             .then(categories => {
+                /* session= req.session
+                res.send(session) */
                 if (req.session.user.rol === 1) {
                     res.render("add", {
                         categories,
@@ -93,6 +95,7 @@ module.exports = {
                 arrayImages.push(image.filename)
             })
         }
+        
         let{id, name, price, discount, height, width } = req.body
         let categoryP = db.Category.findOne({
             where:{ name: req.body.category  }})
@@ -103,7 +106,10 @@ module.exports = {
         let materialP = db.Material.findOne({
             where:{ name: req.body.material  }})
         Promise.all([categoryP, shapeP, brandP, materialP])
+        
         .then(([categories, shapes, brands, materials])=>{
+            let errors = validationResult(req)    
+        if(errors.isEmpty()){
             db.Product.update({
                 name,
                 price,
@@ -120,6 +126,7 @@ module.exports = {
                     id : +req.params.id
                 }
             })
+        
             .then(() =>{
                 if(arrayImages.length > 0){
                     let images = arrayImages.map(image => {
@@ -158,8 +165,25 @@ module.exports = {
                       .then(() => res.redirect('/admin/listado'))
                       .catch(err => console.log(err))
                 }
-            })
+            })}else{db.Category.findAll()
+                .then(categories => {
+                    /* session= req.session
+                    res.send(session) */
+                    if (req.session.user.rol === 1) {
+                        res.render("add", {
+                            categories,
+                            errors: errors.mapped(),
+                            session: req.session
+                        })
+                    } else {
+                        res.redirect('/')
+                    }
+                })
+            }
         })
+    
+        
+
     },
     lista: (req, res) => {
         db.Product.findAll()
