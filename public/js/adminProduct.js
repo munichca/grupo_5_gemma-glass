@@ -69,16 +69,6 @@ function bn(element) {
         }
     });
 
-
-    
-
-        
-       /*  if (this.files.length <= this.getAttribute('maxImg')) {
-            
-        } */
-        
-
-
 $archivos1[0].addEventListener("change", function(){
     if (this.files.length <= 3) {
     if (this.files) {[].forEach.call(this.files, readAndPreview);}
