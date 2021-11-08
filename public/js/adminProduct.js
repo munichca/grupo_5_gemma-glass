@@ -11,10 +11,12 @@ function bn(element) {
         $form = qs("#form"),
         $preview = qs("#img-preview"),
         $archivos1 = bn('archivos'),
+        $archivos = qs('.archivos'),
         $cleanImages = qs(".cleanImages"),
         $submitErrors = qs("#submitErrors"),
         regExNum = /^[+]?((\d+(\.\d*)?)|(\.\d+))$/;
         elementosForm = document.getElementsByClassName("clean");
+        var cont = 1;
     $price1[0].addEventListener('blur', function() {
         switch (true) {
             case !$price1[0].value.trim():
@@ -66,14 +68,29 @@ function bn(element) {
                 break;
         }
     });
+
+
+    
+
+        
+       /*  if (this.files.length <= this.getAttribute('maxImg')) {
+            
+        } */
+        
+
+
 $archivos1[0].addEventListener("change", function(){
+    if (this.files.length <= 3) {
     if (this.files) {[].forEach.call(this.files, readAndPreview);}
 function readAndPreview(file) {
+    $preview.innerHTML = "";
   if (!/\.(jpe?g|png|gif|svg)$/i.test(file.name)) {
     return alert("El archivo "+ file.name + " , no es una imagen válida");
   } 
   var reader = new FileReader();
+  
   reader.addEventListener("load", function() {
+    
     var image = new Image();
     image.height = 100;
     image.title  = file.name;
@@ -81,6 +98,9 @@ function readAndPreview(file) {
     $preview.appendChild(image);
   });
   reader.readAsDataURL(file);
+}}else{
+    alert("solo tres imagenes")
+    $archivos1[0].value="";
 }
 });  
 $form.addEventListener('submit',function(event){
