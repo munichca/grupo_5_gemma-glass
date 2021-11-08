@@ -18,7 +18,7 @@ module.exports = {
                     { association: "image"}]
         }).then ((products) =>{
             session.getUrl= getUrl(req);
-            res.send(products)
+            /* res.send(products); */
             return res.json({
                 meta: {
                     endpoint: getUrl(req),
@@ -30,7 +30,27 @@ module.exports = {
             
         }).catch(errors => console.log(errors))
     },
-    
+    detail:(req, res)=>{
+        /* res.send(req.params.name) */
+        db.Product.findOne({
+            where :{name: req.params.name},
+            include: [{ association: "category"},
+            { association: "shape"},
+            { association: "brand"},
+            { association: "material"},
+            { association: "image"}]
+            
+        }).then(products =>{
+            return res.json({
+                meta:{
+                    endpoint:getUrl(req),
+                    status: 200
+                },
+                data:products
+            })
+        }).catch(error => console.log(error))
+
+    },
     
 }
 

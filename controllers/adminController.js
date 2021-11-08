@@ -1,7 +1,8 @@
-const { localsName } = require('ejs');
+/* const { localsName } = require('ejs'); */
 const db = require('../database/models');
-const { report } = require('../routes/home');
+/* const { report } = require('../routes/home'); */
 let {validationResult} = require ("express-validator");
+const session = require('express-session');
 module.exports = {
     
     add: (req, res) => {        
@@ -66,21 +67,24 @@ module.exports = {
             include: [{ association: "image"}]
         })
             .then(product => { 
-                /* res.send(product) */
-                /* ########### */
                 db.productImages.findAll({
                     where:{
                         productId : +req.params.id
                     }
                 })
                 .then(images =>{
-                    let imageArray= []
+                    
+                    let imageArray= [];
                     imageArray = images;
-                /* res.send(imageArray) */
+                    session.arrayImages= images;
                 if (req.session.user.rol === 1) {
+                    let errors = validationResult(req);
+                    session.product = product;
+                    session.errors = errors;
                     res.render("edicion", {
                         product,
                         imageArray,
+                        errors,
                         session: req.session
                     })
                 } else {
@@ -89,13 +93,14 @@ module.exports = {
             })})
     },
     edicion: (req, res) => {
+        let errors = validationResult(req)
         let arrayImages = [];
         if (req.files) {
             req.files.forEach(image => {
                 arrayImages.push(image.filename)
             })
         }
-        
+        /* res.send(errors) */
         let{id, name, price, discount, height, width } = req.body
         let categoryP = db.Category.findOne({
             where:{ name: req.body.category  }})
@@ -106,29 +111,16 @@ module.exports = {
         let materialP = db.Material.findOne({
             where:{ name: req.body.material  }})
         Promise.all([categoryP, shapeP, brandP, materialP])
-        
         .then(([categories, shapes, brands, materials])=>{
-            let errors = validationResult(req)    
+                
         if(errors.isEmpty()){
-            db.Product.update({
-                name,
-                price,
-                discount,
-                categoryId: categories.id,
-                shapeId: shapes.id,
-                brandId: brands.id,
-                materialId: materials.id,
-                height,
-                width
-            },
-                {
+            db.Product.update({price, discount, categoryId: categories.id, shapeId: shapes.id, brandId: brands.id, materialId: materials.id, height, width }, {
                 where:{
                     id : +req.params.id
-                }
-            })
-        
+                }  })
             .then(() =>{
                 if(arrayImages.length > 0){
+                    
                     let images = arrayImages.map(image => {
                         return {
                             images: image,
@@ -165,21 +157,22 @@ module.exports = {
                       .then(() => res.redirect('/admin/listado'))
                       .catch(err => console.log(err))
                 }
-            })}else{db.Category.findAll()
-                .then(categories => {
-                    /* session= req.session
-                    res.send(session) */
-                    if (req.session.user.rol === 1) {
-                        res.render("add", {
-                            categories,
-                            errors: errors.mapped(),
-                            session: req.session
-                        })
-                    } else {
-                        res.redirect('/')
-                    }
-                })
-            }
+            })}else{
+                /* res.send(errors.mapped()) */
+                 if (req.session.user.rol == 1) {
+                   /* let errors = errors.mapped(); */
+                    
+                    
+                            res.render("edicion", {
+                               
+                               product:session.product,
+                               imageArray:session.arrayImages,
+                               errors: errors.mapped(),
+                               session: req.session
+                           })
+                       } else {
+                           res.redirect('/')
+                       }} 
         })
     
         

@@ -34,7 +34,7 @@ input {
 }
 
 .label{
-    margin : 3 0 !important;
+    /* margin : 3 0 !important; */
     font-size: 1rem !important;
 }
 body{

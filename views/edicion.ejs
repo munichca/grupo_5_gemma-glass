@@ -4,6 +4,10 @@
 <%- include("partials/head")  %> 
 <!-- fin head-->
 <script src='/js/editProduct.js' defer></script>
+<script src='/js/adminProduct.js' defer></script>
+
+
+
 <body>
 
   <%- include('./partials/headerAdmin.ejs') %> 
@@ -12,9 +16,19 @@
     <h5 class="editSubtitles">Ingresá la información actualizada:</h5>
     <form class="tamanioFondo" id="form" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
               <label class="tamanio" for="name">Nombre del producto: </label>
-               <input class="tamanio clean" type="text" name="name" id="name" value="<%= product.name %>">
+              
+                <input class="tamanio clean" type="text" name="name" id="name"  value="<%-product.name%>" readonly>
+                
+               
               <label class="tamanio" for="price">Precio: </label>
                <input class="tamanio clean" type="text" name="price" id="price" value="<%= product.price %>">
+               <% if (locals.errors && errors.price) { %>
+                <script>
+                let price = document.getElementsByName('price');
+                price[0].value="";
+                price[0].placeholder= "<%= errors.price.msg %>";
+                </script>
+            <% } %>
               <label class="tamanio" for="discount">Descuento: </label>
               <select class="tamanio" id="specificSizeSelect" name="discount"  >
                 <option value="<%= product.discount %>"><%= product.discount %> % de descuento</option>
@@ -52,16 +66,30 @@
               </select>
               <label class="tamanio" for="height">Altura: </label>
                <input class="tamanio" type="text" name="height" id="height" value="<%= product.height %>">
+               <% if (locals.errors && errors.height) { %>
+                <script>
+                let height = document.getElementsByName('height');
+                height[0].value="";
+                height[0].placeholder= "<%= errors.height.msg %>";
+                </script>
+            <% } %>
               <label class="tamanio clean" for="width">Ancho: </label>
                <input class="tamanio clean" type="text" name="width" id="width" value="<%= product.width %>">
+               <% if (locals.errors && errors.width) { %>
+                <script>
+                let width = document.getElementsByName('width');
+                width[0].value="";
+                width[0].placeholder= "<%= errors.width.msg %>";
+                </script>
+            <% } %>
              
             
               
 
                <div id="img-preview">
-                <% for( let i = 0; i < imageArray.length; i++ ) { %>
+                <% for( let i = 0; i < imageArray.length; i++ ) {%>
                   
-                  <img class="img"+i src="/image/productImages/<%- imageArray[i].images %> " alt="">
+                  <img class="img" src="/image/productImages/<%- imageArray[i].images %> " id="image<%- i %>" alt="">
                 <% } %>
                 
               </div>
@@ -73,7 +101,7 @@
                 </div>
                 <button class="btn cleanImages" type="button">Limpiar Fotos</button>
                 <button class="btn" type="submit">Aceptar</button>
-                <a class="btn cleanText" href="/admin/listado">Cancelar</a>
+                <a class="btn cancel" >Cancelar</a>
                 
               </div>
           </form> 
@@ -81,5 +109,6 @@
   </section>
   <span id="submitErrors"></span>
 </div>
+
 </body>
 </html>

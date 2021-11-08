@@ -150,9 +150,6 @@ ul{
         width: 93%;
         animation: none ;
     }
-    .external-container .images     .rear{
-        transform: translateY(180deg);
-    }
     .external-container .images .rear{
         backface-visibility: inherit;
         transition:  1s;

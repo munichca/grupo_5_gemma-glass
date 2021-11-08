@@ -4,7 +4,8 @@
 <%- include("partials/head")  %> 
 <!-- fin head-->
 <script src='/js/addProduct.js' defer></script>
-<!-- <script src='/js/productImages.js' defer></script> -->
+<script src='/js/adminProduct.js' defer></script>
+<!-- <script src='/js/nameVal.js' defer></script> -->
 
 <body >
 
@@ -23,7 +24,7 @@
                 </script>
             <% } %>
               <label class="tamanio" for="price">Precio: </label>
-               <input  class="tamanio clean" type="text" name="price" id="price">
+               <input  class="tamanio clean" type="text" name="price" id="price" >
                <% if (locals.errors && errors.price) { %>
                 <script>
                 let price = document.getElementsByName('price');
@@ -99,7 +100,7 @@
               </div>
               <button class="btn cleanImages" type="button">Limpiar Fotos</button>
               <button class="btn" type="submit">Aceptar, enviar</button>
-              <button class="btn cleanText" type="reset">Limpiar Texto</button>
+              <button class="btn cleanText" id="cleanText" type="reset">Limpiar Texto</button>
       
             </div>
       </form> 
