@@ -221,7 +221,38 @@ header a:hover {
     background-color:lightblue;
     margin: 0;
 }
-
+.navbar1{
+  background-color:lightblue;
+  width: 90px !important;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  
+}
+#aca{
+  width: 90px !important;
+  font-size: 18px;
+  padding: 0px 6px;
+  position: relative;
+}
+.menuUl{
+  background-color:lightblue;
+  display: none;
+  
+  /* display: flex;
+  flex-direction: column; */
+}
+.myLi{
+  display: none;
+width: 90px;
+border-color: var(--tipos);
+}
+.fa-chevron-down{
+  position: absolute;
+  bottom: 5px;
+  right: 6px;
+  
+}
 .container-nav ul a {
 text-decoration: none;
 color: var(--tipos);

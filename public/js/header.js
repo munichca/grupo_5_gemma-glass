@@ -12,7 +12,7 @@ c2.style.border = "none"
 c3.style.border = "none"    
 c4.style.border = "none"  */
 function mostrar() {
-    var x = document.getElementById("buscador");
+    let x = document.getElementById("buscador");
     let lupa = document.getElementById("lupa");
     let search_2 = document.getElementById("search_2")
        if (x.style.display === "block") {

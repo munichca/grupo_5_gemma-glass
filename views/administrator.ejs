@@ -1,0 +1,79 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <!-- head -->
+    <%- include("partials/head")  %> 
+    <!-- fin head-->
+    <script src="/js/administrator.js"></script>
+<body>
+    <%- include('./partials/headerAdminNew.ejs') %>
+    <main class="mainList">
+        <h3 class="titlePrincipal">Listado de Productos</h3>
+        <div class="btnAddCont ">
+            <a class="btnAdd" href="/admin/add"><button class=" btn">Agregar</button></a>
+        </div>
+    
+        <div class="containerList">
+            
+            <section class="tama">
+                <ul class="title">
+                    <li class="lista">
+                        <p class="id claro pe">id</p>
+                        <p class="name normal pe">nombre del producto</p>
+                        <p class="price claro pe">precio</p>
+                        <p class="category normal pe">categoria</p>
+                        <p class="shape claro pe">forma</p>
+                        <p class="brand normal pe">marca</p>
+                        <p class="material claro pe">material</p>
+                        <p class="height normal pe">alto</p>
+                        <p class="width claro pe">ancho</p>
+                        <p class="discount normal pe">descuento</p>
+                        <i class="far fa-edit fuera fSize"></i>
+                        <button class="fuera boton caca" type="submit"><i class="far fa-trash-alt"></i></button>
+                    </li>
+                </ul><!--  -->
+                <!--  -->
+                <ul class="list">
+                    <% products.forEach(item => { %> 
+                    <li class="lista">
+                        <p class="id pe"><%- item.id %></p>
+                        <p class="name pe"><%- item.name %></p>
+                        <p class="price pe"><%- item.price %></p>
+                        <% /* let category = category.find(cate => cate.id === item.category) */ %>
+                        <p class="category pe"><%- item.categoryId %></p>
+                        <% /* let forma = formas.find(forma => forma.id === item.subCatForma) */ %> 
+                        <p class="shape pe"><%- item.shapeId %></p>
+                        <% /* let marca = marcas.find(marca => marca.id === item.subCatMarca) */ %> 
+                        <p class="brand pe"><%- item.brandId %></p>
+                        <% /* let material = materials.find(material => material.id === item.subCatmaterial) */ %>
+                        <p class="material pe"><%- item.materialId %></p>
+                        <p class="height pe"><%- item.height %></p>
+                        <p class="width pe"><%- item.width %></p>
+                        <p class="discount pe"><%- item.discount %></p>
+
+
+
+                        <a href="/admin/edit/<%- item.id%>"><i class="far fa-edit fSize"></i></a>
+
+                        <form action="/admin/eliminarProducto/<%= item.id %>?_method=DELETE" method="POST">
+                            <button  class ="boton" type="submit"><i class="far fa-trash-alt"></i></button>
+                        
+                        </form>
+
+                    
+                    </li>
+                    <% }) %>
+                </ul>
+                
+            </section>
+        </div>
+    </main>
+    <section class="temp1 categories" id="categories">
+        <div class="temp"></div>
+    </section>
+    
+    
+    
+    
+</body>
+</html>

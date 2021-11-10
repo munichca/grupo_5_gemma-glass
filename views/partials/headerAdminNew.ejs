@@ -1,5 +1,6 @@
     <header >
         <script src='/js/header.js' defer></script>
+        <script src='/js/administrator.js' defer></script>
         <div class="menuBurger">
             <input type="checkbox" name="burger" id="btn-modal">
             <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
@@ -10,12 +11,12 @@
                     <h2>Gemma Glass</h2>
                     <div class="contenido-burger">
                         <ul>
-                            <% locals.categories.forEach(item => {%>
-                                <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
-                                <% })  %>
-                                <a  href="/product/productOfertas"> <li>Ofertas</li></a>
-                                <!-- <a href="/turnos"> <li>Pedí una consulta</li></a> -->
-                                <a href="/administrator"> <li>Pedí una consulta</li></a>
+                            <li>Ofertas</li>
+                            <li>Ofertas</li>
+                            <li>Ofertas</li>
+                            <li>Ofertas</li>
+                            <li>Ofertas</li>
+                            <li>Pedí una consulta</li>
                         </ul>
                     </div>
                 </div>
@@ -88,7 +89,7 @@
                 </a>
                 <% }else{ %>
                 <ul class="ulMyDiv">
-                     <li class=""><a class="btn mydiv" href="/admin/listado">ADMIN</a></li>
+                     <li class=""><a class="btn mydiv" href="/administrator">ADMIN</a></li>
                 </ul>
     <% }  %> 
             </div>
@@ -96,22 +97,13 @@
         </div>
         <nav class="container-nav">
             <ul>
-                <% locals.categories.forEach(item => {%>
-                <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
-                <% })  %> 
-                <a href="#" class="navbar1">
-                    <div id="aca">ver +<i class="fas fa-chevron-down"></i></div>
-                </a>
-                
-                    <!-- <ul  class="menuUl">
-                    
-                    <li class="myLi">nada</li>
-                    <li class="myLi">todo</li>
-                </ul> -->
-                
-                <a  href="/product/productOfertas"> <li>Ofertas</li></a>
-                <!-- <a  href="/turnos"> <li>Pedí una consulta</li></a> -->
-                <a href="/administrator"> <li>Pedí una consulta</li></a>
+                <a href="#"><li id ="products">Productos</li></a>
+                <a href="#"><li id ="categories">Categorias</li></a>
+                <a href="#"><li id ="shapes">Formas</li></a>
+                <a href="#"><li id ="brands">Marcas</li></a>
+                <a href="#"><li id ="materials">Materiales</li></a>
+                <a href="#"><li id ="users">Usuarios</li></a>
+               
             </ul>
         </nav>
        

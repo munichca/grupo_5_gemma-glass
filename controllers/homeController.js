@@ -69,6 +69,25 @@ module.exports = {
             session: req.session
         })
     },
+    /* administrator: (req, res)=>{
+        res.render("administrator",{
+            
+            session: req.session
+        })
+    }, */
+    administrator: (req, res) => {
+        db.Product.findAll()
+            .then(products => {
+                /* if (req.session.user.rol === 2) { */
+                    res.render("administrator", {
+                        products,
+                        session: req.session
+                    })
+                /* } else {
+                    res.redirect('/')
+                } */
+            })
+    },
     trolley: (req, res)=>{
         res.render("carrito",{
             
