@@ -13,6 +13,8 @@ const usersRouter = require ("./routes/users");
 const productRouter = require ("./routes/product")
 const adminRouter = require ("./routes/admin")
 const apiProductsRoutes = require ("./routes/apis/productRoutes");
+const apiUserRoutes = require ("./routes/apis/userRoutes");
+const apiSubCatRoutes = require ("./routes/apis/subCatRoutes");
 
 /* ################################ */
 /* Middleware */
@@ -39,6 +41,9 @@ app.use("/users", usersRouter);
 app.use("/product", productRouter);
 app.use("/admin", adminRouter);
 app.use('/apis', apiProductsRoutes);
+app.use('/apis', apiUserRoutes);
+app.use('/apis', apiSubCatRoutes);
+
 /* ##################################### */
 app.listen(port, ()=>{
     console.log(`Puerto corriendo en ${port}\n http://localhost:${port}`)});

@@ -56,13 +56,13 @@
   
   .aListModal ul a li {
     text-decoration: none;
-    color: white;
+    color: black;
     text-align: center;
     font-size: 14px;
     font-weight: 300;
-    background: var(--tipos);
+    background: white;
     padding: 4px; 
-    border-bottom:solid 1px gray;
+    border: 1px solid var(--tipos);
     list-style: none;
   }
   /* .aListModal ul a {

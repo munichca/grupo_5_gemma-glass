@@ -11,8 +11,6 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(100),
             allowNull: true
         }
-        
-        
     }
     let config = {
         tableName: "brands", //No hace falta

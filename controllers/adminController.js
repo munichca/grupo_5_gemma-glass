@@ -1,6 +1,6 @@
 /* const { localsName } = require('ejs'); */
 const db = require('../database/models');
-/* const { report } = require('../routes/home'); */
+const { Op } = require("sequelize");
 let {validationResult} = require ("express-validator");
 const session = require('express-session');
 module.exports = {

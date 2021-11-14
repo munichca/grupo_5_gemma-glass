@@ -145,11 +145,16 @@ module.exports = {
                       expires: new Date(Date.now() + 5000000),
                       httpOnly: true,
                     });
+                    
                   }
-            
+                  
             res.locals.user= req.session.user;
             
-            /* res.send(locals.user) */
+            /* localStorage.user= JSON.stringify(req.session.user) ; */
+            
+            
+            /* res.send(localStorage.setItem("user")) */
+             /* res.send(localStorage.setItem("user")) */
             res.redirect('/');
             if(req.session.user.rol === 2){
                 res.redirect('/')

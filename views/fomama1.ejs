@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <!-- head -->
+    <%- include("partials/head")  %> 
+    <!-- fin head-->
+    <!-- <script src='/js/adminLoad.js' defer></script> -->
+<body>
+    <%- include('./partials/headerAdminNew.ejs') %>
+  
+    <section class="temp1 sbmSection " id="sbmSection">
+
+        <section class="subCat subCatSection" >
+            <div class="buttonsCrud">
+                <div  class="navSubCat btnAdd1"><div  >Agregar</div></div>
+                <div  class="navSubCat btnEdit1"><div  >Editar</div></div>
+                <div  class="navSubCat btnDel1"><div  >Eliminar</div></div>
+                
+            </div>
+            <form class="tamanioFondo" id="form" action="/apis/shape/" method="POST">
+                <h4 class="titleChoose"></h4>
+                <div class="contSubCat">
+                    
+                </div>
+                
+                <div class="subCatSection2">
+                    <div class="subCatEntry">
+                        <label class="tamanio subCatLabel " for="subCatinput"></label>
+                        <input class="tamanio subCatInput" type="text" name="subCatInput" value="">
+                    </div>
+                    <button class="btn masterButton" ></button>
+                </div>
+            </form>
+        </section>
+        
+        
+
+    </section>
+    
+    
+    
+    
+</body>
+</html>

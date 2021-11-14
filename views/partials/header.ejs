@@ -63,7 +63,6 @@
                     
                <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%- session.user.avatar? session.user.avatar : "avatar.png" %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
             
-                 <!-- <li><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>  -->
                  </ul>
               <% }else{ %>
                 <ul>
@@ -99,9 +98,9 @@
                 <% locals.categories.forEach(item => {%>
                 <a href="/product/productcat/<%- item.id %>" > <li><%= item.name  %></li></a>                
                 <% })  %> 
-                <a href="#" class="navbar1">
+                <!-- <a href="#" class="navbar1">
                     <div id="aca">ver +<i class="fas fa-chevron-down"></i></div>
-                </a>
+                </a> -->
                 
                     <!-- <ul  class="menuUl">
                     

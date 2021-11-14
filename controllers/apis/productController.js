@@ -41,7 +41,8 @@ module.exports = {
             { association: "image"}]
             
         }).then(products =>{
-            return res.json({
+
+            return res.status(200).json({
                 meta:{
                     endpoint:getUrl(req),
                     status: 200

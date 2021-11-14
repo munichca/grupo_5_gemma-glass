@@ -2,7 +2,7 @@
         <script src='/js/header.js' defer></script>
         <script src='/js/administrator.js' defer></script>
         <div class="menuBurger">
-            <input type="checkbox" name="burger" id="btn-modal">
+            <input type="checkbox" name="burger" id="btn-modal" class="checkUser" value="<%= locals.user ? user.id : "2"%>" >
             <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
             
             <div class="modal-burger" id="myModal" >
@@ -11,12 +11,12 @@
                     <h2>Gemma Glass</h2>
                     <div class="contenido-burger">
                         <ul>
-                            <li>Ofertas</li>
-                            <li>Ofertas</li>
-                            <li>Ofertas</li>
-                            <li>Ofertas</li>
-                            <li>Ofertas</li>
-                            <li>Pedí una consulta</li>
+                            <a href=""><li>Porductos</li></a> 
+                            <a href=""><li>Formas</li></a> 
+                            <a href=""><li>Marcas</li></a> 
+                            <a href=""><li>Materiales</li></a>
+                            <a href=""><li>Usuarios</li></a> 
+                            
                         </ul>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
              <% if (typeof session.user != "undefined" ) { %>
                 <ul>
                     
-               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%- session.user.avatar? session.user.avatar : "avatar.png" %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
+               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" value ="34" src="/image/userAvatars/<%- session.user.avatar? session.user.avatar : "avatar.png" %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
             
                  <!-- <li><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>  -->
                  </ul>
@@ -97,12 +97,13 @@
         </div>
         <nav class="container-nav">
             <ul>
-                <a href="#"><li id ="products">Productos</li></a>
-                <a href="#"><li id ="categories">Categorias</li></a>
-                <a href="#"><li id ="shapes">Formas</li></a>
-                <a href="#"><li id ="brands">Marcas</li></a>
-                <a href="#"><li id ="materials">Materiales</li></a>
-                <a href="#"><li id ="users">Usuarios</li></a>
+                <a href="#0" class="navA" id ="products"><li >Productos</li></a>
+                
+                <a  href="/fomama1.ejs" class="shapes navA" id ="shapes"><li id="navFMM">Formas</li></a>
+                <a href="#/2" class="brand navA" id ="brand"><li id="navFMM">Marcas</li></a>
+                <a href="#3" class="material navA" id ="material"><li id="navFMM">Materiales</li></a>
+                
+                <a href="#4" class="navA" id ="navUsers"><li >Usuarios</li></a>
                
             </ul>
         </nav>
