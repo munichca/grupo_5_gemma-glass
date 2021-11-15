@@ -4,7 +4,7 @@
     <!-- head -->
     <%- include("partials/head")  %> 
     <!-- fin head-->
-    <!-- <script src='/js/adminLoad.js' defer></script> -->
+    <!-- <script src='/js/confirmDelete.js' defer></script> -->
 <body>
     <%- include('./partials/headerAdminNew.ejs') %>
     <main class="mainList">
@@ -56,7 +56,7 @@
                         <a href="/admin/edit/<%- item.id%>"><i class="far fa-edit fSize"></i></a>
 
                         <form action="/admin/eliminarProducto/<%= item.id %>?_method=DELETE" method="POST">
-                            <button  class ="boton" type="submit"><i class="far fa-trash-alt"></i></button>
+                            <button  class ="boton" ><i class="far fa-trash-alt"></i></button>
                         
                         </form>
 

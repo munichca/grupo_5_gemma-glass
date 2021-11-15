@@ -1,9 +1,14 @@
 
-
-var body = document.getElementsByTagName("body")[0];
-function btnModal(clicked_id){
+$mutton = document.querySelector(".masterButton");
+let body = document.getElementsByTagName("body")[0];
+let $btnDel = document.querySelector(".btnDel1");
+window.addEventListener("load", function () {
     
-      var modalWindow = document.getElementById("tvesModal");
+
+    
+$mutton.addEventListener("click", function(){
+      
+      let modalWindow = document.getElementById("tvesModalDel");
              modalWindow.style.opacity = "1";
              modalWindow.style.visibility = "visible";
              modalWindow.style.transform = "translateY(22%)";
@@ -22,10 +27,17 @@ function btnModal(clicked_id){
                 body.style.overflow = "visible";
             }
         }
-    }
+    })
+    let $btnEliminar = document.querySelector(".btnEliminar");
+    
 
+    $btnEliminar.addEventListener("click", function () {
+        let inputChecked = document.querySelector('input[name="whi"]:checked');
+        $form.setAttribute("action", `/apis/sdelete/"${inputChecked.value}"?_method=DELETE`);
+        $form.setAttribute("method", "POST");
+        $form.submit()
+    
+    
 
-
-
-
-
+      })
+    })

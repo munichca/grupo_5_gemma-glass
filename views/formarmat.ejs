@@ -3,6 +3,7 @@
   <%- include("partials/head") %>
   <body>
     <%- include('./partials/headerAdminNew.ejs') %>
+    <!-- <script src='/js/confirmDelete.js' defer></script> -->
     <main class="subcatMain">
       <section class="navLatsub">
           <h5 class="h5SubCat">Seleccione una Sub categoria</h5>
@@ -31,10 +32,10 @@
               <button class="btn masterButton"></button>
             </div>
             <!-- #### para modal ##### -->
-            <div class="aModal" id="tvesModal" >
+            <div class="delModal" id="tvesModalDel" >
               <div class="aModalContainer">
-                  <h3 class="titleModal">¿Está seguro de querer eliminar?</h3>
-                  <div class="btn btnEliminar"></div>
+                  <p class="titleModal">¿Está seguro de querer eliminar?</p>
+                  <div class="btn btnEliminar">Eliminar</div>
               </div>
           </div>
             <!-- #### para modal ##### -->

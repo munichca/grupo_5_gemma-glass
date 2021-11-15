@@ -7,33 +7,19 @@ window.addEventListener("load", function () {
     $shape = qs("#shapes1"),
     $brand = qs(".brand"),
     $material = qs(".material"),
-    $userSection = qs(".userSection"),
     $navUsers = qs("#navUsers"),
     $checkUser = qs(".checkUser"),
     $contSubCat = qs(".contSubCat"),
     $mutton = qs(".masterButton"),
     $subCatLabel = qs(".subCatLabel"),
-    $subCatInput = qs(".subCatInput"),
     $titleChoose = qs(".titleChoose"),
     $btnAdd = qs(".btnAdd1"),
     $btnEdit = qs(".btnEdit1"),
     $btnDel = qs(".btnDel1"),
     $subCatEntry = qs(".subCatEntry"),
     $subCatSection2 = qs(".subCatSection2"),
+    $btnEliminar = qs(".btnEliminar"),
     $form = qs("#form");
-    /* $mainList = qs(".mainList"); */
-
-  /* $products.addEventListener("click", function () {
-    
-    $sbmSection.style.display = "none";
-    $products.style.fontWeight = "850";
-    $shape.style.fontWeight = "unset";
-    $brand.style.fontWeight = "unset";
-    $material.style.fontWeight = "unset";
-    $shape.style.pointerEvents = "inherit";
-    $brand.style.pointerEvents = "inherit";
-    $material.style.pointerEvents = "inherit";
-  }); */
   
   $btnAdd.addEventListener("click", function () {
     if (document.querySelector('input[name="whi"]:checked')){
@@ -113,9 +99,7 @@ window.addEventListener("load", function () {
   });
   $shape.addEventListener("click", function () {
     $mutton.innerHTML="";
-    /* $products.style.fontWeight = "unset"; */
     $subCatEntry.style.display ="flex"
-   /*  $mainList.style.display = "none"; */
     $btnAdd.style.pointerEvents = "inherit";
     $btnAdd.style.opacity = "1";
     $btnEdit.style.pointerEvents = "inherit";
@@ -153,7 +137,6 @@ window.addEventListener("load", function () {
     $mutton.innerHTML="";
     $products.style.fontWeight = "unset";
     $subCatEntry.style.display ="flex"
-    /* $mainList.style.display = "none"; */
     $sbmSection.style.display = "flex";
     $btnAdd.style.pointerEvents = "inherit";
     $btnAdd.style.opacity = "1";
@@ -240,7 +223,6 @@ window.addEventListener("load", function () {
       .then((response) => response.json())
       .then((userFinded) => {
         if (userFinded.data != null) {
-          /* $sbmSection.style.backgroundColor ="green" */
           alert(userFinded.data.name);
         } else {
           alert("no es super user");
@@ -259,18 +241,12 @@ window.addEventListener("load", function () {
               $form.submit()
             break;
             case $btnEdit.style.pointerEvents:
-              /* inputChecked.setAttribute("name", "whiChooser"); */
               $form.setAttribute("action", `/apis/sedit/"${inputChecked.value}"?_method=PUT`);
               $form.setAttribute("method", "POST");
               $form.submit()
               
             break;
-            case $btnDel.style.pointerEvents:
-              $form.setAttribute("action", `/apis/sdelete/"${inputChecked.value}"?_method=DELETE`);
-              $form.setAttribute("method", "POST");
-
-              /* $form.submit() */
-            break;
+            
           }
       break;
       case $brand.style.fontWeight :
@@ -306,17 +282,46 @@ window.addEventListener("load", function () {
       break;
       default :
   }
-    /* if ($shape.style.fontWeight == "850" && $btnAdd.style.pointerEvents == "none"){
-      $form.setAttribute("action", "/apis/shape/");
+  if ($btnDel.style.pointerEvents==="none"){   
+    let body = document.getElementsByTagName("body")[0];
+    let modalWindow = document.getElementById("tvesModalDel");
+           modalWindow.style.opacity = "1";
+           modalWindow.style.visibility = "visible";
+           modalWindow.style.transform = "translateY(22%)";
+           modalWindow.style.transitionDelay = "0.2s";
+           modalWindow.style.transition = "all 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15)";
+           body.style.position = "static";
+           body.style.height = "100%";
+           body.style.overflow = "hidden";
+       window.onclick = function(event) {
+          if (event.target == modalWindow) {
+              modalWindow.style.opacity = "";
+              modalWindow.style.visibility = "hidden";
+              modalWindow.style.transform = "translateY(0)";
+              body.style.position = "inherit";
+              body.style.height = "auto";
+              body.style.overflow = "visible";
+          }
+      }}
+  })
+$btnEliminar.addEventListener("click", function () {
+  let inputChecked = document.querySelector('input[name="whi"]:checked');
+  switch("850"){
+    case $shape.style.fontWeight:
+      $form.setAttribute("action", `/apis/sdelete/"${inputChecked.value}"?_method=DELETE`);
       $form.setAttribute("method", "POST");
       $form.submit()
-    } */
+    break;
+    case $brand.style.fontWeight:
     
-    /* alert(inputChecked.value) */
-  })
-/* ############# */
+    break;
+    case $material.style.fontWeight:
+    
+    break;
+  }
 
+    
 
-
+})
 
 });

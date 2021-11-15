@@ -64,16 +64,10 @@ module.exports = {
         db.Brand.create({
             name:req.body.subCatInput
         })
-        .then((brand)=>{
-            res.status(201).json({
-                meta: {
-                    endpoint: getUrl(req),
-                    msg: "Resource Created"
-                },
-                data: brand,
-            })
+        .then(()=>{
+            res.redirect('/formarmat/')
         }).catch(error => console.log(error))
-        res.redirect('/formarmat/')
+        
     },
     editBrand: (req, res)=> {
         
