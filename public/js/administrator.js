@@ -205,7 +205,6 @@ window.addEventListener("load", function () {
     $mutton.innerHTML="";
     $products.style.fontWeight = "unset";
     $subCatEntry.style.display ="flex"
-    /* $mainList.style.display = "none"; */
     $sbmSection.style.display = "flex";
     $btnAdd.style.pointerEvents = "inherit";
     $btnAdd.style.opacity = "1";
@@ -267,7 +266,10 @@ window.addEventListener("load", function () {
               
             break;
             case $btnDel.style.pointerEvents:
-            
+              $form.setAttribute("action", `/apis/sdelete/"${inputChecked.value}"?_method=DELETE`);
+              $form.setAttribute("method", "POST");
+
+              /* $form.submit() */
             break;
           }
       break;

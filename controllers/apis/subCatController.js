@@ -21,34 +21,31 @@ module.exports = {
         db.Shape.create({
             name:req.body.subCatInput
         })
-        .then((shape)=>{
-            res.status(201).json({
-                meta: {
-                    endpoint: getUrl(req),
-                    msg: "Resource Created"
-                },
-                data: shape,
-            })
+        .then(()=>{
+            res.redirect('/formarmat/')
         }).catch(error => console.log(error))
-        res.redirect('/formarmat/')
+        
     },
     editShape: (req, res)=> {
-                db.Shape.findByIdandUpdate({
-                    name:req.body.subCatInput
-                    
-                 },{
-                    where:{
-                        id: +req.params.id
+                db.Shape.update({
+                    name:req.body.subCatInput},{
+                        where:{
+                            id: +req.body.whi
+                        }
                     }
-                }).then(()=>{
-                    /* res.send(name) */
-                    res.redirect("/formarmat/")
-                })
-                .catch(error => console.log(error))
-                /*  */
+                    ).then(()=>{
+                        res.redirect("/formarmat/")
+                    }).catch(error => console.log(error))
     },
+    
     deleteShape: (req, res)=> {
-        
+        db.Shape.destroy({
+            where:{
+                id:+req.body.whi
+            }
+        }).then(()=>{
+            res.redirect("/formarmat/")
+        }).catch(error => console.log(error))
     },
     brand: (req, res)=> {
         db.Brand.findAll({
