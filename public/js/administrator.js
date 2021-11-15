@@ -1,13 +1,10 @@
-
-
 function qs(element) {
   return document.querySelector(element);
 }
-
 window.addEventListener("load", function () {
   let $products = qs("#products"),
     $sbmSection = qs(".sbmSection"),
-    $shape = qs(".shapes"),
+    $shape = qs("#shapes1"),
     $brand = qs(".brand"),
     $material = qs(".material"),
     $userSection = qs(".userSection"),
@@ -23,11 +20,11 @@ window.addEventListener("load", function () {
     $btnDel = qs(".btnDel1"),
     $subCatEntry = qs(".subCatEntry"),
     $subCatSection2 = qs(".subCatSection2"),
-    $form = qs("#form"),
-    $mainList = qs(".mainList");
+    $form = qs("#form");
+    /* $mainList = qs(".mainList"); */
 
-  $products.addEventListener("click", function () {
-    $mainList.style.display = "flex";
+  /* $products.addEventListener("click", function () {
+    
     $sbmSection.style.display = "none";
     $products.style.fontWeight = "850";
     $shape.style.fontWeight = "unset";
@@ -36,7 +33,7 @@ window.addEventListener("load", function () {
     $shape.style.pointerEvents = "inherit";
     $brand.style.pointerEvents = "inherit";
     $material.style.pointerEvents = "inherit";
-  });
+  }); */
   
   $btnAdd.addEventListener("click", function () {
     if (document.querySelector('input[name="whi"]:checked')){
@@ -116,9 +113,9 @@ window.addEventListener("load", function () {
   });
   $shape.addEventListener("click", function () {
     $mutton.innerHTML="";
-    $products.style.fontWeight = "unset";
+    /* $products.style.fontWeight = "unset"; */
     $subCatEntry.style.display ="flex"
-    $mainList.style.display = "none";
+   /*  $mainList.style.display = "none"; */
     $btnAdd.style.pointerEvents = "inherit";
     $btnAdd.style.opacity = "1";
     $btnEdit.style.pointerEvents = "inherit";
@@ -138,7 +135,7 @@ window.addEventListener("load", function () {
     $contSubCat.style.opacity = "0.7";
     $material.style.fontWeight = "unset";
     $subCatLabel.innerHTML = "Ingrese el nombre de la nueva Forma";
-    $titleChoose.innerHTML = "Forma";
+    $titleChoose.innerHTML = "Formas";
     $contSubCat.innerHTML ="";
     fetch("http://localhost:3005/apis/shape")
       .then((response) => response.json())
@@ -156,7 +153,7 @@ window.addEventListener("load", function () {
     $mutton.innerHTML="";
     $products.style.fontWeight = "unset";
     $subCatEntry.style.display ="flex"
-    $mainList.style.display = "none";
+    /* $mainList.style.display = "none"; */
     $sbmSection.style.display = "flex";
     $btnAdd.style.pointerEvents = "inherit";
     $btnAdd.style.opacity = "1";
@@ -183,7 +180,7 @@ window.addEventListener("load", function () {
             let div = document.querySelector(`#contSubC${brand.data[i].id}`)
             div.innerHTML += `<label class="textSubC" for="">${brand.data[i].name}</label>`
             div.innerHTML += `<input type="radio" name="whi" value="${brand.data[i].id}" for="">`
-          }
+          } 
       });
     /* fetch("http://localhost:3005/apis/brand")
       .then((response) => response.json())
@@ -208,7 +205,7 @@ window.addEventListener("load", function () {
     $mutton.innerHTML="";
     $products.style.fontWeight = "unset";
     $subCatEntry.style.display ="flex"
-    $mainList.style.display = "none";
+    /* $mainList.style.display = "none"; */
     $sbmSection.style.display = "flex";
     $btnAdd.style.pointerEvents = "inherit";
     $btnAdd.style.opacity = "1";
@@ -225,7 +222,7 @@ window.addEventListener("load", function () {
     $brand.style.pointerEvents = "inherit";
     $material.style.pointerEvents = "none";
     $subCatLabel.innerHTML = "Ingrese el nombre del nuevo Material"
-    $titleChoose.innerHTML = "Material"
+    $titleChoose.innerHTML = "Materiales"
     $contSubCat.innerHTML ="";
     
       fetch("http://localhost:3005/apis/material")
@@ -254,8 +251,66 @@ window.addEventListener("load", function () {
   
   $mutton.addEventListener("click", function(){
     let inputChecked = document.querySelector('input[name="whi"]:checked');
-    $form.submit()
-    alert(inputChecked.value)
+    switch ("850") {
+      case $shape.style.fontWeight :
+          switch("none"){
+            case $btnAdd.style.pointerEvents:
+              $form.setAttribute("action", "/apis/shape/");
+              $form.setAttribute("method", "POST");
+              $form.submit()
+            break;
+            case $btnEdit.style.pointerEvents:
+              /* inputChecked.setAttribute("name", "whiChooser"); */
+              $form.setAttribute("action", `/apis/sedit/"${inputChecked.value}"?_method=PUT`);
+              $form.setAttribute("method", "POST");
+              $form.submit()
+              
+            break;
+            case $btnDel.style.pointerEvents:
+            
+            break;
+          }
+      break;
+      case $brand.style.fontWeight :
+          switch("none"){
+            case $btnAdd.style.pointerEvents:
+              $form.setAttribute("action", "/apis/brand/");
+              $form.setAttribute("method", "POST");
+              $form.submit()
+            break;
+            case $btnEdit.style.pointerEvents:
+            
+            break;
+            case $btnDel.style.pointerEvents:
+            
+            break;
+          }
+
+      break;
+      case $material.style.fontWeight :
+          switch("none"){
+            case $btnAdd.style.pointerEvents:
+              $form.setAttribute("action", "/apis/material/");
+              $form.setAttribute("method", "POST");
+              $form.submit()
+            break;
+            case $btnEdit.style.pointerEvents:
+            
+            break;
+            case $btnDel.style.pointerEvents:
+            
+            break;
+          }
+      break;
+      default :
+  }
+    /* if ($shape.style.fontWeight == "850" && $btnAdd.style.pointerEvents == "none"){
+      $form.setAttribute("action", "/apis/shape/");
+      $form.setAttribute("method", "POST");
+      $form.submit()
+    } */
+    
+    /* alert(inputChecked.value) */
   })
 /* ############# */
 

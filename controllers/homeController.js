@@ -88,6 +88,12 @@ module.exports = {
                 } */
             })
     },
+    formarmat: (req, res)=>{
+        res.render("formarmat",{
+            
+            session: req.session
+        })
+    },
     trolley: (req, res)=>{
         res.render("carrito",{
             

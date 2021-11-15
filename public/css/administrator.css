@@ -14,6 +14,11 @@ a{
     background-color: burlywood;
     display:initial;
 }
+.subcatMain{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 #shapeSelect{
     width: 75%;
 }
@@ -25,10 +30,38 @@ a{
     width: 75%;
     margin: 5px auto;
 }
-.navA{
-    border: 1px solid red;
-    width: 33.33% !important;
+.h5SubCat{
+    text-align: right;
 }
+.navLatsub{
+    width: 15%;
+    
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+.navA{
+    width: 100% !important;
+}
+/* .navB{
+    border: 1px solid red;
+    width: 85% !important;
+    margin: 15px 0px 15px 25px;
+} */
+.navB{
+    border: 1.5px solid white;
+    background-color: var(--navbar);
+    width: 85% !important;
+    margin: 15px 0px 15px 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.navB:hover{
+    background-color: var(--header);
+    color: white;
+}
+
 .contSubCat{
     display: flex;
     flex-direction: row;
@@ -36,6 +69,9 @@ a{
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
+    height: 100px;
+    overflow-y: scroll;
+    position: relative;
     padding: 10px 50px;
     border: 1px solid var(--header);
     margin: 0px auto 10px auto;
@@ -91,7 +127,7 @@ a{
     color: white;
 }
 .subCat{
-    width: 70vw;
+    width: 65vw;
     border: 1px solid blue;
     height: 45vw;
     display: flex;
@@ -101,11 +137,12 @@ a{
 
 }
 .temp1{
-display: none;
+display: flex;
 flex-direction: column;
-justify-content: center;
-align-items: center;
-
+/* justify-content: center;
+align-items: center; */
+width: 75%;
+margin-top: 15px;
 }
 .temp{
     width: 85vw;
@@ -131,10 +168,13 @@ align-items: center;
     justify-content: space-evenly;
 }
 #navFMM{
-    margin: 0px 5px;
+    
+    /* margin: 15px 0px; */
+    list-style: none;
 }
 ul{
     padding-left: 0;
+    
 }
 
 /* .btn{

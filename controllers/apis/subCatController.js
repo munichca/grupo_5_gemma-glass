@@ -21,7 +21,6 @@ module.exports = {
         db.Shape.create({
             name:req.body.subCatInput
         })
-        
         .then((shape)=>{
             res.status(201).json({
                 meta: {
@@ -29,13 +28,24 @@ module.exports = {
                     msg: "Resource Created"
                 },
                 data: shape,
-                
             })
         }).catch(error => console.log(error))
-        res.redirect('/administrator/#/1')
+        res.redirect('/formarmat/')
     },
     editShape: (req, res)=> {
-        
+                db.Shape.findByIdandUpdate({
+                    name:req.body.subCatInput
+                    
+                 },{
+                    where:{
+                        id: +req.params.id
+                    }
+                }).then(()=>{
+                    /* res.send(name) */
+                    res.redirect("/formarmat/")
+                })
+                .catch(error => console.log(error))
+                /*  */
     },
     deleteShape: (req, res)=> {
         
@@ -53,6 +63,28 @@ module.exports = {
         }) /* aca termina el then */
         .catch(errors => console.log(errors))
     },
+    createBrand: (req, res)=> {
+        db.Brand.create({
+            name:req.body.subCatInput
+        })
+        .then((brand)=>{
+            res.status(201).json({
+                meta: {
+                    endpoint: getUrl(req),
+                    msg: "Resource Created"
+                },
+                data: brand,
+            })
+        }).catch(error => console.log(error))
+        res.redirect('/formarmat/')
+    },
+    editBrand: (req, res)=> {
+        
+    },
+    deleteBrand: (req, res)=> {
+        
+    },
+    /* #################### */
     material: (req, res)=> {
         db.Material.findAll({
         }).then ((material) =>{
@@ -65,5 +97,26 @@ module.exports = {
                 })
         }) /* aca termina el then */
         .catch(errors => console.log(errors))
+    },
+    createMaterial: (req, res)=> {
+        db.Material.create({
+            name:req.body.subCatInput
+        })
+        .then((material)=>{
+            res.status(201).json({
+                meta: {
+                    endpoint: getUrl(req),
+                    msg: "Resource Created"
+                },
+                data: material,
+            })
+        }).catch(error => console.log(error))
+        res.redirect('/formarmat/')
+    },
+    editMaterial: (req, res)=> {
+        
+    },
+    deleteMaterial: (req, res)=> {
+        
     },
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("partials/head") %>
+  <body>
+    <%- include('./partials/headerAdminNew.ejs') %>
+    <main class="subcatMain">
+      <section class="navLatsub">
+          <h5 class="h5SubCat">Seleccione una Sub categoria</h5>
+        <a href="#" class="shapes navB" id="shapes1">   <li id="navFMM">Formas</li>    </a>
+        <a href="#" class="brand navB" id="brand"  >    <li id="navFMM">Marcas</li>    </a>
+        <a href="#" class="material navB" id="material"><li id="navFMM">Materiales</li></a>
+      </section>
+      <section class="temp1 sbmSection" id="sbmSection">
+        <section class="subCat subCatSection">
+          <div class="buttonsCrud">
+            <div class="navSubCat btnAdd1"><div>Agregar</div></div>
+            <div class="navSubCat btnEdit1"><div>Editar</div></div>
+            <div class="navSubCat btnDel1"><div>Eliminar</div></div>
+          </div>
+          <form class="tamanioFondo" id="form" >
+            <h4 class="titleChoose"></h4>
+            <div class="contSubCat">
+
+            </div>
+
+            <div class="subCatSection2">
+              <div class="subCatEntry">
+                <label class="tamanio subCatLabel" for="subCatinput"></label>
+                <input class="tamanio subCatInput" type="text" name="subCatInput" value=""/>
+              </div>
+              <button class="btn masterButton"></button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
