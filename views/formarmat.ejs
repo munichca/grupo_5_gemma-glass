@@ -6,42 +6,51 @@
     <!-- <script src='/js/confirmDelete.js' defer></script> -->
     <main class="subcatMain">
       <section class="navLatsub">
-          <h5 class="h5SubCat">Seleccione una Sub categoria</h5>
-        <a href="#" class="shapes navB" id="shapes1">   <li id="navFMM">Formas</li>    </a>
-        <a href="#" class="brand navB" id="brand"  >    <li id="navFMM">Marcas</li>    </a>
-        <a href="#" class="material navB" id="material"><li id="navFMM">Materiales</li></a>
+        <h5 class="h5SubCat">Seleccione una Sub categoria</h5>
+        <a href="#" class="shapes navB" id="shapes1"><li id="navFMM">Formas</li></a>
+        <a href="#" class="brand1 navB" id="brand1"><li id="navFMM">Marcas</li></a>
+        <a href="#" class="material1 navB" id="material1"><li id="navFMM">Materiales</li></a>
+        <!-- <a href="#" class="brand navB" id="brand"><li id="navFMM">Marcas</li></a>
+        <a href="#" class="material navB" id="material"><li id="navFMM">Materiales</li></a> -->
       </section>
-      <section class="temp1 sbmSection" id="sbmSection">
+      <section class="sbmSection" id="sbmSection">
         <section class="subCat subCatSection">
           <div class="buttonsCrud">
             <div class="navSubCat btnAdd1"><div>Agregar</div></div>
             <div class="navSubCat btnEdit1"><div>Editar</div></div>
             <div class="navSubCat btnDel1"><div>Eliminar</div></div>
           </div>
-          <form class="tamanioFondo" id="form" >
-            <h4 class="titleChoose"></h4>
-            <div class="contSubCat">
-
-            </div>
+          <form class="tamanioFondo" id="form">
+            <h5 class="titleChoose"></h5>
+            <div class="contSubCat"></div>
 
             <div class="subCatSection2">
               <div class="subCatEntry">
                 <label class="tamanio subCatLabel" for="subCatinput"></label>
-                <input class="tamanio subCatInput" type="text" name="subCatInput" value=""/>
+                <input
+                  class="tamanio subCatInput"
+                  type="text"
+                  name="subCatInput"
+                  value=""
+                />
               </div>
               <button class="btn masterButton"></button>
             </div>
             <!-- #### para modal ##### -->
-            <div class="delModal" id="tvesModalDel" >
+            <div class="delModal" id="tvesModalDel">
               <div class="aModalContainer">
-                  <p class="titleModal">¿Está seguro de querer eliminar?</p>
-                  <div class="btn btnEliminar">Eliminar</div>
+                <p class="titleModal">¿Está seguro de querer eliminar?</p>
+                <div class="btn btnEliminar">Eliminar</div>
               </div>
-          </div>
+            </div>
             <!-- #### para modal ##### -->
           </form>
         </section>
       </section>
+      <div class="backImage">
+      <img class="imgCat" src="/image/subCat.jpg" alt="" />
+    </div>
     </main>
+    
   </body>
 </html>

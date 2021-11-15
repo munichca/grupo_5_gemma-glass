@@ -1,0 +1,313 @@
+:root{
+    --grey : #444444;
+    --red : #b92519;
+    --tipos:#152847;
+    --header:#4F8DF0;
+    
+}
+
+a{
+    margin: 0;
+    padding: 0;
+}
+.userSection{
+    background-color: burlywood;
+    display:initial;
+}
+.subcatMain{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
+}
+#shapeSelect{
+    width: 75%;
+}
+
+.buttonsCrud{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 75%;
+    margin: 5px auto;
+}
+.h5SubCat{
+    text-align:center;
+    width: 100%;
+}
+.navLatsub{
+    width: 95%;
+    /* border: 1px solid green; */
+    margin: 15px auto 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+.navA{
+    width: 100% !important;
+}
+/* .navB{
+    border: 1px solid red;
+    width: 85% !important;
+    margin: 15px 0px 15px 25px;
+} */
+.navB{
+    border: 1.5px solid white;
+    background-color: var(--navbar);
+    width: 28% !important;
+    text-align: center;
+    cursor: pointer;
+}
+.navB:hover{
+    background-color: var(--header);
+    color: white;
+}
+
+.contSubCat{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    overflow-y: scroll;
+    position: relative;
+    padding: 10px 5px;
+    border: 1px solid var(--header);
+    margin: 0px auto 10px auto;
+}
+.contSubC{
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 20px;
+    /* border: 1px solid green; */
+    margin: 5px 0;
+}
+
+.textSubC{
+    border: 1px solid var(--header);
+    width: 70%;
+    padding-top: 1px;
+    padding-right: 3px;
+    font-size: 10px;
+    margin-right: 3px;
+    text-align: right;
+}
+.subCatSection2{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0.8;
+}
+.subCatEntry{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.subCatInput{
+    width: 85%;
+    text-align: center;
+}
+.navSubCat{
+    border: 1.5px solid white;
+    background-color: var(--navbar);
+    width: 33.33%;
+    text-align: center;
+    cursor: pointer;
+}
+.navSubCat:hover{
+    background-color: var(--header);
+    color: white;
+}
+.subCat{
+    width: 100%;
+    border: 1px solid var(--tipos);
+    height: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+
+}
+.sbmSection{
+display: flex;
+flex-direction: column;
+/* border: 1px solid red; */
+/* justify-content: center;
+align-items: center; */
+width: 95%;
+margin: 0 auto;
+}}
+#navFMM{
+    list-style: none;
+}
+.bacImage{
+    /* background-image: url(/image/subCat.jpg); */
+}
+.imgCat{
+width: 90%;
+height: 350px;
+object-fit: cover;
+display: none;
+}
+@media (min-width: 768px){
+    
+    }
+    @media (min-width: 1024px){
+        .userSection{
+            background-color: burlywood;
+            display:initial;
+        }
+        .subcatMain{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        #shapeSelect{
+            width: 75%;
+        }
+        
+        .buttonsCrud{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 75%;
+            margin: 5px auto;
+        }
+        .h5SubCat{
+            text-align: right;
+        }
+        .navLatsub{
+            width: 15%;
+            margin: 15px 65px 0 5px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: unset;
+            text-align: right;
+        }
+        .navA{
+            width: 100% !important;
+        }
+        /* .navB{
+            border: 1px solid red;
+            width: 85% !important;
+            margin: 15px 0px 15px 25px;
+        } */
+        .navB{
+            border: 1.5px solid white;
+            background-color: var(--navbar);
+            width: 85% !important;
+            margin: 15px 0px 15px 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .navB:hover{
+            background-color: var(--header);
+            color: white;
+        }
+        
+        .contSubCat{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            overflow-y: scroll;
+            position: relative;
+            padding: 10px 50px;
+            border: 1px solid var(--header);
+            margin: 0px auto 10px auto;
+        }
+        .contSubC{
+            width: 24%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 20px;
+            /* border: 1px solid green; */
+            margin: 5px 0;
+        }
+        
+        .textSubC{
+            border: 1px solid var(--header);
+            width: 70%;
+            padding-top: 1px;
+            padding-right: 3px;
+            font-size: 10px;
+            margin-right: 3px;
+            text-align: right;
+        }
+        .subCatSection2{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        .subCatEntry{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .subCatInput{
+            width: 85%;
+            text-align: center;
+        }
+        .navSubCat{
+            border: 1.5px solid white;
+            background-color: var(--navbar);
+            width: 33.33%;
+            text-align: center;
+            cursor: pointer;
+        }
+        .navSubCat:hover{
+            background-color: var(--header);
+            color: white;
+        }
+        .subCat{
+            width: 65vw;
+            border: 1px solid blue;
+            height: 30vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+        
+        }
+        .sbmSection{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+        width: 75%;
+        margin-top: 15px;
+        }
+        .backImage{
+            margin-left: 130px;
+        }
+        #navFMM{
+            list-style: none;
+        }
+    }
+
+
+

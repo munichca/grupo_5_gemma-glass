@@ -10,45 +10,42 @@ a{
     margin: 0;
     padding: 0;
 }
-.userSection{
+/* .userSection{
     background-color: burlywood;
     display:initial;
-}
-.subcatMain{
+} */
+/* .subcatMain{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-#shapeSelect{
+} */
+/* #shapeSelect{
     width: 75%;
-}
-.buttonsCrud{
+} */
+
+/* .buttonsCrud{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 75%;
     margin: 5px auto;
-}
-.h5SubCat{
+} */
+/* .h5SubCat{
     text-align: right;
-}
-.navLatsub{
+} */
+/* .navLatsub{
     width: 15%;
     
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     text-align: right;
-}
-.navA{
+} */
+/* .navA{
     width: 100% !important;
 }
-/* .navB{
-    border: 1px solid red;
-    width: 85% !important;
-    margin: 15px 0px 15px 25px;
-} */
+
 .navB{
     border: 1.5px solid white;
     background-color: var(--navbar);
@@ -60,9 +57,9 @@ a{
 .navB:hover{
     background-color: var(--header);
     color: white;
-}
+} */
 
-.contSubCat{
+/* .contSubCat{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -75,18 +72,18 @@ a{
     padding: 10px 50px;
     border: 1px solid var(--header);
     margin: 0px auto 10px auto;
-}
-.contSubC{
+} */
+/* .contSubC{
     width: 24%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: 20px;
-    /* border: 1px solid green; */
+    
     margin: 5px 0;
-}
+} */
 
-.textSubC{
+/* .textSubC{
     border: 1px solid var(--header);
     width: 70%;
     padding-top: 1px;
@@ -94,9 +91,9 @@ a{
     font-size: 10px;
     margin-right: 3px;
     text-align: right;
-}
-.subCatSection2{
-    display: flex;
+} */
+/* .subCatSection2{
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -125,8 +122,8 @@ a{
 .navSubCat:hover{
     background-color: var(--header);
     color: white;
-}
-.subCat{
+} */
+/* .subCat{
     width: 65vw;
     border: 1px solid blue;
     height: 45vw;
@@ -136,19 +133,17 @@ a{
     padding: 5px;
 
 }
-.temp1{
-display: flex;
+.sbmSection{
+display: none;
 flex-direction: column;
-/* justify-content: center;
-align-items: center; */
 width: 75%;
 margin-top: 15px;
-}
-.temp{
-    width: 85vw;
-    height: 85vh;
-    background-color: greenyellow;
-}
+} */
+/* .backImage{
+    width: 75%;
+    height: 250px;
+    border: 1px solid red;
+} */
 .mainList{
     display: flex;
     flex-direction: column;

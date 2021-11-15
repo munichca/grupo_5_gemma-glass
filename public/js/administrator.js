@@ -5,8 +5,8 @@ window.addEventListener("load", function () {
   let $products = qs("#products"),
     $sbmSection = qs(".sbmSection"),
     $shape = qs("#shapes1"),
-    $brand = qs(".brand"),
-    $material = qs(".material"),
+    $brand = qs(".brand1"),
+    $material = qs(".material1"),
     $navUsers = qs("#navUsers"),
     $checkUser = qs(".checkUser"),
     $contSubCat = qs(".contSubCat"),
@@ -19,6 +19,8 @@ window.addEventListener("load", function () {
     $subCatEntry = qs(".subCatEntry"),
     $subCatSection2 = qs(".subCatSection2"),
     $btnEliminar = qs(".btnEliminar"),
+    $subCatSection = qs(".subCatSection"),
+    $subCatInput = qs(".subCatInput"),
     $form = qs("#form");
   
   $btnAdd.addEventListener("click", function () {
@@ -98,6 +100,7 @@ window.addEventListener("load", function () {
     $subCatSection2.style.opacity = "1";
   });
   $shape.addEventListener("click", function () {
+    
     $mutton.innerHTML="";
     $subCatEntry.style.display ="flex"
     $btnAdd.style.pointerEvents = "inherit";
@@ -127,7 +130,7 @@ window.addEventListener("load", function () {
           for (let i=0; i<shape.data.length; i++){
             $contSubCat.innerHTML += `<div class="contSubC" id="contSubC${shape.data[i].id}"></div>`
             let div = document.querySelector(`#contSubC${shape.data[i].id}`)
-            div.innerHTML += `<label class="textSubC" for="">${shape.data[i].name}</label>`
+            div.innerHTML += `<label class="textSubC" for="${shape.data[i].id}">${shape.data[i].name}</label>`
             div.innerHTML += `<input type="radio" name="whi" value="${shape.data[i].id}" for="">`
           }
       });
@@ -231,7 +234,7 @@ window.addEventListener("load", function () {
   });
   
   $mutton.addEventListener("click", function(){
-    let inputChecked = document.querySelector('input[name="whi"]:checked');
+    let inputChecked = document.querySelector('input[type="radio"]:checked');
     switch ("850") {
       case $shape.style.fontWeight :
           switch("none"){
@@ -319,9 +322,26 @@ $btnEliminar.addEventListener("click", function () {
     
     break;
   }
-
-    
-
 })
+/* let whis =  document.getElementsByName("whi")
+let whisResult = [].slice.call(whis)
+alert(whisResult[0].value) */
+$contSubCat.addEventListener("change", function(){
+  let whis =  document.getElementsByName("whi");
+  let labelText = document.querySelectorAll(".textSubC");
+  let whisResult = [].slice.call(whis);
+  let labelResult = [].slice.call(labelText)
+  for (i = 0 ; i<=whisResult.length; i++){
+    if(whisResult[i].checked == true){
+      /* alert(labelResult[i].textContent) */
+      $subCatInput.value=labelResult[i].textContent;
+    }
+  }
+  
+})
+
+     /* $subCatInput.value=inputChecked.value; */
+
+
 
 });
