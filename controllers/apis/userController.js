@@ -16,10 +16,13 @@ module.exports = {
                 [Op.eq]:100
             }
         }
+        
         }).then ((user) =>{
             
                 session.getUrl= getUrl(req);
+               /*  res.send(req.params.id); */
                 return res.status(200).json({
+                    
                     meta: {
                         endpoint: getUrl(req),
                         status: 200,

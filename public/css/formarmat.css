@@ -48,12 +48,9 @@ a{
 }
 .navA{
     width: 100% !important;
+    
 }
-/* .navB{
-    border: 1px solid red;
-    width: 85% !important;
-    margin: 15px 0px 15px 25px;
-} */
+
 .navB{
     border: 1.5px solid white;
     background-color: var(--navbar);
@@ -118,6 +115,7 @@ a{
 .subCatInput{
     width: 85%;
     text-align: center;
+    margin-top: 15px;
 }
 .navSubCat{
     border: 1.5px solid white;
@@ -125,6 +123,7 @@ a{
     width: 33.33%;
     text-align: center;
     cursor: pointer;
+    pointer-events: none;
 }
 .navSubCat:hover{
     background-color: var(--header);
@@ -133,12 +132,16 @@ a{
 .subCat{
     width: 100%;
     border: 1px solid var(--tipos);
-    height: 90vw;
+    height: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5px;
 
+}
+.titleChoose{
+    font-size: 14px;
+    text-align: center;
 }
 .sbmSection{
 display: flex;
@@ -148,18 +151,27 @@ flex-direction: column;
 align-items: center; */
 width: 95%;
 margin: 0 auto;
-}}
+}
 #navFMM{
     list-style: none;
 }
-.bacImage{
-    /* background-image: url(/image/subCat.jpg); */
+/* .bacImage{
+    background-image: url(/image/subCat.jpg);
+} */
+.frame{
+    display: none;
 }
 .imgCat{
 width: 90%;
 height: 350px;
 object-fit: cover;
 display: none;
+}
+.rojo{
+    color: var(--red);
+    font-size: 12px;
+    margin: 0px;
+    
 }
 @media (min-width: 768px){
     
@@ -232,7 +244,10 @@ display: none;
             padding: 10px 50px;
             border: 1px solid var(--header);
             margin: 0px auto 10px auto;
+            pointer-events: visible;
+            opacity: 1;
         }
+        
         .contSubC{
             width: 24%;
             display: flex;
@@ -278,6 +293,7 @@ display: none;
             width: 33.33%;
             text-align: center;
             cursor: pointer;
+            pointer-events: none;
         }
         .navSubCat:hover{
             background-color: var(--header);
@@ -306,6 +322,7 @@ display: none;
         }
         #navFMM{
             list-style: none;
+            pointer-events: none;
         }
     }
 

@@ -8,7 +8,7 @@ module.exports = {
     add: (req, res) => {        
             db.Category.findAll()
             .then(categories => {
-                if (req.session.user.rol === 1) {
+                if (req.session.user.rol === 100 || req.session.user.rol === 1 ) {
                     res.render("add", {
                         categories,
                         session: req.session
@@ -29,7 +29,7 @@ module.exports = {
         if(errors.isEmpty()){
         let {name, price, discount, categoryId, shapeId, brandId, materialId, height, width} = req.body;
             db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width })
-            /* res.send(req.body) */
+            
             .then(product =>{
                 
                 if(arrayImages.length > 0){
@@ -77,7 +77,7 @@ module.exports = {
                     let imageArray= [];
                     imageArray = images;
                     session.arrayImages= images;
-                if (req.session.user.rol === 1) {
+                if (req.session.user.rol === 1 || req.session.user.rol === 100) {
                     let errors = validationResult(req);
                     session.product = product;
                     session.errors = errors;

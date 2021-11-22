@@ -1,19 +1,24 @@
 let express = require ("express");
 let router = express.Router();
 let controller = require ("../../controllers/apis/subCatController");
-
+let shapeValidator = require("../../validations/shapeValidator");
+let brandValidator = require("../../validations/brandValidator");
+let materialValidator = require("../../validations/materialValidator");
 router.get("/shape", controller.shape);
-router.post("/shape/", controller.createShape);
-router.put("/sedit/:id", controller.editShape);
-router.delete("/sdelete/:id", controller.deleteShape);
+router.get("/shape/:name", controller.shapeName);
+router.post("/shape/", shapeValidator, controller.createShape);
+router.put("/sedit/:id", shapeValidator, controller.editShape);
+router.delete("/sdelete/:id",  controller.deleteShape);
 router.get("/brand", controller.brand);
-router.post("/brand/", controller.createBrand);
-router.put("/brand/edit/:id", controller.editBrand);
-router.delete("/brand/delete/:id", controller.deleteBrand);
+router.get("/brand/:name", controller.brandName);
+router.post("/brand/", brandValidator, controller.createBrand);
+router.put("/bedit/:id", brandValidator, controller.editBrand);
+router.delete("/bdelete/:id", controller.deleteBrand);
 router.get("/material", controller.material);
-router.post("/material/", controller.createMaterial);
-router.put("/material/edit/:id", controller.editMaterial);
-router.delete("/material/delete/:id", controller.deleteMaterial);
+router.get("/material/name", controller.materialName);
+router.post("/material/", materialValidator, controller.createMaterial);
+router.put("/medit/:id",materialValidator, controller.editMaterial);
+router.delete("/mdelete/:id", controller.deleteMaterial);
 
 
 module.exports = router;

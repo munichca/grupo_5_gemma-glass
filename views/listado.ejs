@@ -7,11 +7,14 @@
 <body>
     <%- include('./partials/headerAdmin.ejs') %>
     <main class="mainListado">
-        <h3 class="titlePrincipal">Listado de Productos</h3>
-        <div class="btnAddCont ">
-            <a class="btnAdd" href="/admin/add"><button class=" btn">Agregar</button></a>
+        <div class="titleButton">
+            <h3 class="titlePrincipalList">Listado de Productos</h3>
+            <div class="btnAddCont ">
+                <a class="btnAdd" href="/admin/add"><button class="btn btnAddProd">Agregar</button></a>
+            </div>
         </div>
-    
+        
+    <h3>caca</h3>
         <div class="containerList">
             
             <section class="tama">
@@ -28,7 +31,7 @@
                         <p class="width claro pe">ancho</p>
                         <p class="discount normal pe">descuento</p>
                         <i class="far fa-edit fuera fSize"></i>
-                        <button class="fuera boton caca" type="submit"><i class="far fa-trash-alt"></i></button>
+                        <button class="fuera boton " type="button"><i class="far fa-trash-alt"></i></button>
                     </li>
                 </ul><!--  -->
                 <!--  -->
@@ -54,11 +57,18 @@
 
                         <a href="/admin/edit/<%- item.id%>"><i class="far fa-edit fSize"></i></a>
 
+                       
                         <form action="/admin/eliminarProducto/<%= item.id %>?_method=DELETE" method="POST">
-                            <button  class ="boton" type="submit"><i class="far fa-trash-alt"></i></button>
+                            <div class="delModal" id="tvesModalDel">
+                                <div class="aModalContainer">
+                                  <p class="titleModal">¿ Está seguro de querer eliminar el artículo <%- item.name %> ?</p>
+                                  <div class="btn btnEliminarProd">Eliminar</div>
+                                </div>
+                              </div>
+                            
                         
                         </form>
-
+                        <button  class ="btnDelProd boton" type="button"><i class="far fa-trash-alt"></i></button>
                     
                     </li>
                     <% }) %>
@@ -67,7 +77,38 @@
             </section>
         </div>
     </main>
-    
+    <script>
+        let $buttonDel = document.querySelector(".btnDelProd")
+        let $delDef = document.querySelector(".btnEliminarProd")
+$buttonDel.addEventListener("click", function(){
+      let body = document.getElementsByTagName("body")[0];
+      let $titleModal = document.querySelector(".titleModal");
+      let modalWindow = document.getElementById("tvesModalDel");
+            modalWindow.style.opacity = "1";
+            modalWindow.style.visibility = "visible";
+            modalWindow.style.transform = "translateY(22%)";
+            modalWindow.style.transitionDelay = "0.2s";
+            modalWindow.style.transition = "all 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15)";
+            body.style.position = "static";
+            body.style.height = "100%";
+            body.style.overflow = "hidden";
+        window.onclick = function(event) {
+            if (event.target == modalWindow) {
+                modalWindow.style.opacity = "";
+                modalWindow.style.visibility = "hidden";
+                modalWindow.style.transform = "translateY(0)";
+                body.style.position = "inherit";
+                body.style.height = "auto";
+                body.style.overflow = "visible";
+            }
+        }
+            })
+$delDef.addEventListener("click", function(){
+      $form.submit()
+   
+})
+
+    </script>
     
     
     

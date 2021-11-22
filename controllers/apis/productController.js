@@ -47,7 +47,7 @@ module.exports = {
                     endpoint:getUrl(req),
                     status: 200
                 },
-                data:products
+                data: products
             })
         }).catch(error => console.log(error))
 

@@ -70,8 +70,8 @@ function color(clicked_id){
       document.cookie = "pepe="+ mId + ";" + "max-age= 3000 ; path=/";
     }
 let decodedCookie = decodeURIComponent(document.cookie);
-let caca2 = decodedCookie.split(';');
-let micookie = caca2[0];
+let decodedCookie2 = decodedCookie.split(';');
+let micookie = decodedCookie2[0];
 var igual = micookie.indexOf("=");
 var valor = micookie.substring(igual+1);
 

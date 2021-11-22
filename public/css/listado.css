@@ -13,46 +13,48 @@ a{
 .mainListado{
     display: flex;
     flex-direction: column;
+    width: 100%;
    padding-left: 5vw;
    padding-right: 5vw;
+   border: 1px solid green;
 }
-.titlePrincipal{
-    color: var(--tipos);
-    text-align: center;
-    margin: 0;
+.titleButton{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 2px solid red;
+}
+.titlePrincipalList{
+    display: flex;
+    width: 355px;
+    /* color: var(--tipos); */
+    color: red;
+    /* text-align: center;
+    justify-content: center;
+    align-items: center; */
+    border: 2px solid red ;
+}
+.btnAddProd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red ;
 }
 ul{
     padding-left: 0;
 }
-
-/* .btn{
-    width: 80px;
-    height: 35px;
-    font-size: 15px;
-    border: 5px solid var(--tipos);    
-    background-color: var(--header);
-    color: white;
-    font-weight: 700;
-    margin: 0 0 5px;
-    border-radius: 5px;
-    outline: initial;
-}
-.bAdd:hover{
-    border: .5px solid var(--header);
-    background-color: #83b3ff;
-    color: var(--tipos);
-} */
 .tama{
     display: flex;
     flex-direction: column;
     width: 90vw;
+    
 }
-.btnAddCont{
+/* .btnAddCont{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    /* width: 94vw; */
-}
+    
+} */
 .claro{
     background-color: lightcyan;
 }
@@ -78,6 +80,8 @@ ul{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    border: 3px solid green;
 }
 
 .list{
@@ -207,7 +211,10 @@ ul{
     }
     .far{
         margin: 0 4px 0;
-    }   
+    } 
+    .btnAddProd{
+        margin-bottom: 15px !important;
+    }  
 }
 
 

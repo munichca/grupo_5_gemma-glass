@@ -1,5 +1,37 @@
-    <header>
+    <header >
         <script src='/js/header.js' defer></script>
+        <script src='/js/administrator.js' defer></script>
+        <div class="menuBurger">
+            <input type="checkbox" name="burger" id="btn-modal" class="checkUser" value="<%= locals.user ? user.id : "2"%>" >
+            <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
+            
+            <div class="modal-burger" id="myModal" >
+                <div class="contenedor-burger">
+                    <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
+                    <h2>Gemma Glass</h2>
+                    <div class="contenido-burger">
+                        <ul>
+                            <a href="/administrator"><li>Porductos</li></a> 
+                            <a href="/formarmat"><li>Sub-Categorias</li></a> 
+                            <a href=""><li>Usuarios</li></a> 
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="colors formColor">
+            
+            
+            <div   class="sizeA c1" id="c1" onclick="color(this.id)"></div>
+            <div  class="sizeA c2" id="c2" onclick="color(this.id)" ></div>
+            <div  class="sizeA c3" id="c3" onclick="color(this.id)"></div>
+            <div  class="sizeA c4" id="c4" onclick="color(this.id)"></div>
+            
+         
+        </div>
+   
         <div class="container-1">
 
             <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo"></a>
@@ -10,22 +42,27 @@
             <form action="/search" method="GET">
                 <div class="barra-busqueda">
                     <input class="search"  name="keywords" placeholder="Buscá un producto">
-                    <button type="submit" class="lupa" onclick="mostrar()"><i class="fa fa-search "></i></button>
+                    
                     <button type="submit" class="lupa-1" ><i class="fa fa-search "></i></button>
                 </div>
             </form>
-            
+            <!-- este button estaba dentro del form por eso se cortaba
+            agregue codigo en la funcion -->
+            <button type="submit" class="lupa" onclick="mostrar()" id="lupa" ><i class="fa fa-search "></i></button>
         </div>
+        <form class="searchForm" action="/search" method="GET">
         <div id="buscador">
-                <input class="search-2" type="search" placeholder="Buscá un producto">
-                <button class="lupa-2"><i class="fa fa-search "></i></button>
+                <input class="search-2" name="keywords"  placeholder="Buscá un producto" id="search_2" >
+                <button type="submit" class="lupa-2"onclick="mostrar()" ><i class="fa fa-search "></i></button>
         </div>
+        </form>
         <div class="container-3">
              <% if (typeof session.user != "undefined" ) { %>
                 <ul>
-                    <li> <a >¡Bienvenido <%= session.user.name %>! </a>
-                        <a  href="/users/user"><img class="avatar-header" src="/image/userAvatars/<%=session.user.avatar %>" alt="" width="50px"></a>
-                        <a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
+                    
+               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" value ="34" src="/image/userAvatars/<%- session.user.avatar? session.user.avatar : "avatar.png" %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
+            
+                 <!-- <li><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>  -->
                  </ul>
               <% }else{ %>
                 <ul>
@@ -41,7 +78,7 @@
 
         <div class="container_4">
             
-             <% if (typeof session.user == "undefined" || session.user.rol === 'ROL_USER') { %>
+             <% if (typeof session.user == "undefined" || session.user.rol === 2) { %>
             <div class="trolley">
                 <a href="/trolley">
                 
@@ -50,12 +87,24 @@
                 </a>
                 <% }else{ %>
                 <ul class="ulMyDiv">
-                     <li class=""><a class="btn mydiv" href="/admin/listado">ADMIN</a></li>
+                     <li class=""><a class="btn mydiv" href="/administrator">ADMIN</a></li>
                 </ul>
     <% }  %> 
             </div>
 
         </div>
-
-        </header>
+        <nav class="container-nav">
+            <ul>
+                <a href="/administrator" class="navA" id ="products"><li >Productos</li></a>
+                
+                <a href="/formarmat" class="shapes navA" id ="shapes"><li id="navFMM">Sub-Categorias</li></a>
+                
+                <a href="" class="navA" id ="navUsers1"><li >Usuarios</li></a>
+               
+            </ul>
+        </nav>
+       
+         
+         
+    </header>
 

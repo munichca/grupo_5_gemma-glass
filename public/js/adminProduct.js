@@ -16,7 +16,7 @@ function bn(element) {
         $submitErrors = qs("#submitErrors"),
         regExNum = /^[+]?((\d+(\.\d*)?)|(\.\d+))$/;
         elementosForm = document.getElementsByClassName("clean");
-        var cont = 1;
+        
     $price1[0].addEventListener('blur', function() {
         switch (true) {
             case !$price1[0].value.trim():
