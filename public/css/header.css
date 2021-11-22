@@ -161,6 +161,7 @@ header a:hover {
   width: 30px;
   height: 30px;
   border:solid 2px var(--tipos);
+  object-fit: cover;
 }
 .avatar-header:hover{
     border:solid 3px white;

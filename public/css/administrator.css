@@ -150,11 +150,14 @@ margin-top: 15px;
    padding-left: 5vw;
    padding-right: 5vw;
    
+   
 }
 .titlePrincipal{
-    color: var(--tipos);
+    /* color: var(--tipos); */
+    color: red;
     text-align: center;
     margin: 0;
+    border: 1px solid green;
 }
 #shapes{
     display: flex;

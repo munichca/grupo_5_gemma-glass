@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
     $cancel = qs(".cancel"),
     regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,10}$/;
 $cancel.addEventListener("click", function(){
-    $cancel.href="/admin/listado";
+    $cancel.href="/administrator";
   })
 $name1[0].addEventListener("blur", function () {
     switch (true) {
