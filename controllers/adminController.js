@@ -4,7 +4,14 @@ const { Op } = require("sequelize");
 let {validationResult} = require ("express-validator");
 const session = require('express-session');
 module.exports = {
-    
+    adminRol:(req, res)=>{
+        
+            res.render("adminRol", {
+                
+                session: req.session
+            })
+        
+    },
     add: (req, res) => {        
             db.Category.findAll()
             .then(categories => {
@@ -77,7 +84,7 @@ module.exports = {
                     let imageArray= [];
                     imageArray = images;
                     session.arrayImages= images;
-                if (req.session.user.rol === 1 || req.session.user.rol === 100) {
+                if (req.session.user.rol === 100 || req.session.user.rol === 1) {
                     let errors = validationResult(req);
                     session.product = product;
                     session.errors = errors;
@@ -180,9 +187,11 @@ module.exports = {
     },
     lista: (req, res) => {
         db.Product.findAll()
+            
             .then(products => {
                 if (req.session.user.rol === 1) {
-                    res.render("listado", {
+                    
+                    res.render("administrator", {
                         products,
                         session: req.session
                     })
@@ -192,11 +201,13 @@ module.exports = {
             })
     },
     borrarProducto: (req, res) => {
+        
         db.Product.destroy({
             where: {
                 id: +req.params.id
             }
         })
+        
         .then(()=>{
             db.productImages.findAll({
                 where:{
@@ -215,7 +226,7 @@ module.exports = {
 
 
 
-            res.redirect('/admin/listado/')
+            res.redirect('/admin/administrator/')
         })
         .catch(err => console.log(err))
     },
