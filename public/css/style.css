@@ -21,7 +21,7 @@
 @import url(general.css);
 @import url(vistaProductos.css);
 @import url(modalcat.css);
-/* @import url(administrator.css); */
+@import url(adminRol.css);
 @import url(confirmDelete.css);
 @import url(formarmat.css);
 

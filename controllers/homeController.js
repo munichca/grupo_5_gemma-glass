@@ -4,7 +4,7 @@ const {Op} = require("sequelize")
 module.exports = {
     home: (req, res)=>{
         
-        if(res.locals.user != undefined && res.locals.user.rol != 1 && res.locals.user.lastProdId != 0){
+        if(res.locals.user != undefined && res.locals.user.rol == 2){
             db.Product.findOne({
                 where: {
                     id : res.locals.user.lastProdId
@@ -76,9 +76,16 @@ module.exports = {
         })
     }, */
     administrator: (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({
+            include: [{ association: "category"},
+                    { association: "shape"},
+                    { association: "brand"},
+                    { association: "material"},
+                    { association: "image"}]
+        })
             .then(products => {
                 /* if (req.session.user.rol === 2) { */
+                    
                     res.render("administrator", {
                         products,
                         session: req.session

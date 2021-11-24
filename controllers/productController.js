@@ -74,6 +74,7 @@ module.exports = {
     
     },
     productOferta: (req, res) =>{
+        
         db.Product.findAll({
             where:{
                 discount:{
@@ -85,6 +86,7 @@ module.exports = {
             include:[{association: "image"}]
         })
         .then(arrayProduct =>{
+            
             res.render("productos",{
                 arrayProduct,
                 session: req.session

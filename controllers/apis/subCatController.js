@@ -4,6 +4,8 @@ const getUrl = (req) => {
     return `${req.protocol}://${req.get("host")}${req.originalUrl}`
 }
 module.exports = {
+
+    
     shape: (req, res)=> {
         db.Shape.findAll({
         }).then ((shape) =>{

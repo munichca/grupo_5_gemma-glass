@@ -62,22 +62,22 @@
                 ><i class="far fa-edit fSize"></i
               ></a>
 
-              <form
+              <form class="form" 
                 action="/admin/eliminarProducto/<%= item.id %>?_method=DELETE"
                 method="POST"
               >
                 <div class="delModal" id="tvesModalDel">
                   <div class="aModalContainer">
                     <p class="titleModal">
-                      ¿ Está seguro de querer eliminar el artículo <%- item.name
-                      %> ?
+                       
                     </p>
                     <div class="btn btnEliminarProd">Eliminar</div>
                   </div>
                 </div>
               </form>
-              <button class="btnDelProd boton" type="button">
-                <i class="far fa-trash-alt"></i>
+              <button class="btnDelProd boton" type="button"  >
+                <img src="/image/trash.svg" class="btnDelProd imgTrash" id="<%=item.name%>"></img>
+                
               </button>
             </li>
             <% }) %>
@@ -86,9 +86,43 @@
       </div>
     </main>
     <script>
-      let $buttonDel = document.querySelector(".btnDelProd");
+      let $form = document.querySelectorAll(".form");
+      let $buttonDel = document.querySelectorAll(".btnDelProd");
       let $delDef = document.querySelector(".btnEliminarProd");
-      $buttonDel.addEventListener("click", function () {
+      let $buttonDelResult = [].slice.call($buttonDel);
+  
+      $buttonDelResult.forEach(el => {
+  el.addEventListener("click", e => {
+    const name = e.target.getAttribute("id");
+    console.log("Se ha clickeado el id " + name);
+    let body = document.getElementsByTagName("body")[0];
+        let $titleModal = document.querySelector(".titleModal");
+        $titleModal.innerHTML= `¿Seguro quiere eliminar el artículo ${name} ?`  
+        let modalWindow = document.getElementById("tvesModalDel");
+        modalWindow.style.opacity = "1";
+        modalWindow.style.visibility = "visible";
+        modalWindow.style.transform = "translateY(22%)";
+        modalWindow.style.transitionDelay = "0.2s";
+        modalWindow.style.transition =
+          "all 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15)";
+        body.style.position = "static";
+        body.style.height = "100%";
+        body.style.overflow = "hidden";
+        window.onclick = function (event) {
+          if (event.target == modalWindow) {
+            modalWindow.style.opacity = "";
+            modalWindow.style.visibility = "hidden";
+            modalWindow.style.transform = "translateY(0)";
+            body.style.position = "inherit";
+            body.style.height = "auto";
+            body.style.overflow = "visible";
+          }
+        };
+  });
+});
+
+
+      /* $buttonDel.addEventListener("click", function () {
         let body = document.getElementsByTagName("body")[0];
         let $titleModal = document.querySelector(".titleModal");
         let modalWindow = document.getElementById("tvesModalDel");
@@ -111,7 +145,7 @@
             body.style.overflow = "visible";
           }
         };
-      });
+      }); */
       $delDef.addEventListener("click", function () {
         $form.submit();
       });
