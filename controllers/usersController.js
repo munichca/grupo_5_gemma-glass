@@ -91,7 +91,7 @@ module.exports = {
             let {name, lastName, address, phone, email, pass} = req.body;
 
             db.User.create({
-                include: [ { association: "colId"}],
+                include: [ { association: "Product"}],
             name,
             lastName,
             address,

@@ -69,7 +69,7 @@ window.addEventListener('load', ()=>{
   })
     $telefono.addEventListener('blur',function(){
     switch (true) {
-      case $telefono.value.trim().length <=10:
+      case $telefono.value.trim().length >=6:
         $errorTelefono.innerHTML = 'Teléfono inválido'
         $telefono.classList.add('is-invalid')
          validationsErrors= true
