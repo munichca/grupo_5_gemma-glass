@@ -12,14 +12,19 @@
     display: none;
   }
 .aHeaderModal{
+    margin: 0;
+    padding: 0;
+    height: 12%;
+    border-bottom: 1px solid var(--tipos);
+    color: var(--tipos);
+    font-size: 12px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 18px;
 
+}
+.btnEliminarProd{
+  margin-bottom: 10px !important;
 }
 .aModal {
     width: 100%;
@@ -42,10 +47,13 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-evenly;
+      
+      
   }
   .aPes{
     display: flex;
     width: 75px;
+    
     justify-content: center;
     font-size: 13px;
     text-transform: uppercase;
@@ -56,6 +64,19 @@
   }
   .aModalContainer {
    width: 60%;
+   border: 3px solid green;
+   background: hotpink;
+    transition: all 500ms ease;
+    transform: translateY(0%);
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .bacg{
+    background-color: white;
+    width: 25%;
+    /* height: 100%; */
+    padding-bottom: 15px;
     transition: all 500ms ease;
     transform: translateY(0%);
     margin: 0 auto;

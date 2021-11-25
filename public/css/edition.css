@@ -26,6 +26,12 @@
     align-items: center;
     border: 1px solid red;
 }
+.description{
+    width: 75%;
+    height: 80px;
+    padding: 7px;
+    border: 1px solid var(--tipos);
+}
 #img-preview{
     display: flex;
     flex-direction: row;

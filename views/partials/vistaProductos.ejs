@@ -24,11 +24,15 @@
                 <img class="rear picture" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFN.jpg" %>  "  alt="">
             </div>
         <div class="product-name">
-            <p class="pes"><%- item.name %>  </p>
-            <div class="price" id="dollar">                
-                <i id="dollar" class="fas fa-dollar-sign"></i>
-                <p class="pes"><%- item.price %>  .-</p>
+            
+            <div class="price2" > 
+                <p class="pName"><%- item.name %>  </p>   
+                <div class="price">            
+                    <i id="dollar" class="fas fa-dollar-sign"></i>
+                    <p class="pes"><%- item.price %>  .-</p>
+                </div>
             </div>
+            <p class="descrip">Descripción: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt nisi laudantium porro, quibusdam hic totam deleniti maiores facilis veniam officiis quo sit dolorem quod</p>
         </div>
     </a> 
     <% })  %> 

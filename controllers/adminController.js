@@ -150,7 +150,7 @@ module.exports = {
                             })
                         }),//aca van los })
                         db.productImages.bulkCreate(images)
-                      .then(() => res.redirect('/admin/listado'))
+                      .then(() => res.redirect('/admin/administrator'))
                       .catch(err => console.log(err))
                     })
                 }else{
@@ -161,7 +161,7 @@ module.exports = {
                         }
                     });
                     db.productImages.bulkCreate(images)
-                      .then(() => res.redirect('/admin/listado'))
+                      .then(() => res.redirect('/admin/administrator'))
                       .catch(err => console.log(err))
                 }
             })}else{
@@ -186,7 +186,13 @@ module.exports = {
 
     },
     lista: (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({
+            include: [{ association: "category"},
+            { association: "shape"},
+            { association: "brand"},
+            { association: "material"},
+                { association: "image"}],
+        })
             
             .then(products => {
                 if (req.session.user.rol === 1) {

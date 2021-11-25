@@ -47,13 +47,13 @@
                         <p class="name pe"><%- item.name %></p>
                         <p class="price pe"><%- item.price %></p>
                         <% /* let category = category.find(cate => cate.id === item.category) */ %>
-                        <p class="category pe"><%- item.categoryId %></p>
+                        <p class="category pe"><%- item.category.name %></p>
                         <% /* let forma = formas.find(forma => forma.id === item.subCatForma) */ %> 
-                        <p class="shape pe"><%- item.shapeId %></p>
+                        <p class="shape pe"><%- item.shape.name %></p>
                         <% /* let marca = marcas.find(marca => marca.id === item.subCatMarca) */ %> 
-                        <p class="brand pe"><%- item.brandId %></p>
+                        <p class="brand pe"><%- item.brand.name %></p>
                         <% /* let material = materials.find(material => material.id === item.subCatmaterial) */ %>
-                        <p class="material pe"><%- item.materialId %></p>
+                        <p class="material pe"><%- item.material.name %></p>
                         <p class="height pe"><%- item.height %></p>
                         <p class="width pe"><%- item.width %></p>
                         <p class="discount pe"><%- item.discount %></p>
@@ -65,12 +65,18 @@
                         <form class="formDel"  >
                             <!-- ############## -->
                             <div class="aModal" id="tvesModalDel">
-                                <div class="aModalContainer">
-                                  <p class="titleModal">
-                                     
-                                  </p>
-                                  <div class="btn btnEliminarProd">Eliminar</div>
-                                </div>
+                              
+                                <!-- <div class="aModalContainer"> -->
+                                  <div class="bacg">
+                                    <div class="aHeaderModal">
+                                      <p class="titleHeaderModal">GemmaGlass</p>
+                                    </div>
+                                    <p class="titleModal">
+                                      
+                                    </p>
+                                    <div class="btn btnEliminarProd">Eliminar</div>
+                                  </div> 
+                                <!-- </div> -->
                               </div>
                             <!-- ############## -->
                             <!-- <button  class ="boton" type="submit"> -->

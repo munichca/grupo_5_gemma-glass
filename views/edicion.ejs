@@ -82,18 +82,15 @@
                 width[0].placeholder= "<%= errors.width.msg %>";
                 </script>
             <% } %>
-             
-            
-              
-
-               <div id="img-preview">
+            <div class="desPrew">
+              <div id="img-preview">
                 <% for( let i = 0; i < imageArray.length; i++ ) {%>
                   
                   <img class="img" src="/image/productImages/<%- imageArray[i].images %> " id="image<%- i %>" alt="">
                 <% } %>
-                
               </div>
-
+              <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio et eligendi tempore nihil, consectetur culpa nemo nulla ex porro! Voluptate.</p>
+          </div>
               <div class="buttons">
                 <div class="inputFile bordeColor btn">
                   <input class="archivos " id ="archivos" type="file" name="archivos" onchange="leer(this)" multiple>

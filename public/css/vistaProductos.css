@@ -21,8 +21,11 @@ ul{
     width: 75%;
     justify-content: center;
     align-items: center;
-    
+    /* border: 1px solid var(--tipos); */
+    border-radius: 5px;
     margin-bottom: 15px;
+    padding: 5px 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .55);
 }
 
 .external-container .images{
@@ -32,25 +35,20 @@ ul{
     position: relative;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--tipos);
-    border-radius: 30px;
+    /* border: 1px solid var(--tipos);
+    border-radius: 30px; */
     margin-bottom: 10px;
     background-color: white;
 }
 .imagDisc{
-    
     width: 40% !important;
     height: 30% !important;
     position: absolute;
     transform: rotate(45deg);
-    
     top: -10px !important;
     right: -18px;
     z-index: 10;
-    /* opacity:0.7; */
 }
-
-
 .external-container .images .picture{
     width: 98%;
     height: 98%;
@@ -69,17 +67,24 @@ ul{
     margin-bottom: 0;
     color: var(--tipos);
 }
+.external-container .price2{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* text-align: center; */
+    margin: 0 auto 5px;
+    
+}
 .external-container .price{
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin: auto;
 }
 .external-container .price i{
-    margin-right: 5px;
+    margin-right: 2px;
     font-size: 5vw;
 }
 
@@ -88,6 +93,16 @@ ul{
     transform: scaleX(-1) perspective(600px) rotateY(180deg);
     backface-visibility: hidden;
 }
+.pName{
+    margin-right: 25px;
+}
+.descrip{
+    font-size: 10px !important;
+    font-weight: lighter !important;
+    text-align: justify;
+}
+
+
 @media (min-width: 768px){
     .external-container{  
         flex-direction: row;
@@ -112,7 +127,12 @@ ul{
         width: 73%;
         
     }
-      
+    .pName{
+        margin-right: 25px;
+    }
+    .descrip{
+        font-size: 10px !important;
+    }
 }      
 @media (min-width: 1024px){
    
@@ -131,7 +151,7 @@ ul{
         padding: 10px 0px 0px !important;
     }
     .external-container .product-card{
-        width: 25vw;
+        width: 22vw;
         height: 28vw;
        
        
@@ -158,5 +178,8 @@ ul{
         transform: scaleX(0.1%);
     }
     
+    .descrip{
+        font-size: 10px !important;
+    }
     
 }
