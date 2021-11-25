@@ -174,7 +174,9 @@ a{
     align-items: center;
     margin-top: 2px;
     color: var(--header);
-    right: 10px;
+   left: 101%;
+    top: 2px;
+
 }
 .section2 .pass1 #eye1:hover{
     color: var(--tipos);
@@ -199,7 +201,8 @@ a{
     align-items: center;
     margin-top: 2px;
     color: var(--header);
-    right: 10px;
+   left: 101%;
+    top: 2px;
 }
 .section2 .pass2 #eye2:hover{
     color: var(--tipos);
@@ -341,5 +344,3 @@ a{
         margin-top: 10px;
     }
 }
-
-
