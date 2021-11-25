@@ -109,6 +109,11 @@ window.addEventListener('load', ()=>{
         $contraseña.classList.add('is-invalid')
          validationsErrors= true
         break;
+         case $contraseña.value.trim().length <=6:
+        $errorContraseña.innerHTML = "La contraseña debe contener al menos 6 caracteres"
+        $contraseña.classList.add('is-invalid')
+         validationsErrors= true
+        break;
       default:
         $errorContraseña.innerHTML =""
         $contraseña.classList.remove('is-invalid')
@@ -128,6 +133,11 @@ window.addEventListener('load', ()=>{
         $errorContraseña2.innerHTML = "Las contraseñas no coinciden"
         $contraseña2.classList.add('is-invalid')
         validationsErrors= true
+        break;
+         case $contraseña.value.trim().length <=6:
+        $errorContraseña.innerHTML = "La contraseña debe contener al menos 6 caracteres"
+        $contraseña.classList.add('is-invalid')
+         validationsErrors= true
         break;
       default:
         $errorContraseña2.innerHTML =""

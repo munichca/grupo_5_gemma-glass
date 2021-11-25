@@ -18,6 +18,11 @@ window.addEventListener('load', ()=>{
         $email.classList.add('is-invalid')
          validationsErrors= true
       break;
+       case !regExEmail.test($email.value):
+        $errorEmail.innerHTML = "El email es inválido"
+        $email.classList.add('is-invalid')
+         validationsErrors= true
+        break;
       default:
         $errorEmail.innerHTML =""
         $email.classList.remove('is-invalid')
@@ -30,6 +35,11 @@ window.addEventListener('load', ()=>{
     switch (true) {
       case !$contraseña.value.trim():
         $errorContraseña.innerHTML = "La contraseña es obligatoria"
+        $contraseña.classList.add('is-invalid')
+         validationsErrors= true
+        break;
+     case $contraseña.value.trim().length <=6:
+        $errorContraseña.innerHTML = "La contraseña debe contener al menos 6 caracteres"
         $contraseña.classList.add('is-invalid')
          validationsErrors= true
         break;

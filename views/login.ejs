@@ -27,11 +27,12 @@
          <% if (locals.errors && errors.pass) { %>
         <small class="text-danger"><%= errors.pass.msg %> </small>
       <% } %>
+        <span class="text-danger" id="errorContraseña"> </span>
         <a href="#" class="recupero-login">¿Olvidaste tu contraseña?</a>
             <% if (locals.errorMsg ) { %>
                     <small class="text-danger"><%= errorMsg %> </small>
             <% } %>
-              <span class="text-danger" id="errorContraseña"> </span>
+            
             <div class="container_check">
                 <div>
                   <input class="caca checkRegister" type="checkbox" name="remember" id="remember">
