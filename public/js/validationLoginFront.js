@@ -38,7 +38,7 @@ window.addEventListener('load', ()=>{
         $contraseña.classList.add('is-invalid')
          validationsErrors= true
         break;
-     case $contraseña.value.trim().length <=6:
+     case $contraseña.value.trim().length <=5:
         $errorContraseña.innerHTML = "La contraseña debe contener al menos 6 caracteres"
         $contraseña.classList.add('is-invalid')
          validationsErrors= true
