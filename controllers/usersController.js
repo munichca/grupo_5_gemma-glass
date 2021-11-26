@@ -100,7 +100,7 @@ module.exports = {
             pass: bcrypt.hashSync(pass, 12),
             avatar: req.file ? req.file.filename : "avatar.png",
             rol: 2,
-            lastProdId:0,
+            lastProdId:34,
             colorId:1
             })
             .then(user => {
@@ -159,7 +159,7 @@ module.exports = {
             if(req.session.user.rol === 2){
                 res.redirect('/')
             }else{
-                res.redirect('/')
+                res.redirect('administrator')
             }
               });
         }
