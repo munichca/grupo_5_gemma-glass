@@ -23,7 +23,7 @@ let $errorImagen = qs('#errorImagen')
 let $error= qs('#errorSumbit')
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-regExPass = /^(?=.\d)(?=.[a-z]).{6,12}$/;
+regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
 let validationsErrors = false
 
 window.addEventListener('load', ()=>{
@@ -69,7 +69,7 @@ window.addEventListener('load', ()=>{
   })
     $telefono.addEventListener('blur',function(){
     switch (true) {
-      case $telefono.value.trim().length >=6:
+      case $telefono.value.trim().length <6:
         $errorTelefono.innerHTML = 'Teléfono inválido'
         $telefono.classList.add('is-invalid')
          validationsErrors= true
@@ -114,6 +114,11 @@ window.addEventListener('load', ()=>{
         $contraseña.classList.add('is-invalid')
          validationsErrors= true
         break;
+        case !regExPass.test($contraseña.value):
+        $errorContraseña.innerHTML = "La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número"
+        $contraseña.classList.add('is-invalid')
+         validationsErrors= true
+        break;
       default:
         $errorContraseña.innerHTML =""
         $contraseña.classList.remove('is-invalid')
@@ -137,6 +142,11 @@ window.addEventListener('load', ()=>{
          case $contraseña.value.trim().length <=5:
         $errorContraseña.innerHTML = "La contraseña debe contener al menos 6 caracteres"
         $contraseña.classList.add('is-invalid')
+         validationsErrors= true
+        break;
+        case !regExPass.test($contraseña2.value):
+        $errorContraseña2.innerHTML = "La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número"
+        $contraseña2.classList.add('is-invalid')
          validationsErrors= true
         break;
       default:
