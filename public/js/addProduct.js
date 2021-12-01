@@ -9,7 +9,7 @@ function bn(element) {
         $name1 = bn("name"),
         $price1 = bn("price"),
         $cleanText = qs(".cleanText"),
-        regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,10}$/;
+        regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,50}$/;
     let finded ="";
     sessionStorage.setItem("name", "");
     $name.addEventListener("blur", function () {

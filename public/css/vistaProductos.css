@@ -24,7 +24,7 @@ ul{
     /* border: 1px solid var(--tipos); */
     border-radius: 5px;
     margin-bottom: 15px;
-    padding: 5px 15px;
+    padding: 5px 3px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .55);
 }
 
@@ -59,6 +59,7 @@ ul{
 }
 .external-container .product-name{
     text-align: center;
+    width: 100%;
     text-transform: uppercase;
 }
 .external-container .product-name p{
@@ -100,6 +101,8 @@ ul{
     font-size: 10px !important;
     font-weight: lighter !important;
     text-align: justify;
+    margin: 2px 10px;
+    
 }
 
 

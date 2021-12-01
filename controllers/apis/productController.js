@@ -52,6 +52,44 @@ module.exports = {
         }).catch(error => console.log(error))
 
     },
+
+    /* ######################### */
+    deleteProd: (req, res)=> {
+        db.Product.destroy({
+            where:{
+                id:+req.params.id
+            }
+        }).then(result =>{
+            db.productImages.findAll({
+                where:{
+                    productId : +req.params.id
+                }
+            })
+            .then(datos=>{
+                
+                datos.forEach(dato=>{
+                    db.productImages.destroy({
+                        where:{
+                            productId : +req.params.id
+                        }
+                    })
+                }) })
+
+
+            if(result){
+                return res.status(200).json({
+                    msg: "delete successfully",
+                    status:1
+                })
+            }else{
+                return res.status(200).json({
+                    msg: "no changes"
+                })
+            }
+        }).catch(error => console.log(error))
+        
+    },
+    /* ######################### */
     
 }
 
