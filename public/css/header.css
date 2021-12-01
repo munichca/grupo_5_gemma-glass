@@ -19,6 +19,7 @@ header {
 
 .container-2 {
   width: 35%;
+  
 }
 
 .lupa{
@@ -421,8 +422,9 @@ text-align: center;
     padding-top: 5px;
   }
   .number{
-    margin-bottom: 0;
-
+    margin: 0 auto ;
+    margin-left: 45px;
+    
   }
 
   .container-1 {
@@ -459,6 +461,7 @@ text-align: center;
     height: 29px;
     padding: 0 8px;
     outline: none;
+    margin: 0;
   }  
   .barra-busqueda {
     position: relative;

@@ -46,6 +46,10 @@ module.exports = function(sequelize, dataTypes){
         width:{
             type: dataTypes.DECIMAL(10, 2),
             allowNull: false
+        },
+        description:{
+            type: dataTypes.STRING(255),
+            allowNull: true
         }
 
     }

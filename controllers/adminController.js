@@ -1,16 +1,18 @@
 /* const { localsName } = require('ejs'); */
 const db = require('../database/models');
-const { Op } = require("sequelize");
+
 let {validationResult} = require ("express-validator");
 const session = require('express-session');
 module.exports = {
     adminRol:(req, res)=>{
-        
+        if (req.session.user.rol == 100){
             res.render("adminRol", {
                 
                 session: req.session
             })
-        
+        }else{
+            res.redirect('/administrator')
+        }
     },
     add: (req, res) => {        
             db.Category.findAll()
@@ -34,9 +36,9 @@ module.exports = {
         }
         let errors = validationResult(req)
         if(errors.isEmpty()){
-        let {name, price, discount, categoryId, shapeId, brandId, materialId, height, width} = req.body;
-            db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width })
-            
+        let {name, price, discount, categoryId, shapeId, brandId, materialId, height, width, description} = req.body;
+            db.Product.create({name, price, discount, categoryId, shapeId, brandId, materialId, height, width, description})
+            /* res.send(req.body) */
             .then(product =>{
                 
                 if(arrayImages.length > 0){
@@ -47,10 +49,10 @@ module.exports = {
                         }
                     })
                     db.productImages.bulkCreate(images)
-                      .then(() => res.redirect('/admin/listado'))
+                      .then(() => res.redirect('/administrator'))
                       .catch(err => console.log(err))
                 }
-                res.redirect('/admin/listado')
+                res.redirect('/administrator')
             }) 
         }else{
             db.Category.findAll()

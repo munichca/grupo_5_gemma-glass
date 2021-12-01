@@ -41,7 +41,7 @@ app.use("/users", usersRouter);
 app.use("/product", productRouter);
 app.use("/admin", adminRouter);
 app.use('/apis', apiProductsRoutes);
-app.use('/apis', apiUserRoutes);
+app.use('/apis/user', apiUserRoutes);
 app.use('/apis', apiSubCatRoutes);
 
 /* ##################################### */

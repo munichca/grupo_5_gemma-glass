@@ -24,7 +24,7 @@ function btnModal(clicked_id){
              body.style.position = "static";
              body.style.height = "100%";
              body.style.overflow = "hidden";
-         window.onclick = function(event) {
+            window.onclick = function(event) {
             if (event.target == modalWindow) {
                 modalWindow.style.opacity = "";
                 modalWindow.style.visibility = "hidden";
@@ -33,7 +33,7 @@ function btnModal(clicked_id){
                 body.style.height = "auto";
                 body.style.overflow = "visible";
             }
-        }
+        } 
     }
 
 

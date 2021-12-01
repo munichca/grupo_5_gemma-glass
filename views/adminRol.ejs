@@ -5,7 +5,148 @@
     <%- include('./partials/headerAdmin.ejs') %>
 
 <main class="mainAdminRol">
-
+    <section class="section1">
+    <p class="titleUserRol">Seleccione el usuario</p>
+    <select name="selUsers" class="selUser">
+        <option value="" disabled selected>Selecciona un Usuario</option>
+    </select>
+    <hr>
+    <p class="pProperties" >Nombre</p>
+    <p class="name pP"></p>
+    <p class="pProperties" >Apellido</p>
+    <p class="lastName pP"></p>
+    <p class="pProperties" >E-mail</p>
+    <p class="email pP"></p>
+    <p class="pProperties" >teléfono</p>
+    <p class="phone pP"></p>
+    <p class="pProperties" >Tipo de User</p>
+    <p class="rol pP"></p>
+    
+</section>
+<section class="section2Rol">
+    <p class="titleAcUser">Asigne el tipo de usuario</p>
+    <form action="">
+        <div class="contRadio">
+            <label class="labelRol" for="typeUser">Común</label>
+            <input type="radio"  class="inputRol" name="typeUser" id="common" onclick = "typeUser(this.id)" value="2">
+            <label class="labelRol" for="typeUser">Admin</label>
+            <input type="radio"  class="inputRol" name="typeUser" id="admin" onclick = "typeUser(this.id)" value="1">
+            <label class="labelRol" for="typeUser">SuperUser</label>
+            <input type="radio"  class="inputRol" name="typeUser" id="superuser" onclick = "typeUser(this.id)" value="100">
+        </div>
+    </form>
+    <div class="btn buttonRol">Acepta</div>
+    <div class="contImgUser">
+        <img src="/image/userAvatars/avatar.png" alt="" class="userImage">
+    </div>
+</section>
 </main>
+<script>
+    let $selUser = document.querySelector(".selUser")
+    let $name = document.querySelector(".name")
+    let $lastName = document.querySelector(".lastName")
+    let $email = document.querySelector(".email")
+    let $phone = document.querySelector(".phone")
+    let $rol = document.querySelector(".rol")
+    let $labelRol = document.querySelector(".labelRol")
+    let $buttonRol = document.querySelector(".buttonRol")
+    let $common = document.querySelector("#common")
+    let $admin = document.querySelector("#admin")
+    let $superuser = document.querySelector("#superuser")
+    let $userImg = document.querySelector(".userImage")
+    let $form = document.querySelector("form")
+
+    $common.addEventListener("click", function(){
+        cleanLabel ();
+        $common.previousElementSibling.style.fontWeight = "700"
+        $common.previousElementSibling.style.border ="1px solid var(--header)"
+    })
+    $admin.addEventListener("click", function(){
+        cleanLabel ();
+        $admin.previousElementSibling.style.fontWeight = "700"
+        $admin.previousElementSibling.style.border ="1px solid var(--header)"
+    })
+    $superuser.addEventListener("click", function(){
+        cleanLabel ();
+        $superuser.previousElementSibling.style.fontWeight = "700"
+        $superuser.previousElementSibling.style.border ="1px solid var(--header)"
+    })
+    $buttonRol.addEventListener("click",function(){
+        let inputChecked = document.querySelector('input[class="inputRol"]:checked').value;
+        
+            
+       
+        fetch("http://localhost:3005/apis/user/edit/"+ +$selUser.options[$selUser.selectedIndex].value, {
+            method:"PUT",
+            headers: {
+                 "Content-Type" : "application/json" },
+            body: JSON.stringify(
+             {
+                "rol":inputChecked
+             }
+            )
+        })
+        .then((response) => response.json())
+        .then((users) =>{
+            if (users.data != 0){
+                alert("El tipo de usuario de ah cambiado con exito")
+            }else{
+                alert("debe seleccionar un ususario primero")
+            }
+           
+        })
+    })
+ fetch("http://localhost:3005/apis/user/users")
+                .then((response) => response.json())
+                .then((users) => {
+                    for(i=1; i<users.data.length+1; i++){
+                        $selUser.options[i] = new Option(users.data[i-1].name, users.data[i-1].id)
+                    }
+                  }
+                )
+$selUser.addEventListener("change", function(){
+    cleanLabel ();
+    let opSeleted = this.options[$selUser.selectedIndex];
+    fetch("http://localhost:3005/apis/user/user/"+ +opSeleted.value)
+                .then((response) => response.json())
+                .then((user)=>{
+                    $name.innerHTML = user.data.name
+                    $lastName.innerHTML= user.data.lastName
+                    $email.innerHTML = user.data.email
+                    $phone.innerHTML = user.data.phone
+                    switch (user.data.rol){
+                        case 1:
+                            $rol.innerHTML= "Admin"
+                            $admin.checked=true
+                            $admin.previousElementSibling.style.fontWeight = "700"
+                            $admin.previousElementSibling.style.border ="1px solid var(--header)"
+                            break;
+                        case 2:
+                            $rol.innerHTML="Común"
+                            $common.checked=true
+                            $common.previousElementSibling.style.fontWeight ="700"
+                            $common.previousElementSibling.style.border ="1px solid var(--header)"
+                            break;
+                        case 100:
+                            $rol.innerHTML="SuperUser"
+                            $superuser.checked=true
+                            $superuser.previousElementSibling.style.fontWeight ="700"
+                            $superuser.previousElementSibling.style.border ="1px solid var(--header)"
+                            break;
+                    }
+                    
+                    $userImg.setAttribute("src", "/image/userAvatars/"+ user.data.avatar);
+                })
+                    
+})
+function cleanLabel (){
+    $common.previousElementSibling.style.fontWeight = "inherit"
+    $admin.previousElementSibling.style.fontWeight = "inherit"
+    $superuser.previousElementSibling.style.fontWeight = "inherit"
+    $common.previousElementSibling.style.border = "none"
+    $admin.previousElementSibling.style.border = "none"
+    $superuser.previousElementSibling.style.border = "none"
+}
+</script>
 </body>
 </html>

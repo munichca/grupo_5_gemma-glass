@@ -23,10 +23,13 @@ window.addEventListener("load", function () {
     $subCatInput = qs(".subCatInput"),
     $titleModal =qs(".titleModal"),
     $rojo = qs(".rojo"),
-    $form = qs("#form");
-    regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,10}$/;  
+    $closeX = qs(".closeX");
+    let body = document.getElementsByTagName("body")[0];
+    let modalWindow = document.getElementById("tvesModalDel");
 
-    $subCatInput.value="";
+    regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,254}$/;  
+    if($subCatInput){
+    $subCatInput.value="";}
     $mutton.innerHTML="Aceptar";
     $mutton.style.pointerEvents="none";
     $shape.style.pointerEvents = "inherit";
@@ -97,7 +100,6 @@ $subCatInput.addEventListener("change",function (){
     showing()
   });
   $btnDel.addEventListener("click", function () {
-    
     document.querySelector('input[name="whi"]').checked=true;
     if ($shape.style.fontWeight === "850"){
       $titleChoose.innerHTML = "Seleccione la Forma a Eliminar";
@@ -166,6 +168,7 @@ $subCatInput.addEventListener("change",function (){
     showingBtn();
   });
   function fillFields (subCat){
+    $contSubCat.innerHTML="";
     fetch(`http://localhost:3005/apis/${subCat}`)
       .then((response) => response.json())
       .then((material) => {
@@ -173,13 +176,13 @@ $subCatInput.addEventListener("change",function (){
             $contSubCat.innerHTML += `<div class="contSubC" id="contSubC${material.data[i].id}"></div>`
             let div = document.querySelector(`#contSubC${material.data[i].id}`)
             div.innerHTML += `<label class="textSubC" for="">${material.data[i].name}</label>`
-            div.innerHTML += `<input type="radio" name="whi" value="${material.data[i].id}" for="">`
+            div.innerHTML += `<input type="radio" class="whint" name="whi" value="${material.data[i].id}" for="">`
           }
       })
+      $subCatInput.value="";
+      $subCatInput.focus()
   }
-  $navUsers.addEventListener("click", function () {
-    
-    
+ /*  $navUsers.addEventListener("click", function () {
     fetch("http://localhost:3005/apis/sU/"+ +$checkUser.value)
       .then((response) => response.json())
       .then((caca) => {
@@ -190,12 +193,8 @@ $subCatInput.addEventListener("change",function (){
           alert("no es super user");
         }
       });
-  });
-  
-
+  }); */
   $mutton.addEventListener("click", function(e){
-    /* let inputChecked = document.querySelector('input[type="radio"]:checked'); */
-     
       switch ("850") {
         case $shape.style.fontWeight :
           shearchName("shape","sedit", $subCatInput.value);
@@ -209,8 +208,7 @@ $subCatInput.addEventListener("change",function (){
         default :
     }
     if ($btnDel.style.pointerEvents==="none"){   
-      let body = document.getElementsByTagName("body")[0];
-      let modalWindow = document.getElementById("tvesModalDel");
+      
             modalWindow.style.opacity = "1";
             modalWindow.style.visibility = "visible";
             modalWindow.style.transform = "translateY(22%)";
@@ -238,6 +236,14 @@ $subCatInput.addEventListener("change",function (){
             $titleModal.innerHTML= `¿ Está seguro de querer eliminar ${labelResult[i].textContent} ?`;
           }}
       }})
+      $closeX.addEventListener("click", function(){
+        modalWindow.style.opacity = "";
+        modalWindow.style.visibility = "hidden";
+        modalWindow.style.transform = "translateY(0)";
+        body.style.position = "inherit";
+        body.style.height = "auto";
+        body.style.overflow = "visible";
+      })
       function shearchName(subCat, eSubCat, name){
         let inputChecked = document.querySelector('input[name="whi"]:checked');
         fetch(`http://localhost:3005/apis/${subCat}/${name}`)
@@ -268,20 +274,65 @@ $subCatInput.addEventListener("change",function (){
                 default :
                     switch("none"){
                       case $btnAdd.style.pointerEvents:
-                          $form.setAttribute("action", `/apis/${subCat}/`);
-                          $form.setAttribute("method", "POST");
-                          $form.submit();
+                          
+                          fetch("http://localhost:3005/apis/"+subCat,{
+                            method:"POST",
+                                    headers: {
+                                        "Content-Type" : "application/json" },
+                                    body: JSON.stringify(
+                                    {
+                                        "name":name
+                                    }
+                                    )
+                                })
+                                .then((response) => response.json())
+                                .then((result) =>{
+                                    if (result.status != 1){
+                                      alert("El recurso NO se creó")
+                                    }
+                                  
+                                });
+                                fillFields(subCat);
                       break;
                       case $btnEdit.style.pointerEvents:
-                        $form.setAttribute("action", `/apis/${eSubCat}/"${inputChecked.value}"?_method=PUT`);
-                        $form.setAttribute("method", "POST");
-                        $form.submit()
+                        
+                        fetch(`http://localhost:3005/apis/${eSubCat}/${inputChecked.value}`,{
+                            method:"PUT",
+                                    headers: {
+                                        "Content-Type" : "application/json" },
+                                    body: JSON.stringify(
+                                    {
+                                        "name":name
+                                    }
+                                    )
+                                })
+                                .then((response) => response.json())
+                                .then((result) =>{
+                                    if (result.status != 1){
+                                      alert("El recurso NO se creó")
+                                    }
+                                });
+                                fillFields(subCat);
                       break;
                     }
               }
-            });
-      }
-
+            });      }
+function deleteSubCat(eSubCat, id){
+  fetch(`http://localhost:3005/apis/${eSubCat}/${id}`,{
+      method:"DELETE"
+      })
+          .then((response) => response.json())
+          .then((result)=>{
+            let body = document.getElementsByTagName("body")[0];
+            let modalWindow = document.getElementById("tvesModalDel");
+            modalWindow.style.opacity = "";
+            modalWindow.style.visibility = "hidden";
+            modalWindow.style.transform = "translateY(0)";
+            body.style.position = "inherit";
+            body.style.height = "auto";
+            body.style.overflow = "visible";
+          })
+}                      
 
 $subCatInput.addEventListener("focus",function(){
   if($rojo.textContent.trim() && $btnEdit.style.pointerEvents=="none"){
@@ -290,24 +341,25 @@ $subCatInput.addEventListener("focus",function(){
 })
 $btnEliminar.addEventListener("click", function () {
   let inputChecked = document.querySelector('input[name="whi"]:checked');
+  
   switch("850"){
     case $shape.style.fontWeight:
-      $form.setAttribute("action", `/apis/sdelete/"${inputChecked.value}"?_method=DELETE`);
-      $form.setAttribute("method", "POST");
-      $form.submit()
+      
+      deleteSubCat("sdelete", inputChecked.value);
+      fillFields("shape");
+        
     break;
     case $brand.style.fontWeight:
-      $form.setAttribute("action", `/apis/bdelete/"${inputChecked.value}"?_method=DELETE`);
-      $form.setAttribute("method", "POST");
-      $form.submit()
+      deleteSubCat("bdelete", inputChecked.value);
+      fillFields("brand");
     break;
     case $material.style.fontWeight:
-      $form.setAttribute("action", `/apis/mdelete/"${inputChecked.value}"?_method=DELETE`);
-      $form.setAttribute("method", "POST");
-      $form.submit()
+      deleteSubCat("mdelete", inputChecked.value);
+      fillFields("material");
     break;
   }
 })
+
 $contSubCat.addEventListener("click", function(){
   let whis =  document.getElementsByName("whi");
   let labelText = document.querySelectorAll(".textSubC");
@@ -321,13 +373,13 @@ $contSubCat.addEventListener("click", function(){
 })
   function hiding(){
     
-  var whis =  document.getElementsByName("whi");
+  let whis =  document.getElementsByName("whi");
   var labelText = document.querySelectorAll(".textSubC");
   var whisResult = [].slice.call(whis);
   var labelResult = [].slice.call(labelText)
-  for (i = 0 ; i<=whisResult.length; i++){
-      whisResult[i].style.pointerEvents = "none";
-      labelResult[i].style.opacity = "0.7";
+  for (i = 0 ; i<=whis.length; i++){
+    whisResult[i].style.pointerEvents = "none";
+    labelResult[i].style.opacity = "0.7";
   }
   return
 }
@@ -346,24 +398,32 @@ $contSubCat.addEventListener("click", function(){
   }
   return
 }
-  
-function showingBtn(){
+
+
+    function showingBtn(){
   if ($rojo.textContent.trim()){
     $rojo.innerHTML = "";
   }
-  $mutton.innerHTML="Aceptar";
+  $mutton.innerHTML="Aceptar";  
   $subCatInput.value="";
   $subCatEntry.style.display ="flex"
   $sbmSection.style.display = "flex";
   $contSubCat.innerHTML ="";
-  let arrayAddEditDel = document.querySelectorAll(".itemA");
-  let threeAction = [].slice.call(arrayAddEditDel);
-for (i=0;i<=threeAction.length;i++){
-    threeAction[i].style.pointerEvents="inherit";
-    threeAction[i].style.opacity="1";
-  }
+  $btnAdd.style.pointerEvents="inherit";
+  $btnAdd.style.opacity="1";
+  $btnEdit.style.pointerEvents="inherit";
+  $btnEdit.style.opacity="1";
+  $btnDel.style.pointerEvents="inherit";
+  $btnDel.style.opacity="1";
+  /* var arrayAddEditDel = document.querySelectorAll(".itemA");
+  var threeActionAn = [].slice.call(arrayAddEditDel);
+  for (i=0;i<=threeActionAn.length;i++){
+      threeActionAn[i].style.pointerEvents="inherit";
+      threeActionAn[i].style.opacity="1";
+    } */
+  }  
   
-return
-}
+  
+
 
 });

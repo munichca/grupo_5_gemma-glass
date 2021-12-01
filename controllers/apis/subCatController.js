@@ -37,61 +37,61 @@ module.exports = {
             }).catch(error => console.log(error))
     },
     createShape: (req, res)=> {
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
         db.Shape.create({
-            name:req.body.subCatInput
+            name:req.body.name
         })
-        .then(()=>{
-            res.redirect('/formarmat/')
+        .then(result =>{
+            if(result){
+                return res.status(200).json({
+                    msg: "created successfully",
+                    status: 1
+                })
+            }else{
+                return res.status(200).json({
+                    msg: "no create"
+                })
+            }
         }).catch(error => console.log(error))
-    }else{
-        
-                if (req.session.user.rol === 1 || req.session.user.rol === 100) {
-                    res.render("formarmat", {
-                        
-                        errors: errors.mapped(),
-                        session: req.session
-                    })
-                } else {
-                    res.redirect('/')
-                }
-           
-    } 
     },
+
     editShape: (req, res)=> {
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
                 db.Shape.update({
-                    name:req.body.subCatInput},{
+                    name:req.body.name},{
                         where:{
-                            id: +req.body.whi
+                            id: req.params.id
                         }
                     }
-                    ).then(()=>{
-                        res.redirect("/formarmat/")
+                    ).then(result =>{
+                        if(result){
+                            return res.status(200).json({
+                                msg: "updated successfully",
+                                status : 1
+                            })
+                        }else{
+                            return res.status(200).json({
+                                msg: "no changes"
+                            })
+                        }
                     }).catch(error => console.log(error))
-                }else{
-                    if (req.session.user.rol === 1 || req.session.user.rol === 100) {
-                        res.render("formarmat", {
-                            
-                            errors: errors.mapped(),
-                            session: req.session
-                        })
-                    } else {
-                        res.redirect('/')
-                    }
                
-        } 
     },
     
     deleteShape: (req, res)=> {
         db.Shape.destroy({
             where:{
-                id:+req.body.whi
+                id:+req.params.id
             }
-        }).then(()=>{
-            res.redirect("/formarmat/")
+        }).then(result =>{
+            if(result){
+                return res.status(200).json({
+                    msg: "delete successfully",
+                    status:1
+                })
+            }else{
+                return res.status(200).json({
+                    msg: "no changes"
+                })
+            }
         }).catch(error => console.log(error))
     },
     brand: (req, res)=> {
@@ -125,60 +125,59 @@ module.exports = {
             }).catch(error => console.log(error))
     },
     createBrand: (req, res)=> {
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
         db.Brand.create({
-            name:req.body.subCatInput
+            name:req.body.name
         })
-        .then(()=>{
-            res.redirect('/formarmat/')
+        .then(result =>{
+            if(result){
+                return res.status(200).json({
+                    msg: "created successfully",
+                    status: 1
+                })
+            }else{
+                return res.status(200).json({
+                    msg: "no create"
+                })
+            }
         }).catch(error => console.log(error))
-    }else{
-        if (req.session.user.rol === 1 || req.session.user.rol === 100) {
-            res.render("formarmat", {
-                
-                errors: errors.mapped(),
-                session: req.session
-            })
-        } else {
-            res.redirect('/')
-        }
-   
-}
-        
     },
+
     editBrand: (req, res)=> {
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
         db.Brand.update({
-            name:req.body.subCatInput},{
+            name:req.body.name},{
                 where:{
-                    id: +req.body.whi
+                    id: req.params.id
                 }
             }
-            ).then(()=>{
-                res.redirect("/formarmat/")
+            ).then(result =>{
+                if(result){
+                    return res.status(200).json({
+                        msg: "updated successfully",
+                        status : 1
+                    })
+                }else{
+                    return res.status(200).json({
+                        msg: "no changes"
+                    })
+                }
             }).catch(error => console.log(error))
-        }else{
-            if (req.session.user.rol === 1 || req.session.user.rol === 100) {
-                res.render("formarmat", {
-                    
-                    errors: errors.mapped(),
-                    session: req.session
-                })
-            } else {
-                res.redirect('/')
-            }
-       
-}
     },
     deleteBrand: (req, res)=> {
         db.Brand.destroy({
             where:{
-                id:+req.body.whi
+                id:+req.params.id
             }
-        }).then(()=>{
-            res.redirect("/formarmat/")
+        }).then(result =>{
+            if(result){
+                return res.status(200).json({
+                    msg: "delete successfully",
+                    status:1
+                })
+            }else{
+                return res.status(200).json({
+                    msg: "no changes"
+                })
+            }
         }).catch(error => console.log(error))
     },
     /* #################### */
@@ -214,59 +213,59 @@ module.exports = {
             }).catch(error => console.log(error))
     },
     createMaterial: (req, res)=> {
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
         db.Material.create({
-            name:req.body.subCatInput
+            name:req.body.name
         })
-        .then(()=>{
-            res.redirect('/formarmat/')
+        .then(result =>{
+            if(result){
+                return res.status(200).json({
+                    msg: "created successfully",
+                    status: 1
+                })
+            }else{
+                return res.status(200).json({
+                    msg: "no create"
+                })
+            }
         }).catch(error => console.log(error))
-    }else{
-        if (req.session.user.rol === 1 || req.session.user.rol === 100) {
-            res.render("formarmat", {
-                
-                errors: errors.mapped(),
-                session: req.session
-            })
-        } else {
-            res.redirect('/')
-        }
-   
-}
     },
+
     editMaterial: (req, res)=> {
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
         db.Material.update({
-            name:req.body.subCatInput},{
+            name:req.body.name},{
                 where:{
-                    id: +req.body.whi
+                    id: req.params.id
                 }
             }
-            ).then(()=>{
-                res.redirect("/formarmat/")
+            ).then(result =>{
+                if(result){
+                    return res.status(200).json({
+                        msg: "updated successfully",
+                        status : 1
+                    })
+                }else{
+                    return res.status(200).json({
+                        msg: "no changes"
+                    })
+                }
             }).catch(error => console.log(error))
-        }else{
-            if (req.session.user.rol === 1 || req.session.user.rol === 100) {
-                res.render("formarmat", {
-                    
-                    errors: errors.mapped(),
-                    session: req.session
-                })
-            } else {
-                res.redirect('/')
-            }
-       
-    }
     },
     deleteMaterial: (req, res)=> {
         db.Material.destroy({
             where:{
-                id:+req.body.whi
+                id:+req.params.id
             }
-        }).then(()=>{
-            res.redirect("/formarmat/")
+        }).then(result =>{
+            if(result){
+                return res.status(200).json({
+                    msg: "delete successfully",
+                    status:1
+                })
+            }else{
+                return res.status(200).json({
+                    msg: "no changes"
+                })
+            }
         }).catch(error => console.log(error))
         
     },

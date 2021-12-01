@@ -193,7 +193,7 @@ a{
     justify-content: center;
     padding: 5px;
     margin: 0 auto 10px;
-    width: 35vw;
+    width: 75vw;
     align-items: center;
     border: 1px solid var(--header);    
     background-color: var(--header);
@@ -240,7 +240,7 @@ a{
 }
 .block3-postal .pay{
     display: flex;
-    width: 70%;
+    width: 100%;
     flex-direction: column;  
     margin: auto auto;
       

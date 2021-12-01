@@ -66,7 +66,7 @@ module.exports = {
                 .then(()=>{
                     res.redirect("/users/user")
                 })
-           /*  }) */
+           
             
                  
         } else{
@@ -100,8 +100,7 @@ module.exports = {
             pass: bcrypt.hashSync(pass, 12),
             avatar: req.file ? req.file.filename : "avatar.png",
             rol: 2,
-            lastProdId:34,
-            colorId:1
+            lastProdId:47
             })
             .then(user => {
                 
@@ -136,8 +135,7 @@ module.exports = {
                     email: user.email,
                     avatar: user.avatar,
                     rol: user.rol,
-                    lastProdId: user.lastProdId,
-                    colorId: user.colorId
+                    lastProdId: user.lastProdId
                   };
                   
                   if (req.body.remember) {
@@ -145,61 +143,22 @@ module.exports = {
                       expires: new Date(Date.now() + 5000000),
                       httpOnly: true,
                     });
-                    
                   }
-                  
             res.locals.user= req.session.user;
-            
-            /* localStorage.user= JSON.stringify(req.session.user) ; */
-            
-            
-            /* res.send(localStorage.setItem("user")) */
-             /* res.send(localStorage.setItem("user")) */
-            res.redirect('/');
-            if(req.session.user.rol === 2){
+           /*  res.redirect('/'); */
+            if(req.session.user.rol == 2){
                 res.redirect('/')
             }else{
-                res.redirect('administrator')
+                res.redirect('/administrator')
             }
               });
         }
-    
         else{
-            
-            /* res.send(errors.mapped()) */
             res.render("login",{
-                
                 errors: errors.mapped(),
                 session: req.session
             });
-       
         }
-
-    },
-    updateColor:(req, res)=>{
-        db.User.update({
-            
-            colorId : +req.body.color
-         },{
-            where:{
-                id: res.locals.user.id
-            }
-        })
-        
-            .then(()=>{
-                res.send(req.params.id)
-                db.User.findOne({
-                    where: {
-                      id: res.locals.user.colorId,
-                    },
-                    
-                  }).then(() => {
-                    
-                    res.locals.user= req.session.user;
-                      });
-                    })
-                res.redirect("/users/login")
-            /* }) */
     },
  logout:(req,res)=> {
         req.session.destroy();

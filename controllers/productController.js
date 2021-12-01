@@ -33,7 +33,7 @@ module.exports = {
           })
           
        .then((arrayProduct)=>{ 
-                 
+         
         db.Product.findByPk(req.params.id, {
             include: [{ association: "category"},
             { association: "shape"},
@@ -53,7 +53,7 @@ module.exports = {
                     }
                 
               }).then(()=>{
-                /* res.send(producto) */
+                
                 res.render("detalleProducto",{ 
                     productFind: producto,
                     arrayProduct,

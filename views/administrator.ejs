@@ -43,29 +43,25 @@
                 <ul class="list">
                     <% products.forEach(item => { %> 
                     <li class="lista">
-                        <p class="id pe"><%- item.id %></p>
-                        <p class="name pe"><%- item.name %></p>
-                        <p class="price pe"><%- item.price %></p>
-                        <% /* let category = category.find(cate => cate.id === item.category) */ %>
-                        <p class="category pe"><%- item.category.name %></p>
-                        <% /* let forma = formas.find(forma => forma.id === item.subCatForma) */ %> 
-                        <p class="shape pe"><%- item.shape.name %></p>
-                        <% /* let marca = marcas.find(marca => marca.id === item.subCatMarca) */ %> 
-                        <p class="brand pe"><%- item.brand.name %></p>
-                        <% /* let material = materials.find(material => material.id === item.subCatmaterial) */ %>
-                        <p class="material pe"><%- item.material.name %></p>
-                        <p class="height pe"><%- item.height %></p>
-                        <p class="width pe"><%- item.width %></p>
-                        <p class="discount pe"><%- item.discount %></p>
+                      <!-- <div class="contP"> --><p class="id pe"><%- item.id %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="name pe"><%- item.name %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="price pe"><%- item.price %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="category pe"><%- item.category.name %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="shape pe"><%- item.shape.name %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="brand pe"><%- item.brand.name %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="material pe"><%- item.material.name %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="height pe"><%- item.height %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="width pe"><%- item.width %></p><!-- </div> -->
+                      <!-- <div class="contP"> --><p class="discount pe"><%- item.discount %></p><!-- </div> -->
 
 
-
-                        <a href="/admin/edit/<%- item.id%>"><i class="far fa-edit fSize"></i></a>
-
+                        <div class="buttonEdit">
+                          <a class="pe2" href="/admin/edit/<%- item.id%>"><img class="pe editIcon" src="/image/edit.svg" alt=""></i></a>
+                        </div>
                         <form class="formDel"  >
                             <!-- ############## -->
                             <div class="aModal" id="tvesModalDel">
-                              
+                              <label class="closeX">x</label>
                                 <!-- <div class="aModalContainer"> -->
                                   <div class="bacg">
                                     <div class="aHeaderModal">
@@ -80,7 +76,9 @@
                               </div>
                             <!-- ############## -->
                             <!-- <button  class ="boton" type="submit"> -->
-                                <img src="/image/trash.svg" class="btnDelProd imgTrash namePro" id="<%= item.id %>" alt="<%=item.name%>">
+                              <div class="buttonDelete">
+                                <img src="/image/trash.svg" class="btnDelProd imgTrash namePro pe1" id="<%= item.id %>" alt="<%=item.name%>">
+                              </div>  
                             <!-- </button> -->
                         
                         </form>
@@ -98,20 +96,31 @@
       
       <script>
         let $form2 = document.querySelector(".formDel");
+        let $closeX = document.querySelector(".closeX");
         let $buttonDel1 = document.querySelectorAll(".btnDelProd");
         let $delDef1 = document.querySelector(".btnEliminarProd");
         let $buttonDelResult1 = [].slice.call($buttonDel1);
-        
+        let body = document.getElementsByTagName("body")[0];
+        let $titleModal = document.querySelector(".titleModal");
+        let modalWindow = document.getElementById("tvesModalDel");
+        $closeX.addEventListener("click", function(){
+          
+              modalWindow.style.opacity = "";
+              modalWindow.style.visibility = "hidden";
+              modalWindow.style.transform = "translateY(0)";
+              body.style.position = "inherit";
+              body.style.height = "auto";
+              body.style.overflow = "visible";
+        })
         $buttonDelResult1.forEach(el => {
     el.addEventListener("click", e => {
       const name = e.target.getAttribute("alt");
       const id = e.target.getAttribute("id");
       sessionStorage.setItem("id", id);
       console.log("Se ha clickeado el id " +id + " de nombre " + name);
-      let body = document.getElementsByTagName("body")[0];
-          let $titleModal = document.querySelector(".titleModal");
+          
           $titleModal.innerHTML= `¿Seguro quiere eliminar el artículo ${name} ?`  
-          let modalWindow = document.getElementById("tvesModalDel");
+          
           modalWindow.style.opacity = "1";
           modalWindow.style.visibility = "visible";
           modalWindow.style.transform = "translateY(22%)";

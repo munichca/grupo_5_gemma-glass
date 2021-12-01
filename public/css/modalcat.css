@@ -12,9 +12,9 @@
     display: none;
   }
 .aHeaderModal{
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
-    height: 12%;
+    height: 25px;
     border-bottom: 1px solid var(--tipos);
     color: var(--tipos);
     font-size: 12px;
@@ -23,6 +23,7 @@
     align-items: center;
 
 }
+
 .btnEliminarProd{
   margin-bottom: 10px !important;
 }
@@ -41,6 +42,16 @@
     padding: 2rem;
     background: rgba(0, 0, 0, 0.8);
   }
+  /* .aModal::before{
+    content: "x";
+    color: #fff;
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+    font-size: 1.5em;
+    font-weight: 800;
+    opacity: .7;
+  } */
   .aMenuModal{
       display: flex;
       flex-direction: row;
@@ -64,23 +75,34 @@
   }
   .aModalContainer {
    width: 60%;
-   border: 3px solid green;
-   background: hotpink;
     transition: all 500ms ease;
     transform: translateY(0%);
     margin: 0 auto;
     justify-content: center;
     align-items: center;
   }
+  .closeX{
+    color: white;
+    display: flex;
+    justify-content: end;
+    font-size: 25px;
+    font-weight: bold;  
+    cursor: pointer; 
+    width: 10px;
+    margin-left: 80vw;
+   
+
+  }
   .bacg{
     background-color: white;
-    width: 25%;
+    width: 220px;
     /* height: 100%; */
     padding-bottom: 15px;
     transition: all 500ms ease;
     transform: translateY(0%);
     margin: 0 auto;
     justify-content: center;
+    border-radius: 6px;
   }
   
   .aListModal ul a li {
@@ -114,9 +136,14 @@
       .aBaseD{
           display: none;
       }
+  
+  .closeX{
+    
+    margin-left: 93vw;
+   
+
   }
-
-
+}
 /* [data-animation] .modal-content {
     opacity: 0;
     transition: all 5.5s var(--bounceEasing);

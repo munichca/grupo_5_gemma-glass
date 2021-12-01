@@ -1,7 +1,83 @@
+*{
+    color: var(--tipos);
+}
 .mainAdminRol{
-    width: 85%;
+    width: 50%;
     height: 20vh;
     border: 1px solid var(--tipos);
     margin: 15px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
+}
+.titleUserRol{
+    margin: 10px auto 0;
+}
+.section1{
+    display: flex;
+    width: 50%;
+}
+.section2Rol{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    border-left: 2px solid var(--tipos);
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.pProperties{
+    padding: 0 15px;
+    margin: 0 0 0 20px;
+}
+.pP{
+    display: flex;
+    padding: 0 15px;
+    margin: 0 0 5px 20px;
+    align-items: center;
+    width: 220px;
+    height: 25px;
+    border: 1px solid black;
+    font-weight: 700;
+
+}
+hr{
+    width: 100%;
+    border: 1px solid var(--tipos);
+}
+.userImage{
+    
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    border:solid 2px var(--tipos);
+    object-fit: cover;
+}
+.selUser{
+    width: 220px;
+    padding: 0 15px;
+    margin: 10px 0 10px 20px;
+}
+.contImgUser{
+    margin: 0 auto;
+}
+.titleAcUser{
+    margin: 10px auto 0;
+}
+.contRadio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5px 0;
+}
+.labelRol{
+    font-size: 12px;
+    padding: 0 5px;
+    
+}
+.buttonRol{
+    margin: 15px auto;
 }

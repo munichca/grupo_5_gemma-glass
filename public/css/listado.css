@@ -33,9 +33,7 @@ a {
   display: flex;
   
 }
-.emptySpace{
-  width: 16vw;
-}
+
 .titlePrincipalList {
   display: flex;
   width: 100%;
@@ -73,16 +71,41 @@ ul {
   display: flex;
   flex-direction: row;
   list-style: none;
-  border: 1px solid var(--tipos);
+ /*  border: 1px solid var(--tipos); */
   align-items: center;
+  height: 25px;
 }
-.pe {
-  border-right: 1px solid var(--tipos);
-  padding: 4.2px 0 4px;
-  margin: 0;
+.contP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+ /*  padding: 4.2px 0 0px; */
+  margin: 0 0;
   text-align: center;
   font-size: 12px;
+  height: 100%;
 }
+
+
+
+.pe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--tipos);
+ /*  padding: 4.2px 0 0px; */
+  margin: 0 0;
+  text-align: center;
+  font-size: 12px;
+  height: 100%;
+}
+/* .pe1{
+  height: 25px;
+  width: 2vw;
+  
+} */
+
 .containerList {
   display: flex;
   flex-direction: row;
@@ -109,42 +132,70 @@ ul {
   width: 20vw;
 }
 .category {
-  width: 10vw;
   display: none;
 }
 .shape {
-  width: 7vw;
   display: none;
 }
 .brand {
-  width: 8vw;
   display: none;
 }
 .material {
-  width: 8vw;
   display: none;
 }
 .height {
-  width: 5vw;
   display: none;
 }
 .width {
-  width: 5vw;
   display: none;
 }
 .discount {
-  width: 8vw;
   display: none;
 }
 
 .fuera {
   opacity: 0;
 }
+.emptySpace{
+  width: 15vw;
+  border: 1px solid green;
+  height: 25px;
+}
+.editIcon{
+  width: 7vw;
+  height: 4.4vh;
+  margin-top: 2px;
+}
+.pe2{
+  /* height: 7vw;
+  width: 4.4vh; */
+  background-color: var(--header);
+ 
+}
+.buttonEdit{
+  width: 7.5vw;
+  height: 25px;
+  border: 1px solid var(--tipos);
+background-color: var(--header);
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.buttonDelete{
+  width: 7.5vw;
+  height: 25px;
+  border: 1px solid var(--tipos);
+  background-color: rgb(255, 0, 0);
+  display: flex;
+}
 .imgTrash{
   width: 7vw;
-  height: 5.4vh;
-  object-fit: cover;
+  height: 4.4vh;
+  margin-top: 2px;
+  /* object-fit: cover;
   cursor: pointer;
+} */
 }
 .imgTrash:hover{
   opacity: 80%;
@@ -167,11 +218,19 @@ form{
 
 .fSize {
   background-color: lightskyblue;
-  padding: 5px;
+  /* padding: 5px; */
 }
-/* .containerList{
-    display: none;
-} */
+.aHeaderModal{
+ 
+  
+  margin-bottom: 25px;
+}
+.titleHeaderModal{
+  margin: auto;
+}
+.titleModal{
+  margin-top: 15px;
+}
 @media (min-width: 768px) {
   .btn {
     margin: 10px 0px 0px 0;
@@ -192,14 +251,47 @@ form{
     /* border: 1px solid red; */
   }
   .emptySpace{
-    width: 30px;
+    width: 7vw;
   }
   .imgTrash{
-    width: 2.3vw;
-    height: 5.4vh;
+    width: 2vw;
+    height: 18px;
     object-fit: cover;
     cursor: pointer;
+    /* padding: 4px; */
+    background-color: red;
   }
+  .editIcon{
+    width: 3.5vw;
+    height: 4.4vh;
+    margin-top: 2px;
+  }
+  .pe2{
+    /* height: 7vw;
+    width: 4.4vh; */
+    background-color: var(--header);
+   
+  }
+  .buttonEdit{
+    width: 3.5vw;
+    height: 25px;
+    border: 1px solid var(--tipos);
+  background-color: var(--header);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  }
+  .buttonDelete{
+    width: 3.5vw;
+    height: 25px;
+    border: 1px solid var(--tipos);
+    background-color: rgb(255, 0, 0);
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  }
+  
   .id {
     width: 2.5vw;
   }
@@ -211,31 +303,31 @@ form{
   }
   .category {
     width: 14vw;
-    display: initial;
+    display: flex;
   }
   .shape {
     width: 9vw;
-    display: initial;
+    display: flex;
   }
   .brand {
     width: 8vw;
-    display: initial;
+    display: flex;
   }
   .material {
     width: 8vw;
-    display: initial;
+    display: flex;
   }
   .height {
     width: 5vw;
-    display: initial;
+    display: flex;
   }
   .width {
     width: 5vw;
-    display: initial;
+    display: flex;
   }
   .discount {
     width: 8vw;
-    display: initial;
+    display: flex;
   }
   .btnAddProd {
     margin-bottom: 15px !important;
@@ -258,8 +350,49 @@ form{
     font-size: 11px;
   }
 }
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .emptySpace{
-    width: 5.1vw;
+    width: 5vw;
+    border: 1px solid black;
   }
+  /* .pe1{
+    height: 25px;
+    width: 2.5vw;
+    border:1px  solid var(--tipos);
+  } */
+
+.editIcon{
+  width: 2vw;
+  height: 4.4vh;
+  margin-top: 2px;
+}
+.pe2{
+  /* height: 7vw;
+  width: 4.4vh; */
+  background-color: var(--header);
+ 
+}
+.buttonEdit{
+  width: 2.5vw;
+  height: 25px;
+  border: 1px solid var(--tipos);
+background-color: var(--header);
+}
+.buttonDelete{
+  width: 2.5vw;
+  height: 25px;
+  border: 1px solid var(--tipos);
+  background-color: red;
+  justify-content: center;
+}
+
+.imgTrash{
+  width: 1.2vw;
+  height: 18px;
+  /* margin-bottom: 4px; */
+  object-fit: cover;
+  /* object-fit: cover;
+  cursor: pointer;
+} */
+}
 }

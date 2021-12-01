@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
   <%- include("partials/head") %>
+  <script src='/js/administrator.js' defer></script>
   <body>
     <%- include('./partials/headerAdmin.ejs') %>
-    <!-- <script src='/js/validationAdminFront.js' defer></script> -->
+    
     <main class="subcatMain">
       <section class="navLatsub">
         <h5 class="h5SubCat">Seleccione una Sub categoria</h5>
@@ -37,12 +38,24 @@
               
             </div>
             <!-- #### para modal ##### -->
-            <div class="delModal" id="tvesModalDel">
-              <div class="aModalContainer">
-                <p class="titleModal"></p>
-                <div class="btn btnEliminar">Eliminar</div>
+
+            <div class="aModal" id="tvesModalDel">
+              <label class="closeX">x</label>
+                <!-- <div class="aModalContainer"> -->
+                  <div class="bacg">
+                    <div class="aHeaderModal">
+                      <p class="titleHeaderModal">GemmaGlass</p>
+                    </div>
+                    <p class="titleModal">
+                      
+                    </p>
+                    <div class="btn btnEliminar">Eliminar</div>
+                  </div> 
+                <!-- </div> -->
               </div>
-            </div>
+
+
+
             <!-- #### para modal ##### -->
           </form>
           <button type="button"class="btn masterButton"></button>
@@ -53,13 +66,6 @@
     </div>
     </main>
     <iframe name="frame" class="frame" frameborder="0"></iframe>
-    <script>
-      
-       /*  document.querySelector(".shapes").style.fontWeight = "850";
-      document.querySelector(".shapes").click(); */
-      
-     
-      
-    </script>
+    
   </body>
 </html>
