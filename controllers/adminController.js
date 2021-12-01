@@ -47,10 +47,10 @@ module.exports = {
                         }
                     })
                     db.productImages.bulkCreate(images)
-                      .then(() => res.redirect('/admin/listado'))
+                      .then(() => res.redirect('/administratot'))
                       .catch(err => console.log(err))
                 }
-                res.redirect('/admin/listado')
+                res.redirect('/administrator')
             }) 
         }else{
             db.Category.findAll()

@@ -182,12 +182,12 @@ $subCatInput.addEventListener("change",function (){
     
     fetch("http://localhost:3005/apis/sU/"+ +$checkUser.value)
       .then((response) => response.json())
-      .then((caca) => {
-        alert("no es super caca");
-        if (caca.data.name!=="") {
-          alert(caca.data.name);
+      .then((usr) => {
+        alert("Debés ser super user para ingresar");
+        if (usr.data.name!=="") {
+          alert(usr.data.name);
         } else {
-          alert("no es super user");
+          alert("Debés ser super user para ingresar");
         }
       });
   });
@@ -245,19 +245,19 @@ $subCatInput.addEventListener("change",function (){
             .then((subCatFinded) => {
               switch (true) {
                 case !$subCatInput.value.trim():
-                    $rojo.innerHTML= "El campo no puede estar vacio front";
+                    $rojo.innerHTML= "El campo no puede estar vacio";
                     if($btnAdd.style.pointerEvents==="none"){
                     $subCatInput.focus();}  
                     break;
                 case !regExAlphaNumeric.test($subCatInput.value):
-                    $rojo.innerHTML= "El campo debe tener al menos tres caracteres front";
+                    $rojo.innerHTML= "El campo debe tener al menos tres caracteres";
                     if($btnAdd.style.pointerEvents==="none"){
                       $subCatInput.focus();} 
                     break;
                 case subCatFinded.data !== null:
                     if (subCatFinded.data.name === $subCatInput.value){
                       if($btnAdd.style.pointerEvents === "none"){
-                        $rojo.innerHTML= "El nombre ya existe front";
+                        $rojo.innerHTML= "El nombre ya existe";
                         $subCatInput.focus();
                         break;
                       }else{

@@ -6,9 +6,9 @@ const db = require("../database/models");
 module.exports =[
     check("subCatInput")
     .notEmpty()
-    .withMessage("El nombre del campo es obligatorio back").bail()
+    .withMessage("El nombre del campo es obligatorio").bail()
     .isLength({ min: 3})
-    .withMessage("El campo debe tener mas de dos caracteres back"),
+    .withMessage("El campo debe tener mas de dos caracteres"),
     body('subCatInput')
     .custom(value=>{
             return db.Material.findOne({
@@ -18,7 +18,7 @@ module.exports =[
             })
             .then(nam =>{
                 if (nam){
-                    return Promise.reject("El recurso ya existe, modifique el nombre back")
+                    return Promise.reject("El recurso ya existe, modifique el nombre")
                 }
             })
 

@@ -7,7 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
   <%- include('./partials/header.ejs') %>
   
-        <div class="carouselContainer">
+        <!-- <div class="carouselContainer">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -38,6 +38,71 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
+        </div> -->
+
+        <div class="carouselContainer">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="/product/productcat/2"><img src="/image/carousel/1.png" class="d-block w-100" alt="Lentes de sol">
+                <div class="carousel-caption d-md-block">
+                  <h5>Lentes de sol</h5>
+                  <p>Cuidá tu vista de los rayos UV.</p></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="/product/productcat/4"><img src="/image/carousel/2.png" class="d-block w-100" alt="Lentes gaming">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Lentes gaming</h5>
+                  <p>Conseguí los mejores lentes para cuidar tu visión de la luz azul de las pantallas.</p>
+                </div></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/product/productcat/1"><img src="/image/carousel/3.png" class="d-block w-100" alt="Marcos para recetas">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Marcos para recetas</h5>
+                  <p>Encontrá los mejores diseños para tus nuevos lentes y mantenete a la moda.</p></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="/product/productcat/3"><img src="/image/carousel/4.png" class="d-block w-100" alt="Lentes de contacto">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Lentes de contacto</h5>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, assumenda!</p></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="/search?keywords=limpiador"><img src="/image/carousel/5.png" class="d-block w-100" alt="Mantené tus cristales limpios">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Líquidos de limpieza</h5>
+                  <p>Cuidá tus cristales y mantenelos limpios.</p></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="/product/productOfertas"><img src="/image/carousel/6.png" class="d-block w-100" alt="Encontrá las mejores ofertas en nuestra tienda">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Ofertas</h5>
+                  <p>Encontrá las mejores ofertas en nuestra tienda</p></a>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>   
         </div>
 
         <section class="categories">
