@@ -112,7 +112,9 @@
               body.style.height = "auto";
               body.style.overflow = "visible";
         })
+        
         $buttonDelResult1.forEach(el => {
+          
     el.addEventListener("click", e => {
       const name = e.target.getAttribute("alt");
       const id = e.target.getAttribute("id");
@@ -125,8 +127,7 @@
           modalWindow.style.visibility = "visible";
           modalWindow.style.transform = "translateY(22%)";
           modalWindow.style.transitionDelay = "0.2s";
-          modalWindow.style.transition =
-            "all 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15)";
+          modalWindow.style.transition ="all 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15)";
           body.style.position = "static";
           body.style.height = "100%";
           body.style.overflow = "hidden";
@@ -144,10 +145,26 @@
   });
         $delDef1.addEventListener("click", function () {
             const mId = sessionStorage.getItem("id");
-            $form2.setAttribute("action", "/admin/eliminarProducto/"+mId+"?_method=DELETE");
-            $form2.setAttribute("method", "POST");
-            $form2.submit();
-        })
+            
+            /* ################ */
+            fetch(`http://localhost:3005/apis/products/${mId}`,{
+           method:"DELETE"
+      })
+          .then((response) => response.json())
+          .then((result)=>{
+            if (result){
+              modalWindow.style.opacity = "";
+              modalWindow.style.visibility = "hidden";
+              modalWindow.style.transform = "translateY(0)";
+              body.style.position = "inherit";
+              body.style.height = "auto";
+              body.style.overflow = "visible";
+              window.location.reload()
+            }else{
+              alert("no del")
+            }
+            /* ################ */
+        }) })
       </script>
     
     

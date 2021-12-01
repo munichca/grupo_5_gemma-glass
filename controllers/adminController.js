@@ -123,7 +123,7 @@ module.exports = {
         .then(([categories, shapes, brands, materials])=>{
                 
         if(errors.isEmpty()){
-            db.Product.update({price, discount, categoryId: categories.id, shapeId: shapes.id, brandId: brands.id, materialId: materials.id, height, width }, {
+            db.Product.update({price, discount, categoryId: categories.id, shapeId: shapes.id, brandId: brands.id, materialId: materials.id, height, width, description }, {
                 where:{
                     id : +req.params.id
                 }  })
