@@ -10,28 +10,32 @@ function bn(element) {
         $price1 = bn("price"),
         $cleanText = qs(".cleanText"),
         regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,50}$/;
+<<<<<<< HEAD
     let finded ="";
+=======
+    let found ="";
+>>>>>>> bf341567eab4585d8723da96d1af8c579fd531af
     sessionStorage.setItem("name", "");
     $name.addEventListener("blur", function () {
         fetch("http://localhost:3005/apis/products/"+$name.value)
             .then(response => response.json())
-            .then(nameFinded => {
-                finded = nameFinded;
+            .then(nameFound => {
+                found = nameFound;
                 switch (true) {
                     case !$name1[0].value.trim() :
-                        $name1[0].placeholder= "El campo nombre es obligatorio front";
+                        $name1[0].placeholder= "El campo nombre es obligatorio";
                         $name1[0].classList.add("is-invalid");
                         break;
                     case !regExAlphaNumeric.test($name1[0].value) :
                         $name1[0].value = "";
-                        $name1[0].placeholder= "Deben ser tres o más caracteres front";
+                        $name1[0].placeholder= "Este campo debe tener más de 3 caracteres";
                         $name1[0].classList.add("is-invalid");
                         break;
-                    case finded.data !== null:
-                        if (finded.data.name ===$name1[0].value){
-                            sessionStorage.setItem("name", finded.data.name);
+                    case found.data !== null:
+                        if (found.data.name ===$name1[0].value){
+                            sessionStorage.setItem("name", found.data.name);
                             $name1[0].value = "";
-                            $name1[0].placeholder= "El nombre ya existe front";
+                            $name1[0].placeholder= "El nombre ya existe";
                             $name1[0].classList.add("is-invalid");
                             
                         }
@@ -45,8 +49,8 @@ function bn(element) {
         
           
                 
-                /* if(nameFinded.data.name === $name.value){ */
-                /* if(nameFinded.data.name === $name.value && nameFinded.data !==null){
+                /* if(nameFound.data.name === $name.value){ */
+                /* if(nameFound.data.name === $name.value && nameFound.data !==null){
                     $name1[0].value = "";
                     $name1[0].placeholder= "El nombre existe, utilice otro";
                     $name1[0].classList.remove("is-valid");
