@@ -41,12 +41,23 @@ ul{
     background-color: white;
 }
 .imagDisc{
-    width: 40% !important;
-    height: 30% !important;
+    width: 30% !important;
+    height: 19% !important;
     position: absolute;
     transform: rotate(45deg);
     top: -10px !important;
     right: -18px;
+    z-index: 10;
+}
+.addCar{
+    width: 30% !important;
+    height: 19% !important;
+    position: absolute;
+    /* transform: rotate(45deg); */
+    top: 0px !important;
+    font-size: 40px !important;
+    color: var(--tipos);
+    left: 5px;
     z-index: 10;
 }
 .external-container .images .picture{

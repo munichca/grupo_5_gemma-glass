@@ -18,8 +18,12 @@
                     <% if (item.discount == 25) { %>
                         <img class="imagDisc" src="/image/gemOfer25.png" alt="">
                     <% } %>
+                    <i class="addCar fa fa-shopping-cart"></i>
                 </div>
-                
+                <!-- <div class="carV">
+                    <i class="addCar fa fa-shopping-cart">
+                    
+                </div> -->
                 <img class="frontal picture" src="/image/productImages/<%- item.image[1]? item.image[1].images : "logFI.jpg" %> "  alt="">
                 <img class="rear picture" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFN.jpg" %>  "  alt="">
             </div>
@@ -32,7 +36,7 @@
                     <p class="pes"><%- item.price %></p>
                 </div>
             </div>
-            <p class="descrip"><%- item.description %></p>
+            <p class="descrip">Descripción : <%- item.description %></p>
         </div>
     </a> 
     <% })  %> 

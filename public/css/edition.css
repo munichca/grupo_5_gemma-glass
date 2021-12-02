@@ -119,10 +119,6 @@
     margin: 0 auto 0;    
     overflow: hidden;   
     position: relative;
-    /* width: 25%;
-    height: 3vw; *//* 
-    border: 1px solid var(--tipos);
-    border-radius: 35px; */
 }
    
 .buttons {
@@ -169,10 +165,6 @@
         width: 65px;
         height: 65px;
         margin-top: 5px;
-        /* border-radius: 12px;
-        margin: auto 20px;
-        object-fit: contain;
-        border: 1px solid var(--tipos); */
 } 
 .description{
     width: 100%;

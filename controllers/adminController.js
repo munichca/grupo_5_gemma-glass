@@ -97,7 +97,7 @@ module.exports = {
                         session: req.session
                     })
                 } else {
-                    res.redirect('/')
+                    res.redirect('administrator')
                 }
             })})
     },
@@ -110,7 +110,7 @@ module.exports = {
             })
         }
         /* res.send(errors) */
-        let{id, name, price, discount, height, width } = req.body
+        let{id, name, price, discount, height, width, description } = req.body
         let categoryP = db.Category.findOne({
             where:{ name: req.body.category  }})
         let shapeP = db.Shape.findOne({
@@ -123,7 +123,7 @@ module.exports = {
         .then(([categories, shapes, brands, materials])=>{
                 
         if(errors.isEmpty()){
-            db.Product.update({price, discount, categoryId: categories.id, shapeId: shapes.id, brandId: brands.id, materialId: materials.id, height, width, description }, {
+            db.Product.update({name,price, discount, categoryId: categories.id, shapeId: shapes.id, brandId: brands.id, materialId: materials.id, height, width, description }, {
                 where:{
                     id : +req.params.id
                 }  })
@@ -152,7 +152,7 @@ module.exports = {
                             })
                         }),//aca van los })
                         db.productImages.bulkCreate(images)
-                      .then(() => res.redirect('/admin/administrator'))
+                      .then(() => res.redirect('/administrator'))
                       .catch(err => console.log(err))
                     })
                 }else{
@@ -163,7 +163,7 @@ module.exports = {
                         }
                     });
                     db.productImages.bulkCreate(images)
-                      .then(() => res.redirect('/admin/administrator'))
+                      .then(() => res.redirect('/administrator'))
                       .catch(err => console.log(err))
                 }
             })}else{
@@ -180,7 +180,7 @@ module.exports = {
                                session: req.session
                            })
                        } else {
-                           res.redirect('/')
+                           res.redirect('/admin/administrator')
                        }} 
         })
     
