@@ -1,6 +1,7 @@
 <section class="external-container" id="externalContainer" >
     <% arrayProduct.forEach(item => {%> 
-    <a class="product-card" href="/product/detail/<%- item.id %>  ">
+    <!-- <a class="product-card" href="/product/detail/<%- item.id %>  "> -->
+    <div class="product-card" href="/product/detail/<%- item.id %>  ">
             <div class="images" id=twist >
                 <div class="boxCont">
                     <% if (item.discount == 5) { %>
@@ -18,14 +19,12 @@
                     <% if (item.discount == 25) { %>
                         <img class="imagDisc" src="/image/gemOfer25.png" alt="">
                     <% } %>
-                    <i class="addCar fa fa-shopping-cart"></i>
+                    <a href="/views/carrito.ejs"><i class="addCar fa fa-shopping-cart"></i></a>
                 </div>
-                <!-- <div class="carV">
-                    <i class="addCar fa fa-shopping-cart">
-                    
-                </div> -->
-                <img class="frontal picture" src="/image/productImages/<%- item.image[1]? item.image[1].images : "logFI.jpg" %> "  alt="">
-                <img class="rear picture" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFN.jpg" %>  "  alt="">
+                <a class="picture" href="/product/detail/<%- item.id %>  ">
+                    <img class="frontal picture" src="/image/productImages/<%- item.image[1]? item.image[1].images : "logFI.jpg" %> "  alt="">
+                    <img class="rear picture" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFN.jpg" %>  "  alt="">
+                </a>
             </div>
         <div class="product-name">
             
@@ -38,7 +37,8 @@
             </div>
             <p class="descrip">Descripción : <%- item.description %></p>
         </div>
-    </a> 
+    <!-- </a> --> 
+</div> 
     <% })  %> 
     <hr class="hr-mobile">         
 
