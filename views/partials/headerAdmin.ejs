@@ -12,7 +12,10 @@
                     <div class="contenido-burger">
                         <ul>
                             <a href="/administrator"><li>Porductos</li></a> 
-                            <a href="/formarmat"><li>Sub-Categorias</li></a> 
+                            <% if (session.user.rol == 100) { %>
+                                <a href="/formarmat"><li>Sub-Categorias</li></a>
+                            <% } %>
+                             
                             <a href=""><li>Usuarios</li></a> 
                             
                         </ul>

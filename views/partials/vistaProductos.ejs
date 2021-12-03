@@ -19,11 +19,11 @@
                     <% if (item.discount == 25) { %>
                         <img class="imagDisc" src="/image/gemOfer25.png" alt="">
                     <% } %>
-                    <a href="/views/carrito.ejs"><i class="addCar fa fa-shopping-cart"></i></a>
+                    <a href="carrito"><i class="addCar fa fa-shopping-cart"></i></a>
                 </div>
                 <a class="picture" href="/product/detail/<%- item.id %>  ">
-                    <img class="frontal picture" src="/image/productImages/<%- item.image[1]? item.image[1].images : "logFI.jpg" %> "  alt="">
-                    <img class="rear picture" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFN.jpg" %>  "  alt="">
+                    <img class="frontal picture" src="/image/productImages/<%- item.image[1]? item.image[1].images : "logFN.jpg" %> "  alt="">
+                    <img class="rear picture" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFI.jpg" %>  "  alt="">
                 </a>
             </div>
         <div class="product-name">

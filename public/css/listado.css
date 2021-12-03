@@ -75,6 +75,14 @@ ul {
   align-items: center;
   height: 25px;
 }
+.listaP {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+ /*  border: 1px solid var(--tipos); */
+  align-items: center;
+  height: 25px;
+}
 .contP {
   display: flex;
   justify-content: center;
@@ -121,6 +129,7 @@ ul {
   justify-content: center;
   margin: 0 auto 0;
   width: 90vw;
+ /*  border: 2px solid green; */
 }
 .id {
   width: 6vw;
@@ -165,6 +174,8 @@ ul {
   width: 7vw;
   height: 4.4vh;
   margin-top: 2px;
+  border: 1px solid var(--tipos);
+background-color: var(--header);
 }
 .pe2{
   /* height: 7vw;
@@ -182,17 +193,19 @@ justify-content: center;
 align-items: center;
 
 }
-.buttonDelete{
+/* .buttonDelete{
   width: 7.5vw;
   height: 25px;
   border: 1px solid var(--tipos);
   background-color: rgb(255, 0, 0);
   display: flex;
-}
+} */
 .imgTrash{
-  width: 7vw;
-  height: 4.4vh;
-  margin-top: 2px;
+  width: 7.5vw;
+  height: 25PX;
+  /* margin-top: 2px; */
+  background-color: rgb(255, 0, 0);
+  object-fit: cover
   /* object-fit: cover;
   cursor: pointer;
 } */
@@ -242,6 +255,13 @@ form{
     display: flex;
     flex-direction: column;
     width: 90vw;
+    
+  }
+  .list{
+    width: 100%;
+  }
+  .list{
+    width: 100%;
   }
   .btnAddCont {
     display: flex;
@@ -273,8 +293,8 @@ form{
    
   }
   .buttonEdit{
-    width: 3.5vw;
-    height: 25px;
+    width: 3.5vw !important;
+    height: 25px !important;
     border: 1px solid var(--tipos);
   background-color: var(--header);
   display: flex;
@@ -362,8 +382,8 @@ form{
   } */
 
 .editIcon{
-  width: 2vw;
-  height: 4.4vh;
+  width: 2.8vw;
+  height: 27px;
   margin-top: 2px;
 }
 .pe2{
@@ -387,8 +407,8 @@ background-color: var(--header);
 }
 
 .imgTrash{
-  width: 1.2vw;
-  height: 18px;
+  width: 2.5vw;
+  height: 25px;
   /* margin-bottom: 4px; */
   object-fit: cover;
   /* object-fit: cover;

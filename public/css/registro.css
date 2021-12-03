@@ -4,14 +4,14 @@ a{
     text-decoration: none;
 }
 .text-danger{
-    font-size: 10px;
+    font-size: 16px;
 }
 .main{
     width: 95%;
     margin: auto;
 }
 .main label{
-    font-size: 12px;
+    font-size: 18px;
 }
 .exterior{
     width: 100%;
@@ -70,16 +70,16 @@ a{
 }
 .complete{
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     text-decoration: underline;
     margin-bottom: 10px; 
 }
 .input{
     border: 1px solid var(--tipos);
     /* margin-bottom: 5px; */
-    height: 4vh;
+    height: 4.5vh;
     outline: none;
-    font-size: 12px;
+    font-size: 16px;
     padding-left: 10px;
 }
 .input::placeholder{
@@ -162,7 +162,7 @@ a{
 }
  .name .nameLabel{
     width: 40%;
-    font-size: 12px;
+    font-size: 18px;
 }
 .section2 .pass1{
     display: flex;
@@ -189,7 +189,7 @@ a{
 .midle{
     width: 100%;
     margin-bottom: 0;
-    font-size: 8px;
+    font-size: 10px;
 }
 .section2 .pass2{
     display: flex;

@@ -108,18 +108,21 @@
         <section class="categories">
           <section class="section1-home">
             <a href="/product/productcat/1"><img src="/image/marcos.png" alt="Marcos para receta"></a>
-            <a href="/product/productcat/1"><button class="btn" >Recetados</button></a>
+            <!-- <a href="/product/productcat/1"><button class="btn " >Recetados</button></a> -->
+            <a href="/product/productcat/1"><div class="grande g0 " >Recetados</div></a>
           </section>
           
   
           <section class="section2-home">
             <a href="/product/productcat/2"><img src="/image/sol.png" alt="Lentes de sol"></a>
-             <a href="/product/productcat/2"><button class="btn">Lentes de sol</button></a>
+             <!-- <a href="/product/productcat/2"><button class="btn ">Lentes de sol</button></a> -->
+             <a href="/product/productcat/2"><div class=" grande g1">Lentes de sol</div></a>
           </section>
   
           <section class="section1-home">
             <a href="/product/productcat/4"><img src="/image/bluelight.png" alt=""></a>
-            <a href="/product/productcat/4"><button class="btn">Gaming</button></a>
+            <!-- <a href="/product/productcat/4"><button class="btn ">Gaming</button></a> -->
+            <a href="/product/productcat/4"><div class=" grande g0">Gaming</div></a>
           </section>
         </section>
 
@@ -179,7 +182,12 @@
       /* let prodCard = document.getElementById("product-card") */
       container.style.width = "100vw";
      /*  prodCard.style.width = "50%" */
+
+     let $grande = document.querySelector(".grande")
+    $grande.style.width="200px"
+    $grande.style.height="200px"
     }
+    
     </script>
  
 </body>

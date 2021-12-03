@@ -23,7 +23,7 @@ let $errorImagen = qs('#errorImagen')
 let $error= qs('#errorSumbit')
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 let validationsErrors = false
 
 window.addEventListener('load', ()=>{

@@ -24,7 +24,6 @@ module.exports = {
                             { association: "image"}]
                 })
                 .then(productos =>{
-                    
                     res.render("home",{ 
                         arrayProduct: productos,               
                         session: req.session
@@ -32,9 +31,6 @@ module.exports = {
                 })
                 .catch(err => console.log(err))
             })
-            
-
-            
         }else{
             db.Product.findAll({
                 where: {
@@ -57,24 +53,12 @@ module.exports = {
             })
             .catch(err => console.log(err))
         }
-
-
-
-
-        
     },
     turnos: (req, res)=>{
         res.render("turnos",{
-            
             session: req.session
         })
     },
-    /* administrator: (req, res)=>{
-        res.render("administrator",{
-            
-            session: req.session
-        })
-    }, */
     administrator: (req, res) => {
         db.Product.findAll({
             include: [{ association: "category"},
@@ -84,26 +68,19 @@ module.exports = {
                     { association: "image"}]
         })
             .then(products => {
-                /* if (req.session.user.rol === 2) { */
-                    
                     res.render("administrator", {
                         products,
                         session: req.session
                     })
-                /* } else {
-                    res.redirect('/')
-                } */
             })
     },
     formarmat: (req, res)=>{
         res.render("formarmat",{
-            
             session: req.session
         })
     },
     trolley: (req, res)=>{
         res.render("carrito",{
-            
             session: req.session
         })
     },
@@ -123,8 +100,5 @@ module.exports = {
                 session: req.session
             })
         })
-
 	},
-    
-
 }

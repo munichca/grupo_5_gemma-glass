@@ -146,10 +146,22 @@ module.exports = {
                   }
             res.locals.user= req.session.user;
            /*  res.redirect('/'); */
-            if(req.session.user.rol == 2){
+            /* if(req.session.user.rol == 2){
                 res.redirect('/')
             }else{
                 res.redirect('/administrator')
+            } */
+            switch (req.session.user.rol) {
+                case 100:
+                    res.redirect('/admin/adminRol')
+                    break;
+                case 1:
+                    res.redirect('/administrator')
+                    break;
+            
+                default:
+                    res.redirect('/')
+                    break;
             }
               });
         }
