@@ -25,16 +25,16 @@
             <section class="tama">
                 <ul class="title">
                     <li class="listaP">
-                        <p class="id claro pe">id</p>
-                        <p class="name normal pe">nombre del producto</p>
-                        <p class="price claro pe">precio</p>
-                        <p class="category normal pe">categoria</p>
-                        <p class="shape claro pe">forma</p>
-                        <p class="brand normal pe">marca</p>
-                        <p class="material claro pe">material</p>
+                        <p class="id claro pe peH idH">id</p>
+                        <p class="name normal pe peH nameH">nombre del producto</p>
+                        <p class="price claro pe peH priceH">precio</p>
+                        <p class="category normal pe peH categoryH">categoria</p>
+                        <p class="shape claro pe peH shapeH">forma</p>
+                        <p class="brand normal pe peH brandH">marca</p>
+                        <p class="material claro pe peH materialH">material</p>
                         <p class="height normal pe">alto</p>
                         <p class="width claro pe">ancho</p>
-                        <p class="discount normal pe">descuento</p>
+                        <p class="discount normal pe  peH discountH">descuento</p>
                         <div class="emptySpace"></div>
                         <!-- <i class="far fa-edit fuera fSize"></i>
                         <button class="fuera boton caca" type="submit"><i class="far fa-trash-alt"></i></button> -->
@@ -72,25 +72,25 @@
           let ids ="id";
         let uno ="o1.id"
         let dos ="o2.id"
-        function orderA(dato){  
-        dato.sort((o1, o2)=>{
-                  if(o1.name < o2.name){
-                    return -1;
-                  }else if (o1.name > o2.name){
-                    return 1;
-                  }else{
-                    return 0;
-                  }
-                })
-              }
+        
+        
           let $list = document.querySelector(".list");
           let $ordenar = document.querySelector(".ordenar")
+          let $idH = document.querySelector(".idH")
+          let $nameH = document.querySelector(".nameH")
+          let $priceH = document.querySelector(".priceH")
+          let $categoryH = document.querySelector(".categoryH")
+          let $shapeH = document.querySelector(".shapeH")
+          let $brandH = document.querySelector(".brandH")
+          let $materialH = document.querySelector(".materialH")
+          let $discountH = document.querySelector(".discountH")
+          let $listaP = document.querySelector(".listaP")
                 
             fetch("http://localhost:3005/apis/products")
               .then((response) => response.json())
               .then((products) => {
                 
-                orderA(products.data)
+                
                  
                 
                   for (let i=0; i<products.data.length; i++){
@@ -199,7 +199,183 @@
             }
             /* ################ */
         }) })
+/* ################################# */
+$listaP.addEventListener("click", function(e){
+            switch (e.target) {
+              case $idH:
+                orderByA("id")
+                break;
+              case $nameH:
+                orderByA("name")
+                break;
+              case $priceH:
+                orderByA("price")
+                break;
+              case $categoryH:
+                orderByA("category")
+                break;
+              case $shapeH:
+                orderByA("shape")
+                break;
+              case $brandH:
+                orderByA("brand")
+                break;
+              case $materialH:
+                orderByA("material")
+                break;
+              case $discountH:
+                orderByA("discount")
+                break;
+            
+              default:
 
+                break;
+            }
+          }) ;
+function orderByA(valor){
+            fetch("http://localhost:3005/apis/products")
+              .then((response) => response.json())
+              .then((products) => {
+                switch (valor) {
+                  case "id":
+                    orderA(products.data)
+                    break;
+                  case "name":
+                    orderB(products.data)
+                    break;
+                  case "price":
+                
+                    orderC(products.data)
+                    break;
+                  case "category":
+                    orderD(products.data)
+                    break;
+                  case "shape":
+                    orderE(products.data)
+                    break;
+                  case "brand":
+                    orderF(products.data)
+                    break;
+                  case "material":
+                    orderG(products.data)
+                    break;
+                  case "discount":
+                    orderH(products.data)
+                    break;
+                
+                  default:
+                    break;
+                }
+                $list.innerHTML="";
+                  for (let i=0; i<products.data.length; i++){
+                    $list.innerHTML += "<div class='lista cod"+i+"' id='"+i+"' ></div>";
+                    let $lista =document.querySelector(".cod"+i+"");
+                    $lista.innerHTML += "<p class='id pe'>" + products.data[i].id+"</p>"
+                    $lista.innerHTML += "<p class='name pe'>"+products.data[i].name+"</p>"
+                    $lista.innerHTML += "<p class='price pe'>"+products.data[i].price+"</p>"
+                    $lista.innerHTML += "<p class='category pe'>"+products.data[i].category.name+"</p>"
+                    $lista.innerHTML += "<p class='shape pe'>"+products.data[i].shape.name+"</p>"
+                    $lista.innerHTML += "<p class='brand pe'>"+products.data[i].brand.name+"</p>"
+                    $lista.innerHTML += "<p class='material pe'>"+products.data[i].material.name+"</p>"
+                    $lista.innerHTML += "<p class='height pe'>"+products.data[i].height+"</p>"
+                    $lista.innerHTML += "<p class='width pe'>"+products.data[i].width+"</p>"
+                    $lista.innerHTML += "<p class='discount pe'>"+products.data[i].discount+"</p>"
+                    $lista.innerHTML += "<img class='pe editIcon ' name='editIcon' src='/image/edit.svg'  id='"+products.data[i].id+"'>"
+                    $lista.innerHTML += "<img src='/image/trash.svg' name='imgTrash'class='btnDelProd imgTrash  pe1 ' id='"+products.data[i].id+"' alt='"+products.data[i].name+"'>"
+
+                  }
+              })
+          }  ;
+
+          function orderA(dato){  
+            dato.sort((o1, o2)=>{
+                      if(o1.id < o2.id){
+                        return -1;
+                      }else if (o1.id > o2.id){
+                        return 1;
+                      }else{
+                        return 0;
+                      }
+                    })
+                  }
+          function orderB(dato){  
+            dato.sort((o1, o2)=>{
+                      if(o1.name < o2.name){
+                        return -1;
+                      }else if (o1.name > o2.name){
+                        return 1;
+                      }else{
+                        return 0;
+                      }
+                    })
+                  }
+          function orderC(dato){  
+            dato.sort((o1, o2)=>{
+                      if(o1.price < o2.price){
+                        return -1;
+                      }else if (o1.price > o2.price){
+                        return 1;
+                      }else{
+                        return 0;
+                      }
+                    })
+                  }
+          function orderD(dato){  
+            dato.sort((o1, o2)=>{
+                      if(o1.category < o2.category){
+                        return -1;
+                      }else if (o1.category > o2.category){
+                        return 1;
+                      }else{
+                        return 0;
+                      }
+                    })
+                  }
+          function orderE(dato){  
+            dato.sort((o1, o2)=>{
+                      if(o1.shape < o2.shape){
+                        return -1;
+                      }else if (o1.shape > o2.shape){
+                        return 1;
+                      }else{
+                        return 0;
+                      }
+                    })
+                  }
+          function orderF(dato){  
+            dato.sort((o1, o2)=>{
+                      if(o1.brand < o2.brand){
+                        return -1;
+                      }else if (o1.brand > o2.brand){
+                        return 1;
+                      }else{
+                        return 0;
+                      }
+                    })
+                  }
+          function orderG(dato){  
+            dato.sort((o1, o2)=>{
+                      if(o1.material < o2.material){
+                        return -1;
+                      }else if (o1.material > o2.material){
+                        return 1;
+                      }else{
+                        return 0;
+                      }
+                    })
+                  }
+          function orderH(dato){  
+            dato.sort((o1, o2)=>{
+                      if(o1.discount < o2.discount){
+                        return -1;
+                      }else if (o1.discount > o2.discount){
+                        return 1;
+                      }else{
+                        return 0;
+                      }
+                    })
+                  }
+        /* ################################# */
       })
         /* ################################# */
 

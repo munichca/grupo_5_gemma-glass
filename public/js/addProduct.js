@@ -10,11 +10,7 @@ function bn(element) {
         $price1 = bn("price"),
         $cleanText = qs(".cleanText"),
         regExAlphaNumeric = /^[A-Za-z\ñáéíóúü\0-9\s]{3,50}$/;
-<<<<<<< HEAD
-    let finded ="";
-=======
     let found ="";
->>>>>>> bf341567eab4585d8723da96d1af8c579fd531af
     sessionStorage.setItem("name", "");
     $name.addEventListener("blur", function () {
         fetch("http://localhost:3005/apis/products/"+$name.value)

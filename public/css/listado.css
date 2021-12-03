@@ -33,7 +33,9 @@ a {
   display: flex;
   
 }
-
+.peH{
+  cursor: pointer;
+}
 .titlePrincipalList {
   display: flex;
   width: 100%;
