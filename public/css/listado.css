@@ -246,6 +246,26 @@ form{
 .titleModal{
   margin-top: 15px;
 }
+.idH:hover{
+  background-color: var(--tipos);
+  color: white;
+  transition: .4s;
+}
+.nameH:hover{
+  background-color: var(--tipos);
+  color: white;
+  transition: .4s;
+}
+.priceH:hover{
+  background-color: var(--tipos);
+  color: white;
+  transition: .4s;
+}
+.discountH:hover{
+  background-color: var(--tipos);
+  color: white;
+  transition: .4s;
+}
 @media (min-width: 768px) {
   .btn {
     margin: 10px 0px 0px 0;
