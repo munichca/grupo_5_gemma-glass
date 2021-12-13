@@ -104,7 +104,7 @@ $form.addEventListener('submit',function(event){
         }
     }
     if(!error){
-        console.log('Todo bien');
+        /* console.log('Todo bien'); */
         $form.submit()
     }
 });

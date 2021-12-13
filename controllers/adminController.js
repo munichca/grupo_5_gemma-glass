@@ -1,6 +1,6 @@
 /* const { localsName } = require('ejs'); */
 const db = require('../database/models');
-
+const fs = require('fs').promises
 let {validationResult} = require ("express-validator");
 const session = require('express-session');
 module.exports = {
@@ -28,6 +28,7 @@ module.exports = {
             })
     },
     nuevoProducto: (req, res) => {
+        
         let arrayImages = [];
         if (req.files) {
             req.files.forEach(image => {
@@ -208,6 +209,17 @@ module.exports = {
                 }
             })
     },
+    /* ########################################## */
+    // importa el módulo de node `file-system`
+
+
+/* fs.unlink('./old-article.md')
+  .then(() => {
+    console.log('File removed')
+  }).catch(err => {
+    console.error('Something wrong happened removing the file', err)
+  }) */
+    /* ########################################## */
     borrarProducto: (req, res) => {
         
         db.Product.destroy({
@@ -223,7 +235,7 @@ module.exports = {
                 }
             })
             .then(datos=>{
-                
+                res.send(datos);
                 datos.forEach(dato=>{
                     db.productImages.destroy({
                         where:{

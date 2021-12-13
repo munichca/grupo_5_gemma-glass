@@ -24,6 +24,7 @@
 @import url(adminRol.css);
 @import url(confirmDelete.css);
 @import url(formarmat.css);
+@import url(fonts.css);
 
 
 
@@ -38,11 +39,11 @@
     --header:#4F8DF0;
     --navbar : rgb(182, 209, 252);
     /* color 2 */
-    --tipos1:#152847;
+    --tipos1:#091a34;
     --header1:#4F8DF0;
-    --tipos2:#4F2A50;
+    --tipos2:#69036c;
     --header2:#FF61E4;
-    --tipos3:#042808;
+    --tipos3:#003106;
     --header3:#6BBD74;
     --tipos4:#0c242d;
     --header4:#69d1f7;
@@ -54,4 +55,5 @@
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
 }
+
 

@@ -1,6 +1,6 @@
 const session = require("express-session")
 const db = require("../../database/models")
-
+const fs = require("fs")
 
 
 
@@ -52,9 +52,31 @@ module.exports = {
         }).catch(error => console.log(error))
 
     },
+    search:(req, res)=>{
+        db.Product.findOne({
+            where :{id: req.params.id},
+            include: [{ association: "category"},
+            { association: "shape"},
+            { association: "brand"},
+            { association: "material"},
+            { association: "image"}]
+            
+        }).then(products =>{
+
+            return res.status(200).json({
+                meta:{
+                    endpoint:getUrl(req),
+                    status: 200
+                },
+                data: products
+            })
+        }).catch(error => console.log(error))
+
+    },
 
     /* ######################### */
     deleteProd: (req, res)=> {
+        console.log("para por delete")
         db.Product.destroy({
             where:{
                 id:+req.params.id
@@ -68,10 +90,13 @@ module.exports = {
             .then(datos=>{
                 
                 datos.forEach(dato=>{
+                   fs.unlink(`./image/productImages/.${dato.image[index].image}`)
                     db.productImages.destroy({
                         where:{
                             productId : +req.params.id
                         }
+                       /*  res.send(dato.image[0].image); */
+                         
                     })
                 }) })
 

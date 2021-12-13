@@ -14,7 +14,7 @@ router.get("/edit/:id",userAdmin, edit);
 router.get("/administrator",cookie,userAdmin ,lista);
 router.get("/adminRol",cookie,userAdmin ,adminRol);
 router.put("/edit/:id", uploadProductImages.array("archivos"), producteditValidator, edicion);
-router.delete("/eliminarProducto/:id", borrarProducto)
+router.delete("/eliminarProducto/:id", userAdmin, borrarProducto)
 router.get('/add', cookie,add);
 router.post('/add', uploadProductImages.array("archivos"), productCreateValidator, nuevoProducto);
 

@@ -76,7 +76,7 @@
     background-color: var(--header);
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     position: absolute;
     transition: .5s;
@@ -86,8 +86,8 @@
     background-color: #084dbb;
     border: 2px solid white ;
     color: white;
-    font-weight: bold;
-    font-size: 22px;
+    font-weight: lighter;
+    font-size: 16px;
     transition: .5s;
 
 }

@@ -1,5 +1,6 @@
     <header >
         <script src='/js/header.js' defer></script>
+        <script src='/js/troley.js' defer></script>
         <div class="menuBurger">
             <input type="checkbox" name="burger" id="btn-modal">
             <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
@@ -80,7 +81,7 @@
             
              <% if (typeof session.user == "undefined" || session.user.rol === 2) { %>
             <div class="trolley">
-                <a href="/trolley">
+                <a class="troleyIso" href="/trolley">
                 
                     <i class="sixeC fa fa-shopping-cart"></i>
                     <p class="carrito">Mi carrito</p>
