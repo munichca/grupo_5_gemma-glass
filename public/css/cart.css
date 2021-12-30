@@ -1,53 +1,56 @@
-main{
+main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 85%;
     margin: 10px auto;
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
 }
-.sect2 *{
+
+.sect2 * {
     /* border: 1px solid red; */
     line-height: .8;
 }
-.sect1 *{
+
+.sect1 * {
     /* line-height: .8; */
-    
 }
-.hrCar{
+
+.hrCar {
     margin: 10px 2px;
 }
-.sect1{
+
+.sect1 {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 55px;
-    
     justify-content: center;
     align-items: center;
-    
-}
-.carritext{
-   font-size: 22px;
-   font-weight: bolder;
-
 }
 
-.sect2{
+.carritext {
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.sect2 {
     width: 70%;
     height: 100vh;
 }
-.sect2 h6{
+
+.sect2 h6 {
     font-size: 13px;
-    
     color: var(--tipos);
 }
-.sect2 span{
+
+.sect2 span {
     font-size: 16px;
     font-weight: bold;
     color: var(--tipos);
 }
-.card1{
+
+.card1 {
     border-top: 1px outset var(--tipos);
     border-bottom: 1px ridge var(--tipos);
     /* border-style: ; */
@@ -55,99 +58,100 @@ main{
     justify-content: space-around;
     align-items: center;
     padding: auto 10px;
-    
-
 }
-.imgCard{
+
+.imgCard {
     width: 85px;
     /* height: 55px; */
     margin-left: 10px;
     object-fit: contain;
     /* border: 2px solid gray; */
-
 }
-.nameProd{
-    display:flex;
+
+.nameProd {
+    display: flex;
     flex-direction: column;
     width: 20%;
     /* height: 55px; */
-    
     text-align: center;
-    
-    
 }
-.priceProd{
-    display:flex;
+
+.priceProd {
+    display: flex;
     flex-direction: column;
     width: 10%;
-    
-    
     text-align: center;
 }
-.discountProd{
-    display:flex;
+
+.discountProd {
+    display: flex;
     flex-direction: column;
     width: 10%;
-    
-    
     text-align: center;
 }
-.cantProd{
-    display:flex;
+
+.cantProd {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 15%;
-    
     justify-content: center;
     align-items: center;
 }
-.cantProd *{
+
+.cantProd * {
     margin: 2px 0px;
 }
-.imgSign{
+
+.imgSign {
     width: 25px;
     height: 25px;
     color: gray;
-    background-color:white;
+    background-color: white;
     cursor: pointer;
 }
-.masMenos{
+
+.masMenos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-   
 }
-.inputCant{
+
+.inputCant {
     width: 25px;
 }
-.endProd{
+
+.endProd {
     width: 15%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    
 }
-.subTotal{
+
+.subTotal {
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 65%;
 }
-.far{
+
+.far {
     font-size: 24px;
     color: var(--tipos);
     cursor: pointer;
 }
-.sect3{
+
+.sect3 {
     width: 30%;
     height: 100vh;
     ;
 }
-.sect3{
+
+.sect3 {
     border: 1px solid gray;
     padding: 25px;
     display: flex;
@@ -155,26 +159,32 @@ main{
     text-align: center;
     align-items: center;
 }
-.subtotext{
+
+.subtotext {
     font-weight: bold;
 }
-.subtonum{
+
+.subtonum {
     font-size: 20px;
     font-weight: bold;
 }
-.sect3 .btn{
+
+.sect3 .btn {
     font-size: 16px;
 }
+
+
 /* *{
     margin: 0;
     padding: 0;
 } */
-.botonCito{
+
+.botonCito {
     width: 130px;
     height: 30px;
     color: var(--tipos);
     border-radius: 5px;
-    background: linear-gradient(85deg, rgba(79,141,240,1) 0%, rgba(79,141,240,1) 40%, rgba(79,141,240,.8) 50%, rgba(79, 141, 240, 1) 60%, rgba(79,141,240,1) 100%);
+    background: linear-gradient(85deg, rgba(79, 141, 240, 1) 0%, rgba(79, 141, 240, 1) 40%, rgba(79, 141, 240, .8) 50%, rgba(79, 141, 240, 1) 60%, rgba(79, 141, 240, 1) 100%);
     background-size: 300% 300%;
     position: relative;
     display: flex;
@@ -184,32 +194,36 @@ main{
     margin-bottom: 5px;
     /* animation: cambiar 1s ease-in 1 ; */
 }
-.botonCito::before{
-    
-}
-.botonCito:hover{
+
+.botonCito::before {}
+
+.botonCito:hover {
     /* background: linear-gradient(85deg, rgba(21,40,71,1) 0%, rgba(21,40,71,1) 40%, rgba(79,141,240,.7) 50%, rgba(21,40,71,.6) 60%, rgba(21,40,71,1) 100%); */
-    animation: cambiar 1.5s ease-in-out 1 ;
+    animation: cambiar 1.5s ease-in-out 1;
     /* color: white; */
     font-weight: bold;
     box-shadow: 0 0 2px 1.5px var(--tipos);
     border: 1px solid white;
-    
 }
 
-@keyframes cambiar{
-    0%{background-position: 0 50%;}
-    50%{background-position: 100% 50%;}
-    100%{background-position: 0 50%;}
+@keyframes cambiar {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }
+
 
 /*  TABLET  */
-@media (min-width: 768px){
-    
-}
+
+@media (min-width: 768px) {}
+
 
 /* DESKTOP */
-@media (min-width: 1024px) {
-     
-}
 
+@media (min-width: 1024px) {}

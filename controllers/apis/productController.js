@@ -1,6 +1,6 @@
 const session = require("express-session")
 const db = require("../../database/models")
-const fs = require("fs")
+const fs = require('fs').promises
 
 
 
@@ -76,7 +76,7 @@ module.exports = {
 
     /* ######################### */
     deleteProd: (req, res)=> {
-        console.log("para por delete")
+        res.send(req.params.id)
         db.Product.destroy({
             where:{
                 id:+req.params.id
@@ -90,12 +90,17 @@ module.exports = {
             .then(datos=>{
                 
                 datos.forEach(dato=>{
-                   fs.unlink(`./image/productImages/.${dato.image[index].image}`)
+                   /* fs.unlink("/image/productImages/"+ dato.image[0].image, function (err) {
+                        if (err) {
+                          console.error(err);
+                        } else {
+                          console.log("File removed:");
+                        }
+                      }); */
                     db.productImages.destroy({
                         where:{
                             productId : +req.params.id
                         }
-                       /*  res.send(dato.image[0].image); */
                          
                     })
                 }) })

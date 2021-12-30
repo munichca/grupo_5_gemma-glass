@@ -33,9 +33,11 @@ $mutton.addEventListener("click", function(){
 
     $btnEliminar.addEventListener("click", function () {
         let inputChecked = document.querySelector('input[name="whi"]:checked');
-        $form.setAttribute("action", `/apis/sdelete/"${inputChecked.value}"?_method=DELETE`);
-        $form.setAttribute("method", "POST");
-        $form.submit()
+        /* $form.setAttribute("action", `/apis/sdelete/"${inputChecked.value}"?_method=DELETE`); */
+       // $form.setAttribute("action", `/admin/borrarProducto/"${inputChecked.value}"?_method=DELETE`);
+       // $form.setAttribute("method", "POST");
+        //$form.submit()
+        alert("delete")
     
     
 

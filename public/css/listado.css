@@ -1,115 +1,133 @@
 :root {
-  --grey: #444444;
-  --red: #b92519;
-  --tipos: #152847;
-  --header: #4f8df0;
+    --grey: #444444;
+    --red: #b92519;
+    --tipos: #152847;
+    --header: #4f8df0;
 }
 
 a {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 .mainListado {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-left: 5vw;
-  padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
+
 .titleButton {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
-  width: 100%;
- /*  border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    width: 100%;
+    /*  border: 2px solid red; */
 }
-.contTitle{
-  display: flex;
-  justify-content: center;
-  
-  width: 855%;
+
+.contTitle {
+    display: flex;
+    justify-content: center;
+    width: 855%;
 }
-.btnAddCont{
-  display: flex;
-  
+
+.btnAddCont {
+    display: flex;
 }
-.peH{
-  cursor: pointer;
+
+.peH {
+    cursor: pointer;
 }
+
+.pe {
+    border-right: 1px solid var(--tipos);
+    padding: 4.2px 0 4px;
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+}
+
 .titlePrincipalList {
-  display: flex;
-  width: 100%;
-  color: var(--tipos);
-  font-size: 16px;
-  padding-top: 5px;
-  /* margin-left: 5vw; */
-  text-align: center;
+    display: flex;
+    width: 100%;
+    color: var(--tipos);
+    font-size: 16px;
+    padding-top: 5px;
+    /* margin-left: 5vw; */
+    text-align: center;
     justify-content: center;
     align-items: center;
-  /* border: 2px solid red; */
+    /* border: 2px solid red; */
 }
+
 .btnAddProd {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 ul {
-  padding-left: 0;
+    padding-left: 0;
 }
+
 .tama {
-  display: flex;
-  flex-direction: column;
-  width: 90vw;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
 }
 
 .claro {
-  background-color: lightcyan;
+    background-color: lightcyan;
 }
+
 .normal {
-  background-color: lightskyblue;
+    background-color: lightskyblue;
 }
+
 .lista {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
- /*  border: 1px solid var(--tipos); */
-  align-items: center;
-  height: 25px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    /*  border: 1px solid var(--tipos); */
+    align-items: center;
+    height: 25px;
 }
+
 .listaP {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
- /*  border: 1px solid var(--tipos); */
-  align-items: center;
-  height: 25px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    /*  border: 1px solid var(--tipos); */
+    align-items: center;
+    height: 25px;
 }
+
 .contP {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid red;
- /*  padding: 4.2px 0 0px; */
-  margin: 0 0;
-  text-align: center;
-  font-size: 12px;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    /*  padding: 4.2px 0 0px; */
+    margin: 0 0;
+    text-align: center;
+    font-size: 12px;
+    height: 100%;
 }
-
-
 
 .pe {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid var(--tipos);
- /*  padding: 4.2px 0 0px; */
-  margin: 0 0;
-  text-align: center;
-  font-size: 12px;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--tipos);
+    /*  padding: 4.2px 0 0px; */
+    margin: 0 0;
+    text-align: center;
+    font-size: 12px;
+    height: 100%;
 }
+
+
 /* .pe1{
   height: 25px;
   width: 2vw;
@@ -117,84 +135,99 @@ ul {
 } */
 
 .containerList {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  /* border: 3px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* border: 3px solid green; */
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto 0;
-  width: 90vw;
- /*  border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 0;
+    width: 90vw;
+    /*  border: 2px solid green; */
 }
+
 .id {
-  width: 6vw;
+    width: 6vw;
 }
+
 .name {
-  width: 52vw;
+    width: 52vw;
 }
+
 .price {
-  width: 20vw;
+    width: 20vw;
 }
+
 .category {
-  display: none;
+    display: none;
 }
+
 .shape {
-  display: none;
+    display: none;
 }
+
 .brand {
-  display: none;
+    display: none;
 }
+
 .material {
-  display: none;
+    display: none;
 }
+
 .height {
-  display: none;
+    display: none;
 }
+
 .width {
-  display: none;
+    display: none;
 }
+
 .discount {
-  display: none;
+    display: none;
 }
 
 .fuera {
-  opacity: 0;
+    opacity: 0;
 }
-.emptySpace{
-  width: 15vw;
-  border: 1px solid green;
-  height: 25px;
-}
-.editIcon{
-  width: 7vw;
-  height: 4.4vh;
-  margin-top: 2px;
-  border: 1px solid var(--tipos);
-background-color: var(--header);
-}
-.pe2{
-  /* height: 7vw;
-  width: 4.4vh; */
-  background-color: var(--header);
- 
-}
-.buttonEdit{
-  width: 7.5vw;
-  height: 25px;
-  border: 1px solid var(--tipos);
-background-color: var(--header);
-display: flex;
-justify-content: center;
-align-items: center;
 
+.emptySpace {
+    width: 15vw;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
+
+.editIcon {
+    width: 7vw;
+    height: 4.4vh;
+    border: 1px solid var(--tipos);
+    background-color: var(--header);
+}
+
+.pe2 {
+    /* height: 7vw;
+  width: 4.4vh; */
+    background-color: var(--header);
+}
+
+.buttonEdit {
+    width: 7.5vw;
+    height: 25px;
+    border: 1px solid var(--tipos);
+    background-color: var(--header);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* .buttonDelete{
   width: 7.5vw;
   height: 25px;
@@ -202,239 +235,241 @@ align-items: center;
   background-color: rgb(255, 0, 0);
   display: flex;
 } */
-.imgTrash{
-  width: 7.5vw;
-  height: 25PX;
-  /* margin-top: 2px; */
-  background-color: rgb(255, 0, 0);
-  object-fit: cover
-  /* object-fit: cover;
+
+.imgTrash {
+    width: 2.5vw;
+    height: 25px;
+    /* margin-top: 2px; */
+    background-color: rgb(255, 0, 0);
+    object-fit: cover
+    /* object-fit: cover;
   cursor: pointer;
 } */
 }
-.imgTrash:hover{
-  opacity: 80%;
+
+.imgTrash:hover {
+    opacity: 80%;
 }
-form{
-  margin: 0 !important;
-  padding: 0 !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+
+form {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
+
 .boton {
-  padding: 0;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fSize {
-  background-color: lightskyblue;
-  /* padding: 5px; */
+    background-color: lightskyblue;
+    /* padding: 5px; */
 }
-.aHeaderModal{
- 
-  
-  margin-bottom: 25px;
-}
-.titleHeaderModal{
-  margin: auto;
-}
-.titleModal{
-  margin-top: 15px;
-}
-.idH:hover{
-  background-color: var(--tipos);
-  color: white;
-  transition: .4s;
-}
-.nameH:hover{
-  background-color: var(--tipos);
-  color: white;
-  transition: .4s;
-}
-.priceH:hover{
-  background-color: var(--tipos);
-  color: white;
-  transition: .4s;
-}
-.discountH:hover{
-  background-color: var(--tipos);
-  color: white;
-  transition: .4s;
-}
-@media (min-width: 768px) {
-  .btn {
-    margin: 10px 0px 0px 0;
-  }
-  .containerList {
-    display: flex;
-  }
-  .tama {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    
-  }
-  .list{
-    width: 100%;
-  }
-  .list{
-    width: 100%;
-  }
-  .btnAddCont {
-    display: flex;
-    flex-direction: row;
-    /*  justify-content: flex-end; */
 
-    /* border: 1px solid red; */
-  }
-  .emptySpace{
-    width: 7vw;
-  }
-  .imgTrash{
-    width: 2vw;
-    height: 18px;
-    object-fit: cover;
-    cursor: pointer;
-    /* padding: 4px; */
-    background-color: red;
-  }
-  .editIcon{
-    width: 3.5vw;
-    height: 4.4vh;
-    margin-top: 2px;
-  }
-  .pe2{
-    /* height: 7vw;
-    width: 4.4vh; */
-    background-color: var(--header);
-   
-  }
-  .buttonEdit{
-    width: 3.5vw !important;
-    height: 25px !important;
-    border: 1px solid var(--tipos);
-  background-color: var(--header);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  }
-  .buttonDelete{
-    width: 3.5vw;
-    height: 25px;
-    border: 1px solid var(--tipos);
-    background-color: rgb(255, 0, 0);
-    display: flex;
-    justify-content: center;
-  align-items: center;
-  }
-  
-  .id {
-    width: 2.5vw;
-  }
-  .name {
-    width: 18vw;
-  }
-  .price {
-    width: 7vw;
-  }
-  .category {
-    width: 14vw;
-    display: flex;
-  }
-  .shape {
-    width: 9vw;
-    display: flex;
-  }
-  .brand {
-    width: 8vw;
-    display: flex;
-  }
-  .material {
-    width: 8vw;
-    display: flex;
-  }
-  .height {
-    width: 5vw;
-    display: flex;
-  }
-  .width {
-    width: 5vw;
-    display: flex;
-  }
-  .discount {
-    width: 8vw;
-    display: flex;
-  }
-  .btnAddProd {
-    margin-bottom: 15px !important;
-    
-  }
-  .titlePrincipalList {
-    display: flex;
-    color: var(--tipos);
-    font-size: 24px;
-    /* text-align: center;
-      justify-content: center;
-      align-items: center */;
-    
-  }
-  .pe {
-    border-right: 1px solid var(--tipos);
-    /* padding: 4.2px 0 4px; */
-    margin: 0;
-    text-align: center;
-    font-size: 11px;
-  }
+.aHeaderModal {
+    margin-bottom: 25px;
 }
-@media (min-width: 1024px){
-  .emptySpace{
-    width: 5vw;
-    border: 1px solid black;
-  }
-  /* .pe1{
+
+.titleHeaderModal {
+    margin: auto;
+}
+
+.titleModal {
+    margin-top: 15px;
+}
+
+.idH:hover {
+    background-color: var(--tipos);
+    color: white;
+    transition: .4s;
+}
+
+.nameH:hover {
+    background-color: var(--tipos);
+    color: white;
+    transition: .4s;
+}
+
+.priceH:hover {
+    background-color: var(--tipos);
+    color: white;
+    transition: .4s;
+}
+
+.discountH:hover {
+    background-color: var(--tipos);
+    color: white;
+    transition: .4s;
+}
+
+@media (min-width: 768px) {
+    .btn {
+        margin: 10px 0px 0px 0;
+    }
+    .containerList {
+        display: flex;
+    }
+    .tama {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+    .list {
+        width: 100%;
+    }
+    .list {
+        width: 100%;
+    }
+    .btnAddCont {
+        display: flex;
+        flex-direction: row;
+        /*  justify-content: flex-end; */
+        /* border: 1px solid red; */
+    }
+    .emptySpace {
+        width: 7vw;
+    }
+    .imgTrash {
+        width: 2vw;
+        height: 18px;
+        object-fit: cover;
+        cursor: pointer;
+        /* padding: 4px; */
+        background-color: red;
+    }
+    .editIcon {
+        width: 3.5vw;
+        height: 4.4vh;
+    }
+    .pe2 {
+        /* height: 7vw;
+    width: 4.4vh; */
+        background-color: var(--header);
+    }
+    .buttonEdit {
+        width: 3.5vw !important;
+        height: 25px !important;
+        border: 1px solid var(--tipos);
+        background-color: var(--header);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttonDelete {
+        width: 3.5vw;
+        height: 25px;
+        border: 1px solid var(--tipos);
+        background-color: rgb(255, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .id {
+        width: 2.5vw;
+    }
+    .name {
+        width: 18vw;
+    }
+    .price {
+        width: 7vw;
+    }
+    .category {
+        width: 14vw;
+        display: flex;
+    }
+    .shape {
+        width: 9vw;
+        display: flex;
+    }
+    .brand {
+        width: 8vw;
+        display: flex;
+    }
+    .material {
+        width: 8vw;
+        display: flex;
+    }
+    .height {
+        width: 5vw;
+        display: flex;
+    }
+    .width {
+        width: 5vw;
+        display: flex;
+    }
+    .discount {
+        width: 8vw;
+        display: flex;
+    }
+    .btnAddProd {
+        margin-bottom: 15px !important;
+    }
+    .titlePrincipalList {
+        display: flex;
+        color: var(--tipos);
+        font-size: 24px;
+        /* text-align: center;
+      justify-content: center;
+      align-items: center */
+        ;
+    }
+    .pe {
+        border-right: 1px solid var(--tipos);
+        /* padding: 4.2px 0 4px; */
+        padding: auto;
+        text-align: center;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .emptySpace {
+        width: 2.5vw;
+        border: 1px solid black;
+        object-fit: cover;
+    }
+    /* .pe1{
     height: 25px;
     width: 2.5vw;
     border:1px  solid var(--tipos);
   } */
-
-.editIcon{
-  width: 2.8vw;
-  height: 27px;
-  margin-top: 2px;
-}
-.pe2{
-  /* height: 7vw;
+    .editIcon {
+        width: 2.5vw;
+        height: 25px;
+        /* margin-top: 2px; */
+    }
+    .pe2 {
+        /* height: 7vw;
   width: 4.4vh; */
-  background-color: var(--header);
- 
-}
-.buttonEdit{
-  width: 2.5vw;
-  height: 25px;
-  border: 1px solid var(--tipos);
-background-color: var(--header);
-}
-.buttonDelete{
-  width: 2.5vw;
-  height: 25px;
-  border: 1px solid var(--tipos);
-  background-color: red;
-  justify-content: center;
-}
-
-.imgTrash{
-  width: 2.5vw;
-  height: 25px;
-  /* margin-bottom: 4px; */
-  object-fit: cover;
-  /* object-fit: cover;
+        background-color: var(--header);
+    }
+    .buttonEdit {
+        width: 2.5vw;
+        height: 25px;
+        border: 1px solid var(--tipos);
+        background-color: var(--header);
+    }
+    /* .buttonDelete {
+        width: 2.5vw;
+        height: 25px;
+        border: 1px solid var(--tipos);
+        background-color: red;
+        justify-content: center;
+    } */
+    .imgTrash {
+        width: 2.5vw;
+        height: 25px;
+        /* margin-bottom: 4px; */
+        object-fit: contain;
+        /* object-fit: cover;
   cursor: pointer;
 } */
-}
+    }
 }

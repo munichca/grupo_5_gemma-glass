@@ -28,7 +28,7 @@ module.exports = {
             })
     },
     nuevoProducto: (req, res) => {
-        
+        console.log("chau mundo")
         let arrayImages = [];
         if (req.files) {
             req.files.forEach(image => {
@@ -221,7 +221,7 @@ module.exports = {
   }) */
     /* ########################################## */
     borrarProducto: (req, res) => {
-        
+        res.send(req.params.id)
         db.Product.destroy({
             where: {
                 id: +req.params.id

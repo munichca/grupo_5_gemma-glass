@@ -1,71 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("partials/head") %>
-  <script src='/js/administrator.js' defer></script>
-  <body>
-    <%- include('./partials/headerAdmin.ejs') %>
-    
-    <main class="subcatMain">
-      <section class="navLatsub">
-        <h5 class="h5SubCat">Seleccione una Sub categoria</h5>
-        <a href="#" class="shapes navB itemB" id="shapes1"><li id="navFMM">Formas</li></a>
-        <a href="#" class="brand1 navB itemB" id="brand1"><li id="navFMM">Marcas</li></a>
-        <a href="#" class="material1 navB itemB" id="material1"><li id="navFMM">Materiales</li></a>
-        <!-- <a href="#" class="brand navB" id="brand"><li id="navFMM">Marcas</li></a>
-        <a href="#" class="material navB" id="material"><li id="navFMM">Materiales</li></a> -->
-      </section>
-      <section class="sbmSection" id="sbmSection">
-        <section class="subCat subCatSection">
-          <div class="buttonsCrud">
-            <div class="navSubCat btnAdd1 itemA"><div>Agregar</div></div>
-            <div class="navSubCat btnEdit1 itemA"><div>Editar</div></div>
-            <div class="navSubCat btnDel1 itemA"><div>Eliminar</div></div>
-          </div>
-          <form class="tamanioFondo" id="form"  >
-            <h5 class="titleChoose"></h5>
-            <div class="contSubCat"></div>
+<%- include("partials/head") %>
+    <script src='/js/administrator.js' defer></script>
 
-            <div class="subCatSection2">
-              <div class="subCatEntry">
-                <label class="tamanio subCatLabel" for="subCatinput"></label>
-                <input class="tamanio subCatInput" type="text" name="subCatInput" value=""/>
-                <% if (locals.errors && errors.subCatInput) { %>
-                  <p class="rojo" id="myp"><%= errors.subCatInput.msg %> </p>
-              <% }else{ %>
-                <p class="rojo" id="myp"></p>
-              <% } %> 
-              </div>
-              
-            </div>
-            <!-- #### para modal ##### -->
+    <body>
+        <%- include('./partials/headerAdmin.ejs') %>
 
-            <div class="aModal" id="tvesModalDel">
-              <label class="closeX">x</label>
-                <!-- <div class="aModalContainer"> -->
-                  <div class="bacg">
-                    <div class="aHeaderModal">
-                      <p class="titleHeaderModal">GemmaGlass</p>
-                    </div>
-                    <p class="titleModal">
-                      
-                    </p>
-                    <div class="btn btnEliminar">Eliminar</div>
-                  </div> 
-                <!-- </div> -->
-              </div>
+            <main class="subcatMain">
+                <section class="navLatsub">
+                    <h5 class="h5SubCat">Seleccione una Sub categoria</h5>
+                    <a href="#" class="shapes navB itemB" id="shapes1">
+                        <li id="navFMM">Formas</li>
+                    </a>
+                    <a href="#" class="brand1 navB itemB" id="brand1">
+                        <li id="navFMM">Marcas</li>
+                    </a>
+                    <a href="#" class="material1 navB itemB" id="material1">
+                        <li id="navFMM">Materiales</li>
+                    </a>
+                    <!-- <a href="#" class="brand navB" id="brand">
+                        <li id="navFMM">Marcas</li>
+                    </a>
+                    <a href="#" class="material navB" id="material">
+                        <li id="navFMM">Materiales</li>
+                    </a> -->
+                </section>
+                <section class="sbmSection" id="sbmSection">
+                    <section class="subCat subCatSection">
+                        <div class="buttonsCrud">
+                            <div class="navSubCat btnAdd1 itemA">
+                                <div>Agregar</div>
+                            </div>
+                            <div class="navSubCat btnEdit1 itemA">
+                                <div>Editar</div>
+                            </div>
+                            <div class="navSubCat btnDel1 itemA">
+                                <div>Eliminar</div>
+                            </div>
+                        </div>
+                        <form class="tamanioFondo" id="form">
+                            <h5 class="titleChoose"></h5>
+                            <div class="contSubCat"></div>
+
+                            <div class="subCatSection2">
+                                <div class="subCatEntry">
+                                    <label class="tamanio subCatLabel" for="subCatinput"></label>
+                                    <input class="tamanio subCatInput" type="text" name="subCatInput" value="" autocomplete="off" />
+                                    <% if (locals.errors && errors.subCatInput) { %>
+                                        <p class="rojo" id="myp">
+                                            <%= errors.subCatInput.msg %>
+                                        </p>
+                                        <% }else{ %>
+                                            <p class="rojo" id="myp"></p>
+                                            <% } %>
+                                </div>
+
+                            </div>
+                            <!-- #### para modal ##### -->
+
+                            <div class="aModal" id="tvesModalDel">
+                                <label class="closeX">x</label>
+                                <!-- <div class="aModalContainer"> -->
+                                <div class="bacg">
+                                    <div class="aHeaderModal">
+                                        <p class="titleHeaderModal">GemmaGlass</p>
+                                    </div>
+                                    <p class="titleModal">
+
+                                    </p>
+                                    <div class="btn btnEliminar">Eliminar</div>
+                                </div>
+                                <!-- </div> -->
+                            </div>
 
 
 
-            <!-- #### para modal ##### -->
-          </form>
-          <button type="button"class="btn masterButton"></button>
-        </section>
-      </section>
-      <div class="backImage">
-      <img class="imgCat" src="/image/subCat.jpg" alt="" />
-    </div>
-    </main>
-    <iframe name="frame" class="frame" frameborder="0"></iframe>
-    
-  </body>
+                            <!-- #### para modal ##### -->
+                        </form>
+                        <button type="button" class="btn masterButton"></button>
+                    </section>
+                </section>
+                <div class="backImage">
+                    <img class="imgCat" src="/image/subCat.jpg" alt="" />
+                </div>
+            </main>
+            <iframe name="frame" class="frame" frameborder="0"></iframe>
+
+    </body>
+
 </html>

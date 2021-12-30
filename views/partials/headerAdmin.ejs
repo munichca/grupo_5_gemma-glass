@@ -1,113 +1,127 @@
-    <header >
-        <script src='/js/header.js' defer></script>
-        <!-- <script src='/js/administrator.js' defer></script> -->
-        <div class="menuBurger">
-            <input type="checkbox" name="burger" id="btn-modal" class="checkUser" value="<%= locals.user ? user.id : "2"%>" >
-            <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
-            
-            <div class="modal-burger" id="myModal" >
-                <div class="contenedor-burger">
-                    <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
-                    <h2>Gemma Glass</h2>
-                    <div class="contenido-burger">
-                        <ul>
-                            <a href="/administrator"><li>Porductos</li></a> 
-                            <% if (session.user.rol == 100) { %>
-                                <a href="/formarmat"><li>Filtros</li></a>
+<header>
+    <script src='/js/headerAdmin.js' defer></script>
+    <!-- <script src='/js/administrator.js' defer></script> -->
+    <div class="menuBurger">
+        <input type="checkbox" name="burger" id="btn-modal" class="checkUser" value="<%= locals.user ? user.id : " 2 "%>">
+        <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
+
+        <div class="modal-burger" id="myModal">
+            <div class="contenedor-burger">
+                <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
+                <h2>Gemma Glass</h2>
+                <div class="contenido-burger">
+                    <ul>
+                        <a href="/administrator">
+                            <li>Porductos</li>
+                        </a>
+                        <% if (session.user.rol == 100) { %>
+                            <a href="/formarmat">
+                                <li>Filtros</li>
+                            </a>
                             <% } %>
-                             
-                            <a href=""><li>Usuarios</li></a> 
-                            
-                        </ul>
-                    </div>
+
+                                <a href="">
+                                    <li>Usuarios</li>
+                                </a>
+
+                    </ul>
                 </div>
             </div>
         </div>
-        
-        <div class="colors formColor">
-            
-            
-            <div   class="sizeA c1" id="c1" onclick="color(this.id)"></div>
-            <div  class="sizeA c2" id="c2" onclick="color(this.id)" ></div>
-            <div  class="sizeA c3" id="c3" onclick="color(this.id)"></div>
-            <div  class="sizeA c4" id="c4" onclick="color(this.id)"></div>
-            
-         
-        </div>
-   
-        <div class="container-1">
+    </div>
 
-            <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo"></a>
-        </div>
-        <div class="container-2">
-            <p class="number">ADMINISTRADOR</p>
-             <br>
-            <form action="/search" method="GET">
-                <div class="barra-busqueda">
-                    <input class="search"  name="keywords" placeholder="Buscá un producto">
-                    
-                    <button type="submit" class="lupa-1" ><i class="fa fa-search "></i></button>
-                </div>
-            </form>
-            <!-- este button estaba dentro del form por eso se cortaba
-            agregue codigo en la funcion -->
-            <button type="submit" class="lupa" onclick="mostrar()" id="lupa" ><i class="fa fa-search "></i></button>
-        </div>
-        <form class="searchForm" action="/search" method="GET">
-        <div id="buscador">
-                <input class="search-2" name="keywords"  placeholder="Buscá un producto" id="search_2" >
-                <button type="submit" class="lupa-2"onclick="mostrar()" ><i class="fa fa-search "></i></button>
-        </div>
+    <!-- <div class="colors formColor">
+
+
+        <div class="sizeA c1" id="c1" onclick="color(this.id)"></div>
+        <div class="sizeA c2" id="c2" onclick="color(this.id)"></div>
+        <div class="sizeA c3" id="c3" onclick="color(this.id)"></div>
+        <div class="sizeA c4" id="c4" onclick="color(this.id)"></div>
+
+
+    </div> -->
+
+    <div class="container-1">
+
+        <a href="/"> <img class="logo" src="/image/logo.png" alt="Logo"></a>
+    </div>
+    <div class="container-2">
+        <p class="number">ADMINISTRADOR</p>
+
+        <br>
+        <form action="#" method="">
+            <div class="barra-busqueda">
+                <input class="search" name="keywords" placeholder="Buscá un product">
+
+                <button type="button" class="lupa-1 "><i class="fa fa-search" id="lupa-1"></i></button>
+            </div>
+
         </form>
-        <div class="container-3">
-             <% if (typeof session.user != "undefined" ) { %>
-                <ul>
-                    
-               <li> <a >¡Bienvenido <%= session.user.name %>! </a><a  href="/users/user"><img class="avatar-header" value ="34" src="/image/userAvatars/<%- session.user.avatar? session.user.avatar : "avatar.png" %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
-            
-                 <!-- <li><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>  -->
-                 </ul>
-              <% }else{ %>
+        <!-- este button estaba dentro del form por eso se cortaba
+            agregue codigo en la funcion -->
+        <button type="button" class="lupa" onclick="mostrar()" id="lupa"><i class="fa fa-search "></i></button>
+    </div>
+    <form class="searchForm" action="#" method="">
+        <div id="buscador">
+            <input class="search-2" name="keywords" placeholder="Buscá un producto" id="search_2">
+            <button type="button" class="lupa-2" onclick="mostrar()"><i class="fa fa-search "></i></button>
+        </div>
+    </form>
+    <div class="container-3">
+        <% if (typeof session.user != "undefined" ) { %>
+            <ul>
+
+                <li> <a>¡Bienvenido <%= session.user.name %>! </a><a href="/users/user"><img class="avatar-header" value ="34" src="/image/userAvatars/<%- session.user.avatar? session.user.avatar : "avatar.png" %>" alt="" width="50px"></a><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>
+
+                <!-- <li><a class="tipo" href="/users/logout">Cerrar Sesion</a></li>  -->
+            </ul>
+            <% }else{ %>
                 <ul>
                     <li><a href="/users/login">Inicia sesión</a></li>
-                     <li><a href="/users/addUser">Registrate</a></li>
+                    <li><a href="/users/addUser">Registrate</a></li>
                 </ul>
-    <% }  %> 
-</div> 
-<!-- </div> -->
+                <% }  %>
+    </div>
+    <!-- </div> -->
 
 
 
 
-        <div class="container_4">
-            
-             <% if (typeof session.user == "undefined" || session.user.rol === 2) { %>
+    <div class="container_4">
+
+        <% if (typeof session.user == "undefined" || session.user.rol === 2) { %>
             <div class="trolley">
                 <a href="/trolley">
-                
+
                     <i class="sixeC fa fa-shopping-cart"></i>
                     <p class="carrito">Mi carrito</p>
                 </a>
                 <% }else{ %>
-                <ul class="ulMyDiv">
-                     <li class=""><a class="btn mydiv" href="/administrator">ADMIN</a></li>
-                </ul>
-    <% }  %> 
+                    <ul class="ulMyDiv">
+
+                    </ul>
+                    <% }  %>
             </div>
 
-        </div>
-        <nav class="container-nav">
-            <ul>
-                <a href="/administrator" class="navA" id ="products"><li >Productos</li></a>
-                
-                <a href="/formarmat" class="shapes navA" id ="shapes"><li id="navFMM">Filtros</li></a>
-                
-                <a href="/admin/adminRol" class="navA" id ="navUsers1"><li >Usuarios</li></a>
-               
-            </ul>
-        </nav>
-       
-         
-         
-    </header>
+    </div>
+    <nav class="container-nav">
+        <ul>
+            <a href="/administrator" class="navA" id="products">
+                <li>Productos</li>
+            </a>
 
+            <a href="/formarmat" class="shapes navA" id="shapes">
+                <li id="navFMM">Filtros</li>
+            </a>
+
+            <a href="/admin/adminRol" class="navA" id="navUsers1">
+                <li>Usuarios</li>
+            </a>
+
+        </ul>
+    </nav>
+
+    <script>
+    </script>
+
+</header>

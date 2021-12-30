@@ -1,390 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- head -->
+<%- include("partials/head") %>
 
-    <!DOCTYPE html>
-    <html lang="es">
-    <!-- head -->
-    <%- include("partials/head")  %> 
-    <!-- fin head-->
-    <!-- <script src='/js/confirmDelete.js' defer></script> -->
-<body>
-    <%- include('./partials/headerAdmin.ejs') %>
-    <main class="mainListado">
-        <div class="titleButton">
-          <div class="contTitle">
-            
-            <h3 class="titlePrincipalList">Listado de Productos</h3>
-          </div>
-          
-          <div class="btnAddCont ">
-          <a class="btnAdd" href="/admin/add"><button class="btn btnAddProd">Agregar</button></a
-          >
-          </div>
-        </div>
-  
-        <div class="containerList">
-            
-            <section class="tama">
-                <ul class="title">
-                    <li class="listaP">
-                        <p class="id claro pe peH idH">id</p>
-                        <p class="name normal pe peH nameH">nombre del producto</p>
-                        <p class="price claro pe peH priceH">precio</p>
-                        <p class="category normal pe peH categoryH">categoria</p>
-                        <p class="shape claro pe peH shapeH">forma</p>
-                        <p class="brand normal pe peH brandH">marca</p>
-                        <p class="material claro pe peH materialH">material</p>
-                        <p class="height normal pe">alto</p>
-                        <p class="width claro pe">ancho</p>
-                        <p class="discount normal pe  peH discountH">descuento</p>
-                        <div class="emptySpace"></div>
-                        <!-- <i class="far fa-edit fuera fSize"></i>
-                        <button class="fuera boton caca" type="submit"><i class="far fa-trash-alt"></i></button> -->
-                    </li>
-                </ul><!--  -->
-                  <!-- <li class="lista">
-                  </li> -->
-                
-                <div class="list">
+    <body>
+        <%- include('./partials/headerAdmin.ejs') %>
+            <main class="mainListado">
+                <div class="titleButton">
+                    <div class="contTitle">
+                        <h3 class="titlePrincipalList">Listado de Productos</h3>
+                    </div>
+
+                    <div class="btnAddCont">
+                        <a class="btnAdd" href="/admin/add"><button class="btn btnAddProd">Agregar</button></a>
+                    </div>
                 </div>
-                
-            </section>
-        </div>
-        <div class="aModal" id="tvesModalDel">
-          <label class="closeX">x</label>
-            <!-- <div class="aModalContainer"> -->
-              <div class="bacg">
-                <div class="aHeaderModal">
-                  <p class="titleHeaderModal">GemmaGlass</p>
+
+                <div class="containerList">
+                    <section class="tama">
+                        <ul class="title">
+                            <li class="listaP">
+                                <p class="id claro pe peH idH" id="id">id</p>
+                                <p class="name normal pe peH nameH" id="name">nombre del producto</p>
+                                <p class="price claro pe peH priceH" i="price">precio</p>
+                                <p class="category normal pe peH categoryH" id="category">categoria</p>
+                                <p class="shape claro pe peH shapeH" id="shape">forma</p>
+                                <p class="brand normal pe peH brandH" id="brand">marca</p>
+                                <p class="material claro pe peH materialH" id="material">material</p>
+                                <p class="height normal pe" id="height">alto</p>
+                                <p class="width claro pe" id="width">ancho</p>
+                                <p class="discount normal pe peH discountH" id="">descuento</p>
+                                <div class="emptySpace"></div>
+                                <div class="emptySpace"></div>
+                            </li>
+                        </ul>
+                        <div class="list"></div>
+                    </section>
                 </div>
-                <p class="titleModal">
-                  
-                </p>
-                <div class="btn btnEliminarProd">Eliminar</div>
-              </div> 
-            <!-- </div> -->
-          </div>
-       
-          
-      </main>
-      
-      <script>
-        
-        window.addEventListener("load", function (e) { 
-          let ids ="id";
-        let uno ="o1.id"
-        let dos ="o2.id"
-        
-        
-          let $list = document.querySelector(".list");
-          let $ordenar = document.querySelector(".ordenar")
-          let $idH = document.querySelector(".idH")
-          let $nameH = document.querySelector(".nameH")
-          let $priceH = document.querySelector(".priceH")
-          let $categoryH = document.querySelector(".categoryH")
-          let $shapeH = document.querySelector(".shapeH")
-          let $brandH = document.querySelector(".brandH")
-          let $materialH = document.querySelector(".materialH")
-          let $discountH = document.querySelector(".discountH")
-          let $listaP = document.querySelector(".listaP")
-                
-            fetch("http://localhost:3005/apis/products")
-              .then((response) => response.json())
-              .then((products) => {
-                
-                
-                 
-                
-                  for (let i=0; i<products.data.length; i++){
-                    $list.innerHTML += "<div class='lista cod"+i+"' id='"+i+"' ></div>";
-                    let $lista =document.querySelector(".cod"+i+"");
-                    $lista.innerHTML += "<p class='id pe'>" + products.data[i].id+"</p>"
-                    $lista.innerHTML += "<p class='name pe'>"+products.data[i].name+"</p>"
-                    $lista.innerHTML += "<p class='price pe'>"+products.data[i].price+"</p>"
-                    $lista.innerHTML += "<p class='category pe'>"+products.data[i].category.name+"</p>"
-                    $lista.innerHTML += "<p class='shape pe'>"+products.data[i].shape.name+"</p>"
-                    $lista.innerHTML += "<p class='brand pe'>"+products.data[i].brand.name+"</p>"
-                    $lista.innerHTML += "<p class='material pe'>"+products.data[i].material.name+"</p>"
-                    $lista.innerHTML += "<p class='height pe'>"+products.data[i].height+"</p>"
-                    $lista.innerHTML += "<p class='width pe'>"+products.data[i].width+"</p>"
-                    $lista.innerHTML += "<p class='discount pe'>"+products.data[i].discount+"</p>"
-                    $lista.innerHTML += "<img class='pe editIcon ' name='editIcon' src='/image/edit.svg'  id='"+products.data[i].id+"'>"
-                    $lista.innerHTML += "<img src='/image/trash.svg' name='imgTrash'class='btnDelProd imgTrash  pe1 ' id='"+products.data[i].id+"' alt='"+products.data[i].name+"'>"
+                <div class="aModal" id="tvesModalDel">
+                    <label class="closeX">x</label>
+                    <div class="bacg">
+                        <div class="aHeaderModal">
+                            <p class="titleHeaderModal">GemmaGlass</p>
+                        </div>
+                        <p class="titleModal"></p>
+                        <div class="btn btnEliminarProd">Eliminar</div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </main>
 
-                  }
-              })
-              let $form2 = document.querySelector(".formDel");
-        let $closeX = document.querySelector(".closeX");
-              
-        let $delDef1 = document.querySelector(".btnEliminarProd");
-        
-        let body = document.getElementsByTagName("body")[0];
-        let $titleModal = document.querySelector(".titleModal");
-        let modalWindow = document.getElementById("tvesModalDel");
-          
-        $list.addEventListener("click", function(e){
-  let imgTrashs =  document.getElementsByName("imgTrash");
-  let editIcon =  document.getElementsByName("editIcon");
-  let trashsResult = [].slice.call(imgTrashs);
-  let editResult = [].slice.call(editIcon);
-  for (i = 0 ; i<=editResult.length ; i++){
-    if (editResult[i]===e.target){
-      
-      document.location.href="/admin/edit/"+ +editResult[i].id
-    }
-  }
-  
-  for (i = 0 ; i<=trashsResult.length; i++){
-    if (trashsResult[i]===e.target){
-      
-      sessionStorage.setItem("id",trashsResult[i].id)
-      
-      $titleModal.innerHTML= `¿Seguro quiere eliminar el artículo ${trashsResult[i].alt} ?`  
-          
-          modalWindow.style.opacity = "1";
-          modalWindow.style.visibility = "visible";
-          modalWindow.style.transform = "translateY(22%)";
-          modalWindow.style.transitionDelay = "0.2s";
-          modalWindow.style.transition ="all 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15)";
-          body.style.position = "static";
-          body.style.height = "100%";
-          body.style.overflow = "hidden"; 
-          window.onclick = function (event) {
-            if (event.target == modalWindow) {
-              modalWindow.style.opacity = "";
-              modalWindow.style.visibility = "hidden";
-              modalWindow.style.transform = "translateY(0)";
-              body.style.position = "inherit";
-              body.style.height = "auto";
-              body.style.overflow = "visible";
-            }
-          };
-    
-  }
+            <script>
+                window.addEventListener("load", function(e) {
+                    let ids = "id";
+                    let uno = "o1.id";
+                    let dos = "o2.id";
 
-}
-})
+                    let $list = document.querySelector(".list");
+                    let $ordenar = document.querySelector(".ordenar");
+                    let $idH = document.querySelector(".idH");
+                    let $nameH = document.querySelector(".nameH");
+                    let $priceH = document.querySelector(".priceH");
+                    let $categoryH = document.querySelector(".categoryH");
+                    let $shapeH = document.querySelector(".shapeH");
+                    let $brandH = document.querySelector(".brandH");
+                    let $materialH = document.querySelector(".materialH");
+                    let $discountH = document.querySelector(".discountH");
+                    let $listaP = document.querySelector(".listaP");
 
-        
-        
+                    fetch("http://localhost:3005/apis/products")
+                        .then((response) => response.json())
+                        .then((products) => {
+                            for (let i = 0; i < products.data.length; i++) {
+                                $list.innerHTML += "<div class='lista cod" + i + "' id='" + i + "' ></div>";
+                                let $lista = document.querySelector(".cod" + i + "");
+                                $lista.innerHTML +=
+                                    "<p class='id pe'>" + products.data[i].id + "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='name pe'>" + products.data[i].name + "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='price pe'>" + products.data[i].price + "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='category pe'>" +
+                                    products.data[i].category.name +
+                                    "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='shape pe'>" + products.data[i].shape.name + "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='brand pe'>" + products.data[i].brand.name + "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='material pe'>" +
+                                    products.data[i].material.name +
+                                    "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='height pe'>" + products.data[i].height + "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='width pe'>" + products.data[i].width + "</p>";
+                                $lista.innerHTML +=
+                                    "<p class='discount pe'>" + products.data[i].discount + "</p>";
+                                $lista.innerHTML +=
+                                    "<img class='pe editIcon ' name='editIcon' src='/image/edit.svg'  id='" +
+                                    products.data[i].id +
+                                    "'>";
+                                $lista.innerHTML +=
+                                    "<img class='btnDelProd imgTrash  pe1' name='imgTrash' src='/image/trash.svg'  id='" +
+                                    products.data[i].id +
+                                    "' alt='" +
+                                    products.data[i].name +
+                                    "'>";
+                            }
+                        });
+                    let $form2 = document.querySelector(".formDel");
+                    let $closeX = document.querySelector(".closeX");
+                    let $delDef1 = document.querySelector(".btnEliminarProd");
+                    let body = document.getElementsByTagName("body")[0];
+                    let $titleModal = document.querySelector(".titleModal");
+                    let modalWindow = document.getElementById("tvesModalDel");
 
-        $closeX.addEventListener("click", function(){
-          
-              modalWindow.style.opacity = "";
-              modalWindow.style.visibility = "hidden";
-              modalWindow.style.transform = "translateY(0)";
-              body.style.position = "inherit";
-              body.style.height = "auto";
-              body.style.overflow = "visible";
-        })
-        
-        
-        $delDef1.addEventListener("click", function () {
-            const mId = sessionStorage.getItem("id");
-            
-            /* ################ */
-            fetch(`http://localhost:3005/apis/products/${mId}`,{
-           method:"DELETE"
-      })
-          .then((response) => response.json())
-          .then((result)=>{
-            if (result){
-              modalWindow.style.opacity = "";
-              modalWindow.style.visibility = "hidden";
-              modalWindow.style.transform = "translateY(0)";
-              body.style.position = "inherit";
-              body.style.height = "auto";
-              body.style.overflow = "visible";
-              window.location.reload()
-            }else{
-              alert("no del")
-            }
-            /* ################ */
-        }) })
-/* ################################# */
-$listaP.addEventListener("click", function(e){
-            switch (e.target) {
-              case $idH:
-                orderByA("id")
-                break;
-              case $nameH:
-                orderByA("name")
-                break;
-              case $priceH:
-                orderByA("price")
-                break;
-              case $categoryH:
-                orderByA("category")
-                break;
-              case $shapeH:
-                orderByA("shape")
-                break;
-              case $brandH:
-                orderByA("brand")
-                break;
-              case $materialH:
-                orderByA("material")
-                break;
-              case $discountH:
-                orderByA("discount")
-                break;
-            
-              default:
+                    $list.addEventListener("click", function(e) {
+                        let este = e.target;
+                        if (este.name == "editIcon") {
+                            document.location.href = `/admin/edit/${este.id}`;
+                        }
+                        if (este.name === "imgTrash") {
+                            sessionStorage.setItem("id", este.id);
 
-                break;
-            }
-          }) ;
-function orderByA(valor){
-            fetch("http://localhost:3005/apis/products")
-              .then((response) => response.json())
-              .then((products) => {
-                switch (valor) {
-                  case "id":
-                    orderA(products.data)
-                    break;
-                  case "name":
-                    orderB(products.data)
-                    break;
-                  case "price":
-                
-                    orderC(products.data)
-                    break;
-                  case "category":
-                    orderD(products.data)
-                    break;
-                  case "shape":
-                    orderE(products.data)
-                    break;
-                  case "brand":
-                    orderF(products.data)
-                    break;
-                  case "material":
-                    orderG(products.data)
-                    break;
-                  case "discount":
-                    orderH(products.data)
-                    break;
-                
-                  default:
-                    break;
-                }
-                $list.innerHTML="";
-                  for (let i=0; i<products.data.length; i++){
-                    $list.innerHTML += "<div class='lista cod"+i+"' id='"+i+"' ></div>";
-                    let $lista =document.querySelector(".cod"+i+"");
-                    $lista.innerHTML += "<p class='id pe'>" + products.data[i].id+"</p>"
-                    $lista.innerHTML += "<p class='name pe'>"+products.data[i].name+"</p>"
-                    $lista.innerHTML += "<p class='price pe'>"+products.data[i].price+"</p>"
-                    $lista.innerHTML += "<p class='category pe'>"+products.data[i].category.name+"</p>"
-                    $lista.innerHTML += "<p class='shape pe'>"+products.data[i].shape.name+"</p>"
-                    $lista.innerHTML += "<p class='brand pe'>"+products.data[i].brand.name+"</p>"
-                    $lista.innerHTML += "<p class='material pe'>"+products.data[i].material.name+"</p>"
-                    $lista.innerHTML += "<p class='height pe'>"+products.data[i].height+"</p>"
-                    $lista.innerHTML += "<p class='width pe'>"+products.data[i].width+"</p>"
-                    $lista.innerHTML += "<p class='discount pe'>"+products.data[i].discount+"</p>"
-                    $lista.innerHTML += "<img class='pe editIcon ' name='editIcon' src='/image/edit.svg'  id='"+products.data[i].id+"'>"
-                    $lista.innerHTML += "<img src='/image/trash.svg' name='imgTrash'class='btnDelProd imgTrash  pe1 ' id='"+products.data[i].id+"' alt='"+products.data[i].name+"'>"
+                            $titleModal.innerHTML = `¿Seguro quiere eliminar el artículo ${este.alt} ?`;
 
-                  }
-              })
-          }  ;
+                            modalWindow.style.opacity = "1";
+                            modalWindow.style.visibility = "visible";
+                            modalWindow.style.transform = "translateY(22%)";
+                            modalWindow.style.transitionDelay = "0.2s";
+                            modalWindow.style.transition =
+                                "all 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15)";
+                            body.style.position = "static";
+                            body.style.height = "100%";
+                            body.style.overflow = "hidden";
+                            window.onclick = function(event) {
+                                if (event.target == modalWindow) {
+                                    modalWindow.style.opacity = "";
+                                    modalWindow.style.visibility = "hidden";
+                                    modalWindow.style.transform = "translateY(0)";
+                                    body.style.position = "inherit";
+                                    body.style.height = "auto";
+                                    body.style.overflow = "visible";
+                                }
+                            };
+                        }
+                    });
 
-          function orderA(dato){  
-            dato.sort((o1, o2)=>{
-                      if(o1.id < o2.id){
-                        return -1;
-                      }else if (o1.id > o2.id){
-                        return 1;
-                      }else{
-                        return 0;
-                      }
-                    })
-                  }
-          function orderB(dato){  
-            dato.sort((o1, o2)=>{
-                      if(o1.name < o2.name){
-                        return -1;
-                      }else if (o1.name > o2.name){
-                        return 1;
-                      }else{
-                        return 0;
-                      }
-                    })
-                  }
-          function orderC(dato){  
-            dato.sort((o1, o2)=>{
-                      if(o1.price < o2.price){
-                        return -1;
-                      }else if (o1.price > o2.price){
-                        return 1;
-                      }else{
-                        return 0;
-                      }
-                    })
-                  }
-          function orderD(dato){  
-            dato.sort((o1, o2)=>{
-                      if(o1.category < o2.category){
-                        return -1;
-                      }else if (o1.category > o2.category){
-                        return 1;
-                      }else{
-                        return 0;
-                      }
-                    })
-                  }
-          function orderE(dato){  
-            dato.sort((o1, o2)=>{
-                      if(o1.shape < o2.shape){
-                        return -1;
-                      }else if (o1.shape > o2.shape){
-                        return 1;
-                      }else{
-                        return 0;
-                      }
-                    })
-                  }
-          function orderF(dato){  
-            dato.sort((o1, o2)=>{
-                      if(o1.brand < o2.brand){
-                        return -1;
-                      }else if (o1.brand > o2.brand){
-                        return 1;
-                      }else{
-                        return 0;
-                      }
-                    })
-                  }
-          function orderG(dato){  
-            dato.sort((o1, o2)=>{
-                      if(o1.material < o2.material){
-                        return -1;
-                      }else if (o1.material > o2.material){
-                        return 1;
-                      }else{
-                        return 0;
-                      }
-                    })
-                  }
-          function orderH(dato){  
-            dato.sort((o1, o2)=>{
-                      if(o1.discount < o2.discount){
-                        return -1;
-                      }else if (o1.discount > o2.discount){
-                        return 1;
-                      }else{
-                        return 0;
-                      }
-                    })
-                  }
-        /* ################################# */
-      })
-        /* ################################# */
+                    $closeX.addEventListener("click", function() {
+                        modalWindow.style.opacity = "";
+                        modalWindow.style.visibility = "hidden";
+                        modalWindow.style.transform = "translateY(0)";
+                        body.style.position = "inherit";
+                        body.style.height = "auto";
+                        body.style.overflow = "visible";
+                    });
 
-        /* ################################# */
-      </script>
-    
-    
-    
-    
-    
-</body>
+                    $delDef1.addEventListener("click", function() {
+                        const mId = sessionStorage.getItem("id");
+
+                        /* ################ */
+                        fetch(`http://localhost:3005/apis/products/${mId}`, {
+                                method: "DELETE",
+                            })
+                            .then((response) => response.json())
+                            .then((result) => {
+                                if (result) {
+                                    modalWindow.style.opacity = "";
+                                    modalWindow.style.visibility = "hidden";
+                                    modalWindow.style.transform = "translateY(0)";
+                                    body.style.position = "inherit";
+                                    body.style.height = "auto";
+                                    body.style.overflow = "visible";
+                                    window.location.reload();
+                                } else {
+                                    alert("no del");
+                                }
+                                /* ################ */
+                            });
+                    });
+                    /* ################################# */
+                    $listaP.addEventListener("click", function(e) {
+                        switch (e.target) {
+                            case $idH:
+                                console.log($idH)
+                                orderByA("id");
+                                break;
+                            case $nameH:
+                                orderByA("name");
+                                break;
+                            case $priceH:
+                                orderByA("price");
+                                break;
+                            case $categoryH:
+                                orderByA("category");
+                                break;
+                            case $shapeH:
+                                orderByA("shape");
+                                break;
+                            case $brandH:
+                                orderByA("brand");
+                                break;
+                            case $materialH:
+                                orderByA("material");
+                                break;
+                            case $discountH:
+                                orderByA("discount");
+                                break;
+
+                            default:
+                                break;
+                        }
+                    });
+
+                    function orderByA(valor) {
+                        fetch("http://localhost:3005/apis/products")
+                            .then((response) => response.json())
+                            .then((products) => {
+                                switch (valor) {
+                                    case "id":
+                                        orderA(products.data);
+                                        break;
+                                    case "name":
+                                        orderB(products.data);
+                                        break;
+                                    case "price":
+                                        orderC(products.data);
+                                        break;
+                                    case "category":
+                                        orderD(products.data);
+                                        break;
+                                    case "shape":
+                                        orderE(products.data);
+                                        break;
+                                    case "brand":
+                                        orderF(products.data);
+                                        break;
+                                    case "material":
+                                        orderG(products.data);
+                                        break;
+                                    case "discount":
+                                        orderH(products.data);
+                                        break;
+
+                                    default:
+                                        break;
+                                }
+                                $list.innerHTML = "";
+                                for (let i = 0; i < products.data.length; i++) {
+                                    $list.innerHTML +=
+                                        "<div class='lista cod" + i + "' id='" + i + "' ></div>";
+                                    let $lista = document.querySelector(".cod" + i + "");
+                                    $lista.innerHTML +=
+                                        "<p class='id pe'>" + products.data[i].id + "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='name pe'>" + products.data[i].name + "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='price pe'>" + products.data[i].price + "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='category pe'>" +
+                                        products.data[i].category.name +
+                                        "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='shape pe'>" + products.data[i].shape.name + "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='brand pe'>" + products.data[i].brand.name + "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='material pe'>" +
+                                        products.data[i].material.name +
+                                        "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='height pe'>" + products.data[i].height + "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='width pe'>" + products.data[i].width + "</p>";
+                                    $lista.innerHTML +=
+                                        "<p class='discount pe'>" +
+                                        products.data[i].discount +
+                                        "</p>";
+                                    $lista.innerHTML +=
+                                        "<img class='pe editIcon ' name='editIcon' src='/image/edit.svg'  id='" +
+                                        products.data[i].id +
+                                        "'>";
+                                    $lista.innerHTML +=
+                                        "<img src='/image/trash.svg' name='imgTrash'class='btnDelProd imgTrash  pe1 ' id='" +
+                                        products.data[i].id +
+                                        "' alt='" +
+                                        products.data[i].name +
+                                        "'>";
+                                }
+                            });
+                    }
+
+                    function orderA(dato) {
+                        console.log(dato[0].name)
+                        dato.sort((o1, o2) => {
+                            if (o1.id < o2.id) {
+                                return -1;
+                            } else if (o1.id > o2.id) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+                    }
+
+                    function orderB(dato) {
+                        dato.sort((o1, o2) => {
+                            if (o1.name < o2.name) {
+                                return -1;
+                            } else if (o1.name > o2.name) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+                    }
+
+                    function orderC(dato) {
+                        dato.sort((o1, o2) => {
+                            if (o1.price < o2.price) {
+                                return -1;
+                            } else if (o1.price > o2.price) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+                    }
+
+                    function orderD(dato) {
+                        dato.sort((o1, o2) => {
+                            if (o1.category < o2.category) {
+                                return -1;
+                            } else if (o1.category > o2.category) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+                    }
+
+                    function orderE(dato) {
+                        dato.sort((o1, o2) => {
+                            if (o1.shape < o2.shape) {
+                                return -1;
+                            } else if (o1.shape > o2.shape) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+                    }
+
+                    function orderF(dato) {
+                        dato.sort((o1, o2) => {
+                            if (o1.brand < o2.brand) {
+                                return -1;
+                            } else if (o1.brand > o2.brand) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+                    }
+
+                    function orderG(dato) {
+                        dato.sort((o1, o2) => {
+                            if (o1.material < o2.material) {
+                                return -1;
+                            } else if (o1.material > o2.material) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+                    }
+
+                    function orderH(dato) {
+                        dato.sort((o1, o2) => {
+                            if (o1.discount < o2.discount) {
+                                return -1;
+                            } else if (o1.discount > o2.discount) {
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        });
+                    }
+                    /* ################################# */
+
+                    /* ################################# */
+
+                    /* ################################# */
+                });
+            </script>
+    </body>
+
 </html>
