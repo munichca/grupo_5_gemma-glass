@@ -60,8 +60,6 @@ const $searchAll = () => {
             let valor = String($search.value)
 
             for (let product of data) {
-
-
                 if (product.name.toLowerCase().indexOf(texto) !== -1) {
                     /* for (let current of newArray) {
 
@@ -75,11 +73,11 @@ const $searchAll = () => {
                     arrayNew.push(product)
                     newArray = Array.from(arrayNew)
                 }
-                /* if (String(product.discount).indexOf(valor) !== -1) {
+                if (String(product.discount).indexOf(valor) !== -1) {
 
                     arrayNew.push(product)
                     newArray = Array.from(arrayNew)
-                } */
+                }
 
 
             }

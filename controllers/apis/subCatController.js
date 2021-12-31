@@ -1,14 +1,14 @@
 const db = require("../../database/models")
-let {validationResult} = require ("express-validator");
+let { validationResult } = require("express-validator");
 const getUrl = (req) => {
     return `${req.protocol}://${req.get("host")}${req.originalUrl}`
 }
 module.exports = {
 
-    
-    shape: (req, res)=> {
-        db.Shape.findAll({
-        }).then ((shape) =>{
+
+    shape: (req, res) => {
+        db.Shape.findAll({})
+            .then((shape) => {
                 return res.status(200).json({
                     meta: {
                         endpoint: getUrl(req),
@@ -16,87 +16,86 @@ module.exports = {
                     },
                     data: shape
                 })
-        }) /* aca termina el then */
-        .catch(errors => console.log(errors))
+            }) /* aca termina el then */
+            .catch(errors => console.log(errors))
     },
-    shapeName:(req, res)=>{
+    shapeName: (req, res) => {
         db.Shape.findOne({
-            where:{
-                name : req.params.name
-            }
-        })
-        .then ((shape) =>{
-            return res.status(200).json({
-                meta: {
-                    endpoint: getUrl(req),
-                    status: 200,
-                    
-                },
-                data: shape
+                where: {
+                    name: req.params.name
+                }
             })
+            .then((shape) => {
+                return res.status(200).json({
+                    meta: {
+                        endpoint: getUrl(req),
+                        status: 200,
+
+                    },
+                    data: shape
+                })
             }).catch(error => console.log(error))
     },
-    createShape: (req, res)=> {
+    createShape: (req, res) => {
         db.Shape.create({
-            name:req.body.name
-        })
-        .then(result =>{
-            if(result){
+                name: req.body.name
+            })
+            .then(result => {
+                if (result) {
+                    return res.status(200).json({
+                        msg: "created successfully",
+                        status: 1
+                    })
+                } else {
+                    return res.status(200).json({
+                        msg: "no create"
+                    })
+                }
+            }).catch(error => console.log(error))
+    },
+
+    editShape: (req, res) => {
+        db.Shape.update({
+            name: req.body.name
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(result => {
+            if (result) {
                 return res.status(200).json({
-                    msg: "created successfully",
+                    msg: "updated successfully",
                     status: 1
                 })
-            }else{
+            } else {
                 return res.status(200).json({
-                    msg: "no create"
+                    msg: "no changes"
                 })
             }
         }).catch(error => console.log(error))
+
     },
 
-    editShape: (req, res)=> {
-                db.Shape.update({
-                    name:req.body.name},{
-                        where:{
-                            id: req.params.id
-                        }
-                    }
-                    ).then(result =>{
-                        if(result){
-                            return res.status(200).json({
-                                msg: "updated successfully",
-                                status : 1
-                            })
-                        }else{
-                            return res.status(200).json({
-                                msg: "no changes"
-                            })
-                        }
-                    }).catch(error => console.log(error))
-               
-    },
-    
-    deleteShape: (req, res)=> {
+    deleteShape: (req, res) => {
         db.Shape.destroy({
-            where:{
-                id:+req.params.id
+            where: {
+                id: +req.params.id
             }
-        }).then(result =>{
-            if(result){
+        }).then(result => {
+            if (result) {
                 return res.status(200).json({
                     msg: "delete successfully",
-                    status:1
+                    status: 1
                 })
-            }else{
+            } else {
                 return res.status(200).json({
                     msg: "no changes"
                 })
             }
         }).catch(error => console.log(error))
     },
-    brand: (req, res)=> {
-        db.Brand.findAll({
-        }).then ((brand) =>{
+    brand: (req, res) => {
+        db.Brand.findAll({}).then((brand) => {
                 return res.status(200).json({
                     meta: {
                         endpoint: getUrl(req),
@@ -104,76 +103,76 @@ module.exports = {
                     },
                     data: brand
                 })
-        }) /* aca termina el then */
-        .catch(errors => console.log(errors))
+            }) /* aca termina el then */
+            .catch(errors => console.log(errors))
     },
-    brandName:(req, res)=>{
+    brandName: (req, res) => {
         db.Brand.findOne({
-            where:{
-                name : req.params.name
-            }
-        })
-        .then ((brand) =>{
-            return res.status(200).json({
-                meta: {
-                    endpoint: getUrl(req),
-                    status: 200,
-                    
-                },
-                data: brand
+                where: {
+                    name: req.params.name
+                }
             })
+            .then((brand) => {
+                return res.status(200).json({
+                    meta: {
+                        endpoint: getUrl(req),
+                        status: 200,
+
+                    },
+                    data: brand
+                })
             }).catch(error => console.log(error))
     },
-    createBrand: (req, res)=> {
+    createBrand: (req, res) => {
         db.Brand.create({
-            name:req.body.name
-        })
-        .then(result =>{
-            if(result){
+                name: req.body.name
+            })
+            .then(result => {
+                if (result) {
+                    return res.status(200).json({
+                        msg: "created successfully",
+                        status: 1
+                    })
+                } else {
+                    return res.status(200).json({
+                        msg: "no create"
+                    })
+                }
+            }).catch(error => console.log(error))
+    },
+
+    editBrand: (req, res) => {
+        db.Brand.update({
+            name: req.body.name
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(result => {
+            if (result) {
                 return res.status(200).json({
-                    msg: "created successfully",
+                    msg: "updated successfully",
                     status: 1
                 })
-            }else{
+            } else {
                 return res.status(200).json({
-                    msg: "no create"
+                    msg: "no changes"
                 })
             }
         }).catch(error => console.log(error))
     },
-
-    editBrand: (req, res)=> {
-        db.Brand.update({
-            name:req.body.name},{
-                where:{
-                    id: req.params.id
-                }
-            }
-            ).then(result =>{
-                if(result){
-                    return res.status(200).json({
-                        msg: "updated successfully",
-                        status : 1
-                    })
-                }else{
-                    return res.status(200).json({
-                        msg: "no changes"
-                    })
-                }
-            }).catch(error => console.log(error))
-    },
-    deleteBrand: (req, res)=> {
+    deleteBrand: (req, res) => {
         db.Brand.destroy({
-            where:{
-                id:+req.params.id
+            where: {
+                id: +req.params.id
             }
-        }).then(result =>{
-            if(result){
+        }).then(result => {
+            if (result) {
                 return res.status(200).json({
                     msg: "delete successfully",
-                    status:1
+                    status: 1
                 })
-            }else{
+            } else {
                 return res.status(200).json({
                     msg: "no changes"
                 })
@@ -181,9 +180,9 @@ module.exports = {
         }).catch(error => console.log(error))
     },
     /* #################### */
-    material: (req, res)=> {
-        db.Material.findAll({
-        }).then ((material) =>{
+    material: (req, res) => {
+        db.Material.findAll({})
+            .then((material) => {
                 return res.status(200).json({
                     meta: {
                         endpoint: getUrl(req),
@@ -191,82 +190,82 @@ module.exports = {
                     },
                     data: material
                 })
-        }) /* aca termina el then */
-        .catch(errors => console.log(errors))
-    
-    },
-    materialName:(req, res)=>{
-        db.Material.findOne({
-            where:{
-                name : req.params.name
-            }
-        })
-        .then ((material) =>{
-            return res.status(200).json({
-                meta: {
-                    endpoint: getUrl(req),
-                    status: 200,
-                    
-                },
-                data: material
             })
+            .catch(errors => console.log(errors))
+
+    },
+    materialName: (req, res) => {
+        db.Material.findOne({
+                where: {
+                    name: req.params.name
+                }
+            })
+            .then((material) => {
+                return res.status(200).json({
+                    meta: {
+                        endpoint: getUrl(req),
+                        status: 200,
+
+                    },
+                    data: material
+                })
             }).catch(error => console.log(error))
     },
-    createMaterial: (req, res)=> {
+    createMaterial: (req, res) => {
         db.Material.create({
-            name:req.body.name
-        })
-        .then(result =>{
-            if(result){
-                return res.status(200).json({
-                    msg: "created successfully",
-                    status: 1
-                })
-            }else{
-                return res.status(200).json({
-                    msg: "no create"
-                })
-            }
-        }).catch(error => console.log(error))
+                name: req.body.name
+            })
+            .then(result => {
+                if (result) {
+                    return res.status(200).json({
+                        msg: "created successfully",
+                        status: 1
+                    })
+                } else {
+                    return res.status(200).json({
+                        msg: "no create"
+                    })
+                }
+            }).catch(error => console.log(error))
     },
 
-    editMaterial: (req, res)=> {
+    editMaterial: (req, res) => {
         db.Material.update({
-            name:req.body.name},{
-                where:{
-                    id: req.params.id
-                }
+            name: req.body.name
+        }, {
+            where: {
+                id: req.params.id
             }
-            ).then(result =>{
-                if(result){
-                    return res.status(200).json({
-                        msg: "updated successfully",
-                        status : 1
-                    })
-                }else{
-                    return res.status(200).json({
-                        msg: "no changes"
-                    })
-                }
-            }).catch(error => console.log(error))
-    },
-    deleteMaterial: (req, res)=> {
-        db.Material.destroy({
-            where:{
-                id:+req.params.id
-            }
-        }).then(result =>{
-            if(result){
+        }).then(result => {
+            if (result) {
                 return res.status(200).json({
-                    msg: "delete successfully",
-                    status:1
+                    msg: "updated successfully",
+                    status: 1
                 })
-            }else{
+            } else {
                 return res.status(200).json({
                     msg: "no changes"
                 })
             }
         }).catch(error => console.log(error))
-        
+    },
+    deleteMaterial: (req, res) => {
+        db.Material.destroy({
+            where: {
+                id: +req.params.id
+            }
+        }).then(result => {
+            if (result) {
+                return res.status(200).json({
+                    msg: "delete successfully",
+                    status: 1
+                })
+            } else {
+                return res.status(200).json({
+                    msg: "no changes"
+                })
+            }
+        }).catch(error => console.log(error))
+
     },
 }

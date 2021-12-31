@@ -443,6 +443,7 @@ form {
     .editIcon {
         width: 2.5vw;
         height: 25px;
+        cursor: pointer;
         /* margin-top: 2px; */
     }
     .pe2 {
