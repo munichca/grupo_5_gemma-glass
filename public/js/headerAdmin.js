@@ -52,6 +52,15 @@ const $searchAll = () => {
     var newArray = [];
     let flag = 0;
 
+    function noRepeat(data) {
+        for (let current of newArray) {
+            if (data === current.id) {
+                return -1;
+            }
+        }
+    }
+
+
     $result.innerHTML = ""
     fetch("http://localhost:3005/apis/products")
         .then((response) => response.json())
@@ -61,27 +70,20 @@ const $searchAll = () => {
 
             for (let product of data) {
                 if (product.name.toLowerCase().indexOf(texto) !== -1) {
-                    /* for (let current of newArray) {
-
-                    } */
-
-                    arrayNew.push(product);
-                    newArray = Array.from(arrayNew);
+                    // console.log(req.session.user.rol)
+                    verif(product);
                 }
                 if (String(product.id).indexOf(valor) !== -1) {
-
-                    arrayNew.push(product)
-                    newArray = Array.from(arrayNew)
+                    verif(product);
                 }
                 if (String(product.discount).indexOf(valor) !== -1) {
-
-                    arrayNew.push(product)
-                    newArray = Array.from(arrayNew)
+                    verif(product);
                 }
 
 
             }
             if ($search.value === "") {
+                console.log("vacia los array")
                 arrayNew = [];
                 newArray = [];
                 refill(newArray);
@@ -89,6 +91,14 @@ const $searchAll = () => {
                 refill(newArray);
             }
 
+            function verif(productLiteral) {
+                if (noRepeat(productLiteral.id) === -1) {
+                    console.log("ya esta en el array")
+                } else {
+                    arrayNew.push(productLiteral)
+                    newArray = Array.from(arrayNew)
+                }
+            }
             /* console.log(newArray[0].id) */
         })
 
