@@ -70,13 +70,25 @@ const $searchAll = () => {
 
             for (let product of data) {
                 if (product.name.toLowerCase().indexOf(texto) !== -1) {
-                    // console.log(req.session.user.rol)
+                    console.log(product)
                     verif(product);
                 }
                 if (String(product.id).indexOf(valor) !== -1) {
                     verif(product);
                 }
                 if (String(product.discount).indexOf(valor) !== -1) {
+                    verif(product);
+                }
+                if (String(product.price).indexOf(valor) !== -1) {
+                    verif(product);
+                }
+                if (product.category.name.toLowerCase().indexOf(texto) !== -1) {
+                    verif(product);
+                }
+                if (product.shape.name.toLowerCase().indexOf(texto) !== -1) {
+                    verif(product);
+                }
+                if (product.brand.name.toLowerCase().indexOf(texto) !== -1) {
                     verif(product);
                 }
 

@@ -245,7 +245,7 @@ window.addEventListener("load", function() {
 
     function shearchName(subCat, eSubCat, name) {
         let inputChecked = document.querySelector('input[name="whi"]:checked');
-        console.log(inputChecked.value)
+        //console.log(inputChecked.value)
         fetch(`http://localhost:3005/apis/${subCat}/${name}`)
             .then((response) => response.json())
             .then((subCatFinded) => {
